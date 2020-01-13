@@ -61,6 +61,10 @@ body {
     width: 100%;
     position: absolute;
     bottom: 0;
+<<<<<<< HEAD
+=======
+    text-align: center;
+>>>>>>> 7dff4272fe1224893b10e5d554aca05082c73107
     padding-top: 20px;
 }
 
