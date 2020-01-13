@@ -1,6 +1,5 @@
 
 * {
-    /* box-sizing: border-box;s */
     padding: 0;
     margin: 0;
 }
@@ -11,11 +10,17 @@ body {
 
 .navbar {
     font-size: 18px;
-    background: rgba(0, 0, 0, 0.8);
+    /* background: rgba(0, 0, 0, 0.8); */
+    background-image: url('../image/navbar.png');
+    background-repeat: repeat-x;
     padding-bottom: 10px;
     position: fixed;
-    top: 0;
+    top: -73px;
     width: 100%;
+}
+
+.navbar ul li {
+    /* background-color: blue; */
 }
 
 .main-nav {
@@ -59,19 +64,22 @@ body {
     color: rgba(255, 255, 255, 0.9);
     height: 50px;
     width: 100%;
-    position: absolute;
     bottom: 0;
     text-align: center;
     padding-top: 20px;
 }
 
+.intro {
+    background-image: url('../image/backgroud.jpg');
+    height: 740px;
+}
 /* css for desktop */
 @media screen and (min-width: 768px) {
     .navbar {
         display: flex;
         justify-content: space-between;
         padding-bottom: 0;
-        height: 70px;
+        height: 73px;
         align-items: center;
     }
 
