@@ -64,6 +64,17 @@ body {
     padding-top: 20px;
 }
 
+#contact h1 {
+    color: blue;
+    text-align: center;
+}
+
+#contact p {
+    color: coral;
+    text-align: left;
+    padding: 100px;
+}
+
 /* css for desktop */
 @media screen and (min-width: 768px) {
     .navbar {
