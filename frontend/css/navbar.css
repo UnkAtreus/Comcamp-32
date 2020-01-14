@@ -1,0 +1,9 @@
+#navbar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    width: 100vw;
+    height: 50px;
+    display: flex;
+    z-index: 500;
+}
