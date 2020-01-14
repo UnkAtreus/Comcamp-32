@@ -25,11 +25,11 @@
   font-size: 25px;
 }
 
-.intro .logo {
+.intro .logo-intro {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 500px;
+  width: 400px;
 }
 
 @media screen and (min-width: 1000px) {

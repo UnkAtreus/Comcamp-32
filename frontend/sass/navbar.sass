@@ -1,3 +1,43 @@
+.navbar
+  font-size: 18px
+  background-image: url('../image/navbar.png')
+  background-repeat: repeat-x
+  position: fixed
+  top: 0px
+  width: 100vw
+
+.main-nav
+  list-style-type: none
+  display: none
+
+.nav-links, .logo
+  text-decoration: none
+  color: rgba(255, 255, 255, 0.9)
+
+.main-nav li
+  margin: 0px
+  text-align: center
+  background-color: brown
+  padding: 10px
+  border: 1px
+
+.logo
+  display: inline-block
+  font-size: 22px
+  margin-top: 10px
+  margin-left: 20px
+
+.navbar-toggle
+  position: absolute
+  top: 10px
+  right: 30px
+  cursor: pointer
+  color: rgba(255, 255, 255, 0.8)
+  font-size: 24px
+
+.active
+  display: block
+  
 @media screen and (min-width: 768px)
   .navbar
     display: flex
@@ -14,6 +54,7 @@
 
     li
       margin: 0
+      background-color: transparent
 
   .nav-links
     margin-left: 40px
@@ -26,43 +67,3 @@
 
   .logo:hover, .nav-links:hover
     color: rgba(255, 255, 255, 1)
-
-.navbar
-  font-size: 18px
-
-  /* background: rgba(0, 0, 0, 0.8); */
-  background-image: url('../image/navbar.png')
-  background-repeat: repeat-x
-  padding-bottom: 10px
-  position: fixed
-  top: 0px
-  width: 100%
-
-.main-nav
-  list-style-type: none
-  display: none
-
-.nav-links, .logo
-  text-decoration: none
-  color: rgba(255, 255, 255, 0.9)
-
-.main-nav li
-  text-align: center
-  margin: 15px auto
-
-.logo
-  display: inline-block
-  font-size: 22px
-  margin-top: 10px
-  margin-left: 20px
-
-.navbar-toggle
-  position: absolute
-  top: 10px
-  right: 20px
-  cursor: pointer
-  color: rgba(255, 255, 255, 0.8)
-  font-size: 24px
-
-.active
-  display: block
