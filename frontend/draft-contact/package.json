@@ -1,0 +1,23 @@
+{
+  "name": "comcamp-32",
+  "version": "0.1.0",
+  "description": "Comcamp 32",
+  "main": "index.js",
+  "scripts": {
+    "css": "node-sass scss -o css && postcss css/*.css -u autoprefixer -u cssnano --no-map -r",
+    "watch": "watch \"npm run css\" scss",
+    "-------js": "uglifyjs ./dist/js/index.js -o ./dist/js/index.min.js | uglifyjs ./dist/js/regis.js -o ./dist/js/regis.min.js | uglifyjs ./dist/js/regis.form.js -o ./dist/js/regis.form.min.js | uglifyjs ./dist/js/regis.form.2.js -o ./dist/js/regis.form.2.min.js | uglifyjs ./dist/js/regis.form.3.js -o ./dist/js/regis.form.3.min.js | uglifyjs ./dist/js/regis.form.4.js -o ./dist/js/regis.form.4.min.js | uglifyjs ./dist/js/regis.format.js -o ./dist/js/regis.format.min.js | uglifyjs ./dist/js/announce.js -o ./dist/js/announce.min.js",
+    "-------compile": "npm run css | npm run js"
+  },
+  "author": "CPE33",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^9.4.4",
+    "cssnano": "^4.1.8",
+    "node-sass": "^4.11.0",
+    "postcss": "^7.0.7",
+    "postcss-cli": "^6.1.1",
+    "uglify-js": "^3.4.9",
+    "watch": "^1.0.2"
+  }
+}

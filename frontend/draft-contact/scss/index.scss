@@ -1,0 +1,36 @@
+@import "variables";
+
+body {
+  font-family: $font;
+}
+
+.footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: rgba(255, 255, 255, 0.9);
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  padding-top: 20px;
+}
+
+#contact {
+  h1 {
+    color: blue;
+    text-align: center;
+  }
+
+  p {
+    color: coral;
+    text-align: left;
+    padding: 100px;
+  }
+}
+
+/* css for desktop */
+@media screen and (min-width: 768px) {
+  .footer p {
+    display: inline;
+  }
+}

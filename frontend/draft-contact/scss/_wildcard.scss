@@ -1,0 +1,27 @@
+html {
+  box-sizing: border-box;
+  text-size-adjust: 100%;
+  outline: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  outline: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+  * {
+    max-height: 1000000em; /* Chrome for Android */
+    -moz-text-size-adjust: none; /* Firefox Mobile */
+  }
+}
+
+img {
+  user-select: none;
+  user-drag: none;
+}
