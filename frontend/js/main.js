@@ -15,7 +15,7 @@ $(document).ready(function() {
     );
   });
   window.onscroll = function() {
-    scrollFunction();
+    // scrollFunction();
   };
 
   // function scrollFunction() {
