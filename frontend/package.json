@@ -1,22 +1,27 @@
 {
   "name": "comcamp32",
   "version": "1.0.0",
-  "description": "",
+  "description": "Comcamp 32",
   "main": "index.js",
-  "dependencies": {
-    "node-sass": "^4.13.0"
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.13.0",
+    "autoprefixer": "^9.4.4",
+    "cssnano": "^4.1.8",
+    "postcss": "^7.0.7",
+    "postcss-cli": "^6.1.1"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass:compile": "node-sass --include-path sass sass/index.sass css/index.css",
-    "watch": "npm run sass:compile -- -w --usePolling"
+    "build": "node-sass scss -o css && postcss css/*.css -u autoprefixer -u cssnano --no-map -r",
+    "compile": "node-sass sass -o css",
+    "watch": "npm run compile -- -w --usePolling"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/UnkAtreus/Comcamp-32.git"
   },
-  "author": "",
+  "author": "CPE33",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/UnkAtreus/Comcamp-32/issues"

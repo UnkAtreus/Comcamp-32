@@ -4,33 +4,28 @@
   background-repeat: repeat-x;
   position: fixed;
   top: 0px;
-  width: 100vw;
-}
+  width: 100vw; }
 
 .main-nav {
   list-style-type: none;
-  display: none;
-}
+  display: none; }
 
 .nav-links, .logo {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.9);
-}
+  color: rgba(255, 255, 255, 0.9); }
 
 .main-nav li {
   margin: 0px;
   text-align: center;
   background-color: brown;
   padding: 10px;
-  border: 1px;
-}
+  border: 1px; }
 
 .logo {
   display: inline-block;
   font-size: 22px;
   margin-top: 10px;
-  margin-left: 20px;
-}
+  margin-left: 20px; }
 
 .navbar-toggle {
   position: absolute;
@@ -38,55 +33,31 @@
   right: 30px;
   cursor: pointer;
   color: rgba(255, 255, 255, 0.8);
-  font-size: 24px;
-}
+  font-size: 24px; }
 
 .active {
-  display: block;
-}
+  display: block; }
 
 @media screen and (min-width: 768px) {
   .navbar {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     padding-bottom: 0;
     height: 73px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
+    align-items: center; }
   .main-nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin-right: 30px;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-  }
-  .main-nav li {
-    margin: 0;
-    background-color: transparent;
-  }
+    flex-direction: row;
+    justify-content: flex-end; }
+    .main-nav li {
+      margin: 0;
+      background-color: transparent; }
   .nav-links {
-    margin-left: 40px;
-  }
+    margin-left: 40px; }
   .logo {
-    margin-top: 0;
-  }
+    margin-top: 0; }
   .navbar-toggle {
-    display: none;
-  }
+    display: none; }
   .logo:hover, .nav-links:hover {
-    color: white;
-  }
-}
-/*# sourceMappingURL=navbar.css.map */
+    color: white; } }
