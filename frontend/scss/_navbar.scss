@@ -1,10 +1,11 @@
 .navbar {
   font-size: 18px;
-  background-image: url("../image/navbar.png");
+  background-color: red;
   background-repeat: repeat-x;
   position: fixed;
   top: 0;
   width: 100vw;
+  padding-bottom: 15px;
 }
 
 .main-nav {
