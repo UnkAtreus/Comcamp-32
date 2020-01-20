@@ -25,6 +25,8 @@ mongoose.connect(configDB.url, { useNewUrlParser: true, useUnifiedTopology: true
 
 require('./app/passport')(passport); // pass passport for configuration
 
+
+
 //session required for passport
 app.use(session({ 
     secret: 'WeLoveComcamp32EiEi',
