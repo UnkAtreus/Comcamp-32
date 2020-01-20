@@ -6,7 +6,10 @@ var auth = require('./controllers/auth')
 module.exports = function (app, passport) {
 
 
-    app.get('/', (req, res) => res.send("OK"))
+    app.get('/', (req, res) => {
+        console.log("Recieve Connection")
+        res.send("Recieve Connection")
+    })
     app.get('/home', home.home)
 
     app.get('/auth/facebook', passport.authenticate('facebook'))
