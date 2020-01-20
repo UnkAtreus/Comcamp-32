@@ -1,22 +1,5 @@
 version: "3"
 services:
-#  website:
-#         build:
-#             context: .
-#         command: node app
-#         ports:
-#             - 5000:5000
-#         volumes:
-#             - .:/usr/src/app
-#  database:
-#   image: mongo
-#   environment:
-#     - MONGO_INITDB_DATABASE=test1
-#   ports:
-#   - "27017:27017"
-#   volumes:
-#   - ./data/mongo:/data/db
-
  app:
     container_name: docker-node-mongo
     restart: always
@@ -30,5 +13,11 @@ services:
     image: mongo
     ports:
     - "27017:27017"
-
-
+#  nginx:
+#     image: nginx
+#     container_name: nginx
+#     expose: 
+#      - 80
+#     ports:
+#      - "80:80"
+     
