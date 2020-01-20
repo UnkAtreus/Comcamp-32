@@ -6,7 +6,6 @@ var port = process.env.PORT || 5000;
 var mongoose = require('mongoose');
 var passport = require('passport');
 
-const cookieSession = require('cookie-session')
 const session = require('express-session')
 
 var bodyParser = require('body-parser');
@@ -31,9 +30,9 @@ require('./app/passport')(passport); // pass passport for configuration
 //session required for passport
 app.use(session({ 
     secret: 'WeLoveComcamp32EiEi',
-    resave: true,
+    resave: false,
     saveUninitialized: true,
-    maxAge: 30 * 60 * 1000
+    cookie: {maxAge: 30 * 60 * 1000}
 }));
 
 app.use(passport.initialize());
