@@ -1,10 +1,10 @@
 .navbar {
-  font-size: 18px;
-  background-image: url("../image/navbar.png");
-  background-repeat: repeat-x;
+  display: inline-block;
+  width: 100%;
+  top: 2px;
+  transform: none;
+  z-index: 100;
   position: fixed;
-  top: 0;
-  width: 100vw;
 }
 
 .main-nav {
@@ -28,9 +28,9 @@
 
 .logo {
   display: inline-block;
+  white-space: nowrap;
   font-size: 22px;
-  margin-top: 10px;
-  margin-left: 20px;
+  margin-right: 30px;
 }
 
 .navbar-toggle {
@@ -46,20 +46,38 @@
   display: block;
 }
 
-@media screen and (min-width: 768px) {
+.logo-nav {
+  position: relative;
+  max-width: 100%;
+  display: inline-block;
+  width: 40px;
+  overflow: hidden;
+}
+
+
   .navbar {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 0;
-    height: 73px;
-    align-items: center;
+    display: inline-block;
+    width: 100%;
+    top: 2px;
+    transform: none;
+    z-index: 100;
+    position: fixed;
   }
 
   .main-nav {
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    max-width: 1600px;
+    top: 20px;
+    left: 0px;
+    position: absolute;
+    z-index: 50;
     display: flex;
-    margin-right: 30px;
-    flex-direction: row;
-    justify-content: flex-end;
+    padding: 0px;
 
     li {
       margin: 0;
@@ -68,7 +86,16 @@
   }
 
   .nav-links {
-    margin-left: 40px;
+    display: inline-block;
+    white-space: nowrap;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+    color: rgb(255, 241, 221);
+    text-shadow: rgba(153, 0, 0, 0.8) 0px 2px 0px, rgba(153, 0, 0, 0.6) 0px 2px 4px;
+    font-size: 17.778px;
+    margin-right: 30px;
+    text-decoration: none;
+    transition: color 0.25s ease 0s, transform 0.25s ease 0s, opacity 0.25s ease 0s;
   }
 
   .logo {
@@ -83,4 +110,3 @@
   .nav-links:hover {
     color: rgba(255, 255, 255, 1);
   }
-}

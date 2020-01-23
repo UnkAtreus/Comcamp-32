@@ -1,3 +1,52 @@
 // # VARIABLES
 // Contains variables for using across the styles
-$font: "Sarabun", sans-serif;
+$font: "Sarabun",
+sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Lora:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Sarabun:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Pridi:300,400&display=swap');
+@font-face {
+    font-family: CenturyGothicStd;
+    src: url("/font/CenturyGothicStd.eot");
+    /* IE9 Compat Modes */
+    src: url("/font/CenturyGothicStd.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("/font/CenturyGothicStd.woff") format("woff"), /* Modern Browsers */
+    url("/font/CenturyGothicStd.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("/font/CenturyGothicStd.svg#svgFontName") format("svg");
+    /* Legacy iOS */
+}
+
+@font-face {
+    font-family: CenturyGothicStd-Bold;
+    font-weight: bold;
+    src: url("/font/CenturyGothicStd-Bold.eot");
+    /* IE9 Compat Modes */
+    src: url("/font/CenturyGothicStd-Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("/font/CenturyGothicStd-Bold.woff") format("woff"), /* Modern Browsers */
+    url("/font/CenturyGothicStd-Bold.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("/font/CenturyGothicStd-Bold.svg#svgFontName") format("svg");
+    /* Legacy iOS */
+}
+
+@font-face {
+    font-family: SarunsJackSparrow;
+    src: url("/font/Sarun\'s\ JackSparrow.eot");
+    /* IE9 Compat Modes */
+    src: url("/font/Sarun\'s\ JackSparrow.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("/font/SarunsJackSparrow.woff") format("woff"), /* Modern Browsers */
+    url("/font/SarunsJackSparrow.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("/font/SarunsJackSparrow.svg#svgFontName") format("svg");
+    /* Legacy iOS */
+}
+
+// Main Palette
+$color-5: #e8b444;
+$color-4: #ba4732;
+$color-3: #66222f;
+$color-2: #2b1a22;
+$color-1: #15121b;
+// Metallic Palette
+$color-gray-light: #bab6b7;
+$color-gray-dark: #564e4c;
+$color-yellow-light: #efbb4e;
+$color-yellow-dark: #cc9a43;

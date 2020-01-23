@@ -2,29 +2,46 @@
 // define custom natural things that occur in webpage as a BASE
 // SHOULD NOT contain any components
 html {
-  box-sizing: border-box;
-  text-size-adjust: 100%;
-  outline: none;
+    box-sizing: border-box;
+    text-size-adjust: 100%;
+    outline: none;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
-  outline: inherit;
-  padding: 0;
-  margin: 0;
+    box-sizing: inherit;
+    outline: inherit;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    list-style: none;
 }
 
 body {
-  overflow-x: hidden;
-  * {
-    max-height: 1000000em; /* Chrome for Android */
-    -moz-text-size-adjust: none; /* Firefox Mobile */
-  }
+    overflow-x: hidden;
+    * {
+        max-height: 1000000em;
+        /* Chrome for Android */
+        -moz-text-size-adjust: none;
+        /* Firefox Mobile */
+    }
 }
 
 img {
-  user-select: none;
-  user-drag: none;
+    user-select: none;
+}
+
+.Background {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-size: auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
 }

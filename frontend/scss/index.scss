@@ -1,26 +1,24 @@
 // # INDEX
 // Must include if you want to use variables in variables file
 @import "variables";
-
 // Import components
 @import "navbar";
 @import "intro";
+@import "about";
 @import "footer";
-
 // Other custom styles
 body {
-  font-family: $font;
+    font-family: $font;
 }
 
 #contact {
-  h1 {
-    color: blue;
-    text-align: center;
-  }
-
-  p {
-    color: coral;
-    text-align: left;
-    padding: 100px;
-  }
+    h1 {
+        color: blue;
+        text-align: center;
+    }
+    p {
+        color: coral;
+        text-align: left;
+        padding: 100px;
+    }
 }

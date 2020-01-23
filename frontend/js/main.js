@@ -1,3 +1,7 @@
+/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+particlesJS.load('particles-js', 'js/particlesjs-config.json', function() {
+  console.log('callback - particles.js config loaded');
+});
 $(document).ready(function() {
   let mainNav = $("#js-menu");
   let navBarToggle = $("#js-navbar-toggle");
