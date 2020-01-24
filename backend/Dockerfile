@@ -6,4 +6,6 @@ RUN npm install
 COPY . .
 EXPOSE 5000
 CMD ["node", "app"]
+FROM redis
+CMD ["redis-server"]
 # EXPOSE 5000

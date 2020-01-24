@@ -12,7 +12,10 @@ services:
     container_name: mongoDB
     image: mongo
     ports:
-    - "27017:27017"
+    - "27017:27017" 
+#  redis: 
+#     image: redis
+
 #  nginx:
 #     image: nginx
 #     container_name: nginx
