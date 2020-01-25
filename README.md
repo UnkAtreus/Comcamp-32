@@ -2,7 +2,7 @@ Used Js
 - owl.carousel.js
 - smooth-scroll.polyfills.js
 
-To do
+Not done yet
 - Responsive
 - Faq
 - Timeline
