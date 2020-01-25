@@ -1033,28 +1033,72 @@
   visibility: hidden;
 }
 
-.footer {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: rgba(255, 255, 255, 0.9);
-  height: 50px;
-  width: 100%;
-  bottom: 0;
-  text-align: center;
-  padding-top: 10px;
+.Section.Timeline {
+  padding: 120px 60px;
+}
+
+.Section.Faq {
+  padding: 120px 60px;
+}
+
+.Section.Contact {
+  padding: 120px 60px;
+}
+
+.Section.Sponsor {
+  padding: 120px 60px;
+}
+
+.Section.Footer {
+  padding: 0;
+}
+
+.Footer-Section-Background {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.Footer-Area {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  -webkit-transform: translate(0%, 0%);
+          transform: translate(0%, 0%);
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(black), color-stop(75%, rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to top, black, rgba(0, 0, 0, 0) 75%);
+}
+
+.Footer-Section-Content {
+  position: relative;
+}
+
+.Footer-Row {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  max-width: 1600px;
+  padding: 50px 50px 30px;
 }
 
 body {
   font-family: "Pridi", serif;
-}
-
-#contact h1 {
-  color: blue;
-  text-align: center;
-}
-
-#contact p {
-  color: coral;
-  text-align: left;
-  padding: 100px;
 }
 /*# sourceMappingURL=index.css.map */

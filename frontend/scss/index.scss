@@ -6,20 +6,12 @@
 @import "intro";
 @import "about";
 @import "subject";
+@import "timeline";
+@import "faq";
+@import "contact";
+@import "sponsor";
 @import "footer";
 // Other custom styles
 body {
     font-family: $font;
-}
-
-#contact {
-    h1 {
-        color: blue;
-        text-align: center;
-    }
-    p {
-        color: coral;
-        text-align: left;
-        padding: 100px;
-    }
 }
