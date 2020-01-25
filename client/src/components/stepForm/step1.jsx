@@ -12,7 +12,7 @@ function StepForm1(props) {
     }
 
     const nextStep = async () => {
-        const flag =  await register.sendData({step: currentStep, paper: true})
+        const flag =  await register.sendData(currentStep, {step0: true})
         console.log("Click Next")
         console.log(flag)
         if(flag) {
