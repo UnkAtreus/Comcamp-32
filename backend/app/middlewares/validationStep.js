@@ -18,6 +18,52 @@ const step1Validation = () => {
         body('shirt_size').isIn(['S','M','L','XL']),
         body('telephone').not().isEmpty(),
         body('email').isEmail(),
+       
+    ]
+}
+const step2Validation = () => {
+    [
+        body('gpax').not().isEmpty(),
+        body('lv').isIn(['4', '5', '6', 'ปวช']),
+        body('school_name').not().isEmpty(),
+        body('school_province').not().isEmpty(),
+
+    ]
+}
+const step4Validation = () => {
+    [
+        body('present').not().isEmpty(),
+        body('regis').not().isEmpty(),
+        body('parent').not().isEmpty(),
+        body('parent_relation').not().isEmpty(),
+        body('parent_name').not().isEmpty(),
+        body('parent_tel').not().isEmpty(),
+        body('parent_email').isEmail(),
+        body('recent_camp').not().isEmpty(),
+
+    ]
+}
+
+const step5Validation = () => {
+    [
+        body('one_faculty').not().isEmpty(),
+        body('one_university').not().isEmpty(),
+        body('two_faculty').not().isEmpty(),
+        body('two_university').not().isEmpty(),        
+        body('three_faculty').not().isEmpty(),
+        body('three_university').not().isEmpty(),
+        body('interest').isIn(['reg', 'inter', 'hds']),
+
+    ]
+}
+
+const step6Validation = () => {
+    [
+        body('programming').not().isEmpty(),
+        body('bigdata').not().isEmpty(),
+        body('flowchart').not().isEmpty(),
+        body('microcontroller').not().isEmpty(),
+        body('brainstorm').not().isEmpty(),
     ]
 }
 
@@ -37,6 +83,10 @@ const validate = (req, res, next) => {
 module.exports = {
     step0Validation,
     step1Validation,
+    step2Validation,
+    step4Validation,
+    step5Validation,
+    step6Validation,
     validate,
 }
   
