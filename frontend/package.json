@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "Comcamp 32",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "owl.carousel": "^2.3.4"
+  },
   "devDependencies": {
-    "node-sass": "^4.13.0",
     "autoprefixer": "^9.4.4",
     "cssnano": "^4.1.8",
+    "node-sass": "^4.13.0",
     "postcss": "^7.0.7",
     "postcss-cli": "^6.1.1"
   },

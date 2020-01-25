@@ -5,7 +5,7 @@
     font-family: sans-serif;
     color: rgb(204, 204, 204);
     background-color: rgb(26, 24, 20);
-    background-image: url(https://bnetcmsus-a.akamaihd.net/cms/template_resource/NA91JHTYJJIU1541005919241.jpg);
+    background-image: url(/asset/General_BG_new.png);
     background-size: auto;
     max-width: 2400px;
     font-size: 17.778px;
@@ -65,40 +65,6 @@
     min-height: 800px;
     height: 85vh;
     max-height: 1000px;
-    padding: 0px;
-}
-
-.Nav-Sticky {
-    z-index: 48;
-    position: absolute;
-    top: 2px;
-    left: 0px;
-    display: block;
-    width: 100%;
-}
-
-.Nav-Sticky-Content {
-    display: inline-block;
-    width: 100%;
-    top: 2px;
-    transform: none;
-    z-index: 100;
-    position: fixed;
-}
-
-.Nav-Row {
-    margin-left: auto;
-    margin-right: auto;
-    -webkit-box-pack: start;
-    justify-content: flex-start;
-    -webkit-box-align: center;
-    align-items: center;
-    max-width: 1600px;
-    top: 20px;
-    left: 0px;
-    position: absolute;
-    z-index: 50;
-    display: flex;
     padding: 0px;
 }
 
@@ -202,7 +168,7 @@
     max-width: 100%;
     display: inline-block;
     position: absolute;
-    left: -7px;
+    left: -13px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 3;
@@ -219,7 +185,7 @@
     max-width: 100%;
     display: inline-block;
     position: absolute;
-    right: -5px;
+    right: -13px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 3;
@@ -227,7 +193,7 @@
 }
 
 .Button-BorderImage {
-    border-image-source: url(https://bnetcmsus-a.akamaihd.net/cms/template_resource/ZGGLNA8DC0371541005920359.png);
+    border-image-source: url(/asset/Button_Frame.png);
     border-image-width: 22px 42px;
     border-image-repeat: round;
     position: absolute;
@@ -249,7 +215,8 @@
     color: rgb(255, 238, 204);
     font-weight: bold;
     text-shadow: rgba(0, 0, 0, 0.6) 0px 1px 2px, rgba(0, 0, 0, 0.4) 0px 2px 4px;
-    background-image: url(https://bnetcmsus-a.akamaihd.net/cms/template_resource/BGSHO3YLCM591541005916124.jpg);
+    background-image: url(/asset/Button_Highlight/CC_Button_middle.png);
+    background-size: 500px 170px;
     font-family: SourceSerifVariable, SourceSerif, serif;
     letter-spacing: 0.025em;
     cursor: inherit;
@@ -303,56 +270,3 @@
         padding: 0px 15px;
     }
 }
-
-
-/*
-.intro {
-  background-image: url("../image/backgroud.jpg");
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  -webkit-box-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  align-items: center;
-  max-width: 1600px;
-  min-height: 800px;
-  height: 85vh;
-  max-height: 1000px;
-  padding: 0px;
-
-  .intro-column {
-    width: 100%;
-    text-align: center;
-    position: relative;
-    flex: 1 0 auto;
-    margin: 80px auto 100px;
-
-
-  }
-
-  .text-intro {
-    font-family: "CenturyGothicStd";
-    display: flex;
-    color: black;
-    margin: 0 25px 0 25px;
-    font-size: 25px;
-  }
-
-  .logo-intro {
-    display: flex;
-    width: 400px;
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  .intro {
-    height: 700px;
-
-    .text-intro {
-      width: 1000px;
-    }
-  }
-}
-*/
