@@ -1,7 +1,5 @@
 /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-particlesJS.load('particles-js', 'js/particlesjs-config.json', function() {
-    console.log('callback - particles.js config loaded');
-});
+particlesJS.load('particles-js', 'js/particlesjs-config.json', function() {});
 $(document).ready(function() {
     $('.owl-carousel').owlCarousel({
         margin: 10,
@@ -46,6 +44,7 @@ $(document).ready(function() {
     $('.Gellary').owlCarousel({
         stageOuterClass: 'About-Pic-Column',
         stageClass: 'About-Pic',
+        autoplay: true,
         nav: true,
         navContainerClass: 'Subject-Slider-Control',
         navClass: [

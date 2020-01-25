@@ -1,3 +1,57 @@
 .Section.Contact {
     padding: 120px 60px;
 }
+
+.Contact-Row {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    max-width: 1200px;
+    padding: 0px;
+}
+
+.Contact-Column-Social {
+    width: 100%;
+    max-width: 891px;
+    display: block;
+    flex: 0 0 0;
+    text-align: center;
+}
+
+.Contact-Column {
+    max-width: 600px;
+    text-align: center;
+    margin-left: 100px;
+}
+
+.Contact-Text-Content-TH {
+    line-height: 1.6;
+    text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px, rgba(0, 0, 0, 0.25) 0px 0px 8px;
+    font-family: 'Pridi', serif;
+    letter-spacing: 0.05em;
+    font-weight: 300;
+    font-size: 1.14em;
+    margin: 0.6em 0px;
+    text-align: left;
+}
+
+.Contact-Text-Header {
+    line-height: 1.6;
+    text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px, rgba(0, 0, 0, 0.25) 0px 0px 8px;
+    font-family: 'Lora', serif;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    color: #e6e6e6;
+    font-size: 2em;
+    text-align: center;
+    margin: 0.6em 0px;
+}
+
+.Contant-Text {
+    padding: 30px 40px 30px 40px;
+}
