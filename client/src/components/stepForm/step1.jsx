@@ -6,6 +6,19 @@ function StepForm2(props) {
 
     const {currentStep, handlePrev, handleNext} = props
 
+    const [generals, setGenerals] = useState({
+        name_th: '',
+        name_end: '',
+        nickname: '',
+        sex: '',
+        birthday: new Date(),
+        blood: '',
+        religion: '',
+        shire_size: '',
+        telephone: '',
+        email: ''
+    })
+
     const alert = useAlert()
 
     if(currentStep != 1) {
@@ -25,23 +38,12 @@ function StepForm2(props) {
         }
     }
 
-    const [generals, setGenerals] = useState({
-        name_th: '',
-        name_end: '',
-        nickname: '',
-        sex: '',
-        birthday: new Date(),
-        blood: '',
-        religion: '',
-        shire_size: '',
-        telephone: '',
-        email: ''
-    })
-
     return (
         <div>
             <h1>ข้อมูลทั่วไป</h1>
-            <input type="text" />
+            <form>
+                
+            </form>
            <button onClick={handlePrev}>ก่อนหน้า</button>
            <button onClick={nextStep}>ถัดไป</button>
         </div>
