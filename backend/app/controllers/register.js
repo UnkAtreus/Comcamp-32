@@ -1,21 +1,29 @@
 const User = require('../models/User')
 
-exports.index = (req, res) => {
+exports.step0 = (req, res) => {
     console.log(req.user._id)
     const id = req.user._id
-    const step = req.body.step
     console.log(id)
-    if (step === 0) {
-        User.findByIdAndUpdate(id, { paper: true }, (err, result) => {
-            console.log("update")
-            if (err) {
-                res.sendStatus(400)
-            }
-            res.sendStatus(200)
-        })
-    } else if (step === 1) {
-        res.sendStatus(400)
-    } else {
-        res.sendStatus(400)
-    }
+    User.findByIdAndUpdate(id, { step0: true }, (err, result) => {
+        console.log("update")
+        // console.log(result)
+        if (err) {
+            res.sendStatus(400)
+        }
+        res.sendStatus(200)
+    })
+}
+
+exports.step1 = (req, res) => {
+    console.log(req.user._id)
+    const id = req.user._id
+    console.log(id)
+    User.findByIdAndUpdate(id, { step0: true }, (err, result) => {
+        console.log("update")
+        // console.log(result)
+        if (err) {
+            res.sendStatus(400)
+        }
+        res.sendStatus(200)
+    })
 }

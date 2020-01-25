@@ -31,9 +31,9 @@ class Register {
     //     }) 
     // }
 
-    sendData = async (payload) => {
+    sendData = async (step, payload) => {
         try {
-            const res = await axios.post(this.baseURL, payload)
+            const res = await axios.post(this.baseURL + '/' + step, payload)
             console.log("Send Data")
             if(res.status === 200) {
                 console.log("success")

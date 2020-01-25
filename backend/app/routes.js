@@ -1,5 +1,6 @@
 const register = require('./controllers/register')
 const auth = require('./middlewares/auth')
+const validateStep = require('./middlewares/validationStep')
 
 
 //you can include all your controllers
@@ -27,6 +28,7 @@ module.exports = function (app, passport) {
         res.send(req.user)
     })
 
-    app.post('/api/register', auth.isLoggedIn, register.index)
+    app.post('/api/register/0', auth.isLoggedIn, validateStep.step0Validation(), validateStep.validate, register.step0)
+    app.post('/api/register/1', auth.isLoggedIn, validateStep.step1Validation(), validateStep.validate, register.step1)
     
 }
