@@ -7,7 +7,6 @@ var generalSchema = mongoose.Schema({
 	name_eng:{type:String,required:true},
 	nickname:{type:String,required:true},
 	sex:{type:String,required:true,enum:['male','female']},
-	facebook:{type:String,required:true},
 	birthday:{type:Date,required:true},
 	blood:{type:String,required:true,enum:['A','B','AB','O']},
 	religion:{type:String,required:true},

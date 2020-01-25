@@ -12,7 +12,6 @@ const step1Validation = () => {
         body('name_eng').not().isEmpty(),
         body('nickname').not().isEmpty(),
         body('sex').isIn(['male','female']),
-        body('facebook').not().isEmpty(),
         body('birthday').isISO8601().toDate(),
         body('bloodenum').isIn(['A','B','AB','O']),
         body('religion').not().isEmpty(),

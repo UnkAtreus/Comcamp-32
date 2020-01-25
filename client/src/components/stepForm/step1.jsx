@@ -1,13 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 import register from '../../api/register'
 import { useAlert } from 'react-alert'
 
-function StepForm1(props) {
+function StepForm2(props) {
 
-    const {currentStep, handleNext} = props
+    const {currentStep, handlePrev, handleNext} = props
+
     const alert = useAlert()
 
-    if(currentStep != 0) {
+    if(currentStep != 1) {
         return null
     }
 
@@ -16,25 +17,35 @@ function StepForm1(props) {
         console.log("Click Next")
         console.log(flag)
         if(flag) {
-            console.log("Next")
-            alert.success("บันทึกข้อมูลเสร็จสมบูรณ์")
+            console.log("Next 2")
             handleNext()
+            alert.success('บันทึกข้อมูลเสร็จสมบูรณ์')
         } else {
             alert.error('บันทึกข้อมูลผิดพลาด')
         }
     }
 
+    const [generals, setGenerals] = useState({
+        name_th: '',
+        name_end: '',
+        nickname: '',
+        sex: '',
+        birthday: new Date(),
+        blood: '',
+        religion: '',
+        shire_size: '',
+        telephone: '',
+        email: ''
+    })
+
     return (
         <div>
-            <h1>เอกสารประกอบการสมัคร</h1>
-            <ul>
-                <li>
-                    สำเนาบัตรประชาชน
-                </li>
-            </ul>
+            <h1>ข้อมูลทั่วไป</h1>
+            <input type="text" />
+           <button onClick={handlePrev}>ก่อนหน้า</button>
            <button onClick={nextStep}>ถัดไป</button>
         </div>
     )
 }
 
-export default StepForm1
+export default StepForm2

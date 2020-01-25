@@ -8,8 +8,8 @@ import Navbar from './navbar.component'
 
 // import step form
 import StepForm from './stepForm/timelineStep'
+import StepForm0 from './stepForm/step0'
 import StepForm1 from './stepForm/step1'
-import StepForm2 from './stepForm/step2'
 
 function RegisterForm(props) {
     console.log("prop user", props.user)
@@ -21,7 +21,8 @@ function RegisterForm(props) {
     function checkStep(user) {
         console.log("user",user)
         if(user != null) {
-            if(user.hasOwnProperty("paper")) {
+            if(user.hasOwnProperty("step0")) {
+                console.log("step0")
                 setCurrentStep(1)
                 setMaxStep(1)
             }
@@ -73,8 +74,8 @@ function RegisterForm(props) {
             <Navbar />
             <AlertProvider template={AlertTemplate}{...options} >
                 <StepForm currentStep={currentStep} maxStep={maxStep}/>
+                <StepForm0 currentStep={currentStep} handlePrev={prev} handleNext={next}/>
                 <StepForm1 currentStep={currentStep} handlePrev={prev} handleNext={next}/>
-                <StepForm2 currentStep={currentStep} handlePrev={prev} handleNext={next}/>
             </AlertProvider>
         </div>
     )
