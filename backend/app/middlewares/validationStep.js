@@ -31,7 +31,7 @@ const step2Validation = () => {
 
     ]
 }
-const step3Validation = () => {
+const step4Validation = () => {
     [
         body('present').not().isEmpty(),
         body('regis').not().isEmpty(),
@@ -85,7 +85,7 @@ module.exports = {
     step0Validation,
     step1Validation,
     step2Validation,
-    step3Validation,
+    step4Validation,
     step5Validation,
     step6Validation,
     validate,
