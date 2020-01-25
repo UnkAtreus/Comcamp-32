@@ -51,6 +51,9 @@ function RegisterForm(props) {
     }
 
     function next() {
+        if(currentStep + 1>= maxStep) {
+            setMaxStep(currentStep + 1)
+        }
         setCurrentStep(currentStep + 1)
         console.log(currentStep)
     }

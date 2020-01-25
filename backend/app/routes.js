@@ -18,6 +18,7 @@ module.exports = function (app, passport) {
     })
     
     app.get('/api/logout', (req, res) => {
+        console.log("logout")
         req.logout()
         res.sendStatus(200)
     })

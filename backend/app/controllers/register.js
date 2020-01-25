@@ -14,7 +14,7 @@ exports.index = (req, res) => {
             res.sendStatus(200)
         })
     } else if (step === 1) {
-
+        res.sendStatus(400)
     } else {
         res.sendStatus(400)
     }

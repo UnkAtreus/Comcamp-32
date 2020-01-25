@@ -34,7 +34,7 @@ class Register {
     sendData = async (payload) => {
         try {
             const res = await axios.post(this.baseURL, payload)
-            console.log("Send Data2")
+            console.log("Send Data")
             if(res.status === 200) {
                 console.log("success")
                 return true
@@ -53,7 +53,7 @@ class Register {
 
     logout = async () => {
         try {
-            const res = await axios.post('/api/logout')
+            const res = await axios.get('/api/logout')
             console.log("Send Data2")
             if(res.status === 200) {
                 window.location = '/'
