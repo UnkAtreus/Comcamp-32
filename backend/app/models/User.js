@@ -74,6 +74,7 @@ var userSchema = mongoose.Schema({
 	disease: [diseaseSchema],
 	address: [addressSchema],
 	future: [futureSchema],
+	ability: [abilitySchema],
 });
 
 //create the model for users and expose it to our app

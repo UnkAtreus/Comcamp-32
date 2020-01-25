@@ -32,13 +32,13 @@ const step2Validation = () => {
 }
 const step4Validation = () => {
     [
-        body('present').not().isEmpty(),
-        body('regis').not().isEmpty(),
-        body('parent').not().isEmpty(),
-        body('parent_relation').not().isEmpty(),
-        body('parent_name').not().isEmpty(),
-        body('parent_tel').not().isEmpty(),
-        body('parent_email').isEmail(),
+        body('address_present').not().isEmpty(),
+        body('address_regis').not().isEmpty(),
+        body('address_parent').not().isEmpty(),
+        body('relation').not().isEmpty(),
+        body('name').not().isEmpty(),
+        body('tel').not().isEmpty(),
+        body('email').isEmail(),
         body('recent_camp').not().isEmpty(),
 
     ]
@@ -60,10 +60,10 @@ const step5Validation = () => {
 const step6Validation = () => {
     [
         body('programming').not().isEmpty(),
-        body('bigdata').not().isEmpty(),
-        body('flowchart').not().isEmpty(),
+        body('big_data').not().isEmpty(),
+        body('flow_chart').not().isEmpty(),
         body('microcontroller').not().isEmpty(),
-        body('brainstorm').not().isEmpty(),
+        body('brain_storm').not().isEmpty(),
     ]
 }
 
