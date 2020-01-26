@@ -11,23 +11,21 @@ const step1Validation = () => {
         body('name_th').not().isEmpty(),
         body('name_eng').not().isEmpty(),
         body('nickname').not().isEmpty(),
-        body('sex').isIn(['male','female']),
+        body('sex').isIn(['ชาย','หญิง']),
         body('birthday').isISO8601().toDate(),
         body('bloodenum').isIn(['A','B','AB','O']),
         body('religion').not().isEmpty(),
         body('shirt_size').isIn(['S','M','L','XL']),
         body('telephone').not().isEmpty(),
         body('email').isEmail(),
-       
     ]
 }
 const step2Validation = () => {
-    [
+    return [
         body('gpax').not().isEmpty(),
-        body('lv').isIn(['4', '5', '6', 'ปวช']),
+        body('grade').isIn(['4', '5', '6', 'ปวช']),
         body('school_name').not().isEmpty(),
         body('school_province').not().isEmpty(),
-
     ]
 }
 const step4Validation = () => {
