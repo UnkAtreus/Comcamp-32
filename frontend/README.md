@@ -5,7 +5,7 @@ Used Js
 
 Not done yet
 - Responsive
-- Faq
+- Faq //Css and layout
 - Timeline
 - Learning Icon and Content / Pic for learning
 - Background
