@@ -7,10 +7,6 @@ function StepForm1(props) {
     const {currentStep, handleNext} = props
     const alert = useAlert()
 
-    if(currentStep != 0) {
-        return null
-    }
-
     const nextStep = async () => {
         const flag =  await register.sendData(currentStep, {step0: true})
         console.log("Click Next")

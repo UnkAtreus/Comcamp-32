@@ -8,8 +8,12 @@ import Navbar from './navbar.component'
 
 // import step form
 import StepForm from './stepForm/timelineStep'
-import StepForm0 from './stepForm/step0'
-import StepForm1 from './stepForm/step1'
+import StepForm1 from './stepForm/step0'
+import StepForm2 from './stepForm/step1'
+import StepForm3 from './stepform/step2'
+import StepForm4 from './stepForm/step3'
+import StepForm5 from './stepForm/step4'
+import StepForm6 from './stepForm/step5'
 
 function RegisterForm(props) {
     console.log("prop user", props.user)
@@ -75,7 +79,12 @@ function RegisterForm(props) {
             <AlertProvider template={AlertTemplate}{...options} >
                 <StepForm currentStep={currentStep} maxStep={maxStep}/>
                 <StepForm0 currentStep={currentStep} handlePrev={prev} handleNext={next}/>
-                <StepForm1 currentStep={currentStep} handlePrev={prev} handleNext={next}/>
+                <StepForm1 currentStep={currentStep} handlePrev={prev} handleNext={next} />
+                <StepForm2 currentStep={currentStep} handlePrev={prev} handleNext={next} />
+                <StepForm3 currentStep={currentStep} handlePrev={prev} handleNext={next} />
+                <StepForm4 currentStep={currentStep} handlePrev={prev} handleNext={next} />
+                <StepForm5 currentStep={currentStep} handlePrev={prev} handleNext={next} />
+                <StepForm6 currentStep={currentStep} handlePrev={prev} handleNext={next}/>
             </AlertProvider>
         </div>
     )
