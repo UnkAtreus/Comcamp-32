@@ -4,10 +4,6 @@ function StepForm3(props) {
 
     const {currentStep, handlePrev} = props
 
-    if(currentStep != 2) {
-        return null
-    }
-
     return (
         <div>
             <h1>Step3</h1>

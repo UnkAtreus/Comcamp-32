@@ -2,21 +2,18 @@ import React, {useState} from 'react'
 import register from '../../api/register'
 import { useAlert } from 'react-alert'
 
-function StepForm2(props) {
+function StepForm5(props) {
 
     const {currentStep, handlePrev, handleNext} = props
 
-    const [generals, setGenerals] = useState({
-        name_th: '',
-        name_end: '',
-        nickname: '',
-        sex: '',
-        birthday: new Date(),
-        blood: '',
-        religion: '',
-        shirt_size: '',
-        telephone: '',
-        email: ''
+    const [futureInfo, setFutureInfo] = useState({
+        one_faculty: '',
+        one_university: '',
+        two_faculty: '',
+        two_university: '',
+        three_faculty: '',
+        three_university: '',
+        interest: '',
     })
 
     const alert = useAlert()
@@ -26,7 +23,7 @@ function StepForm2(props) {
         console.log("Click Next")
         console.log(flag)
         if(flag) {
-            console.log("Next 2")
+            console.log("Next 4")
             handleNext()
             alert.success('บันทึกข้อมูลเสร็จสมบูรณ์')
         } else {
@@ -36,7 +33,7 @@ function StepForm2(props) {
 
     return (
         <div>
-            <h1>ข้อมูลทั่วไป</h1>
+            <h1>ความสนใจ</h1>
             <form>
                 
             </form>
@@ -46,4 +43,4 @@ function StepForm2(props) {
     )
 }
 
-export default StepForm2
+export default StepForm5
