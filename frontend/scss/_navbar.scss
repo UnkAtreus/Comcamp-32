@@ -16,6 +16,18 @@
     position: fixed;
 }
 
+.Nav-Fade-Black {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.79) 8.1%, rgba(0, 0, 0, 0.76) 15.5%, rgba(0, 0, 0, 0.718) 22.5%, rgba(0, 0, 0, 0.66) 29%, rgba(0, 0, 0, 0.592) 35.3%, rgba(0, 0, 0, 0.518) 41.2%, rgba(0, 0, 0, 0.44) 47.1%, rgba(0, 0, 0, 0.36) 52.9%, rgba(0, 0, 0, 0.282) 58.8%, rgba(0, 0, 0, 0.208) 64.7%, rgba(0, 0, 0, 0.14) 71%, rgba(0, 0, 0, 0.082) 77.5%, rgba(0, 0, 0, 0.04) 84.5%, rgba(0, 0, 0, 0.01) 91.9%, rgba(0, 0, 0, 0) 100%);
+    height: 160px;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 49;
+    right: 0px;
+    pointer-events: none;
+    flex: 1 1 auto;
+}
+
 .Nav-Row {
     margin-left: auto;
     margin-right: auto;

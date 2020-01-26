@@ -45,6 +45,21 @@
   position: fixed;
 }
 
+.Nav-Fade-Black {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), color-stop(8.1%, rgba(0, 0, 0, 0.79)), color-stop(15.5%, rgba(0, 0, 0, 0.76)), color-stop(22.5%, rgba(0, 0, 0, 0.718)), color-stop(29%, rgba(0, 0, 0, 0.66)), color-stop(35.3%, rgba(0, 0, 0, 0.592)), color-stop(41.2%, rgba(0, 0, 0, 0.518)), color-stop(47.1%, rgba(0, 0, 0, 0.44)), color-stop(52.9%, rgba(0, 0, 0, 0.36)), color-stop(58.8%, rgba(0, 0, 0, 0.282)), color-stop(64.7%, rgba(0, 0, 0, 0.208)), color-stop(71%, rgba(0, 0, 0, 0.14)), color-stop(77.5%, rgba(0, 0, 0, 0.082)), color-stop(84.5%, rgba(0, 0, 0, 0.04)), color-stop(91.9%, rgba(0, 0, 0, 0.01)), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.79) 8.1%, rgba(0, 0, 0, 0.76) 15.5%, rgba(0, 0, 0, 0.718) 22.5%, rgba(0, 0, 0, 0.66) 29%, rgba(0, 0, 0, 0.592) 35.3%, rgba(0, 0, 0, 0.518) 41.2%, rgba(0, 0, 0, 0.44) 47.1%, rgba(0, 0, 0, 0.36) 52.9%, rgba(0, 0, 0, 0.282) 58.8%, rgba(0, 0, 0, 0.208) 64.7%, rgba(0, 0, 0, 0.14) 71%, rgba(0, 0, 0, 0.082) 77.5%, rgba(0, 0, 0, 0.04) 84.5%, rgba(0, 0, 0, 0.01) 91.9%, rgba(0, 0, 0, 0) 100%);
+  height: 160px;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 49;
+  right: 0px;
+  pointer-events: none;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
 .Nav-Row {
   margin-left: auto;
   margin-right: auto;
@@ -414,6 +429,15 @@
   }
 }
 
+@media screen and (max-width: 380px) {
+  .Button-Row {
+    width: 100%;
+  }
+  .Section-Row {
+    min-height: 650px;
+  }
+}
+
 .Section.About {
   padding: 120px 60px;
 }
@@ -546,7 +570,7 @@
   width: 100%;
   max-width: 800px;
   padding-bottom: 0px;
-  margin-left: 80px;
+  margin-right: 60px;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 58%;
           flex: 0 0 58%;
@@ -563,10 +587,10 @@
   border-image-width: 13px;
   border-image-repeat: round;
   position: absolute;
-  top: -1px;
-  right: -1px;
-  bottom: -1px;
-  left: -1px;
+  top: -3px;
+  right: -3px;
+  bottom: -3px;
+  left: -3px;
   z-index: 5;
   border-image-slice: 26 fill;
   pointer-events: none;
@@ -631,18 +655,52 @@
   width: 50px;
   height: 7px;
   display: inline-block;
-  background: #ccc;
+  background-image: url(/asset/Button_Highlight/CC_Button_middle.png);
+  background-size: 70px 20px;
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  -o-border-image: initial;
+  border-image: initial;
+  background-position: center center;
   margin: 0 5px;
   -webkit-box-shadow: black 0px 0px 1px 1px;
           box-shadow: black 0px 0px 1px 1px;
 }
 
 .About-Dots-Container button.owl-dot.active {
-  background-color: #b93821;
+  -webkit-filter: brightness(170%);
+          filter: brightness(170%);
 }
 
 .About-Dots-Container button.owl-dot:focus {
   outline: none;
+}
+
+@media screen and (max-width: 1204px) {
+  .About-Content-Row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .About-Text-Column {
+    margin-bottom: 80px;
+    max-width: 700px;
+  }
+  .About-Album-Column {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Section.About {
+    padding: 0px 15px 120px 15px;
+  }
+  .About-Head-Row {
+    margin-top: -50px;
+    min-height: 300px;
+  }
 }
 
 .Section.Subject {
@@ -685,6 +743,7 @@
 }
 
 .Subject-SectionFullWidth {
+  white-space: nowrap;
   max-width: none;
   position: relative;
   -webkit-box-flex: 1;
@@ -765,7 +824,7 @@
 }
 
 .Subject-SpriteHeroes {
-  background-image: url(https://bnetcmsus-a.akamaihd.net/cms/template_resource/SWU5235K29YV1541005873655.jpg);
+  background-image: url(/asset/charactor.jpg);
   background-size: 400px 400px;
   width: 100px;
   height: 100px;
@@ -797,9 +856,13 @@
   background-position: -200px -200px;
 }
 
+.Subject-SpriteHeroes.Five {
+  background-position: -200px -200px;
+}
+
 .Subject-BorderPortrait {
   position: absolute;
-  background-image: url(https://bnetcmsus-a.akamaihd.net/cms/template_resource/A8VBBA38N0DB1541005875756.png);
+  background-image: url(/asset/ring.png);
   width: 144px;
   height: 144px;
   left: -12px;
@@ -1031,6 +1094,79 @@
 .slider-control-centerleft.disabled,
 .slider-control-centerright.disabled {
   visibility: hidden;
+}
+
+@media screen and (max-width: 950px) {
+  .Subject-BorderPortrait {
+    left: -5px;
+    top: -5px;
+    width: 120px;
+    height: 120px;
+    background-size: 240px 120px;
+  }
+  .Subject-Column-Out {
+    margin-right: 30px;
+    width: 100px;
+  }
+  .Subject-SpriteHeroes {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .Subject-Carousel-Pager.active .Subject-BorderPortrait {
+    background-position: -120px 0px;
+  }
+  .Subject-Carousel-Pager.active .Subject-Art {
+    -webkit-box-shadow: rgba(248, 183, 0, 0.5) 0px 0px 50px 5px;
+            box-shadow: rgba(248, 183, 0, 0.5) 0px 0px 50px 5px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .Subject-BorderPortrait {
+    left: -5px;
+    top: -5px;
+    width: 60px;
+    height: 60px;
+    background-size: 120px 60px;
+  }
+  .Subject-Column-Out {
+    margin-right: 20px;
+    width: 50px;
+  }
+  .Subject-SpriteHeroes {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  .Subject-Carousel-Pager.active .Subject-BorderPortrait {
+    background-position: -60px 0px;
+  }
+  .Subject-Carousel-Pager.active .Subject-Art {
+    -webkit-box-shadow: rgba(248, 183, 0, 0.5) 0px 0px 25px 5px;
+            box-shadow: rgba(248, 183, 0, 0.5) 0px 0px 25px 5px;
+  }
+  .About-Dots-Container button.owl-dot {
+    width: 40px;
+    height: 3px;
+  }
+  .Subject-Carousel-Pager {
+    top: -74px;
+  }
+  .Spacer-Subject {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .About-Dots-Container button.owl-dot {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .Subject-Column-Out {
+    margin-right: 5px;
+    width: 50px;
+  }
 }
 
 .Section.Timeline {

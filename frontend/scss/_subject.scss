@@ -32,6 +32,7 @@
 }
 
 .Subject-SectionFullWidth {
+    white-space: nowrap;
     max-width: none;
     position: relative;
     flex: 1 1 auto;
@@ -102,7 +103,7 @@
 }
 
 .Subject-SpriteHeroes {
-    background-image: url(https://bnetcmsus-a.akamaihd.net/cms/template_resource/SWU5235K29YV1541005873655.jpg);
+    background-image: url(/asset/charactor.jpg);
     background-size: 400px 400px;
     width: 100px;
     height: 100px;
@@ -130,9 +131,13 @@
     background-position: -200px -200px;
 }
 
+.Subject-SpriteHeroes.Five {
+    background-position: -200px -200px;
+}
+
 .Subject-BorderPortrait {
     position: absolute;
-    background-image: url(https://bnetcmsus-a.akamaihd.net/cms/template_resource/A8VBBA38N0DB1541005875756.png);
+    background-image: url(/asset/ring.png);
     width: 144px;
     height: 144px;
     left: -12px;
@@ -343,4 +348,73 @@
 .slider-control-centerleft.disabled,
 .slider-control-centerright.disabled {
     visibility: hidden;
+}
+
+@media screen and (max-width: 950px) {
+    .Subject-BorderPortrait {
+        left: -5px;
+        top: -5px;
+        width: 120px;
+        height: 120px;
+        background-size: 240px 120px;
+    }
+    .Subject-Column-Out {
+        margin-right: 30px;
+        width: 100px;
+    }
+    .Subject-SpriteHeroes {
+        transform: scale(1);
+    }
+    .Subject-Carousel-Pager.active .Subject-BorderPortrait {
+        background-position: -120px 0px;
+    }
+    .Subject-Carousel-Pager.active .Subject-Art {
+        box-shadow: rgba(248, 183, 0, 0.5) 0px 0px 50px 5px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .Subject-BorderPortrait {
+        left: -5px;
+        top: -5px;
+        width: 60px;
+        height: 60px;
+        background-size: 120px 60px;
+    }
+    .Subject-Column-Out {
+        margin-right: 20px;
+        width: 50px;
+    }
+    .Subject-SpriteHeroes {
+        transform: scale(0.5);
+    }
+    .Subject-Carousel-Pager.active .Subject-BorderPortrait {
+        background-position: -60px 0px;
+    }
+    .Subject-Carousel-Pager.active .Subject-Art {
+        box-shadow: rgba(248, 183, 0, 0.5) 0px 0px 25px 5px;
+    }
+    .About-Dots-Container button.owl-dot {
+        width: 40px;
+        height: 3px;
+    }
+    .Subject-Carousel-Pager {
+        top: -74px;
+    }
+    .Spacer-Subject {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .About-Dots-Container button.owl-dot {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .Subject-Column-Out {
+        margin-right: 5px;
+        width: 50px;
+    }
 }

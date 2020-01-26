@@ -1,0 +1,750 @@
+.Navbar {
+    .Navbar-button {
+        display: inline-block;
+        position: relative;
+        background-color: $Navbar-button-background;
+        border: $Navbar-button-border;
+        font-family: $Navbar-font-family;
+        font-size: $Navbar-font-size-base;
+        font-weight: $Navbar-font-weight;
+        line-height: $Navbar-line-height-button;
+        color: $Navbar-button-text;
+        padding: $Navbar-button-padding;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        outline: 0;
+        overflow: visible;
+        max-width: 100%;
+        transition: $Navbar-transition-hover-button;
+        &:hover,
+        &:focus {
+            background-color: $Navbar-button-background-hover;
+            border: $Navbar-button-border-hover;
+            text-decoration: none;
+            color: $Navbar-button-text-hover;
+        }
+        &:active {
+            background-color: $Navbar-button-background-pressed;
+            border: $Navbar-button-border-pressed;
+            text-decoration: none;
+            color: $Navbar-button-text-pressed;
+        }
+        &:disabled,
+        &.is-disabled {
+            background-color: $Navbar-button-background-disabled;
+            border: $Navbar-button-border-disabled;
+            text-decoration: none;
+            color: $Navbar-button-text-disabled;
+        }
+        &.is-full {
+            width: 100%;
+        }
+        &.is-tertiary {
+            background-color: $Navbar-button-tertiary-background;
+            border: $Navbar-button-border-style $Navbar-button-tertiary-border;
+            color: $Navbar-button-tertiary-text;
+            &:hover {
+                background-color: $Navbar-button-tertiary-background-hover;
+                border: $Navbar-button-border-style $Navbar-button-tertiary-border-hover;
+                color: $Navbar-button-tertiary-text-hover;
+            }
+            &:active {
+                background-color: $Navbar-button-tertiary-background-pressed;
+                border: $Navbar-button-border-style $Navbar-button-tertiary-border-pressed;
+                color: $Navbar-button-tertiary-text-pressed;
+            }
+            &:disabled,
+            &.is-disabled {
+                background-color: $Navbar-button-tertiary-background-disabled;
+                border: $Navbar-button-border-style $Navbar-button-tertiary-border-disabled;
+                color: $Navbar-button-tertiary-text-disabled;
+            }
+        }
+    }
+    .Navbar-modal {
+        display: none;
+        z-index: $Navbar-zIndex-modal;
+        &.is-open {
+            display: block;
+        }
+    }
+    .Navbar-dropdown {
+        position: absolute;
+        top: $Navbar-height-mobile - 1;
+        background-color: $Navbar-color-background-dropdown;
+        background: $Navbar-gradient-background-dropdown;
+        border: $Navbar-border-style;
+        box-shadow: $Navbar-shadow-dropdown;
+        opacity: 0;
+        &.is-open {
+            opacity: 1.0;
+        }
+        &.is-full {
+            left: 0;
+            right: 0;
+            border-left: 0;
+            border-right: 0;
+        }
+        .Navbar-tick {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: $Navbar-size-dropdown-notch;
+            height: $Navbar-size-dropdown-notch;
+            border-top: $Navbar-border-style;
+            border-right: $Navbar-border-style;
+            background-color: $Navbar-gradient-background-dropdown-start;
+            opacity: 0.95;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            transform-origin: center;
+            .Navbar-tickInner {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                border: solid 1px rgba(#000, 0);
+                background-color: $Navbar-gradient-background-dropdown-end;
+                opacity: 0;
+            }
+        }
+    }
+    .Navbar-modalContent {
+        z-index: $Navbar-zIndex-above;
+        position: relative;
+    }
+    .Navbar-modalSection {
+        border-top: $Navbar-border-style-light;
+        padding: $Navbar-margin-dropdown;
+        &:first-child {
+            border-top: 0;
+        }
+        &.is-full {
+            padding: 0;
+        }
+    }
+    .Navbar-dropdownFooter {
+        height: $Navbar-dropdown-footer-height;
+        padding: 0;
+    }
+    .Navbar-dropdown {
+        .Navbar-gamePublishers {
+            display: table;
+            position: relative;
+            width: 100%;
+            max-width: $Navbar-breakpoint-huge-max;
+            margin: 0 auto;
+            padding: 0 $Navbar-margin-desktop;
+            @media (min-width: $Navbar-breakpoint-wide-min) {
+                padding: 0 $Navbar-margin-wide;
+            }
+            @for $t from $Navbar-games-min-columns through $Navbar-games-max-columns {
+                &.Navbar-columns#{$t} {
+                    $Navbar-game-breakpoint: $Navbar-margin-wide * 2 + ($Navbar-margin-poster + $Navbar-poster-calc-width) * $t;
+                    @if $Navbar-game-breakpoint < $Navbar-breakpoint-huge-max {
+                        @media (max-width: ($Navbar-game-breakpoint - 1)) {
+                            .Navbar-gamePublisher {
+                                padding-right: 0;
+                                &:not(:first-child) {
+                                    padding-left: ($Navbar-margin-poster / 2) + $Navbar-border-width;
+                                }
+                            }
+                        }
+                        @media (min-width: $Navbar-game-breakpoint) {
+                            .Navbar-gameLogos {
+                                display: none;
+                            }
+                            .Navbar-posters {
+                                display: block;
+                            }
+                        }
+                    }
+                    @for $c from 1 through $Navbar-games-max-columns {
+                        $Navbar-game-outer-width: 100% * $c / $t;
+                        $Navbar-game-inner-width: 100% / $c;
+                        $Navbar-game-poster-margins: (($c - 1) * $Navbar-margin-poster) / $c;
+                        .Navbar-gamePublisher.Navbar-columns#{$c} {
+                            width: $Navbar-game-outer-width;
+                            @for $b from 1 through $c {
+                                $Navbar-game-logo-block-width: 100% * $b / $c;
+                                $Navbar-game-logo-block-inner-width: 100% / $b;
+                                .Navbar-gameLogoBlock.Navbar-columns#{$b} {
+                                    min-width: $Navbar-game-logo-block-width;
+                                }
+                            }
+                            .Navbar-poster {
+                                width: calc(#{$Navbar-game-inner-width} - #{$Navbar-game-poster-margins});
+                            }
+                        }
+                    }
+                }
+            }
+            @for $c from 1 through $Navbar-games-max-columns {
+                $Navbar-game-inner-width: 100% / $c;
+                .Navbar-gameLogoBlock.Navbar-columns#{$c} {
+                    .Navbar-gameLogo {
+                        width: $Navbar-game-inner-width;
+                    }
+                }
+            }
+        }
+        .Navbar-gamePublisher {
+            display: table-cell;
+            position: relative;
+            vertical-align: top;
+            padding: $Navbar-margin-publisher;
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
+            @media (min-width: $Navbar-breakpoint-huge-min) {
+                &:first-child {
+                    padding-left: 0;
+                }
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+            &:not(:first-child) {
+                padding-left: $Navbar-margin-poster + $Navbar-border-width;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: $Navbar-margin-poster;
+                    bottom: $Navbar-margin-poster;
+                    left: 0;
+                    width: $Navbar-border-width;
+                    border-left: $Navbar-border-style;
+                    pointer-events: none;
+                }
+            }
+            &:only-child {
+                padding-top: 20px;
+                padding-bottom: 20px;
+                .Navbar-poster {
+                    margin-top: 15px;
+                }
+            }
+            .Navbar-gamePublisherLabel {
+                text-align: left;
+                font-size: $Navbar-font-size-publisher-label;
+                text-transform: uppercase;
+                color: $Navbar-color-text-4;
+                @media (min-width: $Navbar-breakpoint-huge-min) {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        .Navbar-gameLogos {
+            display: block;
+            text-align: center;
+            font-size: 0;
+        }
+        .Navbar-gameLogoBlock {
+            display: inline-block;
+            white-space: nowrap;
+        }
+        .Navbar-gameLogo {
+            position: relative;
+            display: inline-block;
+            height: $Navbar-game-logo-height-dynamic;
+            max-height: $Navbar-game-logo-height;
+            min-width: $Navbar-game-logo-width-min;
+            min-height: min($Navbar-game-logo-height, $Navbar-game-logo-height-min);
+            transform: translateZ(0); // Promote GPU layer to remove rendering glitches
+            .Navbar-gameLogoImage {
+                position: absolute;
+                bottom: 37.5%;
+                left: 50%;
+                width: $Navbar-game-logo-image-width;
+                height: $Navbar-game-logo-image-height;
+                transform: translateX(-50%);
+                filter: $Navbar-game-filter;
+                transition: $Navbar-transition-hover-game;
+            }
+            .Navbar-gameLogoLabel {
+                position: absolute;
+                top: 62.5%;
+                left: 15%;
+                right: 15%;
+                text-align: center;
+                font-size: $Navbar-font-size-logo;
+                line-height: $Navbar-line-height;
+                color: $Navbar-color-text-2;
+                white-space: normal;
+                transition: $Navbar-transition-hover-label;
+            }
+            &:hover {
+                .Navbar-gameLogoImage {
+                    filter: $Navbar-game-filter-hover;
+                }
+                .Navbar-gameLogoLabel {
+                    color: $Navbar-color-text;
+                }
+            }
+        }
+        .Navbar-posters {
+            display: none;
+            text-align: center;
+            font-size: 0;
+        }
+        &.is-open {
+            .Navbar-gamePublisherLabel {
+                animation-name: Navbar-dropdown-fade-in;
+                animation-duration: $Navbar-transition-dropdown-speed;
+                animation-fill-mode: backwards;
+                animation-timing-function: ease-out;
+            }
+            .Navbar-gameMenuItem {
+                animation-name: Navbar-dropdown-drop-in-delayed;
+                animation-duration: $Navbar-transition-dropdown-speed;
+                animation-fill-mode: backwards;
+                animation-timing-function: ease-out;
+            }
+            .Navbar-imagePanel>* {
+                animation-name: Navbar-dropdown-drop-in-delayed;
+                animation-duration: $Navbar-transition-dropdown-speed;
+                animation-fill-mode: backwards;
+                animation-timing-function: ease-out;
+            }
+        }
+        .Navbar-poster {
+            position: relative;
+            display: inline-block;
+            height: $Navbar-poster-height;
+            min-width: $Navbar-poster-min-width;
+            max-width: $Navbar-poster-max-width;
+            overflow: hidden;
+            box-shadow: $Navbar-poster-shadow;
+            margin: 0 $Navbar-margin-poster $Navbar-margin-poster-vertical 0;
+            font-size: 0;
+            transition: $Navbar-transition-hover-poster;
+            transform: translateZ(0); // Promote GPU layer to remove rendering glitches
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                border: $Navbar-poster-border;
+                pointer-events: none;
+            }
+            .Navbar-posterImage {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                height: $Navbar-poster-height;
+                width: $Navbar-poster-width;
+                filter: $Navbar-poster-filter;
+                transition: $Navbar-transition-hover-poster-inner;
+            }
+            &:hover {
+                box-shadow: $Navbar-poster-shadow-hover;
+                &:after {
+                    border: $Navbar-poster-border-hover;
+                }
+                .Navbar-posterImage {
+                    filter: $Navbar-poster-filter-hover;
+                }
+            }
+        }
+        .Navbar-gameMenu {
+            .Navbar-gameMenuItem {
+                display: inline-block;
+                margin: 0 $Navbar-margin-menu;
+                height: $Navbar-dropdown-footer-height;
+                line-height: $Navbar-dropdown-footer-height;
+                font-size: $Navbar-font-size-options;
+                text-decoration: none;
+                display: inline-flex;
+                flex-direction: row;
+                align-items: center;
+                color: $Navbar-color-text-2;
+                transition: $Navbar-transition-hover-link;
+                .Navbar-gameMenuItemIcon {
+                    display: inline-block;
+                    color: $Navbar-color-primary;
+                    transition: $Navbar-transition-hover-link;
+                    width: $Navbar-size-icon-options;
+                    height: $Navbar-size-icon-options;
+                }
+                .Navbar-gameMenuItemLabel {
+                    display: inline-block;
+                    margin-left: $Navbar-margin-icon;
+                    font-family: $Navbar-font-family;
+                    font-size: $Navbar-font-size-options;
+                    font-weight: $Navbar-font-weight;
+                    line-height: $Navbar-line-height;
+                    color: inherit;
+                }
+                @media (min-width: $Navbar-breakpoint-huge-min) {
+                    font-size: $Navbar-font-size-options-huge;
+                }
+                &:hover {
+                    color: $Navbar-color-text;
+                    .Navbar-gameMenuItemIcon {
+                        color: $Navbar-color-primary-hover;
+                    }
+                }
+            }
+        }
+        .Navbar-esportsLogos {
+            display: table;
+            position: relative;
+            margin: 0 auto;
+            .Navbar-esport {
+                display: table-cell;
+                position: relative;
+                vertical-align: top;
+                width: $Navbar-esport-logo-size;
+                max-width: $Navbar-esport-logo-size-max;
+                font-size: $Navbar-font-size-esport;
+                line-height: $Navbar-line-height;
+                text-decoration: none;
+                color: $Navbar-color-text-2;
+                transform: translateZ(0); // Promote GPU layer to remove rendering glitches
+                .Navbar-esportImage {
+                    width: $Navbar-esport-logo-size;
+                    max-width: $Navbar-esport-logo-size-max;
+                    height: $Navbar-esport-logo-size;
+                    max-height: $Navbar-esport-logo-size-max;
+                    filter: $Navbar-esport-filter;
+                    transition: $Navbar-transition-hover-esport;
+                }
+                .Navbar-esportLabel {
+                    padding: 0 $Navbar-margin-label;
+                    margin-bottom: $Navbar-margin-dropdown;
+                    font-family: $Navbar-font-family;
+                    font-size: $Navbar-font-size-esport;
+                    font-weight: $Navbar-font-weight;
+                    line-height: $Navbar-line-height;
+                    color: inherit;
+                    transition: $Navbar-transition-hover-label;
+                }
+                @media (min-width: $Navbar-breakpoint-huge-min) {
+                    padding: $Navbar-margin-dropdown 0;
+                    font-size: $Navbar-font-size-esport-huge;
+                    .Navbar-esportLabel {
+                        padding: 0 $Navbar-margin-dropdown;
+                    }
+                }
+                &:hover {
+                    color: $Navbar-color-text;
+                    .Navbar-esportImage {
+                        filter: $Navbar-esport-filter-hover;
+                    }
+                }
+            }
+        }
+    }
+    .Navbar-siteMenuLogo {
+        color: $Navbar-color-site-menu-logo-compact;
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            transform: translateY(-50%);
+            fill: currentColor;
+            pointer-events: none;
+        }
+    }
+    .Navbar-accountDropdown {
+        right: $Navbar-margin-menu;
+        width: 100%;
+        max-width: 20em;
+        border-top: 0;
+    }
+    .Navbar-accountDropdownLoggedOut {
+        border-top: $Navbar-border-style-light;
+    }
+    .Navbar-accountDropdownLoggedIn {
+        display: none;
+        border-top: $Navbar-border-style-light;
+        .Navbar-accountDropdownProfileInfo {
+            font-size: $Navbar-font-size-battletag;
+            line-height: $Navbar-line-height;
+            color: $Navbar-color-battletag;
+            .Navbar-accountDropdownBattleTag {
+                display: inline;
+                font-family: $Navbar-font-family;
+                font-size: $Navbar-font-size-battletag;
+                font-weight: $Navbar-font-weight;
+                line-height: $Navbar-line-height;
+                color: inherit;
+            }
+            .Navbar-accountDropdownBattleTagNumber {
+                display: inline;
+                font-family: $Navbar-font-family;
+                font-size: $Navbar-font-size-battletag;
+                font-weight: $Navbar-font-weight;
+                line-height: $Navbar-line-height;
+                color: $Navbar-color-text-4;
+                &:before {
+                    content: ' ';
+                }
+            }
+        }
+        .Navbar-accountDropdownEmail {
+            font-family: $Navbar-font-family;
+            font-size: $Navbar-font-size-email;
+            font-weight: $Navbar-font-weight;
+            line-height: $Navbar-line-height;
+            overflow-x: hidden;
+            text-overflow: ellipsis;
+            color: $Navbar-color-text-4;
+        }
+    }
+    &.is-authenticated {
+        .Navbar-accountDropdownLoggedOut {
+            display: none;
+        }
+        .Navbar-accountDropdownLoggedIn {
+            display: block;
+        }
+    }
+    .Navbar-accountDropdownLink {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-top: $Navbar-border-style-light;
+        padding: 0 $Navbar-margin-menu;
+        height: $Navbar-account-link-height;
+        line-height: $Navbar-account-link-height;
+        font-size: $Navbar-font-size-base;
+        text-decoration: none;
+        color: $Navbar-color-text-2;
+        .Navbar-accountDropdownLinkIcon {
+            display: inline-block;
+            color: $Navbar-color-primary;
+            transition: $Navbar-transition-hover-link;
+            width: $Navbar-size-icon-options;
+            height: $Navbar-size-icon-options;
+            margin-right: $Navbar-margin-icon;
+        }
+        .Navbar-accountDropdownLinkLabel {
+            display: inline-block;
+            font-family: $Navbar-font-family;
+            font-size: $Navbar-font-size-base;
+            font-weight: $Navbar-font-weight;
+            line-height: $Navbar-line-height;
+            color: inherit;
+        }
+    }
+    .Navbar-toast {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        padding: $Navbar-margin-promotion;
+        padding-top: $Navbar-margin-promotion * 4;
+        background: $Navbar-gradient-background-promotion-underlay;
+        opacity: 0.0;
+        z-index: $Navbar-zIndex-modal;
+        .Navbar-toastContainer {
+            position: relative;
+            min-height: $Navbar-width-promotion-image + (2 * $Navbar-margin-dropdown);
+            background: $Navbar-color-background-dropdown;
+            background: $Navbar-gradient-background-dropdown-linear;
+            box-shadow: $Navbar-shadow-promotion;
+            user-select: none;
+            &:after {
+                content: ' ';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border: $Navbar-border-style;
+                pointer-events: none;
+            }
+        }
+        .Navbar-toastImage {
+            position: absolute;
+            top: $Navbar-margin-dropdown;
+            left: $Navbar-margin-dropdown;
+            width: $Navbar-width-promotion-image;
+        }
+        .Navbar-toastContent {
+            position: relative;
+            padding: $Navbar-margin-dropdown;
+        }
+        .Navbar-toastLabel {
+            font-family: $Navbar-font-family;
+            font-size: $Navbar-font-size-popup-label;
+            font-weight: $Navbar-font-weight;
+            line-height: $Navbar-line-height-promotion;
+            height: $Navbar-font-size-popup-label * $Navbar-line-height-promotion;
+        }
+        .Navbar-toastText {
+            font-size: $Navbar-font-size-popup-text;
+            color: $Navbar-color-text-3;
+            font-family: $Navbar-font-family;
+            font-weight: $Navbar-font-weight;
+            line-height: $Navbar-line-height;
+            margin: $Navbar-margin-popup 0;
+        }
+        .Navbar-toastLink {
+            display: block;
+            font-family: $Navbar-font-family;
+            font-size: $Navbar-font-size-promotion-link;
+            font-weight: $Navbar-font-weight;
+            line-height: $Navbar-line-height-promotion;
+            height: $Navbar-font-size-promotion-link * $Navbar-line-height-promotion;
+            text-decoration: none;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            color: $Navbar-color-primary;
+            background: transparent;
+            &:visited {
+                text-decoration: none;
+                color: $Navbar-color-primary;
+                background: transparent;
+            }
+            &:hover,
+            &:focus,
+            &:active {
+                text-decoration: none;
+                color: $Navbar-color-primary-hover;
+                background: transparent;
+            }
+        }
+        .Navbar-button {
+            padding: $Navbar-button-tiny;
+            font-size: $Navbar-font-size-popup-text;
+            &.is-tertiary {
+                margin-left: $Navbar-margin-button;
+            }
+            .Navbar-icon {
+                display: inline-block;
+                height: 1px;
+                width: $Navbar-size-icon-small;
+                margin-left: $Navbar-margin-icon;
+                svg {
+                    top: auto;
+                    bottom: -0.25em;
+                }
+            }
+        }
+        .Navbar-toastClose {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: $Navbar-width-promotion-close;
+            width: $Navbar-width-promotion-close;
+            color: $Navbar-color-promotion-close;
+            cursor: pointer;
+            svg {
+                top: ($Navbar-width-promotion-close - $Navbar-size-icon) / 2;
+                left: ($Navbar-width-promotion-close - $Navbar-size-icon) / 2;
+                right: auto;
+                bottom: auto;
+                height: $Navbar-size-icon;
+                width: $Navbar-size-icon;
+            }
+            &:hover {
+                color: $Navbar-color-promotion-close-hover;
+            }
+        }
+        &.is-open {
+            display: block;
+            opacity: 1.0;
+            animation-name: Navbar-promotion-in;
+            animation-duration: $Navbar-transition-promotion-speed;
+            animation-fill-mode: forwards;
+        }
+        &.is-dismissed {
+            animation-name: Navbar-promotion-out;
+            animation-duration: $Navbar-transition-promotion-speed;
+            animation-fill-mode: forwards;
+        }
+        @media (min-width: $Navbar-breakpoint-desktop-min) {
+            padding: $Navbar-margin-promotion-small;
+            left: auto;
+            width: $Navbar-width-promotion-popup;
+            background: transparent;
+        }
+    }
+    .Navbar-promotion {
+        .Navbar-promotionContent {
+            position: relative;
+            padding: $Navbar-margin-dropdown;
+            padding-left: $Navbar-width-promotion-image + (2 * $Navbar-margin-dropdown);
+            padding-right: $Navbar-width-promotion-close;
+        }
+        .Navbar-promotionLabel {
+            font-size: $Navbar-font-size-promotion-label;
+            height: $Navbar-font-size-promotion-label * $Navbar-line-height-promotion;
+            text-transform: uppercase;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            color: $Navbar-color-text-4;
+        }
+        .Navbar-promotionText {
+            font-size: $Navbar-font-size-promotion-text;
+            color: $Navbar-color-text-2;
+            margin: $Navbar-margin-promotion 0;
+        }
+        @media (min-width: $Navbar-breakpoint-small-min) {
+            padding: $Navbar-margin-promotion-small;
+            left: auto;
+            width: $Navbar-width-promotion-popup + ($Navbar-margin-promotion-small * 2);
+            background: transparent;
+            .Navbar-promotionContainer {
+                position: relative;
+                min-height: $Navbar-width-promotion-image-small + (2 * $Navbar-margin-dropdown);
+            }
+            .Navbar-promotionImage {
+                position: absolute;
+                top: $Navbar-margin-dropdown;
+                left: $Navbar-margin-dropdown;
+                width: $Navbar-width-promotion-image-small;
+            }
+            .Navbar-promotionContent {
+                padding-left: $Navbar-width-promotion-image-small + (2 * $Navbar-margin-dropdown);
+            }
+        }
+    }
+    .Navbar-mobileOnly {
+        display: block;
+        @media (min-width: $Navbar-breakpoint-desktop-min) {
+            display: none;
+        }
+    }
+    .Navbar-desktopOnly {
+        display: none;
+        @media (min-width: $Navbar-breakpoint-desktop-min) {
+            display: block;
+        }
+    }
+    .Navbar-constrained {
+        .Navbar-dropdown {
+            .Navbar-modalContent {
+                background: $Navbar-gradient-background-dropdown-linear;
+            }
+        }
+    }
+    .Navbar-registered {
+        position: relative;
+        font-size: $Navbar-font-size-registered;
+        line-height: inherit;
+        bottom: $Navbar-margin-registered;
+    }
+    //- Navbar embedded SVG styles
+    .Navbar-svgLogoAlternate {
+        fill-rule: evenodd;
+    }
+}

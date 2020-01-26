@@ -50,3 +50,13 @@ $color-gray-light: #bab6b7;
 $color-gray-dark: #564e4c;
 $color-yellow-light: #efbb4e;
 $color-yellow-dark: #cc9a43;
+//-- Breakpoints
+$Navbar-breakpoint-small-min: 480px !default; // Mobile view below this breakpoint
+$Navbar-breakpoint-desktop-min: 768px !default; // Mobile view below this breakpoint
+$Navbar-breakpoint-wide-min: 960px !default;
+$Navbar-breakpoint-huge-min: 1200px !default;
+$Navbar-breakpoint-base-max: $Navbar-breakpoint-small-min - 1 !default;
+$Navbar-breakpoint-mobile-max: $Navbar-breakpoint-desktop-min - 1 !default;
+$Navbar-breakpoint-desktop-max: $Navbar-breakpoint-wide-min - 1 !default;
+$Navbar-breakpoint-wide-max: $Navbar-breakpoint-huge-min - 1 !default;
+$Navbar-breakpoint-huge-max: 1600px !default;

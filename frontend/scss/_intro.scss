@@ -270,3 +270,12 @@
         padding: 0px 15px;
     }
 }
+
+@media screen and (max-width: 380px) {
+    .Button-Row {
+        width: 100%;
+    }
+    .Section-Row {
+        min-height: 650px;
+    }
+}

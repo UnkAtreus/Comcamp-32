@@ -230,6 +230,19 @@ template,
   text-transform: uppercase;
 }
 
+@media (max-width: 480px) {
+  .Heading {
+    font-size: 1em;
+  }
+}
+
+.Schematic-Image img {
+  position: relative;
+  width: 100%;
+  max-width: 588px;
+  overflow: hidden;
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

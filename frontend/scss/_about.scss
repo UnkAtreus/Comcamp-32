@@ -106,7 +106,7 @@
     width: 100%;
     max-width: 800px;
     padding-bottom: 0px;
-    margin-left: 80px;
+    margin-right: 60px;
     flex: 0 0 58%;
     position: relative;
     box-shadow: rgba(0, 0, 0, 0.6) 0px 10px 20px 5px, rgba(0, 0, 0, 0.4) 0px 20px 40px 10px;
@@ -118,10 +118,10 @@
     border-image-width: 13px;
     border-image-repeat: round;
     position: absolute;
-    top: -1px;
-    right: -1px;
-    bottom: -1px;
-    left: -1px;
+    top: -3px;
+    right: -3px;
+    bottom: -3px;
+    left: -3px;
     z-index: 5;
     border-image-slice: 26 fill;
     pointer-events: none;
@@ -181,15 +181,45 @@
     width: 50px;
     height: 7px;
     display: inline-block;
-    background: #ccc;
+    background-image: url(/asset/Button_Highlight/CC_Button_middle.png);
+    background-size: 70px 20px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    -o-border-image: initial;
+    border-image: initial;
+    background-position: center center;
     margin: 0 5px;
     box-shadow: black 0px 0px 1px 1px;
 }
 
 .About-Dots-Container button.owl-dot.active {
-    background-color: #b93821;
+    filter: brightness(170%);
 }
 
 .About-Dots-Container button.owl-dot:focus {
     outline: none;
+}
+
+@media screen and (max-width: 1204px) {
+    .About-Content-Row {
+        flex-direction: column;
+    }
+    .About-Text-Column {
+        margin-bottom: 80px;
+        max-width: 700px;
+    }
+    .About-Album-Column {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .Section.About {
+        padding: 0px 15px 120px 15px;
+    }
+    .About-Head-Row {
+        margin-top: -50px;
+        min-height: 300px;
+    }
 }
