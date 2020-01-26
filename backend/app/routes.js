@@ -1,5 +1,7 @@
-var home = require('./controllers/home')
-var auth = require('./controllers/auth')
+const register = require('./controllers/register')
+const auth = require('./middlewares/auth')
+const validateStep = require('./middlewares/validationStep')
+
 
 //you can include all your controllers
 
@@ -10,18 +12,23 @@ module.exports = function (app, passport) {
         console.log("Recieve Connection")
         res.send("Recieve Connection")
     })
-    app.get('/home', home.home)
 
     app.get('/auth/facebook', passport.authenticate('facebook'))
-    app.get('/auth/facebook/callback', passport.authenticate('facebook', {session: true}))
+    app.get('/auth/facebook/callback', passport.authenticate('facebook', {session: true}), (req, res) => {
+        res.redirect('/register')
+    })
     
-    app.get('/logout', (req, res) => {
+    app.get('/api/logout', (req, res) => {
+        console.log("logout")
         req.logout()
-        res.send(req.user);
+        res.sendStatus(200)
     })
 
-    app.get('/current_user', (req, res) => {
+    app.get('/api/current_user', (req, res) => {
         res.send(req.user)
     })
+
+    app.post('/api/register/0', auth.isLoggedIn, validateStep.step0Validation(), validateStep.validate, register.step0)
+    app.post('/api/register/1', auth.isLoggedIn, validateStep.step1Validation(), validateStep.validate, register.step1)
     
 }

@@ -7,8 +7,14 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 
 const session = require('express-session')
+const redis = require('redis')
+
+let RedisStore = require('connect-redis')(session)
+let redisClient = redis.createClient()
 
 var bodyParser = require('body-parser');
+
+const cors = require('cors')
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -18,17 +24,18 @@ app.use(bodyParser.urlencoded({extended: true}));
 var mongoose = require('mongoose');
 var configDB = require('./config/database.js');
 //configuration ===============================================================
-mongoose.connect(configDB.url, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
+mongoose.connect(configDB.url, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }, () => {
     console.log("Connect Database")
 }); // connect to our database
 
 
 require('./app/passport')(passport); // pass passport for configuration
 
-
+app.use(cors())
 
 //session required for passport
 app.use(session({ 
+    store: new RedisStore({ host: 'localhost', port: 6379, client: redisClient}),
     secret: 'WeLoveComcamp32EiEi',
     resave: false,
     saveUninitialized: true,
