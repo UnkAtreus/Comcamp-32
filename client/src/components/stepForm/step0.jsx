@@ -2,14 +2,10 @@ import React from 'react'
 import register from '../../api/register'
 import { useAlert } from 'react-alert'
 
-function StepForm1(props) {
+function StepForm0(props) {
 
     const {currentStep, handleNext} = props
     const alert = useAlert()
-
-    if(currentStep != 0) {
-        return null
-    }
 
     const nextStep = async () => {
         const flag =  await register.sendData(currentStep, {step0: true})
@@ -37,4 +33,4 @@ function StepForm1(props) {
     )
 }
 
-export default StepForm1
+export default StepForm0

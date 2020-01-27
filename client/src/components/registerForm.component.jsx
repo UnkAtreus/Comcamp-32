@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { connect } from 'react-redux'
 import { transitions, positions, Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic'
+import { Row, Col } from 'antd'
 
 
 import Navbar from './navbar.component'
@@ -10,6 +11,9 @@ import Navbar from './navbar.component'
 import StepForm from './stepForm/timelineStep'
 import StepForm0 from './stepForm/step0'
 import StepForm1 from './stepForm/step1'
+import StepForm2 from './stepForm/step2'
+import StepForm3 from './stepForm/step3'
+import StepForm4 from './stepForm/step4'
 
 function RegisterForm(props) {
     console.log("prop user", props.user)
@@ -20,13 +24,20 @@ function RegisterForm(props) {
 
     function checkStep(user) {
         console.log("user",user)
+        let newStep = 0
         if(user != null) {
             if(user.hasOwnProperty("step0")) {
-                console.log("step0")
-                setCurrentStep(1)
-                setMaxStep(1)
+                newStep = 1
+            }
+            if(user.hasOwnProperty("general")) {
+                newStep = 2
+            }
+            if(user.hasOwnProperty("school")) {
+                newStep = 3
             }
         }
+        setCurrentStep(newStep)
+        setMaxStep(newStep)
     }
     
     useEffect( ()=> {
@@ -73,9 +84,17 @@ function RegisterForm(props) {
         <div>
             <Navbar />
             <AlertProvider template={AlertTemplate}{...options} >
-                <StepForm currentStep={currentStep} maxStep={maxStep}/>
-                <StepForm0 currentStep={currentStep} handlePrev={prev} handleNext={next}/>
-                <StepForm1 currentStep={currentStep} handlePrev={prev} handleNext={next}/>
+                <Row>
+                    <Col span={18} offset={3}>
+                        <StepForm currentStep={currentStep} maxStep={maxStep}/>
+                        {currentStep === 0 && <StepForm0 currentStep={currentStep} handlePrev={prev} handleNext={next}/>}
+                        {currentStep === 1 && <StepForm1 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user}/>}
+                        {currentStep === 2 && <StepForm2 currentStep={currentStep} handlePrev={prev} handleNext={next}/>}
+                        {currentStep === 3 && <StepForm3 currentStep={currentStep} handlePrev={prev} handleNext={next}/>}
+                        {currentStep === 4 && <StepForm4 currentStep={currentStep} handlePrev={prev} handleNext={next}/>}
+                        {currentStep === 5 && <StepForm5 currentStep={currentStep} handlePrev={prev} handleNext={next}/>}
+                    </Col>
+                </Row>
             </AlertProvider>
         </div>
     )

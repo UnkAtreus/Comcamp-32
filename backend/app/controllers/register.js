@@ -17,6 +17,7 @@ exports.step0 = (req, res) => {
 exports.step1 = (req, res) => {
     console.log(req.user._id)
     const id = req.user._id
+    console.log("STEP 1")
     const {
         name_th,
         name_eng,
@@ -31,16 +32,18 @@ exports.step1 = (req, res) => {
     } = req.body
     console.log(id)
     User.findByIdAndUpdate(id, { 
-        name_th: name_th,
-        name_eng: name_eng,
-        nickname: nickname,
-        sex: sex,
-        birthday: birthday,
-        bloodenum: bloodenum,
-        religion: religion,
-        shirt_size: shirt_size,
-        telephone: telephone,
-        email: email
+        general: {
+            name_th: name_th,
+            name_eng: name_eng,
+            nickname: nickname,
+            sex: sex,
+            birthday: birthday,
+            bloodenum: bloodenum,
+            religion: religion,
+            shirt_size: shirt_size,
+            telephone: telephone,
+            email: email
+        }
      }, (err, result) => {
         console.log("update")
         // console.log(result)
@@ -55,14 +58,14 @@ exports.step2 = (req, res) => {
     const id = req.user._id
     const {
         gpax,
-        lv,
+        grade,
         school_name,
         school_province
     } = req.body
     console.log(id)
     User.findByIdAndUpdate(id, { 
         gpax:gpax,
-        lv:lv,
+        grade:grade,
         school_name:school_name,
         school_province:school_province
      }, (err, result) => {
