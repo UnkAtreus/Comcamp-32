@@ -10,7 +10,10 @@ const session = require('express-session')
 const redis = require('redis')
 
 let RedisStore = require('connect-redis')(session)
-let redisClient = redis.createClient()
+let redisClient = redis.createClient({
+    host: 'redis',
+    port: 6379
+})
 
 var bodyParser = require('body-parser');
 

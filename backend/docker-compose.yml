@@ -1,18 +1,40 @@
 version: "3"
 services:
- app:
-    container_name: docker-node-mongo
-    restart: always
-    build: .
+#  app:
+#     container_name: node
+#     restart: always
+#     build: .
+#     volumes:
+#     - .:/usr/app/
+#     - /usr/app/node_modules
+#     ports:
+#     - "5000:5000"
+#     depends_on:
+#     - mongo
+#     links:
+#     - mongo
+#    #  command: node app
+#    #  -run: node app
+ redis:
+    container_name: redis
+    image: redis
+ node:
+    image: node:12.13.0-alpine
+    container_name: node
+    volumes:
+      - .:/var/www
+    working_dir: /var/www
+    command: sh -c "node app"
     ports:
-    - "5000:5000"
-    links:
-    - mongo
+     - "5000:5000"
+
+
  mongo:
     container_name: mongoDB
     image: mongo
     ports:
     - "27017:27017" 
+    
 #  redis: 
 #     image: redis
 
