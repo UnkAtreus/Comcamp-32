@@ -62,15 +62,16 @@ exports.step2 = (req, res) => {
         school_name,
         school_province
     } = req.body
-    console.log(id)
-    User.findByIdAndUpdate(id, { 
+    console.log(req.body)
+    User.findByIdAndUpdate(id, { school: {
         gpax:gpax,
         grade:grade,
         school_name:school_name,
         school_province:school_province
-     }, (err, result) => {
+        }
+    }, (err, result) => {
         console.log("update")
-        // console.log(result)
+        console.log(result)
         if (err) {
             res.sendStatus(400)
         }

@@ -12,12 +12,10 @@ function StepForm1(props) {
     const alert = useAlert()
     
     useEffect(() => {
-        console.log("user general", user.general)
-        let generalData = user.general
-        delete generalData._id
-        delete generalData.birthday
-        console.log("general Data " ,generalData)
         if(user.hasOwnProperty("general")) {
+            let generalData = user.general
+            delete generalData._id
+            delete generalData.birthday
             props.form.setFieldsValue(generalData);
         }
     }, []);

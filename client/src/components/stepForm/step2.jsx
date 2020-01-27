@@ -87,13 +87,16 @@ const province_th = [
 
 function StepForm2(props) {
 
-    const { currentStep, handlePrev, handleNext } = props
+    const { currentStep, handlePrev, handleNext, user } = props
     const alert = useAlert()
 
-    if(currentStep != 2) {
-        return null
-    }
-
+    useEffect(() => {
+        if(user.hasOwnProperty("school")) {
+            let schoolData = user.school
+            delete schoolData._id
+            props.form.setFieldsValue(schoolData);
+        }
+    }, []);
 
 
     const nextStep = async (payload) => {
