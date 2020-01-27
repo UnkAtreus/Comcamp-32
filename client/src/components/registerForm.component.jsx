@@ -14,6 +14,7 @@ import StepForm1 from './stepForm/step1'
 import StepForm2 from './stepForm/step2'
 import StepForm3 from './stepForm/step3'
 import StepForm4 from './stepForm/step4'
+import StepForm5 from './stepForm/step5'
 
 function RegisterForm(props) {
     console.log("prop user", props.user)
@@ -34,6 +35,12 @@ function RegisterForm(props) {
             }
             if(user.hasOwnProperty("school")) {
                 newStep = 3
+            }
+            if(user.hasOwnProperty("futureInfo")) {
+                newStep = 4
+            }
+            if(user.hasOwnProperty("ability")) {
+                newStep = 5
             }
         }
         setCurrentStep(newStep)
