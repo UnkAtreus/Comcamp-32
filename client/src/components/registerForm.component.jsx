@@ -12,6 +12,8 @@ import StepForm from './stepForm/timelineStep'
 import StepForm0 from './stepForm/step0'
 import StepForm1 from './stepForm/step1'
 import StepForm2 from './stepForm/step2'
+import StepForm3 from './stepForm/step3'
+import StepForm4 from './stepForm/step4'
 
 function RegisterForm(props) {
     console.log("prop user", props.user)
@@ -88,6 +90,9 @@ function RegisterForm(props) {
                         {currentStep === 0 && <StepForm0 currentStep={currentStep} handlePrev={prev} handleNext={next}/>}
                         {currentStep === 1 && <StepForm1 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user}/>}
                         {currentStep === 2 && <StepForm2 currentStep={currentStep} handlePrev={prev} handleNext={next}/>}
+                        {currentStep === 3 && <StepForm3 currentStep={currentStep} handlePrev={prev} handleNext={next}/>}
+                        {currentStep === 4 && <StepForm4 currentStep={currentStep} handlePrev={prev} handleNext={next}/>}
+                        {currentStep === 5 && <StepForm5 currentStep={currentStep} handlePrev={prev} handleNext={next}/>}
                     </Col>
                 </Row>
             </AlertProvider>
