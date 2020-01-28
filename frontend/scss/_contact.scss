@@ -10,16 +10,16 @@
     flex-direction: row-reverse;
     justify-content: space-between;
     -webkit-box-align: center;
-    align-items: center;
     max-width: 1200px;
     padding: 0px;
 }
 
 .Contact-Column-Social {
     width: 100%;
-    max-width: 891px;
+    max-width: 340px;
+    height: 550px;
     display: block;
-    flex: 0 0 0;
+    flex: 0 0 auto;
     text-align: center;
 }
 
@@ -54,4 +54,34 @@
 
 .Contant-Text {
     padding: 30px 40px 30px 40px;
+}
+
+.About-BorderImage.Contect {
+    margin-bottom: 50px;
+    position: inherit;
+}
+
+@media screen and (max-width: 1050px) {
+    .Contact-Row {
+        display: table-cell;
+        text-align: center;
+        text-align: -webkit-center;
+    }
+    .Contact-Column {
+        margin: 0 200px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .Section.Contact {
+        padding: 0px 15px 120px 15px;
+    }
+    .Contact-Row {
+        display: table-cell;
+        text-align: center;
+        text-align: -webkit-center;
+    }
+    .Contact-Column {
+        margin: 0 0px;
+    }
 }

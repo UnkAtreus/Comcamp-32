@@ -90,3 +90,13 @@
     -o-transition: all 0.35s ease 0.15s;
     transition: all 0.35s ease 0.15s;
 }
+
+@media screen and (max-width: 480px) {
+    .Section.Faq {
+        padding: 0px 15px 120px 15px;
+    }
+    .Head-Row {
+        margin-top: -50px;
+        min-height: 300px;
+    }
+}
