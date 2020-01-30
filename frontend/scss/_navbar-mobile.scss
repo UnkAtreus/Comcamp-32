@@ -1,0 +1,157 @@
+.Nav-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 450px) {
+  .Nav-Sticky-Content {
+    display: none;
+  }
+  .Nav-mobile {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 1rem;
+    width: 100%;
+
+    > .Nvmb-background {
+      background-image: linear-gradient(
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.79) 8.1%,
+        rgba(0, 0, 0, 0.76) 15.5%,
+        rgba(0, 0, 0, 0.718) 22.5%,
+        rgba(0, 0, 0, 0.66) 29%,
+        rgba(0, 0, 0, 0.592) 35.3%,
+        rgba(0, 0, 0, 0.518) 41.2%,
+        rgba(0, 0, 0, 0.44) 47.1%,
+        rgba(0, 0, 0, 0.36) 52.9%,
+        rgba(0, 0, 0, 0.282) 58.8%,
+        rgba(0, 0, 0, 0.208) 64.7%,
+        rgba(0, 0, 0, 0.14) 71%,
+        rgba(0, 0, 0, 0.082) 77.5%,
+        rgba(0, 0, 0, 0.04) 84.5%,
+        rgba(0, 0, 0, 0.01) 91.9%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      z-index: -1;
+      transition: height 0.3s;
+    }
+
+    > .Nvmb-start {
+      flex-basis: 0;
+      flex-grow: 1;
+      flex-shrink: 1;
+    }
+
+    > .Nvmb-end {
+      position: relative;
+      width: 40px;
+      padding: 5px;
+
+      > div {
+        width: 30px;
+        background: white;
+        height: 12%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all 0.7s;
+
+        &:before,
+        &:after {
+          content: "";
+          width: 100%;
+          background: white;
+          height: 100%;
+          position: absolute;
+          transform: translateY(-225%);
+          transition: all 0.7s;
+        }
+
+        &:after {
+          transform: translateY(225%);
+        }
+      }
+    }
+
+    > .Nvmb-menu {
+      display: none;
+
+      > a {
+        display: none;
+        opacity: 0;
+      }
+    }
+
+    &.Nvmb-active {
+      > .Nvmb-background {
+        height: 100vh;
+        transition: height 0.5s;
+      }
+
+      > .Nvmb-end > div {
+        background: rgba(255, 255, 255, 0);
+        &:before {
+          width: 135%;
+          transform-origin: left center;
+          transform: translate(70%, -255%) rotate(135deg);
+        }
+        &:after {
+          width: 135%;
+          transform-origin: right center;
+          transform: translate(-100%, -255%) rotate(225deg);
+        }
+      }
+
+      > .Nvmb-menu {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding-bottom: 1rem;
+
+        > a {
+          display: block;
+          margin: 0 0 1rem;
+          text-align: center;
+          font-size: 2rem;
+          animation: translateDown 0.5s forwards;
+
+          &:nth-child(2) {
+            animation-delay: 0.1s;
+          }
+          &:nth-child(3) {
+            animation-delay: 0.2s;
+          }
+          &:nth-child(4) {
+            animation-delay: 0.3s;
+          }
+          &:nth-child(5) {
+            animation-delay: 0.4s;
+          }
+          &:nth-child(6) {
+            animation-delay: 0.5s;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes translateDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

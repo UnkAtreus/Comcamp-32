@@ -37,7 +37,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/core.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/navbar.css">
+    <!-- <link rel="stylesheet" href="css/navbar.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="css/owl.carousel.css">
@@ -121,6 +121,31 @@
     </div>
     -->
 
+    <nav id="Nav-mobile" class="Nav-mobile">
+        <div class="Nvmb-background"></div>
+        <div class="Nvmb-start">
+            <a data-scroll href="#intro" class="Logo">
+                <img src="/assets/logo-small.png" alt="">
+            </a> 
+        </div>
+        <div role="button" class="Nvmb-end" onclick="toggleMobileNav()">
+            <div></div>
+        </div>
+        <div class="Nvmb-menu">
+            <a data-scroll href="#intro" id="nav-home" class="Nav-Links" onclick="toggleMobileNav()">
+                <span>Home</span></a>
+            <a data-scroll href="#about" id="nav-about" class="Nav-Links" onclick="toggleMobileNav()">
+                <span>What</span></a>
+            <a data-scroll href="#subject" id="nav-subject" class="Nav-Links" onclick="toggleMobileNav()">
+                <span>Learning</span></a>
+            <a data-scroll href="#timeline" id="nav-timeline" class="Nav-Links" onclick="toggleMobileNav()">
+                <span>Schedule</span></a>
+            <a data-scroll href="#faq" id="nav-faq" class="Nav-Links" onclick="toggleMobileNav()">
+                <span>FAQ</span></a>
+            <a data-scroll href="#contact" id="nav-contact" class="Nav-Links" onclick="toggleMobileNav()">
+                <span>Contact</span></a>
+        </div>
+    </nav>
 
     <div class="Section-Background" id="particles-js">
     </div>
@@ -128,7 +153,7 @@
         <div class="Section-Content" id="intro">
             <div class="Section-Row">
                 <div class="Nav-Sticky">
-                    <div class="Nav-Sticky-Content">
+                    <nav class="Nav-Sticky-Content">
                         <div class="Nav-Fade-Black"></div>
                         <div id="nav" class="Nav-Row">
                             <a data-scroll href="#intro" class="Logo">
@@ -149,7 +174,7 @@
                             <a data-scroll href="#contact" id="nav-contact" class="Nav-Links">
                                 <span>Contact</span></a>
                         </div>
-                    </div>
+                    </nav>
                     <div class="Intro-Column">
                         <div class="Intro-Row">
                             <div class="Intro-Image"><img src="/assets/logo-big.png">

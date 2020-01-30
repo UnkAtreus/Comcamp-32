@@ -78,3 +78,14 @@ function toggleAccordion() {
 }
 
 items.forEach(item => item.addEventListener('click', toggleAccordion));
+
+var navState = 0;
+var navElement = document.getElementById("Nav-mobile");
+function toggleMobileNav(){
+    if (navState) {
+        navElement.classList.remove("Nvmb-active")
+    } else {
+        navElement.classList.add("Nvmb-active")
+    }
+    navState = !navState;
+}
