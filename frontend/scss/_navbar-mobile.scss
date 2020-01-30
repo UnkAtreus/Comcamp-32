@@ -3,10 +3,6 @@
 }
 
 @media screen and (max-width: 680px) {
-    .Logo {
-        margin-right: 0px;
-        margin-top: 5px;
-    }
     .Nav-Sticky-Content {
         display: none;
     }
@@ -18,6 +14,16 @@
         z-index: 100;
         height: 48px;
         width: 100%;
+        >.Nvmb-dim {
+            background: rgba(0,0,0,.5);
+            position: fixed;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            z-index: -1;
+            display: none;
+        }
         >.Nvmb-background {
             background-color: #0d0200;
             background-image: linear-gradient(to right, #0d0200, #260000, #0d0200);
@@ -30,26 +36,28 @@
             z-index: -1;
             transition: height 0.3s;
         }
-        >.Nvmb-start {
-            text-align-last: center;
+        >.Nvmb-middle {
+            text-align: center;
             flex-basis: 0;
             flex-grow: 1;
             flex-shrink: 1;
+            > .Logo {
+                margin: 0;
+                margin-top: 6px;
+            }
         }
-        >.Nvmb-end {
-            position: absolute;
-            left: 20px;
-            top: 0;
-            bottom: 0;
-            width: 48px;
-            >div {
+        >.Nvmb-start {
+            width: 56px;
+            padding: 0 1rem;
+
+            > div {
                 width: 25px;
                 background: #ccb17a;
                 height: 4px;
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
-                transition: all 0.7s;
+                transition: all 0.4s;
                 &:before,
                 &:after {
                     content: "";
@@ -58,12 +66,15 @@
                     height: 100%;
                     position: absolute;
                     transform: translateY(-225%);
-                    transition: all 0.7s;
+                    transition: all 0.3s;
                 }
                 &:after {
                     transform: translateY(225%);
                 }
             }
+        }
+        >.Nvmb-end {
+            width: 56px;
         }
         >.Nvmb-menu {
             display: none;
@@ -73,19 +84,24 @@
             }
         }
         &.Nvmb-active {
+            >.Nvmb-dim {
+                display: block;
+                animation: fade 0.7s forwards;
+            }
             >.Nvmb-background {
-                height: 450px;
+                height: 426px;
                 transition: height 0.5s;
             }
-            >.Nvmb-end>div {
+            >.Nvmb-start>div {
                 background: rgba(255, 255, 255, 0);
-                &:before {
+                transition: all 0.7s;
+                &:before, &:after {
+                    transition: all 0.7s;
                     width: 135%;
                     transform-origin: left center;
                     transform: translate(70%, -255%) rotate(135deg);
                 }
                 &:after {
-                    width: 135%;
                     transform-origin: right center;
                     transform: translate(-100%, -255%) rotate(225deg);
                 }
@@ -132,5 +148,14 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

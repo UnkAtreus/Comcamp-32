@@ -148,20 +148,23 @@
     -->
 
     <nav id="Nav-mobile" class="Nav-mobile">
+      <div class="Nvmb-dim" onclick="toggleMobileNav()"></div>
       <div class="Nvmb-background"></div>
-      <div class="Nvmb-start">
-        <a data-scroll href="#intro" class="Logo">
-          <img class="lazy" data-src="/assets/logo-small.png" alt="Comcamp 32" />
-        </a>
-      </div>
       <div
         role="button"
         aria-label="Mobile navigation menu toggler"
-        class="Nvmb-end"
+        class="Nvmb-start"
         onclick="toggleMobileNav()"
       >
         <div></div>
       </div>
+      <div class="Nvmb-middle">
+        <a data-scroll href="#intro" class="Logo">
+          <img class="lazy" data-src="/assets/logo-small.png" alt="Comcamp 32" />
+        </a>
+      </div>
+      <div class="Nvmb-end"></div>
+
       <div class="Nvmb-menu">
         <a
           data-scroll
