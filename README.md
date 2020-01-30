@@ -1,5 +1,5 @@
-yarn start ใน folder client
-nodemon app ใน backend
+### yarn start ใน folder client
+### nodemon app ใน backend
 
 # Backend
 - เชื่อมต่อ mongo (done)
