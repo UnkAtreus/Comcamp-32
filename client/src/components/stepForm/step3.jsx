@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect, useState } from 'react'
 import register from '../../api/register'
 import { useAlert } from 'react-alert'
 import { Form, Input, Button, Row, Col, Select, DatePicker, InputNumber } from 'antd';
@@ -90,16 +90,19 @@ function StepForm3(props) {
     const {currentStep, handlePrev, handleNext, user} = props
     const alert = useAlert()
 
+    const [accident, setAccident] = useState(false)
+
     useEffect(() => {
-        if(user.hasOwnProperty("address")) {
-            let addressData = user.address
-            delete addressData._id
-            props.form.setFieldsValue(addressData);
+        if(user.hasOwnProperty("disease")) {
+            let diseaseData = user.disease
+            delete diseaseData._id
+            props.form.setFieldsValue(diseaseData);
         }
+        // props.form.setFieldsValue({have_accident: false})
     }, []);
 
-    const nextStep = async () => {
-        const flag =  await register.sendData(currentStep, {step0: true})
+    const nextStep = async (payload) => {
+        const flag =  await register.sendData(currentStep, payload)
         console.log("Click Next")
         console.log(flag)
         if(flag) {
@@ -123,67 +126,67 @@ function StepForm3(props) {
 
     const { getFieldDecorator } = props.form;
 
+    const handleAccident = value => {
+        if(value == "true") {
+            setAccident(true)
+        } else if(value == "false") {
+            setAccident(false)
+        }
+        console.log(accident)
+    }
+
     return (
         <div>
-            <h1>ที่อยู่</h1>
+            <h1>สิ่งที่แพ้</h1>
             <Form onSubmit={handleSubmit} >
-                <Row>
-                    <Col span={16}>
-                        <Form.Item label="ชื่อสถานศึกษา">
-                        {getFieldDecorator('school_name', {
-                            rules: [{ required: true, message: 'กรุณากรอกชื่อสถานศึกษา' }],
-                        })(
-                            <Input
-                            placeholder="โรงเรียนคอมแคมป์ 32"
-                            />,
-                        )}
-                        </Form.Item>
-                    </Col>
-                    <Col span={6} offset={1}>
-                        <Form.Item label="จังหวัด">
-                        {getFieldDecorator('school_province', {
-                            rules: [{ required: true, message: 'กรุณากรอกชื่อสถานศึกษา' }],
-                        })(
-                            <Select>
-                                {
-                                    province_th.map( (province) => (
-                                        <Option key={province} value={province}>{province}</Option>
-                                    )
-                                    )
-                                }
-                            </Select>,
-                        )}
-                        </Form.Item>
-                    </Col>
-                </Row>
-                
-                <Row>
-                    <Col span={10}>
-                        <Form.Item label="ชั้นปี">
-                        {getFieldDecorator('grade', {
-                            rules: [{ required: true, message: 'กรุณากรอกชั้นปีการศึกษา', enum:['4', '5', '6', 'ปวช'] }],
-                        })(
-                            <Select>
-                                <Option value={'4'}>ม.4</Option>
-                                <Option value={'5'}>ม.5</Option>
-                                <Option value={'6'}>ม.6</Option>
-                                <Option value={'ปวช'}>ปวช</Option>
-                            </Select>,
-                        )}
-                        </Form.Item>
-                    </Col>
-                    <Col span={10} offset={1}>
-                        <Form.Item label="เกรดเฉลี่ย">
-                        {getFieldDecorator('gpax', {
-                            rules: [{ required: true, message: 'กรุณากรอกเกรดเฉลี่ย' }],
-                        })(
-                            <InputNumber min={0} max={4} step={0.01}
-                            placeholder="4.00"
-                            />,
-                        )}
-                        </Form.Item>
-                    </Col>
-                </Row>
+
+                <Form.Item label="โรคประจำตัว">
+                {getFieldDecorator('disease')(
+                    <Input
+                    placeholder="โรคหอบหึด"
+                    />,
+                )}
+                </Form.Item>
+                <Form.Item label="อาหารที่แพ้">
+                {getFieldDecorator('allergy_food')(
+                    <Input
+                    placeholder="ถั่วเขียว"
+                    />,
+                )}
+                </Form.Item>
+                <Form.Item label="ยาที่แพ้">
+                {getFieldDecorator('allergy_medic')(
+                    <Input
+                    placeholder="ยาแอมพลิซิลลิน"
+                    />,
+                )}
+                </Form.Item>
+                <Form.Item label="ยาประจำตัว">
+                {getFieldDecorator('medic_need')(
+                    <Input
+                    placeholder="ยาแก้หอบหึด"
+                    />,
+                )}
+                </Form.Item>
+
+                <Form.Item label="อุบัติเหตุในรอบ 6 เดือน">
+                    <Select
+                    placeholder="Select a option and change input text above"
+                    onChange={handleAccident}
+                    >
+                    <Option value="false">ไม่มี</Option>
+                    <Option value="true">มี</Option>
+                    </Select>
+                </Form.Item>
+                { accident && 
+                <Form.Item label="เนื่องจาก">
+                {getFieldDecorator('accident')(
+                    <Input
+                    placeholder="ยาแก้หอบหึด"
+                    />,
+                )}
+                </Form.Item>
+                }
                 <Form.Item>
                     <Button type="primary" onClick={handlePrev}>
                     Back
@@ -192,7 +195,6 @@ function StepForm3(props) {
                     Submit
                     </Button>
                 </Form.Item>
-                
             </Form>
         </div>
     )

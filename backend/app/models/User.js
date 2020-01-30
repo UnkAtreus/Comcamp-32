@@ -37,13 +37,27 @@ var parent_info = mongoose.Schema({
 	email:{type:String,required:true}
 });
 
+var locationSchema = mongoose.Schema({
+	home_number: {type:String,required:true},
+	road: {type:String,required:true},
+	village: {type:String,required:true},
+	lane: {type:String},
+	sub_district: {type:String,required:true},
+	district: {type:String,required:true},
+	province: {type:String,required:true},
+	postal_code: {type:String,required:true}
+})
+
 var addressSchema = mongoose.Schema({
-	address_present:{type:String,required:true},
-	address_regis:{type:String,required:true},
-	address_parent:{type:String,required:true},
-	parent:[parent_info],
-	recent_camp:{type:String}
+	address_present:locationSchema,
+	address_regis:locationSchema,
+	address_parent:locationSchema,
+	parent:parent_info,
 });
+
+var recent_camp = mongoose.Schema({
+	name: {type:String}
+})
 
 var future_info = mongoose.Schema({
 	faculty:{type:String,required:true},
@@ -51,9 +65,9 @@ var future_info = mongoose.Schema({
 });
 
 var futureSchema = mongoose.Schema({
-	one:[future_info],
-	two:[future_info],
-	three:[future_info],
+	one:future_info,
+	two:future_info,
+	three:future_info,
 	interest:{type:String}
 });
 
@@ -73,6 +87,7 @@ var userSchema = mongoose.Schema({
 	school: schoolSchema,
 	disease: diseaseSchema,
 	address: addressSchema,
+	recent_camp: recent_camp,
 	future: futureSchema,
 	ability: abilitySchema,
 });

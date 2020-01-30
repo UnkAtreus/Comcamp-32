@@ -15,6 +15,8 @@ import StepForm2 from './stepForm/step2'
 import StepForm3 from './stepForm/step3'
 import StepForm4 from './stepForm/step4'
 import StepForm5 from './stepForm/step5'
+import StepForm6 from './stepForm/step6'
+import StepForm7 from './stepForm/step7'
 
 function RegisterForm(props) {
     console.log("prop user", props.user)
@@ -28,13 +30,25 @@ function RegisterForm(props) {
         let newStep = 0
         if(user != null) {
             if(user.hasOwnProperty("step0")) {
-                newStep = 1
+                newStep++
             }
             if(user.hasOwnProperty("general")) {
-                newStep = 2
+                newStep++
             }
             if(user.hasOwnProperty("school")) {
-                newStep = 3
+                newStep++
+            }
+            if(user.hasOwnProperty("disease")) {
+                newStep++
+            }
+            if(user.hasOwnProperty("address")) {
+                newStep++
+            }
+            if(user.hasOwnProperty("future")) {
+                newStep++
+            }
+            if(user.hasOwnProperty("ability")) {
+                newStep++
             }
         }
         setCurrentStep(newStep)
@@ -94,6 +108,8 @@ function RegisterForm(props) {
                         {currentStep === 3 && <StepForm3 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user}/>}
                         {currentStep === 4 && <StepForm4 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user}/>}
                         {currentStep === 5 && <StepForm5 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user}/>}
+                        {currentStep === 6 && <StepForm6 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user}/>}
+                        {currentStep === 7 && <StepForm7 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user}/>}
                     </Col>
                 </Row>
             </AlertProvider>

@@ -79,31 +79,101 @@ exports.step2 = (req, res) => {
     })
 }
 
+exports.step3 = (req, res) => {
+    console.log(req.user._id)
+    const id = req.user._id
+    const disease = req.body
+    console.log("step3")
+    console.log(req.body)
+    User.findByIdAndUpdate(id, { disease: disease}, (err, result) => {
+        console.log("update")
+        console.log(result)
+        if (err) {
+            res.sendStatus(400)
+        }
+        res.sendStatus(200)
+    })
+}
+
 exports.step4 = (req, res) => {
     console.log(req.user._id)
     const id = req.user._id
     const {
-        address_present,
-        address_regis,
-        address_parent,
+
+        home_number,
+        road,
+        village,
+        lane,
+        sub_district,
+        district,
+        province,
+        postal_code,
+
+        home_number_regis,
+        road_regis,
+        village_regis,
+        lane_regis,
+        sub_district_regis,
+        district_regis,
+        province_regis,
+        postal_code_regis,
+
+        home_number_parent,
+        road_parent,
+        village_parent,
+        lane_parent,
+        sub_district_parent,
+        district_parent,
+        province_parent,
+        postal_code_parent,
+
         relation,
         name,
         tel,
         email,
-        recent_camp
 
     } = req.body
     console.log(id)
-    User.findByIdAndUpdate(id, { 
-        address_present:address_present,
-        address_regis:address_regis,
-        address_parent:address_parent,
-        relation:relation,
-        name: name,
-        tel:tel,
-        email:email,
-        recent_camp:recent_camp
-     }, (err, result) => {
+    User.findByIdAndUpdate(id, {
+        address: {
+            address_present: {
+                home_number: home_number,
+                road: road,
+                village:village,
+                lane: lane,
+                sub_district: sub_district,
+                district: district,
+                province: province,
+                postal_code: postal_code,
+            },
+            address_regis: {
+                home_number: home_number_regis,
+                road: road_regis,
+                village:village_regis,
+                lane: lane_regis,
+                sub_district: sub_district_regis,
+                district: district_regis,
+                province: province_regis,
+                postal_code: postal_code_regis,
+            },
+            address_parent: {
+                home_number: home_number_parent,
+                road: road_parent,
+                village:village_parent,
+                lane: lane_parent,
+                sub_district: sub_district_parent,
+                district: district_parent,
+                province: province_parent,
+                postal_code: postal_code_parent,
+            },
+            parent: {
+                relation:relation,
+                name: name,
+                tel: tel,
+                email: email
+            }
+        }
+    }, (err, result) => {
         console.log("update")
         // console.log(result)
         if (err) {
@@ -115,6 +185,7 @@ exports.step4 = (req, res) => {
 
 exports.step5 = (req, res) => {
     console.log(req.user._id)
+    console.log("step 5")
     const id = req.user._id
     const {
         one_faculty,
@@ -127,14 +198,21 @@ exports.step5 = (req, res) => {
 
     } = req.body
     console.log(id)
-    User.findByIdAndUpdate(id, { 
-        one:one_faculty,
-        one_university:one_university,
-        two_faculty:two_faculty,
-        two_university:two_university,
-        three_faculty:three_faculty,
-        three_university:three_university,
+    User.findByIdAndUpdate(id, { future : {
+        one: {
+            faculty: one_faculty,
+            university: one_university,
+        },
+        two: {
+            faculty: two_faculty,
+            university: two_university,
+        },
+        three: {
+            faculty: three_faculty,
+            university: three_university,
+        },
         interest:interest
+    }
      }, (err, result) => {
         console.log("update")
         // console.log(result)
@@ -148,21 +226,10 @@ exports.step5 = (req, res) => {
 exports.step6 = (req, res) => {
     console.log(req.user._id)
     const id = req.user._id
-    const {
-        programming,
-        big_data,
-        flow_chart,
-        microcontroller,
-        brain_storm
-
-    } = req.body
+    console.log("step 6")
     console.log(id)
     User.findByIdAndUpdate(id, { 
-        programming:programming,
-        big_data:big_data,
-        flow_chart:flow_chart,
-        microcontroller:microcontroller,
-        brain_storm:brain_storm
+        ability: req.body
      }, (err, result) => {
         console.log("update")
         // console.log(result)
