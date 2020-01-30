@@ -172,7 +172,7 @@
   }
   .Nav-mobile > .Nvmb-end > div {
     width: 25px;
-    background: white;
+    background: #ccb17a;
     height: 4px;
     position: absolute;
     top: 50%;
@@ -184,7 +184,7 @@
   .Nav-mobile > .Nvmb-end > div:before, .Nav-mobile > .Nvmb-end > div:after {
     content: "";
     width: 100%;
-    background: white;
+    background: #ccb17a;
     height: 100%;
     position: absolute;
     -webkit-transform: translateY(-225%);

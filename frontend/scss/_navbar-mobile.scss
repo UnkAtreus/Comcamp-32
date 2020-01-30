@@ -44,7 +44,7 @@
             width: 48px;
             >div {
                 width: 25px;
-                background: white;
+                background: #ccb17a;
                 height: 4px;
                 position: absolute;
                 top: 50%;
@@ -54,7 +54,7 @@
                 &:after {
                     content: "";
                     width: 100%;
-                    background: white;
+                    background: #ccb17a;
                     height: 100%;
                     position: absolute;
                     transform: translateY(-225%);
