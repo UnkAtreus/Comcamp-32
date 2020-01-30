@@ -115,6 +115,180 @@
   color: white;
 }
 
+.Nav-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 680px) {
+  .Logo {
+    margin-right: 0px;
+    margin-top: 5px;
+  }
+  .Nav-Sticky-Content {
+    display: none;
+  }
+  .Nav-mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    height: 48px;
+    width: 100%;
+  }
+  .Nav-mobile > .Nvmb-background {
+    background-color: #0d0200;
+    background-image: -webkit-gradient(linear, left top, right top, from(#0d0200), color-stop(#260000), to(#0d0200));
+    background-image: linear-gradient(to right, #0d0200, #260000, #0d0200);
+    -webkit-box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.2), 0 0 6px rgba(102, 20, 20, 0.6), 0 0 24px rgba(102, 20, 20, 0.4);
+            box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.2), 0 0 6px rgba(102, 20, 20, 0.6), 0 0 24px rgba(102, 20, 20, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: -1;
+    -webkit-transition: height 0.3s;
+    transition: height 0.3s;
+  }
+  .Nav-mobile > .Nvmb-start {
+    text-align-last: center;
+    -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
+  }
+  .Nav-mobile > .Nvmb-end {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 48px;
+  }
+  .Nav-mobile > .Nvmb-end > div {
+    width: 25px;
+    background: white;
+    height: 4px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    -webkit-transition: all 0.7s;
+    transition: all 0.7s;
+  }
+  .Nav-mobile > .Nvmb-end > div:before, .Nav-mobile > .Nvmb-end > div:after {
+    content: "";
+    width: 100%;
+    background: white;
+    height: 100%;
+    position: absolute;
+    -webkit-transform: translateY(-225%);
+            transform: translateY(-225%);
+    -webkit-transition: all 0.7s;
+    transition: all 0.7s;
+  }
+  .Nav-mobile > .Nvmb-end > div:after {
+    -webkit-transform: translateY(225%);
+            transform: translateY(225%);
+  }
+  .Nav-mobile > .Nvmb-menu {
+    display: none;
+  }
+  .Nav-mobile > .Nvmb-menu > a {
+    display: none;
+    opacity: 0;
+  }
+  .Nav-mobile.Nvmb-active > .Nvmb-background {
+    height: 450px;
+    -webkit-transition: height 0.5s;
+    transition: height 0.5s;
+  }
+  .Nav-mobile.Nvmb-active > .Nvmb-end > div {
+    background: rgba(255, 255, 255, 0);
+  }
+  .Nav-mobile.Nvmb-active > .Nvmb-end > div:before {
+    width: 135%;
+    -webkit-transform-origin: left center;
+            transform-origin: left center;
+    -webkit-transform: translate(70%, -255%) rotate(135deg);
+            transform: translate(70%, -255%) rotate(135deg);
+  }
+  .Nav-mobile.Nvmb-active > .Nvmb-end > div:after {
+    width: 135%;
+    -webkit-transform-origin: right center;
+            transform-origin: right center;
+    -webkit-transform: translate(-100%, -255%) rotate(225deg);
+            transform: translate(-100%, -255%) rotate(225deg);
+  }
+  .Nav-mobile.Nvmb-active > .Nvmb-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding-top: 2rem;
+  }
+  .Nav-mobile.Nvmb-active > .Nvmb-menu > a {
+    display: block;
+    margin: 0 0 1rem;
+    text-align: center;
+    font-size: 2rem;
+    -webkit-animation: translateDown 0.5s forwards;
+            animation: translateDown 0.5s forwards;
+  }
+  .Nav-mobile.Nvmb-active > .Nvmb-menu > a:nth-child(2) {
+    -webkit-animation-delay: 0.1s;
+            animation-delay: 0.1s;
+  }
+  .Nav-mobile.Nvmb-active > .Nvmb-menu > a:nth-child(3) {
+    -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s;
+  }
+  .Nav-mobile.Nvmb-active > .Nvmb-menu > a:nth-child(4) {
+    -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s;
+  }
+  .Nav-mobile.Nvmb-active > .Nvmb-menu > a:nth-child(5) {
+    -webkit-animation-delay: 0.4s;
+            animation-delay: 0.4s;
+  }
+  .Nav-mobile.Nvmb-active > .Nvmb-menu > a:nth-child(6) {
+    -webkit-animation-delay: 0.5s;
+            animation-delay: 0.5s;
+  }
+}
+
+@-webkit-keyframes translateDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes translateDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
 .Section {
   position: relative;
   z-index: auto;
