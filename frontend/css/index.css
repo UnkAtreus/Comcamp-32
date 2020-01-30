@@ -558,7 +558,7 @@
 .About-Text-Content-TH {
   line-height: 1.6;
   text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px, rgba(0, 0, 0, 0.25) 0px 0px 8px;
-  font-family: 'Pridi', serif;
+  font-family: 'Sarabun', sans-serif;
   letter-spacing: 0.05em;
   font-weight: 300;
   font-size: 1.14em;
@@ -583,19 +583,19 @@
 }
 
 .About-BorderImage {
-  border-image-source: url(https://bnetcmsus-a.akamaihd.net/cms/template_resource/W4IAWGPY8FHW1541005920489.png);
-  border-image-width: 13px;
-  border-image-repeat: round;
+  border-image-source: url(/asset/fame.png);
+  border-image-width: 25px;
+  /* border-image-repeat: round; */
   position: absolute;
   top: -3px;
   right: -3px;
   bottom: -3px;
   left: -3px;
   z-index: 5;
-  border-image-slice: 26 fill;
+  border-image-slice: 7% fill;
   pointer-events: none;
   border-style: solid;
-  border-width: 13px;
+  border-width: 6px;
 }
 
 .About-Pic-Column {
@@ -1108,7 +1108,7 @@
     background-size: 240px 120px;
   }
   .Subject-Column-Out {
-    margin-right: 30px;
+    margin-right: 20px;
     width: 100px;
   }
   .Subject-SpriteHeroes {
@@ -1217,7 +1217,7 @@
 .Register-Text-TH {
   line-height: 1.6;
   text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px, rgba(0, 0, 0, 0.25) 0px 0px 8px;
-  font-family: 'Pridi', serif;
+  font-family: 'Sarabun', sans-serif;
   letter-spacing: 0.05em;
   font-weight: 300;
   font-size: 1.14em;
@@ -1406,13 +1406,13 @@
   display: block;
   line-height: 1.6;
   text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px, rgba(0, 0, 0, 0.25) 0px 0px 8px;
-  font-family: 'Pridi', serif;
+  font-family: 'Sarabun', sans-serif;
   letter-spacing: 0.005em;
   font-weight: 500;
   position: absolute;
   font-size: 1.2em;
   color: #ffddcc;
-  width: 130px;
+  width: 120px;
   margin: 0px;
 }
 
@@ -1497,7 +1497,7 @@
   display: block;
   line-height: 1.6;
   text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px, rgba(0, 0, 0, 0.25) 0px 0px 8px;
-  font-family: 'Pridi', serif;
+  font-family: 'Sarabun', sans-serif;
   letter-spacing: 0.005em;
   font-weight: 500;
   font-size: 1.5em;
@@ -1589,7 +1589,7 @@
   text-align: left;
   line-height: 1.6;
   text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px, rgba(0, 0, 0, 0.25) 0px 0px 8px;
-  font-family: 'Pridi', serif;
+  font-family: 'Sarabun', sans-serif;
   letter-spacing: 0.005em;
   font-weight: 500;
   font-size: 1.2em;
@@ -1688,7 +1688,7 @@
 }
 
 /* ================ Timeline Media Queries ================ */
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 680px) {
   .Timeline-Row-Out {
     margin-left: 0;
     margin-right: 0;
@@ -1776,7 +1776,7 @@
   }
 }
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 680px) {
   .direction-l .desc,
   .direction-r .desc {
     margin: 1em 4em 0 4em;
@@ -1794,7 +1794,10 @@
   }
 }
 
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 1360px) {
+  .Contact-Content {
+    text-align: -webkit-center;
+  }
   .Timeline-Column {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 40px;
@@ -1976,7 +1979,7 @@
 .Contact-Text-Content-TH {
   line-height: 1.6;
   text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px, rgba(0, 0, 0, 0.25) 0px 0px 8px;
-  font-family: 'Pridi', serif;
+  font-family: 'Sarabun', sans-serif;
   letter-spacing: 0.05em;
   font-weight: 300;
   font-size: 1.14em;
@@ -2012,7 +2015,7 @@
     text-align: -webkit-center;
   }
   .Contact-Column {
-    margin: 0 200px;
+    margin: 0 10%;
   }
 }
 

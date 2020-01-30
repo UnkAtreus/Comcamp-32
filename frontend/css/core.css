@@ -230,7 +230,7 @@ template,
   text-transform: uppercase;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 620px) {
   .Heading {
     font-size: 1em;
     letter-spacing: 0.5em;
