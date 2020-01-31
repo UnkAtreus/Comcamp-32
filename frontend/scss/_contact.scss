@@ -4,6 +4,7 @@
 
 .Contact-Row {
     position: relative;
+    place-items: center;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -68,7 +69,7 @@
         text-align: -webkit-center;
     }
     .Contact-Column {
-        margin: 0 10%;
+        margin: 0 0px;
     }
 }
 

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="th">
-  <head>
+
+<head>
     <!-- Preload -->
     <!-- <link rel="preload" as="font" href="font/SarunsJackSparrow.eot">
     <link rel="preload" as="font" href="font/SarunsJackSparrow.woff2">
@@ -53,225 +54,78 @@
     <!-- ...place favicons meta under here -->
 
     <!-- Stylesheets -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Lora:400,700|Pridi:300,400|Sarabun:400,500,600,700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css"
-      type="text/plain"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Pridi:300,400|Sarabun:400,500,600,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css" type="text/plain" />
     <!-- ย้าย owl carousel ไปโหลดใต้ body เพราะไม่ได้เห็นทันทีเมื่อเปิดเว็บ -->
     <link rel="stylesheet" href="css/core.css" />
     <link rel="stylesheet" href="css/index.css" />
-  </head>
+</head>
 
-  <body>
+<body>
     <!-- Intro & Navbar -->
-    <!--
-    <div class="Navbar is-auto is-compact">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" class="Navbar-embedded">
-            <g id="Navbar-icon-new_window">
-                <g id="Navbar-icon-close">
-                    <path
-                        d="M47.949,50.625c-0.64,0-1.28-0.244-1.768-0.732L14.635,18.346c-0.977-0.976-0.977-2.559,0-3.535    c0.976-0.977,2.56-0.977,3.535,0l31.546,31.547c0.977,0.976,0.977,2.559,0,3.535C49.229,50.381,48.589,50.625,47.949,50.625z">
-                    </path>
-                    <path
-                        d="M16.051,50.273c-0.64,0-1.28-0.244-1.768-0.732c-0.977-0.976-0.977-2.559,0-3.535l31.898-31.898    c0.976-0.977,2.56-0.977,3.535,0c0.977,0.976,0.977,2.559,0,3.535L17.818,49.541C17.331,50.029,16.69,50.273,16.051,50.273z">
-                    </path>
-                </g>
-            </g>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48" class="Navbar-embedded">
-            <g id="Navbar-icon-menu">
-                <rect x="15" y="16" width="18" height="2"></rect>
-                <rect x="15" y="23" width="18" height="2"></rect>
-                <rect x="15" y="30" width="18" height="2"></rect>
-            </g>
-        </svg>
-        <div class="Navbar-overlay"></div>
-        <div class="Navbar-container">
-            <nav class="Navbar-mobile">
-                <div class="Navbar-mobileOverlay Navbar-overlay"></div>
-                <a data-target="Navbar-siteMenu" data-site-mode="true" class="Navbar-menu Navbar-modalToggle is-noSelect is-active">
-                    <div class="Navbar-icon Navbar-mobileIcon Navbar-siteMenuIcon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48" focusable="false">
-                            <use xlink:href="#Navbar-icon-menu"></use>
-                        </svg></div>
-                </a>
-                <a href="" class="Navbar-customLogo"><img src=""></a>
-            </nav>
-        </div>
-        <div class="Navbar-modals">
-            <div data-compact-mode="true" class="Navbar-modal Navbar-siteMenu is-animated is-scroll-blocking">
-                <div class="Navbar-modalContent">
-                    <div>
-                        <div>
-                            <div class="Schematic-Column  css-1ui0edp">
-                                <div class="Schematic-e Schematic-Image css-4d28lx"><img src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/IHGZAAQYPX741541005928570.png" srcset="https://bnetcmsus-a.akamaihd.net/cms/template_resource/IHGZAAQYPX741541005928570.png, https://bnetcmsus-a.akamaihd.net/cms/template_resource/1WBZT1Z7I5131541005928671.png 2x">
-                                </div>
-                            </div>
-                            <div class="Schematic-Column  css-17vi6no">
-                                <a data-analytics="site nav" data-analytics-placement="story" href="#section-story" target="_self" url="#section-story" scrolltooptions="[object Object]" _globals="[object Object]" class="Schematic-e Schematic-MobileNavLink css-124zzdl"><span class="Markdown"
-                                        textpreview="Story">Story</span></a><a data-analytics="site nav" data-analytics-placement="world" href="#section-world" target="_self" url="#section-world" scrolltooptions="[object Object]"
-                                    _globals="[object Object]" class="Schematic-e Schematic-MobileNavLink css-124zzdl"><span class="Markdown"
-                                        textpreview="World">World</span></a><a data-analytics="site nav" data-analytics-placement="controls" href="#section-controls" target="_self" url="#section-controls" scrolltooptions="[object Object]" _globals="[object Object]"
-                                    class="Schematic-e Schematic-MobileNavLink css-124zzdl"><span class="Markdown"
-                                        textpreview="Controls">Controls</span></a><a data-analytics="site nav" data-analytics-placement="classes" href="#section-classes" target="_self" url="#section-classes" scrolltooptions="[object Object]" _globals="[object Object]"
-                                    class="Schematic-e Schematic-MobileNavLink css-124zzdl"><span class="Markdown"
-                                        textpreview="Classes">Classes</span></a><a data-analytics="site nav" data-analytics-placement="monsters" href="#section-monsters" target="_self" url="#section-monsters" scrolltooptions="[object Object]" _globals="[object Object]"
-                                    class="Schematic-e Schematic-MobileNavLink css-124zzdl"><span class="Markdown"
-                                        textpreview="Monsters">Monsters</span></a><a data-analytics="site nav" data-analytics-placement="media" href="#section-media" target="_self" url="#section-media" scrolltooptions="[object Object]" _globals="[object Object]"
-                                    class="Schematic-e Schematic-MobileNavLink css-124zzdl"><span class="Markdown"
-                                        textpreview="Media">Media</span></a>
-                            </div>
-                        </div>
-                        <div class="Navbar-modalClose Navbar-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
-                                <use xlink:href="#Navbar-icon-close"></use>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="Navbar-modalCloseGutter"></div>
-        </div>
-    </div>
-    -->
-
     <nav id="Nav-mobile" class="Nav-mobile">
-      <div class="Nvmb-dim" onclick="toggleMobileNav()"></div>
-      <div class="Nvmb-background"></div>
-      <div
-        role="button"
-        aria-label="Mobile navigation menu toggler"
-        class="Nvmb-start"
-        onclick="toggleMobileNav()"
-      >
-        <div></div>
-      </div>
-      <div class="Nvmb-middle">
-        <a data-scroll href="#intro" class="Logo">
-          <img class="lazy" data-src="/assets/logo-small.png" alt="Comcamp 32" />
-        </a>
-      </div>
-      <div class="Nvmb-end"></div>
+        <div class="Nvmb-dim" onclick="toggleMobileNav()"></div>
+        <div class="Nvmb-background"></div>
+        <div role="button" aria-label="Mobile navigation menu toggler" class="Nvmb-start" onclick="toggleMobileNav()">
+            <div></div>
+        </div>
+        <div class="Nvmb-middle">
+            <a data-scroll href="#intro" class="Logo">
+                <img class="lazy" data-src="/assets/logo-small.png" alt="Comcamp 32" />
+            </a>
+        </div>
+        <div class="Nvmb-end"></div>
 
-      <div class="Nvmb-menu">
-        <a
-          data-scroll
-          href="#intro"
-          id="nav-mobile-home"
-          class="Nav-Links"
-          onclick="toggleMobileNav()"
-        >
-          <span>Home</span></a
-        >
-        <a
-          data-scroll
-          href="#about"
-          id="nav-mobile-about"
-          class="Nav-Links"
-          onclick="toggleMobileNav()"
-        >
-          <span>What</span></a
-        >
-        <a
-          data-scroll
-          href="#subject"
-          id="nav-mobile-subject"
-          class="Nav-Links"
-          onclick="toggleMobileNav()"
-        >
-          <span>Learning</span></a
-        >
-        <a
-          data-scroll
-          href="#timeline"
-          id="nav-mobile-timeline"
-          class="Nav-Links"
-          onclick="toggleMobileNav()"
-        >
-          <span>Schedule</span></a
-        >
-        <a
-          data-scroll
-          href="#faq"
-          id="nav-mobile-faq"
-          class="Nav-Links"
-          onclick="toggleMobileNav()"
-        >
-          <span>FAQ</span></a
-        >
-        <a
-          data-scroll
-          href="#contact"
-          id="nav-mobile-contact"
-          class="Nav-Links"
-          onclick="toggleMobileNav()"
-        >
-          <span>Contact</span></a
-        >
-      </div>
+        <div class="Nvmb-menu">
+            <a data-scroll href="#intro" id="nav-mobile-home" class="Nav-Links" onclick="toggleMobileNav()">
+                <span>Home</span></a>
+            <a data-scroll href="#about" id="nav-mobile-about" class="Nav-Links" onclick="toggleMobileNav()">
+                <span>What</span></a>
+            <a data-scroll href="#subject" id="nav-mobile-subject" class="Nav-Links" onclick="toggleMobileNav()">
+                <span>Learning</span></a>
+            <a data-scroll href="#timeline" id="nav-mobile-timeline" class="Nav-Links" onclick="toggleMobileNav()">
+                <span>Schedule</span></a>
+            <a data-scroll href="#faq" id="nav-mobile-faq" class="Nav-Links" onclick="toggleMobileNav()">
+                <span>FAQ</span></a>
+            <a data-scroll href="#contact" id="nav-mobile-contact" class="Nav-Links" onclick="toggleMobileNav()">
+                <span>Contact</span></a>
+        </div>
     </nav>
 
     <div class="Section-Background" id="particles-js"> </div>
     <div id="intro" class="Section">
-      <div class="Section-Content" id="intro-section">
-        <div class="Section-Row">
-          <div class="Nav-Sticky">
-            <nav class="Nav-Sticky-Content">
-              <div class="Nav-Fade-Black"></div>
-              <div id="nav" class="Nav-Row">
-                <a data-scroll href="#intro" class="Logo">
-                  <div class="Nav-Logo">
-                    <img
-                      class="lazy"
-                      data-src="/assets/logo-small.png"
-                      alt="Comcamp 32"
-                    />
-                  </div>
-                </a>
-                <a data-scroll href="#intro" id="nav-home" class="Nav-Links">
-                  <span>Home</span></a
-                >
-                <a data-scroll href="#about" id="nav-about" class="Nav-Links">
-                  <span>What</span></a
-                >
-                <a data-scroll href="#subject" id="nav-subject" class="Nav-Links">
-                  <span>Learning</span></a
-                >
-                <a data-scroll href="#timeline" id="nav-timeline" class="Nav-Links">
-                  <span>Schedule</span></a
-                >
-                <a data-scroll href="#faq" id="nav-faq" class="Nav-Links">
-                  <span>FAQ</span></a
-                >
-                <a data-scroll href="#contact" id="nav-contact" class="Nav-Links">
-                  <span>Contact</span></a
-                >
-              </div>
-            </nav>
-            <div class="Intro-Column">
-              <div class="Intro-Row">
-                <div class="Intro-Image"
-                  ><img
-                    class="lazy"
-                    data-src="/assets/logo-big.png"
-                    alt="Comcamp 32"
-                  /> </div
-                ><span class="Intro-Text">
+        <div class="Section-Content" id="intro-section">
+            <div class="Section-Row">
+                <div class="Nav-Sticky">
+                    <nav class="Nav-Sticky-Content">
+                        <div class="Nav-Fade-Black"></div>
+                        <div id="nav" class="Nav-Row">
+                            <a data-scroll href="#intro" class="Logo">
+                                <div class="Nav-Logo">
+                                    <img class="lazy" data-src="/assets/logo-small.png" alt="Comcamp 32" />
+                                </div>
+                            </a>
+                            <a data-scroll href="#intro" id="nav-home" class="Nav-Links">
+                                <span>Home</span></a>
+                            <a data-scroll href="#about" id="nav-about" class="Nav-Links">
+                                <span>What</span></a>
+                            <a data-scroll href="#subject" id="nav-subject" class="Nav-Links">
+                                <span>Learning</span></a>
+                            <a data-scroll href="#timeline" id="nav-timeline" class="Nav-Links">
+                                <span>Schedule</span></a>
+                            <a data-scroll href="#faq" id="nav-faq" class="Nav-Links">
+                                <span>FAQ</span></a>
+                            <a data-scroll href="#contact" id="nav-contact" class="Nav-Links">
+                                <span>Contact</span></a>
+                        </div>
+                    </nav>
+                    <div class="Intro-Column">
+                        <div class="Intro-Row">
+                            <div class="Intro-Image"><img class="lazy" data-src="/assets/logo-big.png" alt="Comcamp 32" /> </div><span class="Intro-Text">
                   <span class="Markdown">Department of Computer Engineering </span>
-                  <span class="Markdown"
-                    >King MongKut's University of Technology Thonburi</span
+                            <span class="Markdown">King MongKut's University of Technology Thonburi</span
                   ></span
                 >
                 <div class="Button-Row">
@@ -294,52 +148,46 @@
                       <div class="Button-BorderImage"></div>
                       <button class="Button-Background">
                         <span class="Markdown">Register Now</span>
-                      </button>
+                            </button>
+                        </div>
+                        </a>
                     </div>
-                  </a>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
+    </div>
     </div>
 
     <div class="Line-Section"></div>
 
     <!-- About -->
     <div id="about" class="Section About">
-      <div class="Section-Background">
-        <div class="Background"> </div>
-      </div>
-      <div class="About-Content" id="about-section">
-        <div class="About-Head-Row">
-          <div class="About-Head-Column">
-            <div class="Heading">
-              <h1><span class="Markdown">About</span></h1>
-            </div>
-            <div class="Schematic-Image">
-              <img
-                class="lazy"
-                data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/DEU5SSXBTOR11541005927932.png"
-                data-srcset="https://bnetcmsus-a.akamaihd.net/cms/template_resource/DEU5SSXBTOR11541005927932.png, https://bnetcmsus-a.akamaihd.net/cms/template_resource/4O44ISM05RZX1541005927945.png 2x"
-                alt="Title seperator"
-              />
-            </div>
-          </div>
+        <div class="Section-Background">
+            <div class="Background"> </div>
         </div>
-        <div class="About-Content-Row">
-          <div class="About-Text-Column">
-            <span class="About-Text-Header">
-              <span class="Markdown">WHAT IS COMCAMP</span></span
-            >
-            <span class="About-Text-Header-TH">
+        <div class="About-Content" id="about-section">
+            <div class="About-Head-Row">
+                <div class="About-Head-Column">
+                    <div class="Heading">
+                        <h1><span class="Markdown">About</span></h1>
+                    </div>
+                    <div class="Schematic-Image">
+                        <img class="lazy" data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/DEU5SSXBTOR11541005927932.png" data-srcset="https://bnetcmsus-a.akamaihd.net/cms/template_resource/DEU5SSXBTOR11541005927932.png, https://bnetcmsus-a.akamaihd.net/cms/template_resource/4O44ISM05RZX1541005927945.png 2x"
+                            alt="Title seperator" />
+                    </div>
+                </div>
+            </div>
+            <div class="About-Content-Row">
+                <div class="About-Text-Column">
+                    <span class="About-Text-Header">
+              <span class="Markdown">WHAT IS COMCAMP</span></span>
+                    <span class="About-Text-Header-TH">
               <span class="Markdown"
-                ><span>คอมแคมป์</span><span>คือ</span><span>อะไร</span></span
-              >
-            </span>
-            <br />
-            <span class="About-Text-Content-TH">
+                ><span>คอมแคมป์</span><span>คือ</span><span>อะไร</span></span>
+                    </span>
+                    <br />
+                    <span class="About-Text-Content-TH">
               <span class="Markdown"
                 >โครงการฝึกอบรมเชิงปฏิบัติการคอมพิวเตอร์เบื้องต้น ครั้งที่ 32
                 น้องๆเคยสงสัยกันบ้างหรือเปล่า ว่าวิศวะคอมทำอะไรกัน? สนุกไหม?
@@ -358,25 +206,25 @@
               <div class="Gellary">
                 <img
                   class="lazy"
-                  data-src="/assets/testpic.jpg"
+                  data-src="/asset/pic1.jpg"
                   alt="Comcamp Activity"
                   style="width:100%"
                 />
                 <img
                   class="lazy"
-                  data-src="/assets/testpic.jpg"
+                  data-src="/asset/pic2.jpg"
                   alt="Comcamp Activity"
                   style="width:100%"
                 />
                 <img
                   class="lazy"
-                  data-src="/assets/testpic.jpg"
+                  data-src="/asset/pic3.jpg"
                   alt="Comcamp Activity"
                   style="width:100%"
                 />
                 <img
                   class="lazy"
-                  data-src="/assets/testpic.jpg"
+                  data-src="/asset/pic4.jpg"
                   alt="Comcamp Activity"
                   style="width:100%"
                 />
@@ -396,112 +244,103 @@
           <div class="About-Head-Column">
             <div class="Heading">
               <h1><span class="Markdown">Learning</span></h1>
+                </div>
+                <div class="Schematic-Image">
+                    <img class="lazy" data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/DEU5SSXBTOR11541005927932.png" data-srcset="https://bnetcmsus-a.akamaihd.net/cms/template_resource/DEU5SSXBTOR11541005927932.png, https://bnetcmsus-a.akamaihd.net/cms/template_resource/4O44ISM05RZX1541005927945.png 2x"
+                        alt="Title seperator" />
+                </div>
             </div>
-            <div class="Schematic-Image">
-              <img
-                class="lazy"
-                data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/DEU5SSXBTOR11541005927932.png"
-                data-srcset="https://bnetcmsus-a.akamaihd.net/cms/template_resource/DEU5SSXBTOR11541005927932.png, https://bnetcmsus-a.akamaihd.net/cms/template_resource/4O44ISM05RZX1541005927945.png 2x"
-                alt="Title seperator"
-              />
-            </div>
-          </div>
         </div>
         <div class="Spacer-Subject"></div>
         <div class="Subject-SectionFullWidth">
-          <div
-            class="slider-control-topcenter"
-            style="position: absolute;top: 0;left: 50%;transform: translateX(-50%);"
-          >
-            <div class="Subject-Carousel-Pager active" style="display: inline-block;">
-              <div class="Subject-Column-Out">
-                <div class="Subject-Column-In">
-                  <div class="Subject-Art">
-                    <div class="Subject-Art-Border">
-                      <div class="Subject-Size">
-                        <div class="Subject-Art-Content">
-                          <div class="Subject-SpriteHeroes One"></div>
+            <div class="slider-control-topcenter" style="position: absolute;top: 0;left: 50%;transform: translateX(-50%);">
+                <div class="Subject-Carousel-Pager active" style="display: inline-block;">
+                    <div class="Subject-Column-Out">
+                        <div class="Subject-Column-In">
+                            <div class="Subject-Art">
+                                <div class="Subject-Art-Border">
+                                    <div class="Subject-Size">
+                                        <div class="Subject-Art-Content">
+                                            <div class="Subject-SpriteHeroes One"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Subject-BorderPortrait One"></div>
                         </div>
-                      </div>
                     </div>
-                  </div>
-                  <div class="Subject-BorderPortrait One"></div>
                 </div>
-              </div>
-            </div>
-            <div class="Subject-Carousel-Pager" style="display: inline-block;">
-              <div class="Subject-Column-Out">
-                <div class="Subject-Column-In">
-                  <div class="Subject-Art">
-                    <div class="Subject-Art-Border">
-                      <div class="Subject-Size">
-                        <div class="Subject-Art-Content">
-                          <div class="Subject-SpriteHeroes Two"></div>
+                <div class="Subject-Carousel-Pager" style="display: inline-block;">
+                    <div class="Subject-Column-Out">
+                        <div class="Subject-Column-In">
+                            <div class="Subject-Art">
+                                <div class="Subject-Art-Border">
+                                    <div class="Subject-Size">
+                                        <div class="Subject-Art-Content">
+                                            <div class="Subject-SpriteHeroes Two"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Subject-BorderPortrait Two"></div>
                         </div>
-                      </div>
                     </div>
-                  </div>
-                  <div class="Subject-BorderPortrait Two"></div>
                 </div>
-              </div>
-            </div>
-            <div class="Subject-Carousel-Pager" style="display: inline-block;">
-              <div class="Subject-Column-Out">
-                <div class="Subject-Column-In">
-                  <div class="Subject-Art">
-                    <div class="Subject-Art-Border">
-                      <div class="Subject-Size">
-                        <div class="Subject-Art-Content">
-                          <div class="Subject-SpriteHeroes Three"></div>
+                <div class="Subject-Carousel-Pager" style="display: inline-block;">
+                    <div class="Subject-Column-Out">
+                        <div class="Subject-Column-In">
+                            <div class="Subject-Art">
+                                <div class="Subject-Art-Border">
+                                    <div class="Subject-Size">
+                                        <div class="Subject-Art-Content">
+                                            <div class="Subject-SpriteHeroes Three"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Subject-BorderPortrait Three"></div>
                         </div>
-                      </div>
                     </div>
-                  </div>
-                  <div class="Subject-BorderPortrait Three"></div>
                 </div>
-              </div>
-            </div>
-            <div class="Subject-Carousel-Pager" style="display: inline-block;">
-              <div class="Subject-Column-Out">
-                <div class="Subject-Column-In">
-                  <div class="Subject-Art">
-                    <div class="Subject-Art-Border">
-                      <div class="Subject-Size">
-                        <div class="Subject-Art-Content">
-                          <div class="Subject-SpriteHeroes Four"></div>
+                <div class="Subject-Carousel-Pager" style="display: inline-block;">
+                    <div class="Subject-Column-Out">
+                        <div class="Subject-Column-In">
+                            <div class="Subject-Art">
+                                <div class="Subject-Art-Border">
+                                    <div class="Subject-Size">
+                                        <div class="Subject-Art-Content">
+                                            <div class="Subject-SpriteHeroes Four"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Subject-BorderPortrait Four"></div>
                         </div>
-                      </div>
                     </div>
-                  </div>
-                  <div class="Subject-BorderPortrait Four"></div>
                 </div>
-              </div>
-            </div>
-            <div class="Subject-Carousel-Pager" style="display: inline-block;">
-              <div class="Subject-Column-Out" style="margin-right: 0;">
-                <div class="Subject-Column-In">
-                  <div class="Subject-Art">
-                    <div class="Subject-Art-Border">
-                      <div class="Subject-Size">
-                        <div class="Subject-Art-Content">
-                          <div class="Subject-SpriteHeroes Five"></div>
+                <div class="Subject-Carousel-Pager" style="display: inline-block;">
+                    <div class="Subject-Column-Out" style="margin-right: 0;">
+                        <div class="Subject-Column-In">
+                            <div class="Subject-Art">
+                                <div class="Subject-Art-Border">
+                                    <div class="Subject-Size">
+                                        <div class="Subject-Art-Content">
+                                            <div class="Subject-SpriteHeroes Five"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Subject-BorderPortrait Five"></div>
                         </div>
-                      </div>
                     </div>
-                  </div>
-                  <div class="Subject-BorderPortrait Five"></div>
                 </div>
-              </div>
             </div>
-          </div>
-          <div class="owl-carousel owl-theme">
-            <div class="Subject-Slide-Column">
-              <div class="Subject-Slide-Row One">
-                <div class="Subject-Slide-Content-Column">
-                  <div class="Subject-Slide-Content-Heading">
-                    <h2 class="Subject-Slide-Content-Heading-Title"
-                      ><span class="Markdown" content="" textpreview="Humans"
-                        >Humans</span
+            <div class="owl-carousel owl-theme">
+                <div class="Subject-Slide-Column">
+                    <div class="Subject-Slide-Row One">
+                        <div class="Subject-Slide-Content-Column">
+                            <div class="Subject-Slide-Content-Heading">
+                                <h2 class="Subject-Slide-Content-Heading-Title"><span class="Markdown" content="" textpreview="Humans">Humans</span
                       ></h2
                     > </div
                   ><span class="Subject-Content-Text"
@@ -511,469 +350,352 @@
                       troops, fearsome siege capability, and mighty spellcasters.</span
                     >
                   </span>
-                  <div class="Spacer"></div>
-                  <img
-                    class="lazy"
-                    data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/73AN3GCF9TCP1541005872849.png"
-                    alt="Placeholder image"
-                  />
-                </div>
-                <div class="Subject-BorderSimple"></div>
-              </div>
-            </div>
-            <div class="Subject-Slide-Column">
-              <div class="Subject-Slide-Row Two">
-                <div class="Subject-Slide-Content-Column">
-                  <div class="Subject-Slide-Content-Heading">
-                    <h2 class="Subject-Slide-Content-Heading-Title"
-                      ><span class="Markdown" content="">Orcs</span></h2
-                    > </div
-                  ><span class="Subject-Content-Text"
-                    ><span class="Markdown" content=""
+                                    <div class="Spacer"></div>
+                                    <img class="lazy" data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/73AN3GCF9TCP1541005872849.png" alt="Placeholder image" />
+                            </div>
+                            <div class="Subject-BorderSimple"></div>
+                        </div>
+                    </div>
+                    <div class="Subject-Slide-Column">
+                        <div class="Subject-Slide-Row Two">
+                            <div class="Subject-Slide-Content-Column">
+                                <div class="Subject-Slide-Content-Heading">
+                                    <h2 class="Subject-Slide-Content-Heading-Title"><span class="Markdown" content="">Orcs</span></h2>
+                                </div><span class="Subject-Content-Text"><span class="Markdown" content=""
                       >A confederation of orcs, trolls, and tauren, the Horde are defined
                       by their brute strength and shamanistic power.&nbsp;</span
                     >
                   </span>
-                  <div class="Spacer"></div>
-                  <img
-                    class="lazy"
-                    data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/Z1GCARJNYXMX1541005873218.png"
-                    alt="Placeholder image"
-                  />
-                </div>
-                <div class="Subject-BorderSimple"></div>
-              </div>
-            </div>
-            <div class="Subject-Slide-Column">
-              <div class="Subject-Slide-Row Three">
-                <div class="Subject-Slide-Content-Column">
-                  <div class="Subject-Slide-Content-Heading">
-                    <h2 class="Subject-Slide-Content-Heading-Title"
-                      ><span class="Markdown" content="">Orcs</span></h2
-                    > </div
-                  ><span class="Subject-Content-Text"
-                    ><span class="Markdown" content=""
+                                <div class="Spacer"></div>
+                                <img class="lazy" data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/Z1GCARJNYXMX1541005873218.png" alt="Placeholder image" />
+                            </div>
+                            <div class="Subject-BorderSimple"></div>
+                        </div>
+                    </div>
+                    <div class="Subject-Slide-Column">
+                        <div class="Subject-Slide-Row Three">
+                            <div class="Subject-Slide-Content-Column">
+                                <div class="Subject-Slide-Content-Heading">
+                                    <h2 class="Subject-Slide-Content-Heading-Title"><span class="Markdown" content="">Orcs</span></h2>
+                                </div><span class="Subject-Content-Text"><span class="Markdown" content=""
                       >A well-balanced faction with durable ground forces and potent air
                       units, the undead Scourge fields armies more numerous than any other
                       faction through insidious necromantic magics.</span
                     >
                   </span>
-                  <div class="Spacer"></div>
-                  <img
-                    class="lazy"
-                    data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/1IIZOWTRUWNF1541005873367.png"
-                    alt="Placeholder image"
-                  />
-                </div>
-                <div class="Subject-BorderSimple"></div>
-              </div>
-            </div>
-            <div class="Subject-Slide-Column">
-              <div class="Subject-Slide-Row Four">
-                <div class="Subject-Slide-Content-Column">
-                  <div class="Subject-Slide-Content-Heading">
-                    <h2 class="Subject-Slide-Content-Heading-Title"
-                      ><span class="Markdown" content="">Orcs</span></h2
-                    > </div
-                  ><span class="Subject-Content-Text"
-                    ><span class="Markdown" content=""
+                                <div class="Spacer"></div>
+                                <img class="lazy" data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/1IIZOWTRUWNF1541005873367.png" alt="Placeholder image" />
+                            </div>
+                            <div class="Subject-BorderSimple"></div>
+                        </div>
+                    </div>
+                    <div class="Subject-Slide-Column">
+                        <div class="Subject-Slide-Row Four">
+                            <div class="Subject-Slide-Content-Column">
+                                <div class="Subject-Slide-Content-Heading">
+                                    <h2 class="Subject-Slide-Content-Heading-Title"><span class="Markdown" content="">Orcs</span></h2>
+                                </div><span class="Subject-Content-Text"><span class="Markdown" content=""
                       >The night elves of Kalimdor emphasize mobility, ranged firepower,
                       and spellcraft. Though they lack the brute strength of other races,
                       their skills with bow and magic more than compensate.</span
                     >
                   </span>
-                  <div class="Spacer"></div>
-                  <img
-                    class="lazy"
-                    data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/UO625VI7OVJ61541005872963.png"
-                    alt="Placeholder image"
-                  />
-                </div>
-                <div class="Subject-BorderSimple"></div>
-              </div>
-            </div>
-            <div class="Subject-Slide-Column">
-              <div class="Subject-Slide-Row Five">
-                <div class="Subject-Slide-Content-Column">
-                  <div class="Subject-Slide-Content-Heading">
-                    <h2 class="Subject-Slide-Content-Heading-Title"
-                      ><span class="Markdown" content="">Orcs</span></h2
-                    > </div
-                  ><span class="Subject-Content-Text"
-                    ><span class="Markdown" content=""
+                                <div class="Spacer"></div>
+                                <img class="lazy" data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/UO625VI7OVJ61541005872963.png" alt="Placeholder image" />
+                            </div>
+                            <div class="Subject-BorderSimple"></div>
+                        </div>
+                    </div>
+                    <div class="Subject-Slide-Column">
+                        <div class="Subject-Slide-Row Five">
+                            <div class="Subject-Slide-Content-Column">
+                                <div class="Subject-Slide-Content-Heading">
+                                    <h2 class="Subject-Slide-Content-Heading-Title"><span class="Markdown" content="">Orcs</span></h2>
+                                </div><span class="Subject-Content-Text"><span class="Markdown" content=""
                       >A confederation of orcs, trolls, and tauren, the Horde are defined
                       by their brute strength and shamanistic power.&nbsp;</span
                     >
                   </span>
-                  <div class="Spacer"></div>
-                  <img
-                    class="lazy"
-                    data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/Z1GCARJNYXMX1541005873218.png"
-                    alt="Placeholder image"
-                  />
+                                <div class="Spacer"></div>
+                                <img class="lazy" data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/Z1GCARJNYXMX1541005873218.png" alt="Placeholder image" />
+                            </div>
+                            <div class="Subject-BorderSimple"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="Subject-BorderSimple"></div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
     <div class="Line"></div>
 
     <!-- Timeline -->
     <div id="timeline" class="Section Timeline">
-      <div class="Timeline-Content" id="timeline-section">
-        <div class="Head-Row">
-          <div class="Head-Column">
-            <div class="Heading">
-              <h1><span class="Markdown">Registration</span></h1>
+        <div class="Timeline-Content" id="timeline-section">
+            <div class="Head-Row">
+                <div class="Head-Column">
+                    <div class="Heading">
+                        <h1><span class="Markdown">Registration</span></h1>
+                    </div>
+                    <div class="Schematic-Image">
+                        <img class="lazy" data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/DEU5SSXBTOR11541005927932.png" data-srcset="https://bnetcmsus-a.akamaihd.net/cms/template_resource/DEU5SSXBTOR11541005927932.png, https://bnetcmsus-a.akamaihd.net/cms/template_resource/4O44ISM05RZX1541005927945.png 2x"
+                            alt="Title seperator" />
+                    </div>
+                </div>
             </div>
-            <div class="Schematic-Image">
-              <img
-                class="lazy"
-                data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/DEU5SSXBTOR11541005927932.png"
-                data-srcset="https://bnetcmsus-a.akamaihd.net/cms/template_resource/DEU5SSXBTOR11541005927932.png, https://bnetcmsus-a.akamaihd.net/cms/template_resource/4O44ISM05RZX1541005927945.png 2x"
-                alt="Title seperator"
-              />
-            </div>
-          </div>
-        </div>
 
-        <div class="Register-Row">
-          <div class="Register-Column">
-            <div class="Register-Image One"> </div>
-            <span class="Register-Text-TH">
+            <div class="Register-Row">
+                <div class="Register-Column">
+                    <div class="Register-Image One"> </div>
+                    <span class="Register-Text-TH">
               <span class="Markdown"
                 >กำลังศึกษาอยู่ในระดับชั้นมัธยมศึกษาปีที่ 4-6 สายวิทย์ฯ หรือ ปวช.
                 ฐานวิทยาศาสตร์</span
               >
             </span>
-          </div>
-          <div class="Register-Column">
-            <div class="Register-Image Two"> </div>
-            <span class="Register-Text-TH">
+                </div>
+                <div class="Register-Column">
+                    <div class="Register-Image Two"> </div>
+                    <span class="Register-Text-TH">
               <span class="Markdown"
                 >มีความสนใจในด้านคอมพิวเตอร์โดยไม่จำเป็นต้องมีพื้นฐานมาก่อน</span
               >
             </span>
-          </div>
-          <div class="Register-Column">
-            <div class="Register-Image Three"> </div>
-            <span class="Register-Text-TH">
+                </div>
+                <div class="Register-Column">
+                    <div class="Register-Image Three"> </div>
+                    <span class="Register-Text-TH">
               <span class="Markdown"
                 >ผู้ปกครองอนุญาติให้นักเรียนคนดังกล่าวเข้าร่วมกิจกรรม</span
               >
             </span>
-          </div>
-          <div class="Register-Column">
-            <div class="Register-Image Four"> </div>
-            <span class="Register-Text-TH">
+                </div>
+                <div class="Register-Column">
+                    <div class="Register-Image Four"> </div>
+                    <span class="Register-Text-TH">
               <span class="Markdown"
                 >สามารถเข้าพักในระยะเวลาและสถานที่ที่กำหนดได้ตลอดระยะเวลาโครงการ</span
               >
             </span>
-          </div>
-        </div>
+                </div>
+            </div>
 
-        <div class="Timeline-Head">
-          <div class="Timeline-Head-Text-TH">
-            <span class="Markdown">
+            <div class="Timeline-Head">
+                <div class="Timeline-Head-Text-TH">
+                    <span class="Markdown">
               Timeline
             </span>
-          </div>
+                </div>
+            </div>
+
+            <div class="Timeline-Row-Out">
+                <ul class="timeline">
+                    <!-- Item 1 -->
+                    <li>
+                        <div class="direction-r">
+                            <div class="flag-wrapper">
+                                <span class="flag">เปิดรับสมัคร</span>
+                                <span class="time-wrapper"><span class="time">2013 - present</span></span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Item 2 -->
+                    <li>
+                        <div class="direction-l">
+                            <div class="flag-wrapper">
+                                <span class="flag">ปิดรับสมัคร</span>
+                                <span class="time-wrapper"><span class="time">2011 - 2013</span></span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Item 3 -->
+                    <li>
+                        <div class="direction-r">
+                            <div class="flag-wrapper">
+                                <span class="flag">ประกาศผล</span>
+                                <span class="time-wrapper"><span class="time">2008 - 2011</span></span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="direction-l">
+                            <div class="flag-wrapper">
+                                <span class="flag">เปิดค่าย</span>
+                                <span class="time-wrapper"><span class="time">2008 - 2011</span></span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="direction-r">
+                            <div class="flag-wrapper">
+                                <span class="flag">ปิดค่าย</span>
+                                <span class="time-wrapper"><span class="time">2008 - 2011</span></span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="Timeline-Row-In">
+                    <div class="Timeline-Line"></div>
+
+                    <div class="Timeline-Column One">
+                        <span class="Timeline-Text Top Left">
+                <span class="Markdown" content="">เปิดรับสมัคร</span>
+                        <span class="Markdown" content="">ปิดรับ</span></span>
+                        </span>
+                        <div class="Timeline-Image-Top">
+                            <img class="lazy" data-src="asset/regis_point_small_up_active.png" alt="Timeline image" />
+                        </div>
+                    </div>
+                    <div class="Timeline-Column Two">
+                        <span class="Timeline-Text Bottom Left">
+                <span class="Markdown" content="">ปิดรับสมัคร</span>
+                        <span class="Markdown" content="">ปิดรับ</span></span>
+                        <div class="Timeline-Image-Bottom">
+                            <img class="lazy" data-src="asset/regis_point_small_down.png" alt="Timeline image" />
+                        </div>
+                    </div>
+
+                    <div class="Timeline-Column-Three">
+                        <div class="Timeline-Row">
+                            <div class="Timeline-Content-Row">
+                                <div class="Timeline-Content-Column">
+                                    <span class="Timeline-Text-Center">
+                      <span class="Markdown" content="">ประกาศผล</span>
+                                    <span class="Markdown" content="">ปิดรับ</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Timeline-Image-Center">
+                            <img class="lazy" data-src="asset/regis_point_large.png" alt="Timeline image" />
+                        </div>
+                    </div>
+
+                    <div class="Timeline-Column Four">
+                        <span class="Timeline-Text Bottom Right">
+                <span class="Markdown" content="">เปิดค่าย</span>
+                        <span class="Markdown" content="">ปิดรับ</span></span>
+                        <div class="Timeline-Image-Bottom">
+                            <img class="lazy" data-src="asset/regis_point_small_down.png" alt="Timeline image" />
+                        </div>
+                    </div>
+                    <div class="Timeline-Column Five">
+                        <span class="Timeline-Text Top Right">
+                <span class="Markdown" content="">ปิดค่าย</span>
+                        <span class="Markdown" content="">ปิดรับ</span></span>
+                        <div class="Timeline-Image-Top">
+                            <img class="lazy" data-src="asset/regis_point_small_up.png" alt="Timeline image" />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="Timeline-Row-Out">
-          <ul class="timeline">
-            <!-- Item 1 -->
-            <li>
-              <div class="direction-r">
-                <div class="flag-wrapper">
-                  <span class="flag">เปิดรับสมัคร</span>
-                  <span class="time-wrapper"
-                    ><span class="time">2013 - present</span></span
-                  >
-                </div>
-              </div>
-            </li>
-
-            <!-- Item 2 -->
-            <li>
-              <div class="direction-l">
-                <div class="flag-wrapper">
-                  <span class="flag">ปิดรับสมัคร</span>
-                  <span class="time-wrapper"><span class="time">2011 - 2013</span></span>
-                </div>
-              </div>
-            </li>
-
-            <!-- Item 3 -->
-            <li>
-              <div class="direction-r">
-                <div class="flag-wrapper">
-                  <span class="flag">ประกาศผล</span>
-                  <span class="time-wrapper"><span class="time">2008 - 2011</span></span>
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="direction-l">
-                <div class="flag-wrapper">
-                  <span class="flag">เปิดค่าย</span>
-                  <span class="time-wrapper"><span class="time">2008 - 2011</span></span>
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="direction-r">
-                <div class="flag-wrapper">
-                  <span class="flag">ปิดค่าย</span>
-                  <span class="time-wrapper"><span class="time">2008 - 2011</span></span>
-                </div>
-              </div>
-            </li>
-          </ul>
-          <div class="Timeline-Row-In">
-            <div class="Timeline-Line"></div>
-
-            <div class="Timeline-Column One">
-              <span class="Timeline-Text Top Left">
-                <span class="Markdown" content="">เปิดรับสมัคร</span></span
-              >
-              <div class="Timeline-Image-Top">
-                <img
-                  class="lazy"
-                  data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/70IZ2NR28YIH1541005934354.png"
-                  alt="Timeline image"
-                />
-              </div>
-            </div>
-            <div class="Timeline-Column Two">
-              <span class="Timeline-Text Bottom Left">
-                <span class="Markdown" content="">ปิดรับสมัคร</span></span
-              >
-              <div class="Timeline-Image-Bottom">
-                <img
-                  class="lazy"
-                  data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/2W000L7OIAPE1541005934437.png"
-                  alt="Timeline image"
-                />
-              </div>
-            </div>
-
-            <div class="Timeline-Column-Three">
-              <div class="Timeline-Row">
-                <div class="Timeline-Content-Row">
-                  <div class="Timeline-Content-Column">
-                    <span class="Timeline-Text-Center">
-                      <span class="Markdown" content="">ประกาศผล</span></span
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="Timeline-Image-Center">
-                <img
-                  class="lazy"
-                  data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/X770SVC7BVA21541005934215.png"
-                  alt="Timeline image"
-                />
-              </div>
-            </div>
-
-            <div class="Timeline-Column Four">
-              <span class="Timeline-Text Bottom Right">
-                <span class="Markdown" content="">เปิดค่าย</span></span
-              >
-              <div class="Timeline-Image-Bottom">
-                <img
-                  class="lazy"
-                  data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/2W000L7OIAPE1541005934437.png"
-                  alt="Timeline image"
-                />
-              </div>
-            </div>
-            <div class="Timeline-Column Five">
-              <span class="Timeline-Text Top Right">
-                <span class="Markdown" content="">ปิดค่าย</span></span
-              >
-              <div class="Timeline-Image-Top">
-                <img
-                  class="lazy"
-                  data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/70IZ2NR28YIH1541005934354.png"
-                  alt="Timeline image"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <div class="Line"></div>
     <!-- Faq -->
     <div id="faq" class="Section Faq">
-      <div class="Faq-Content" id="faq-section">
-        <div class="Head-Row">
-          <div class="Head-Column">
-            <div class="Heading">
-              <h1><span class="Markdown">Faq</span></h1>
+        <div class="Faq-Content" id="faq-section">
+            <div class="Head-Row">
+                <div class="Head-Column">
+                    <div class="Heading">
+                        <h1><span class="Markdown">Faq</span></h1>
+                    </div>
+                    <div class="Schematic-Image">
+                        <img class="lazy" data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/DEU5SSXBTOR11541005927932.png" data-srcset="https://bnetcmsus-a.akamaihd.net/cms/template_resource/DEU5SSXBTOR11541005927932.png, https://bnetcmsus-a.akamaihd.net/cms/template_resource/4O44ISM05RZX1541005927945.png 2x"
+                            alt="Title seperator" />
+                    </div>
+                </div>
             </div>
-            <div class="Schematic-Image">
-              <img
-                class="lazy"
-                data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/DEU5SSXBTOR11541005927932.png"
-                data-srcset="https://bnetcmsus-a.akamaihd.net/cms/template_resource/DEU5SSXBTOR11541005927932.png, https://bnetcmsus-a.akamaihd.net/cms/template_resource/4O44ISM05RZX1541005927945.png 2x"
-                alt="Title seperator"
-              />
+            <div class="Faq-Column">
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <a>ค่ายจัดขึ้นที่ไหนคะ ?</a>
+                        <div class="content">
+                            <p>ค่าย Comcamp ครั้งที่ 32 ของเรา จัดขึ้นที่ภาควิชาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี ค่ะ
+                            </p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <a>ค่ายจัดวันไหนคะ ?</a>
+                        <div class="content">
+                            <p>ค่าย Comcamp ครั้งที่ 32 ของเรา จัดขึ้นในวันที่ 11 - 15 เมษายน พ.ศ.2563 ค่ะ</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <a>รับจำนวนกี่คนคะ ?</a>
+                        <div class="content">
+                            <p>ค่าย Comcamp ครั้งที่ 32 ของเรา รับนักเรียนเข้าร่วมโครงการจำนวน 100 คนค่ะ ซึ่งทางเราจะทำการคัดเลือกน้อง ๆ จากคำถามรับสมัคร และจะติดต่อกลับเมื่อน้อง ๆ ได้รับคัดเลือกเข้าร่วมโครงการค่ะ
+                            </p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <a>รับนักเรียนชั้นไหนบ้าง และน้องอยู่ ม.3 ขึ้น ม.4 เข้าร่วมได้ไหมคะ ?</a>
+                        <div class="content">
+                            <p>ค่าย Comcamp ครั้งที่ 32 ของเรา รับนักเรียนระดับชั้นมัธยมศึกษาปีที่ 4 - 6 ปีการศึกษา 2562 และน้อง ๆ ปวช. เท่านั้นค่ะ (น้อง ๆ ม.3 ขึ้น ม.4 ต้องรบกวนให้รอปีหน้านะคะ)
+                            </p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <a>เสียค่าใช้จ่ายกี่บาท และต้องจ่ายค่าอาหารเองไหมคะ ?</a>
+                        <div class="content">
+                            <p>ค่าย Comcamp ครั้งที่ 32 ของเราเป็นค่ายฟรีค่ะ น้อง ๆ จะไม่ต้องจ่ายค่าอาหาร รวมถึงค่าที่พัก แต่จะมีค่ายืนยันสิทธิก่อนเข้าค่ายจำนวน xxx บาท ซึ่งทางค่ายจะคืนเงินจำนวนดังกล่าวให้เมื่อน้องเข้าร่วมครบเวลากิจกรรมค่ะ</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <a>ต้องเข้าร่วมทุกวันใช่หรือเปล่าคะ ?</a>
+                        <div class="content">
+                            <p>ใช่ค่ะ เพื่อให้น้องๆสะดวกต่อการทำกิจกรรม พี่ๆจึงจัดให้น้องๆได้เข้าพักในหอพักนักศึกษา ซึ่งสะดวกสบายและง่ายต่อการทำกิจกรรมของน้องๆ และที่สำคัญ พี่ๆจะดูแลน้องได้ตลอด 24 ชั่วโมงตลอดโครงการ น้องๆสบายใจได้ค่ะ</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <a>ถ้าได้เข้าค่ายจะมีโควต้าพิเศษเข้ามหาลัยไหมคะ ?</a>
+                        <div class="content">
+                            <p>ทางภาควิชาวิศวกรรมคอมพิวเตอร์ จะไม่มีการเปิดรับนักเรียนด้วยโควต้าของค่าย Comcamp ค่ะ แต่น้อง ๆ สามารถนำประกาศนียบัตรและรูปผลงานภายในค่ายแนบกับ Portfoilo มาสัมภาษณ์ในรอบต่าง ๆ ได้ค่ะ
+                            </p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <a>สามารถสมัครค่ายได้อย่างไรคะ ?</a>
+                        <div class="content">
+                            <p>น้อง ๆ ที่สนใจเข้าร่วมค่ายสามารถสมัครได้ผ่านทางเว็บไซต์ comcamp.io ตั้งแต่วันที่ x ถึงวันที่ x ค่ะ
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="Faq-Column">
-          <div class="accordion">
-            <div class="accordion-item">
-              <a>ค่ายนี้รับสมัครระดับชั้นไหนบ้างครับ ?</a>
-              <div class="content">
-                <p
-                  >ค่ายคอมแคมป์รับเฉพาะน้องๆ ที่ศึกษาอยู่ในระดับชั้น ม.ปลาย ในปีการศึกษา
-                  2559 ซึ่งก็คือ น้องๆ ม.4 ขี้น ม.5, ม.5 ขี้น ม.6 หรือน้องๆ ม.6
-                  ที่กำลังเตรียมแอดมิชชั่นก็สมัครได้เช่นกันครับ
-                </p>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <a>สามารถส่งใบสมัครได้ทางไหนบ้างคะ ?</a>
-              <div class="content">
-                <p
-                  >การรับสมัครและส่งใบสมัคร จะมีอยู่ 3 ช่องทางด้วยกัน คือ
-                  สมัครผ่านเว็บไซต์ https://www.comcamp.in.th/ ส่งใบสมัครมาทางไปรษณีย์
-                  หรือสามารถส่งใบสมัครมาทาง E-mail comcamp29@comcamp.in.th
-                  ก็ได้เช่นกันครับ</p
-                >
-              </div>
-            </div>
-            <div class="accordion-item">
-              <a>เกรดหนูไม่ค่อยดีเลยค่ะ สามารถสมัครค่ายนี้ได้ไหมคะ ?</a>
-              <div class="content">
-                <p
-                  >สมัครได้ครับ ขอแค่น้องๆมีคุณสมบัติตามที่ระบุไว้
-                  และมีความสนใจในด้านคอมพิวเตอร์ ก็สามารถสมัครเข้าร่วมโครงการได้ครับ
-                </p>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <a>หนูไม่ค่อยมีความรู้เกี่ยวกับคอมพิวเตอร์ จะเข้าค่ายนี้ได้ไหมคะ ?</a>
-              <div class="content"
-                >ฟ
-                <p
-                  >ได้ครับ
-                  เพราะค่ายคอมแคมป์เป็นโครงการที่มีวัตถุประสงค์เพื่อแนะนำการเรียนการสอนและการปฏิบัติเชิงคอมพิวเตอร์อยู่แล้ว
-                  ขอแค่น้องๆมีคุณสมบัติตามที่ระบุไว้ และมีความสนใจในด้านคอมพิวเตอร์
-                  ก็สามารถสมัครเข้าร่วมโครงการได้ครับ
-                </p>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <a>ผมเป็นเด็กต่างจังหวัด ถ้าจะเดินทางมาค่ายนี้ จะมีคำแนะนำไหมครับ ?</a>
-              <div class="content">
-                <p
-                  >หากน้องๆเดินทางมาจากต่างจังหวัด น้องๆสามารถระบุจุดนัดพบ
-                  ตามที่ระบุไว้ในใบสมัคร และในวันเข้าร่วมโครงการ
-                  จะมีพวกพี่ๆไปดูแลและอำนวยความสะดวกในการเดินทางครับ</p
-                >
-              </div>
-            </div>
-            <div class="accordion-item">
-              <a>ค่ายนี้ต้องค้างคืนไหมคะ ?</a>
-              <div class="content">
-                <p
-                  >ใช่ครับ เพื่อให้น้องๆสะดวกต่อการทำกิจกรรม
-                  พี่ๆจึงจัดให้น้องๆได้เข้าพักในหอพักนักศึกษา
-                  ซึ่งสะดวกสบายและง่ายต่อการทำกิจกรรมของน้องๆ และที่สำคัญ
-                  พี่ๆจะดูแลน้องได้ตลอด 24 ชั่วโมงตลอดโครงการ น้องๆสบายใจได้ครับ</p
-                >
-              </div>
-            </div>
-            <div class="accordion-item">
-              <a>เอกสารที่จะต้องใช้ในการสมัครมีอะไรบ้างครับ ?</a>
-              <div class="content">
-                <p
-                  >เอกสารที่ใช้ในการสมัครโครงการ
-                  น้องๆสามารถเข้าไปดูรายละเอียดเพิ่มเติมได้ที่หน้ากรอกข้อมูลเลยครับ
-                </p>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <a>ค่ายจัดขึ้นที่ไหนครับ ?</a>
-              <div class="content">
-                <p
-                  >ตลอดระยะเวลาของโครงการ ภายในมหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี
-                  ตลอดทั้ง 5 วันครับ
-                </p>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <a>ค่ายนี้มีค่าใช้จ่ายอะไรบ้างคะ ?</a>
-              <div class="content">
-                <p
-                  >โครงการนี้ ฟรี ! ตลอดทั้งโครงการครับ
-                  ขอเพียงน้องๆเตรียมพร้อมทั้งตัวและหัวใจ
-                  มาพบกับเพื่อนๆและพี่ๆในค่ายก็พอครับ
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <div class="Line"></div>
 
     <!-- Contact -->
     <div id="contact" class="Section Contact">
-      <div class="Contact-Content" id="contact-section">
-        <div class="Head-Row">
-          <div class="Head-Column">
-            <div class="Heading">
-              <h1><span class="Markdown">Contact</span></h1>
+        <div class="Contact-Content" id="contact-section">
+            <div class="Head-Row">
+                <div class="Head-Column">
+                    <div class="Heading">
+                        <h1><span class="Markdown">Contact</span></h1>
+                    </div>
+                    <div class="Schematic-Image">
+                        <img class="lazy" data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/DEU5SSXBTOR11541005927932.png" data-srcset="https://bnetcmsus-a.akamaihd.net/cms/template_resource/DEU5SSXBTOR11541005927932.png, https://bnetcmsus-a.akamaihd.net/cms/template_resource/4O44ISM05RZX1541005927945.png 2x"
+                            alt="Title seperator" />
+                    </div>
+                </div>
             </div>
-            <div class="Schematic-Image">
-              <img
-                class="lazy"
-                data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/DEU5SSXBTOR11541005927932.png"
-                data-srcset="https://bnetcmsus-a.akamaihd.net/cms/template_resource/DEU5SSXBTOR11541005927932.png, https://bnetcmsus-a.akamaihd.net/cms/template_resource/4O44ISM05RZX1541005927945.png 2x"
-                alt="Title seperator"
-              />
-            </div>
-          </div>
-        </div>
 
-        <div class="Contact-Row">
-          <div class="Contact-Column-Social">
-            <iframe
-              title="Facebook Fanpage"
-              class="lazy"
-              data-src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F%F0%9D%93%9B%F0%9D%93%B8%F0%9D%93%BF%F0%9D%93%AE-%F0%9D%93%93%F0%9D%93%B8%F0%9D%93%B0-105400457608790%2F&tabs=timeline,messages&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=902141913296049"
-              width="340"
-              height="500"
-              style="border:none;overflow:hidden"
-              scrolling="no"
-              frameborder="0"
-              allowTransparency="true"
-              allow="encrypted-media"
-            ></iframe>
-          </div>
-          <div class="Contact-Column">
-            <div
-              class="About-BorderImage Contect"
-              style="max-width: 500px;max-height: 300px;"
-            >
-              <div class="Contant-Text">
-                <span class="Contact-Text-Header">
-                  <span class="Markdown">ADDRESS</span></span
-                >
-                <span class="Contact-Text-Content-TH"
-                  ><span class="Markdown"
+            <div class="Contact-Row">
+                <div class="Contact-Column-Social">
+                    <iframe title="Facebook Fanpage" class="lazy" data-src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F%F0%9D%93%9B%F0%9D%93%B8%F0%9D%93%BF%F0%9D%93%AE-%F0%9D%93%93%F0%9D%93%B8%F0%9D%93%B0-105400457608790%2F&tabs=timeline,messages&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=902141913296049"
+                        width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                </div>
+                <div class="Contact-Column">
+                    <div class="About-BorderImage Contect" style="max-width: 500px;max-height: 300px;">
+                        <div class="Contant-Text">
+                            <span class="Contact-Text-Header">
+                  <span class="Markdown">ADDRESS</span></span>
+                            <span class="Contact-Text-Content-TH"><span class="Markdown"
                     >คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี ชั้น10
                     อาคารวิศวะวัฒนะ 126 ถ.ประชาอุทิศ แขวงบางมด เขตทุ่งครุ กรุงเทพฯ
                     10140</span
@@ -987,19 +709,16 @@
             >
               <div class="Contant-Text">
                 <span class="Contact-Text-Header">
-                  <span class="Markdown">PHONE</span></span
-                >
-                <span class="Contact-Text-Content-TH"
-                  ><span class="Markdown">พี่เฌอแตม : 085-9400984</span>
-                  <span class="Markdown">พี่มิ้นโตะ : 088-2962355</span>
-                  <span class="Markdown">พี่พู : 095-7588902</span>
-                  <span class="Markdown">พี่นนท์ : 096-3061332</span></span
-                >
-              </div>
+                  <span class="Markdown">PHONE</span></span>
+                            <span class="Contact-Text-Content-TH"><span class="Markdown">พี่เฌอแตม : 085-9400984</span>
+                            <span class="Markdown">พี่มิ้นโตะ : 088-2962355</span>
+                            <span class="Markdown">พี่พู : 095-7588902</span>
+                            <span class="Markdown">พี่นนท์ : 096-3061332</span></span>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
     <div class="Line"></div>
 
@@ -1013,14 +732,14 @@
 
     <!-- Footer -->
     <div id="copyright" class="Section Footer">
-      <div class="Footer-Section-Background">
-        <div class="Footer-Area"></div>
-      </div>
-      <div class="Footer-Section-Content">
-        <div class="Footer-Row">
-          © 2020 Comcamp 32nd All Rights Reserved. Designed and developed by CPE#33
+        <div class="Footer-Section-Background">
+            <div class="Footer-Area"></div>
         </div>
-      </div>
+        <div class="Footer-Section-Content">
+            <div class="Footer-Row">
+                © 2020 Comcamp 32nd All Rights Reserved. Designed and developed by CPE#33
+            </div>
+        </div>
     </div>
 
     <!-- Scripts -->
@@ -1028,17 +747,18 @@
     <script src="js/smooth-scroll.polyfills.min.js"></script>
     <script src="js/particles.js"></script>
     <script src="js/main.immediate.js"></script>
-    
+
     <!-- Styles / Scripts that can be loaded later -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
-    
+
     <link rel="stylesheet" href="css/owl.carousel.css" />
     <link rel="stylesheet" href="css/owl.theme.default.css" />
     <link rel="stylesheet" href="css/owl.carousel.min.css" />
     <link rel="stylesheet" href="css/owl.theme.default.min.css" />
     <script src="js/owl.carousel.js"></script>
-    
+
     <script src="js/main.js" defer></script>
-  </body>
+</body>
+
 </html>

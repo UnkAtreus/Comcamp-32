@@ -207,26 +207,26 @@
 .Timeline-Text.Top.Left {
     bottom: 50px;
     text-align: center;
-    left: 30px;
+    left: 40px;
 }
 
 .Timeline-Text.Bottom.Left {
     top: 60px;
     text-align: center;
-    left: 30px;
+    left: 40px;
 }
 
 .Timeline-Text.Top.Right {
     bottom: 50px;
     text-align: center;
-    left: 30px;
+    left: 40px;
 }
 
 .Timeline-Text.Bottom.Right {
     bottom: auto;
     top: 60px;
     text-align: center;
-    left: 30px;
+    left: 40px;
 }
 
 .Timeline-Row {
@@ -304,7 +304,7 @@
 
 .timeline:before {
     position: absolute;
-    left: 49.5%;
+    left: 50%;
     top: 0;
     content: ' ';
     display: block;
@@ -503,10 +503,10 @@
         position: absolute;
         top: -35px;
         left: 50%;
-        content: url(https://bnetcmsus-a.akamaihd.net/cms/template_resource/X770SVC7BVA21541005934215.png);
+        content: url(/asset/regis_point_large_active.png);
         display: block;
-        transform: scale(0.4);
-        margin-left: -20px;
+        transform: scale(0.5);
+        margin-left: -22px;
         z-index: 10;
         background: none;
         border-radius: 0;
