@@ -333,7 +333,7 @@
   font-family: sans-serif;
   color: #cccccc;
   background-color: #1a1814;
-  background-image: url(/asset/General_BG_new.png);
+  background-image: url(/asset/general2.png);
   background-size: auto;
   max-width: 2400px;
   font-size: 17.778px;
@@ -918,7 +918,7 @@
 
 .Section.Subject {
   padding: 100px 40px;
-  background-image: url(/asset/Learning_BG_Darker.png);
+  background-image: url(/asset/Background1.png);
 }
 
 .Spacer {
@@ -1152,7 +1152,7 @@
 }
 
 .Subject-Slide-Content-Heading {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: 'Lora', serif;
   line-height: 1;
   margin-bottom: 0.4em;
   color: white;
@@ -1162,12 +1162,13 @@
 
 .Subject-Slide-Content-Heading-Title {
   font-size: inherit;
-  font-family: BlizQuadrataWeb, serif;
+  font-family: 'Lora', serif;
   font-weight: normal;
   margin: 0px;
 }
 
 .Subject-Content-Text {
+  font-family: 'Sarabun', sans-serif;
   line-height: 1.4;
   color: rgba(255, 255, 255, 0.8);
 }
