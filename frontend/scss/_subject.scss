@@ -176,7 +176,7 @@
     background-image: url(https://bnetcmsus-a.akamaihd.net/cms/template_resource/1GD95QCE6XUR1541005871979.jpg);
     background-repeat: no-repeat;
     overflow: hidden;
-    padding: 80px;
+    padding: 80px 30px;
     background-position: 0px 0px;
 }
 
@@ -224,7 +224,10 @@
 
 .Subject-Content-Text {
     font-family: 'Sarabun', sans-serif;
-    line-height: 1.4;
+    line-height: 1.6;
+    letter-spacing: 0.05em;
+    font-size: 1.14em;
+    text-align: left;
     color: rgba(255, 255, 255, 0.8);
 }
 
@@ -410,6 +413,12 @@
 @media screen and (max-width: 540px) {
     .About-Dots-Container button.owl-dot {
         display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .Subject-Slide-Content-Heading {
+        font-size: 28px;
     }
 }
 
