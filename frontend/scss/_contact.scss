@@ -39,6 +39,17 @@
     font-size: 1.14em;
     margin: 0.6em 0px;
     text-align: left;
+    > span.Markdown > a[href^="tel:"] {
+        text-decoration: none;
+        color: #ddd;
+        border-bottom: 1px #ddd dashed;
+        transition: border .1s;
+
+        &:hover {
+            color: #eee;
+            border-bottom-color: #eee;
+        }
+    }
 }
 
 .Contact-Text-Header {
