@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .Nav-Sticky {
     z-index: 48;
     position: absolute;
@@ -5,6 +6,16 @@
     left: 0px;
     display: block;
     width: 100%;
+=======
+.navbar {
+  font-size: 18px;
+  background-color: red;
+  background-repeat: repeat-x;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  padding-bottom: 15px;
+>>>>>>> 43a75d270827be7e1a09c4928a437dbe674f04ef
 }
 
 .Nav-Sticky-Content {

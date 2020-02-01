@@ -1,0 +1,75 @@
+import React, { useEffect } from 'react'
+import register from '../../api/register'
+import { useAlert } from 'react-alert'
+import { Form, Input, Button, Row, Col, Select } from 'antd';
+
+const { Option } = Select
+
+const locations = ['มา มจธ. ด้วยจนเอง', 'สายใต้ใหม่ ถนนบรม (ใต้)', 'ขนส่งเอกมัย (ตะวันออก)', 'หัวลำโพง (รถไฟ)', 'อนุเสาวรีย์ชัยสมรถภูมิ (รถตู้)']
+
+function StepForm9(props) {
+
+    const {currentStep, handlePrev, handleNext, user} = props
+
+    const alert = useAlert()
+
+    // useEffect(() => {
+    //     if(user.hasOwnProperty("location")) {
+    //         let locationData = user.location
+    //         props.form.setFieldsValue({location: locationData});
+    //     }
+    //     // props.form.setFieldsValue({have_accident: false})
+    // }, []);
+
+    const nextStep = async (payload) => {
+        const flag =  await register.sendData(currentStep, payload)
+        console.log("Click Next")
+        console.log(flag)
+        if(flag) {
+            console.log("Next 5")
+            handleNext()
+            alert.success('บันทึกข้อมูลเสร็จสมบูรณ์')
+        } else {
+            alert.error('บันทึกข้อมูลผิดพลาด')
+        }
+    }
+    const handleSubmit = e => {
+        e.preventDefault();
+        props.form.validateFields((err, values) => {
+          if (!err) {
+            console.log('Received values of form: ', values);
+            nextStep(values)
+          }
+        });
+      };
+    const { getFieldDecorator } = props.form;
+    return (
+        <div>
+            <h1>เสร็จสิ้น</h1>
+            โปรดส่งเอกสารมาตามที่อยู่นี้ ......
+            <Form onSubmit={handleSubmit} >
+                <Form.Item label="เลข Tracking Number">
+                    {getFieldDecorator('tracking_number', {
+                        rules: [{required: true, message: 'กรุณาระบุสถานที่'}],
+                    })(
+                    <Input />,
+                    )}
+                </Form.Item>
+                
+                
+
+                <Form.Item>
+                    <Button type="primary" onClick={handlePrev}>
+                    Back
+                    </Button>
+                    <Button type="primary" htmlType="submit">
+                    Submit
+                    </Button>
+                </Form.Item>
+                
+            </Form>
+        </div>
+    )
+}
+
+export default Form.create({name: 'step9'})(StepForm9)
