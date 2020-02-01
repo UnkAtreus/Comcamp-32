@@ -82,6 +82,25 @@ const step6Validation = () => {
     ]
 }
 
+const step7Validation = () => {
+    return [
+        body('location').isIn(['มา มจธ. ด้วยจนเอง', 'สายใต้ใหม่ ถนนบรม (ใต้)', 'ขนส่งเอกมัย (ตะวันออก)', 'หัวลำโพง (รถไฟ)', 'อนุเสาวรีย์ชัยสมรถภูมิ (รถตู้)'])
+    ]
+}
+
+const step8Validation = () => {
+    return [
+        body('question1').not().isEmpty(),
+        body('question2').not().isEmpty(),
+        body('question3').not().isEmpty(),
+        body('question4').not().isEmpty(),
+        body('question5').not().isEmpty(),
+        body('question6').not().isEmpty(),
+        body('question7').not().isEmpty(),
+        body('question8').not().isEmpty(),
+    ]
+}
+
 const validate = (req, res, next) => {
     const errors = validationResult(req)
     if (errors.isEmpty()) {
@@ -102,6 +121,8 @@ module.exports = {
     step4Validation,
     step5Validation,
     step6Validation,
+    step7Validation,
+    step8Validation,
     validate,
 }
   

@@ -1,7 +1,170 @@
 import React, { useEffect } from 'react'
 import register from '../../api/register'
 import { useAlert } from 'react-alert'
-import { Form, Input, Button, Row, Col, Select, DatePicker, InputNumber } from 'antd';
+import { Form, Input, Button, Row, Col, Select } from 'antd';
+
+const { Option } = Select
+
+const province_th = [
+    'กรุงเทพฯ',
+    'กระบี่',
+    'กาญจนบุรี',
+    'กาฬสินธุ์',
+    'กำแพงเพชร',
+    'ขอนแก่น',
+    'จันทบุรี',
+    'ฉะเชิงเทรา',
+    'ชลบุรี',
+    'ชัยนาท',
+    'ชัยภูมิ',
+    'ชุมพร',
+    'เชียงใหม่',
+    'เชียงราย',
+    'ตรัง',
+    'ตราด',
+    'ตาก',
+    'นครนายก',
+    'นครปฐม',
+    'นครพนม',
+    'นครราชสีมา',
+    'นครศรีธรรมราช',
+    'นครสวรรค์',
+    'นนทบุรี',
+    'นราธิวาส',
+    'น่าน',
+    'บึงกาฬ',
+    'บุรีรัมย์',
+    'ปทุมธานี',
+    'ประจวบคีรีขันธ์',
+    'ปราจีนบุรี',
+    'ปัตตานี',
+    'พระนครศรีอยุธยา',
+    'พะเยา',
+    'พังงา',
+    'พัทลุง',
+    'พิจิตร',
+    'พิษณุโลก',
+    'เพชรบุรี',
+    'เพชรบูรณ์',
+    'แพร่',
+    'ภูเก็ต',
+    'มหาสารคาม',
+    'มุกดาหาร',
+    'แม่ฮ่องสอน',
+    'ยโสธร',
+    'ยะลา',
+    'ร้อยเอ็ด',
+    'ระนอง',
+    'ระยอง',
+    'ราชบุรี',
+    'ลพบุรี',
+    'ลำปาง',
+    'ลำพูน',
+    'เลย',
+    'ศรีสะเกษ',
+    'สกลนคร',
+    'สงขลา',
+    'สตูล',
+    'สมุทรปราการ',
+    'สมุทรสงคราม',
+    'สมุทรสาคร',
+    'สระแก้ว',
+    'สระบุรี',
+    'สิงห์บุรี',
+    'สุโขทัย',
+    'สุพรรณบุรี',
+    'สุราษฎร์ธานี',
+    'สุรินทร์',
+    'หนองคาย',
+    'หนองบัวลำภู',
+    'อ่างทอง',
+    'อำนาจเจริญ',
+    'อุดรธานี',
+    'อุตรดิตถ์',
+    'อุทัยธานี',
+    'อุบลราชธานี',
+  ];
+
+const config = {
+    rules: [{required: true, message: 'กรุณากรอกจังหวัด', enum: ['กรุงเทพฯ',
+    'กระบี่',
+    'กาญจนบุรี',
+    'กาฬสินธุ์',
+    'กำแพงเพชร',
+    'ขอนแก่น',
+    'จันทบุรี',
+    'ฉะเชิงเทรา',
+    'ชลบุรี',
+    'ชัยนาท',
+    'ชัยภูมิ',
+    'ชุมพร',
+    'เชียงใหม่',
+    'เชียงราย',
+    'ตรัง',
+    'ตราด',
+    'ตาก',
+    'นครนายก',
+    'นครปฐม',
+    'นครพนม',
+    'นครราชสีมา',
+    'นครศรีธรรมราช',
+    'นครสวรรค์',
+    'นนทบุรี',
+    'นราธิวาส',
+    'น่าน',
+    'บึงกาฬ',
+    'บุรีรัมย์',
+    'ปทุมธานี',
+    'ประจวบคีรีขันธ์',
+    'ปราจีนบุรี',
+    'ปัตตานี',
+    'พระนครศรีอยุธยา',
+    'พะเยา',
+    'พังงา',
+    'พัทลุง',
+    'พิจิตร',
+    'พิษณุโลก',
+    'เพชรบุรี',
+    'เพชรบูรณ์',
+    'แพร่',
+    'ภูเก็ต',
+    'มหาสารคาม',
+    'มุกดาหาร',
+    'แม่ฮ่องสอน',
+    'ยโสธร',
+    'ยะลา',
+    'ร้อยเอ็ด',
+    'ระนอง',
+    'ระยอง',
+    'ราชบุรี',
+    'ลพบุรี',
+    'ลำปาง',
+    'ลำพูน',
+    'เลย',
+    'ศรีสะเกษ',
+    'สกลนคร',
+    'สงขลา',
+    'สตูล',
+    'สมุทรปราการ',
+    'สมุทรสงคราม',
+    'สมุทรสาคร',
+    'สระแก้ว',
+    'สระบุรี',
+    'สิงห์บุรี',
+    'สุโขทัย',
+    'สุพรรณบุรี',
+    'สุราษฎร์ธานี',
+    'สุรินทร์',
+    'หนองคาย',
+    'หนองบัวลำภู',
+    'อ่างทอง',
+    'อำนาจเจริญ',
+    'อุดรธานี',
+    'อุตรดิตถ์',
+    'อุทัยธานี',
+    'อุบลราชธานี']}]
+}
+
 function StepForm4(props) {
 
     const {currentStep, handlePrev, handleNext, user} = props
@@ -174,13 +337,16 @@ function StepForm4(props) {
                     </Col>
 
                     <Col span={5} offset={1}>
-                        <Form.Item label="จังหวัด">
-                        {getFieldDecorator('province', {
-                            rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
-                        })(
-                            <Input
-                            placeholder="คณะวิศวกรรมศาสตร์"
-                            />,
+                    <Form.Item label="จังหวัด">
+                        {getFieldDecorator('province', config)(
+                            <Select>
+                                {
+                                    province_th.map( (province) => (
+                                        <Option key={province} value={province}>{province}</Option>
+                                    )
+                                    )
+                                }
+                            </Select>,
                         )}
                         </Form.Item>
                     </Col>
@@ -268,13 +434,16 @@ function StepForm4(props) {
                     </Col>
 
                     <Col span={5} offset={1}>
-                        <Form.Item label="จังหวัด">
-                        {getFieldDecorator('province_regis', {
-                            rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
-                        })(
-                            <Input
-                            placeholder="คณะวิศวกรรมศาสตร์"
-                            />,
+                    <Form.Item label="จังหวัด">
+                        {getFieldDecorator('province_regis', config)(
+                            <Select>
+                                {
+                                    province_th.map( (province) => (
+                                        <Option key={province} value={province}>{province}</Option>
+                                    )
+                                    )
+                                }
+                            </Select>,
                         )}
                         </Form.Item>
                     </Col>
@@ -363,12 +532,15 @@ function StepForm4(props) {
 
                     <Col span={5} offset={1}>
                         <Form.Item label="จังหวัด">
-                        {getFieldDecorator('province_parent', {
-                            rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
-                        })(
-                            <Input
-                            placeholder="คณะวิศวกรรมศาสตร์"
-                            />,
+                        {getFieldDecorator('province_parent', config)(
+                            <Select>
+                                {
+                                    province_th.map( (province) => (
+                                        <Option key={province} value={province}>{province}</Option>
+                                    )
+                                    )
+                                }
+                            </Select>,
                         )}
                         </Form.Item>
                     </Col>

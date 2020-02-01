@@ -7,19 +7,19 @@ const { Option } = Select
 
 const locations = ['มา มจธ. ด้วยจนเอง', 'สายใต้ใหม่ ถนนบรม (ใต้)', 'ขนส่งเอกมัย (ตะวันออก)', 'หัวลำโพง (รถไฟ)', 'อนุเสาวรีย์ชัยสมรถภูมิ (รถตู้)']
 
-function StepForm7(props) {
+function StepForm9(props) {
 
     const {currentStep, handlePrev, handleNext, user} = props
 
     const alert = useAlert()
 
-    useEffect(() => {
-        if(user.hasOwnProperty("location")) {
-            let locationData = user.location
-            props.form.setFieldsValue({location: locationData});
-        }
-        // props.form.setFieldsValue({have_accident: false})
-    }, []);
+    // useEffect(() => {
+    //     if(user.hasOwnProperty("location")) {
+    //         let locationData = user.location
+    //         props.form.setFieldsValue({location: locationData});
+    //     }
+    //     // props.form.setFieldsValue({have_accident: false})
+    // }, []);
 
     const nextStep = async (payload) => {
         const flag =  await register.sendData(currentStep, payload)
@@ -45,21 +45,14 @@ function StepForm7(props) {
     const { getFieldDecorator } = props.form;
     return (
         <div>
-            <h1>สถานที่ที่งการให้พี่ค่ายไปรับ</h1>
+            <h1>เสร็จสิ้น</h1>
+            โปรดส่งเอกสารมาตามที่อยู่นี้ ......
             <Form onSubmit={handleSubmit} >
-                <Form.Item label="สถานที่ที่ต้องการให้พี่ค่ายไปรับ">
-                    {getFieldDecorator('location', {
+                <Form.Item label="เลข Tracking Number">
+                    {getFieldDecorator('tracking_number', {
                         rules: [{required: true, message: 'กรุณาระบุสถานที่'}],
-                        initialValue:"มา มจธ. ด้วยจนเอง"
                     })(
-                    <Select>
-                    {
-                        locations.map( (location) => (
-                            <Option key={location} value={location}>{location}</Option>
-                        )
-                        )
-                    }
-                    </Select>,
+                    <Input />,
                     )}
                 </Form.Item>
                 
@@ -79,4 +72,4 @@ function StepForm7(props) {
     )
 }
 
-export default Form.create({name: 'step7'})(StepForm7)
+export default Form.create({name: 'step9'})(StepForm9)

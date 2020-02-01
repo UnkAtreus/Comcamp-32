@@ -30,7 +30,7 @@ exports.step1 = (req, res) => {
         telephone,
         email
     } = req.body
-    console.log(id)
+    console.log(birthday)
     User.findByIdAndUpdate(id, { 
         general: {
             name_th: name_th,
@@ -230,6 +230,40 @@ exports.step6 = (req, res) => {
     console.log(id)
     User.findByIdAndUpdate(id, { 
         ability: req.body
+     }, (err, result) => {
+        console.log("update")
+        // console.log(result)
+        if (err) {
+            res.sendStatus(400)
+        }
+        res.sendStatus(200)
+    })
+}
+
+exports.step7 = (req, res) => {
+    console.log(req.user._id)
+    const id = req.user._id
+    console.log("step 7")
+    console.log(id)
+    User.findByIdAndUpdate(id, { 
+        location: req.body.location
+     }, (err, result) => {
+        console.log("update")
+        // console.log(result)
+        if (err) {
+            res.sendStatus(400)
+        }
+        res.sendStatus(200)
+    })
+}
+
+exports.step8 = (req, res) => {
+    console.log(req.user._id)
+    const id = req.user._id
+    console.log("step 8")
+    console.log(id)
+    User.findByIdAndUpdate(id, { 
+        question: req.body
      }, (err, result) => {
         console.log("update")
         // console.log(result)

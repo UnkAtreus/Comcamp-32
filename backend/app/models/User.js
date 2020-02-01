@@ -79,9 +79,20 @@ var abilitySchema = mongoose.Schema({
 	brain_storm:{type:Number,required:true},
 });
 
+var questionSchema = mongoose.Schema({
+	question1: {type:String, required: true},
+	question2: {type:String, required: true},
+	question3: {type:String, required: true},
+	question4: {type:String, required: true},
+	question5: {type:String, required: true},
+	question6: {type:String, required: true},
+	question7: {type:String, required: true},
+	question8: {type:String, required: true},
+})
+
 var userSchema = mongoose.Schema({	
-	facebookId: String,
-	displayName: String,
+	facebookId: {type:String},
+	displayName: {type:String},
 	step0: Boolean,
 	general: generalSchema,
 	school: schoolSchema,
@@ -90,6 +101,8 @@ var userSchema = mongoose.Schema({
 	recent_camp: recent_camp,
 	future: futureSchema,
 	ability: abilitySchema,
+	location: {type: String},
+	question: questionSchema
 });
 
 //create the model for users and expose it to our app

@@ -14,13 +14,15 @@ function StepForm1(props) {
     useEffect(() => {
         if(user.hasOwnProperty("general")) {
             let generalData = user.general
+            console.log("gen ", generalData.birthday)
             delete generalData._id
             delete generalData.birthday
-            props.form.setFieldsValue(generalData);
+            props.form.setFieldsValue(generalData)
         }
     }, []);
     
     const nextStep = async (payload) => {
+        console.log("payload ", payload)
         const flag = await register.sendData(currentStep, payload)
         console.log("Click Next")
         console.log(flag)
@@ -37,7 +39,8 @@ function StepForm1(props) {
         e.preventDefault();
         props.form.validateFields((err, values) => {
           if (!err) {
-            console.log('Received values of form: ', values);
+            console.log('Received values of form: ', values)
+            console.log('birthday', values['birthday'])
             nextStep({
                 ...values,
                 birthday: values['birthday'].format('YYYY-MM-DD')

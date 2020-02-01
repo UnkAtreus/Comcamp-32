@@ -17,6 +17,8 @@ import StepForm4 from './stepForm/step4'
 import StepForm5 from './stepForm/step5'
 import StepForm6 from './stepForm/step6'
 import StepForm7 from './stepForm/step7'
+import StepForm8 from './stepForm/step8'
+import StepForm9 from './stepForm/step9'
 
 function RegisterForm(props) {
     console.log("prop user", props.user)
@@ -50,7 +52,14 @@ function RegisterForm(props) {
             if(user.hasOwnProperty("ability")) {
                 newStep++
             }
+            if(user.hasOwnProperty("location")) {
+                newStep++
+            }
+            if(user.hasOwnProperty("question")) {
+                newStep++
+            }
         }
+        // newStep = 3
         setCurrentStep(newStep)
         setMaxStep(newStep)
     }
@@ -110,6 +119,8 @@ function RegisterForm(props) {
                         {currentStep === 5 && <StepForm5 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user}/>}
                         {currentStep === 6 && <StepForm6 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user}/>}
                         {currentStep === 7 && <StepForm7 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user}/>}
+                        {currentStep === 8 && <StepForm8 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user}/>}
+                        {currentStep === 9 && <StepForm9 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user}/>}
                     </Col>
                 </Row>
             </AlertProvider>

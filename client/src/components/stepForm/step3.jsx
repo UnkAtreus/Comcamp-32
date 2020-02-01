@@ -92,13 +92,22 @@ function StepForm3(props) {
 
     const [accident, setAccident] = useState(false)
 
-    useEffect(() => {
-        if(user.hasOwnProperty("disease")) {
-            let diseaseData = user.disease
-            delete diseaseData._id
-            props.form.setFieldsValue(diseaseData);
-        }
-        // props.form.setFieldsValue({have_accident: false})
+    useEffect( () => {
+        async function fetchData()  {
+            if(user.hasOwnProperty("disease")) {
+                let diseaseData = user.disease
+                delete diseaseData._id
+                if(diseaseData.hasOwnProperty("accident")) {
+                    await setAccident(true)
+                    await props.form.setFieldsValue({have_accident: "true"})
+                } else {
+                    await setAccident(false)
+                    await props.form.setFieldsValue({have_accident: "false"})
+                }
+                props.form.setFieldsValue(diseaseData);
+            }
+        }  
+        fetchData()  
     }, []);
 
     const nextStep = async (payload) => {
@@ -170,6 +179,7 @@ function StepForm3(props) {
                 </Form.Item>
 
                 <Form.Item label="อุบัติเหตุในรอบ 6 เดือน">
+                {getFieldDecorator('have_accident')(
                     <Select
                     placeholder="Select a option and change input text above"
                     onChange={handleAccident}
@@ -177,6 +187,7 @@ function StepForm3(props) {
                     <Option value="false">ไม่มี</Option>
                     <Option value="true">มี</Option>
                     </Select>
+                )}
                 </Form.Item>
                 { accident && 
                 <Form.Item label="เนื่องจาก">
