@@ -333,7 +333,7 @@
   font-family: sans-serif;
   color: #cccccc;
   background-color: #1a1814;
-  background-image: url(/asset/general2.png);
+  background-image: url(/asset/General_BG_new.png);
   background-size: auto;
   max-width: 2400px;
   font-size: 17.778px;
@@ -794,7 +794,7 @@
 
 .About-BorderImage {
   border-image-source: url(/asset/fame.png);
-  border-image-width: 25px;
+  border-image-width: 22px;
   /* border-image-repeat: round; */
   position: absolute;
   top: -3px;
@@ -805,7 +805,7 @@
   border-image-slice: 7% fill;
   pointer-events: none;
   border-style: solid;
-  border-width: 6px;
+  border-width: 8px;
 }
 
 .About-Pic-Column {
@@ -900,6 +900,12 @@
   }
   .About-Album-Column {
     margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .About-Text-Header {
+    font-size: 1.6em;
   }
 }
 
@@ -2161,7 +2167,6 @@
 
 .Contact-Row {
   position: relative;
-  place-items: center;
   margin-left: auto;
   margin-right: auto;
   display: -webkit-box;
@@ -2182,7 +2187,8 @@
 .Contact-Column-Social {
   width: 100%;
   max-width: 340px;
-  height: 550px;
+  margin-bottom: 100px;
+  height: 600px;
   display: block;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
@@ -2238,6 +2244,11 @@
 
 .About-BorderImage.Contect {
   margin-bottom: 10%;
+  position: inherit;
+}
+
+.About-BorderImage.Facebook {
+  height: 600px;
   position: inherit;
 }
 

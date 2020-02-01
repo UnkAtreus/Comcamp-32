@@ -4,7 +4,7 @@
 
 .Contact-Row {
     position: relative;
-    place-items: center;
+    //place-items: center;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -18,7 +18,8 @@
 .Contact-Column-Social {
     width: 100%;
     max-width: 340px;
-    height: 550px;
+    margin-bottom: 100px;
+    height: 600px;
     display: block;
     flex: 0 0 auto;
     text-align: center;
@@ -39,12 +40,11 @@
     font-size: 1.14em;
     margin: 0.6em 0px;
     text-align: left;
-    > span.Markdown > a[href^="tel:"] {
+    >span.Markdown>a[href^="tel:"] {
         text-decoration: none;
         color: #ddd;
         border-bottom: 1px #ddd dashed;
         transition: border .1s;
-
         &:hover {
             color: #eee;
             border-bottom-color: #eee;
@@ -70,6 +70,11 @@
 
 .About-BorderImage.Contect {
     margin-bottom: 10%;
+    position: inherit;
+}
+
+.About-BorderImage.Facebook {
+    height: 600px;
     position: inherit;
 }
 

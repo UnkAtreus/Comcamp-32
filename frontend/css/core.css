@@ -232,7 +232,7 @@ template,
 
 @media (max-width: 620px) {
   .Heading {
-    font-size: 1em;
+    font-size: 0.9em;
     letter-spacing: 0.5em;
   }
 }
