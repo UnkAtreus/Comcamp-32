@@ -29,6 +29,10 @@ h1 {
     font-weight: 500;
 }
 
+.ant-steps {
+    justify-content: center;
+}
+
 .ant-steps.ant-steps-horizontal.ant-steps-label-horizontal {
     margin-bottom: 30px;
 }
@@ -156,4 +160,17 @@ h1 {
 
 .Nav-Links:hover {
     color: rgba(255, 255, 255, 1);
+}
+
+.ant-steps-item-process>.ant-steps-item-container>.ant-steps-item-content>.ant-steps-item-title {
+    color: rgba(255, 255, 255, 1);
+}
+
+.ant-steps-item-wait>.ant-steps-item-container>.ant-steps-item-content>.ant-steps-item-title {
+    color: rgb(204, 204, 204);
+}
+
+.ant-divider-horizontal {
+    background-color: gray;
+    opacity: 40%;
 }

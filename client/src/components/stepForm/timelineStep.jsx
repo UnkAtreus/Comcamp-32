@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Steps,Popover  } from 'antd';
+import { Steps,Divider  } from 'antd';
 
 
 function getSteps() {
@@ -51,6 +51,7 @@ function StepForm(props) {
           getSteps().map( (step) => <Step key={step} title={step} />)
         }
       </Steps>
+      <Divider />
     </div>
   );
 }
