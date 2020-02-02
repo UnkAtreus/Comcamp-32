@@ -1,1 +1,159 @@
 @import '~antd/dist/antd.css';
+body {
+    position: relative;
+    z-index: auto;
+    box-sizing: border-box;
+    color: rgb(204, 204, 204);
+    background-color: rgb(26, 24, 20);
+    background-image: url(asset/General_BG_new.png);
+    background-size: auto;
+    max-width: 2400px;
+    background-position: center top;
+    background-repeat: repeat;
+    margin: 0px auto;
+    padding: 0px 60px;
+    line-height: 1.6;
+    text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px, rgba(0, 0, 0, 0.25) 0px 0px 8px;
+    font-family: Sarabun, sans-serif;
+    letter-spacing: 0.05em;
+    font-weight: 300;
+    font-size: 1.14em;
+    text-align: justify;
+    margin: 0.6em 0px;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    color: rgb(204, 204, 204);
+    font-weight: 500;
+}
+
+.ant-steps.ant-steps-horizontal.ant-steps-label-horizontal {
+    margin-bottom: 30px;
+}
+
+.ant-steps-item-tail::after {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 3px 1px inset, rgba(0, 0, 0, 0.5) 0px -1px 0px, rgba(0, 0, 0, 0.5) 0px 1px 0px, rgba(51, 46, 46, 0.75) 0px -3px 0px, rgba(51, 46, 46, 0.75) 0px 3px 0px, rgba(0, 0, 0, 0.4) 0px 4px 8px;
+}
+
+.ant-steps-dot .ant-steps-item-icon .ant-steps-icon-dot {
+    background-image: url(asset/regis_point_large.png);
+    width: 35px;
+    height: 35px;
+    background-size: 35px;
+}
+
+.ant-steps-dot .ant-steps-item-process .ant-steps-item-icon .ant-steps-icon-dot {
+    top: -12px;
+}
+
+.ant-steps-dot .ant-steps-item:first-child .ant-steps-icon-dot {
+    left: -15px;
+}
+
+.ant-steps-item-process .ant-steps-item-icon>.ant-steps-icon .ant-steps-icon-dot {
+    background-image: url(asset/regis_point_large_active.png);
+}
+
+.ant-steps-item-process .ant-steps-item-icon>.ant-steps-icon .ant-steps-icon-dot {
+    background: url(asset/regis_point_large_active.png) center center;
+    background-size: 40px;
+    left: -12px;
+}
+
+.ant-steps-item-wait .ant-steps-item-icon>.ant-steps-icon .ant-steps-icon-dot {
+    background: url(asset/regis_point_large.png) center center;
+    background-size: 35px;
+    left: -12px;
+    top: -12px;
+}
+
+.ant-steps-item-finish .ant-steps-item-icon>.ant-steps-icon .ant-steps-icon-dot {
+    background: url(asset/regis_point_large_active.png) center center;
+    background-size: 40px;
+    left: -12px;
+    top: -12px;
+}
+
+.ant-steps-item-finish>.ant-steps-item-container>.ant-steps-item-tail::after {
+    background-color: rgb(204, 34, 0);
+}
+
+.Nav-Sticky {
+    z-index: 48;
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    display: block;
+    width: 100%;
+}
+
+.Nav-Sticky-Content {
+    display: inline-block;
+    width: 100%;
+    top: 2px;
+    transform: none;
+    z-index: 100;
+    position: fixed;
+}
+
+.Nav-Fade-Black {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.79) 8.1%, rgba(0, 0, 0, 0.76) 15.5%, rgba(0, 0, 0, 0.718) 22.5%, rgba(0, 0, 0, 0.66) 29%, rgba(0, 0, 0, 0.592) 35.3%, rgba(0, 0, 0, 0.518) 41.2%, rgba(0, 0, 0, 0.44) 47.1%, rgba(0, 0, 0, 0.36) 52.9%, rgba(0, 0, 0, 0.282) 58.8%, rgba(0, 0, 0, 0.208) 64.7%, rgba(0, 0, 0, 0.14) 71%, rgba(0, 0, 0, 0.082) 77.5%, rgba(0, 0, 0, 0.04) 84.5%, rgba(0, 0, 0, 0.01) 91.9%, rgba(0, 0, 0, 0) 100%);
+    height: 160px;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 49;
+    right: 0px;
+    pointer-events: none;
+    flex: 1 1 auto;
+}
+
+.Nav-Row {
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    max-width: 1600px;
+    top: 20px;
+    left: 0px;
+    position: sticky;
+    z-index: 50;
+    display: flex;
+    padding: 0px;
+}
+
+.Logo {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 22px;
+    margin-right: 30px;
+}
+
+.Nav-Logo {
+    position: relative;
+    max-width: 100%;
+    display: inline-block;
+    width: 40px;
+    overflow: hidden;
+}
+
+.Nav-Links {
+    display: inline-block;
+    white-space: nowrap;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+    color: rgb(255, 241, 221);
+    text-shadow: rgba(153, 0, 0, 0.8) 0px 2px 0px, rgba(153, 0, 0, 0.6) 0px 2px 4px;
+    font-size: 17.778px;
+    margin-right: 30px;
+    text-decoration: none;
+    transition: color 0.25s ease 0s, transform 0.25s ease 0s, opacity 0.25s ease 0s;
+}
+
+.Nav-Links:hover {
+    color: rgba(255, 255, 255, 1);
+}

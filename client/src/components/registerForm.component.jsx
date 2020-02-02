@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { connect } from 'react-redux'
 import { transitions, positions, Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic'
-import { Row, Col } from 'antd'
+import { Row, Col , Steps, Popover } from 'antd'
 
 
 import Navbar from './navbar.component'
@@ -60,7 +60,7 @@ function RegisterForm(props) {
             }
         }
         //go to page
-        newStep = 1
+        newStep = 0
         setCurrentStep(newStep)
         setMaxStep(newStep)
     }

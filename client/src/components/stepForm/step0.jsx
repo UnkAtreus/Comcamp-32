@@ -89,8 +89,10 @@ function StepForm0(props) {
                     1 ชุด
                 </Col>
             </Row>
+            <Button type="primary" onClick={nextStep}>
+            ถัดไป
+                    </Button>
 
-           <button onClick={nextStep}>ถัดไป</button>
         </div>
     )
 }

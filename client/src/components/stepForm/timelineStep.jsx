@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Steps } from 'antd';
+import { Steps,Popover  } from 'antd';
 
 
 function getSteps() {
@@ -46,7 +46,7 @@ function StepForm(props) {
           );
         })}
       </Stepper> */}
-      <Steps current={currentStep}>
+      <Steps current={currentStep} progressDot>
         {
           getSteps().map( (step) => <Step key={step} title={step} />)
         }
