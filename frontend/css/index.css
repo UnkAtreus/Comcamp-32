@@ -1,8 +1,9 @@
 @font-face {
   font-family: CenturyGothicStd;
-  src: url("/font/CenturyGothicStd.eot");
+  src: url("/frontend/font/CenturyGothicStd-Bold.eot");
+  /*src: url("/font/CenturyGothicStd.eot");*/
   /* IE9 Compat Modes */
-  src: url("/font/CenturyGothicStd.eot?#iefix") format("embedded-opentype"), url("/font/CenturyGothicStd.woff") format("woff"), url("/font/CenturyGothicStd.ttf") format("truetype"), url("/font/CenturyGothicStd.svg#svgFontName") format("svg");
+  src: url("/frontend/font/CenturyGothicStd.eot?#iefix") format("embedded-opentype"), url("/frontend/font/CenturyGothicStd.woff") format("woff"), url("/frontend/font/CenturyGothicStd.ttf") format("truetype"), url("/frontend/font/CenturyGothicStd.svg#svgFontName") format("svg");
   /* Legacy iOS */
   font-display: swap;
 }
@@ -10,18 +11,18 @@
 @font-face {
   font-family: CenturyGothicStd-Bold;
   font-weight: bold;
-  src: url("/font/CenturyGothicStd-Bold.eot");
+  src: url("/frontend/font/CenturyGothicStd-Bold.eot");
   /* IE9 Compat Modes */
-  src: url("/font/CenturyGothicStd-Bold.eot?#iefix") format("embedded-opentype"), url("/font/CenturyGothicStd-Bold.woff") format("woff"), url("/font/CenturyGothicStd-Bold.ttf") format("truetype"), url("/font/CenturyGothicStd-Bold.svg#svgFontName") format("svg");
+  src: url("/frontend/font/CenturyGothicStd-Bold.eot?#iefix") format("embedded-opentype"), url("/frontend/font/CenturyGothicStd-Bold.woff") format("woff"), url("/frontend/font/CenturyGothicStd-Bold.ttf") format("truetype"), url("/frontend/font/CenturyGothicStd-Bold.svg#svgFontName") format("svg");
   /* Legacy iOS */
   font-display: swap;
 }
 
 @font-face {
   font-family: SarunsJackSparrow;
-  src: url("/font/SarunsJackSparrow.eot");
+  src: url("/frontend/font/SarunsJackSparrow.eot");
   /* IE9 Compat Modes */
-  src: url("/font/SarunsJackSparrow.eot?#iefix") format("embedded-opentype"), url("/font/SarunsJackSparrow.woff") format("woff"), url("/font/SarunsJackSparrow.ttf") format("truetype"), url("/font/SarunsJackSparrow.svg#svgFontName") format("svg");
+  src: url("/frontend/font/SarunsJackSparrow.eot?#iefix") format("embedded-opentype"), url("/frontend/font/SarunsJackSparrow.woff") format("woff"), url("/frontend/font/SarunsJackSparrow.ttf") format("truetype"), url("/frontend/font/SarunsJackSparrow.svg#svgFontName") format("svg");
   /* Legacy iOS */
   font-display: swap;
 }

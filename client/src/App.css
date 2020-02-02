@@ -227,14 +227,14 @@ h1 {
 }
 
 .ant-input:hover {
-    filter: brightness(150%);
+    filter: brightness(150%) !important;
     border-color: transparent;
 }
 
 .ant-input:focus {
     border-color: transparent;
     border-right-width: 0px !important;
-    filter: brightness(200%);
+    filter: brightness(200%) !important;
     -webkit-box-shadow: 0 0 0 0px rgba(24, 144, 255, 0.2);
     box-shadow: 0 0 0 0px rgba(24, 144, 255, 0.2);
 }
@@ -260,6 +260,8 @@ h1 {
 
 input:valid {
     color: white;
+    text-shadow: rgba(0, 0, 0, 0.5) 0px 0px 0px, rgba(0, 0, 0, 0.25) 0px 0px 0;
+    letter-spacing: 0.05em;
 }
 
 ::selection {
@@ -272,4 +274,39 @@ input:valid {
 .ant-select-selection {
     border: 0px solid #d9d9d9;
     background-color: black;
+}
+
+
+/*Dropdown*/
+
+.ant-select-dropdown {
+    background-color: black;
+}
+
+.ant-select-dropdown-menu-item {
+    color: white;
+}
+
+.ant-select {
+    color: white;
+}
+
+.anticon {
+    color: white;
+}
+
+.ant-select-focused .ant-select-selection,
+.ant-select-selection:focus,
+.ant-select-selection:active {
+    border-right-width: 0px !important;
+    -webkit-box-shadow: 0 0 0 0px rgba(24, 144, 255, 0.2);
+    box-shadow: 0 0 0 0px rgba(24, 144, 255, 0.2);
+}
+
+.ant-select-selection:hover {
+    border-right-width: 0px !important;
+}
+
+.ant-select-dropdown-menu-item:hover:not(.ant-select-dropdown-menu-item-disabled) {
+    background-color: #1f1f1f;
 }
