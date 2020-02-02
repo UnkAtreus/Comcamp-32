@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { transitions, positions, Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic'
 import { Row, Col } from 'antd'
+import {fetchUserAction} from '../actions/myaction'
 
 
 import Navbar from './navbar.component'
@@ -22,10 +23,20 @@ import StepForm9 from './stepForm/step9'
 
 function RegisterForm(props) {
     console.log("prop user", props.user)
-
+    
+    const { test } = props
     const [currentStep, setCurrentStep] = useState(0);
     const [maxStep, setMaxStep] = useState(0);
     const [user, setUser] = useState({})
+    const [loading, setLoading] = useState(true)
+
+    // useEffect( () => {
+    //     console.log("test", test)
+    // }, [currentStep])
+
+    useEffect( () => {
+        props.fetch_user()
+      }, [currentStep])
 
     function checkStep(user) {
         console.log("user",user)
@@ -70,16 +81,17 @@ function RegisterForm(props) {
         }
         if(user != null && props.user) {
             setUser(props.user)
+            setLoading(false)
         }
     }, [props])
 
+
     useEffect( () => {
         checkStep(user)
-    }, [user])
+    }, [loading])
 
-    if(props.user === null) {
-        return <h1>Is Loading...</h1>
-    }
+
+    
 
     function prev() {
         setCurrentStep(currentStep - 1)
@@ -103,6 +115,10 @@ function RegisterForm(props) {
         // you can also just use 'scale'
         transition: transitions.SCALE
      }
+
+    if(loading) {
+        return <h1>Is Loading...</h1>
+    }
 
     return (
         <div>
@@ -130,8 +146,15 @@ function RegisterForm(props) {
 
 const mapStateToProps = (state) => {
     return {
-        user: state.auth
+        user: state.auth,
+        // fetch_user:()=>{dispatch(fetchUserAction())}
     }
 }
 
-export default connect(mapStateToProps)(RegisterForm)
+const mapDispatchToProps = (dispatch) => {
+    return {
+      fetch_user:()=>{dispatch(fetchUserAction())}
+    }
+  }
+
+  export default connect(mapStateToProps, mapDispatchToProps)(RegisterForm)
