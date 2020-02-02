@@ -102,7 +102,8 @@ var userSchema = mongoose.Schema({
 	future: futureSchema,
 	ability: abilitySchema,
 	location: {type: String},
-	question: questionSchema
+	question: questionSchema,
+	tracking_number: {type: String}
 });
 
 //create the model for users and expose it to our app
