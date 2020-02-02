@@ -32,6 +32,8 @@ function StepForm(props) {
 
   return (
     <div>
+      <span className="Heading-Text"><h1>Registration</h1></span>
+      
       {/* <Stepper alternativeLabel nonLinear activeStep={currentStep}>
         {steps.map((label, index) => {
           const stepProps = {};

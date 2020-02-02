@@ -114,7 +114,7 @@
 }
 
 .About-BorderImage {
-    border-image-source: url(/asset/fame.png);
+    border-image-source: url(/frontend/asset/fame.png);
     border-image-width: 22px;
     /* border-image-repeat: round; */
     position: absolute;
@@ -157,7 +157,7 @@
     height: 33px;
     width: 100%;
     background-color: rgb(51, 51, 51);
-    background-image: url(/asset/CC_seperate.png);
+    background-image: url(/frontend/asset/CC_seperate.png);
     background-size: 600px 33px;
     z-index: 5;
     box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 24px 8px, rgba(0, 0, 0, 0.33) 0px 0px 12px;
@@ -181,7 +181,7 @@
     width: 50px;
     height: 7px;
     display: inline-block;
-    background-image: url(/asset/Button_Highlight/CC_Button_middle.png);
+    background-image: url(/frontend/asset/Button_Highlight/CC_Button_middle.png);
     background-size: 70px 20px;
     border-width: 0px;
     border-style: initial;

@@ -1,6 +1,6 @@
 .Section.Subject {
     padding: 100px 40px;
-    background-image: url(/asset/Background1.png);
+    background-image: url(/frontend/asset/Background1.png);
 }
 
 .Spacer {
@@ -103,7 +103,7 @@
 }
 
 .Subject-SpriteHeroes {
-    background-image: url(/asset/charactor.jpg);
+    background-image: url(/frontend/asset/charactor.jpg);
     background-size: 400px 400px;
     width: 100px;
     height: 100px;
@@ -132,12 +132,12 @@
 }
 
 .Subject-SpriteHeroes.Five {
-    background-position: -100px -200px;
+    background-position: 0px 0px;
 }
 
 .Subject-BorderPortrait {
     position: absolute;
-    background-image: url(/asset/ring.png);
+    background-image: url(/frontend/asset/ring.png);
     width: 144px;
     height: 144px;
     left: -12px;
