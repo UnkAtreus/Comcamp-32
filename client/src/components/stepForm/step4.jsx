@@ -167,7 +167,7 @@ const config = {
 
 function StepForm4(props) {
 
-    const {currentStep, handlePrev, handleNext, user} = props
+    const {currentStep, handlePrev, handleNext, user, summary} = props
     const { getFieldDecorator, getFieldsValue, setFieldsValue } = props.form;
 
     const alert = useAlert()
@@ -605,6 +605,7 @@ function StepForm4(props) {
                     </Col>
                 </Row>
 
+                {!summary && 
                 <Form.Item>
                     <Button type="primary" onClick={handlePrev}>
                     Back
@@ -613,6 +614,7 @@ function StepForm4(props) {
                     Submit
                     </Button>
                 </Form.Item>
+                }
                 
             </Form>
         </div>

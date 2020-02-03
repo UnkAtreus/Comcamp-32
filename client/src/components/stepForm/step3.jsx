@@ -87,7 +87,7 @@ const province_th = [
 
 function StepForm3(props) {
 
-    const {currentStep, handlePrev, handleNext, user} = props
+    const {currentStep, handlePrev, handleNext, user, summary } = props
     const alert = useAlert()
 
     const [accident, setAccident] = useState(false)
@@ -191,13 +191,17 @@ function StepForm3(props) {
                 </Form.Item>
                 { accident && 
                 <Form.Item label="เนื่องจาก">
-                {getFieldDecorator('accident')(
+                {getFieldDecorator('accident', {
+                        rules: [{required: true, message: 'กรุณาระบุสถานที่'}],
+                })(
                     <Input
                     placeholder="ยาแก้หอบหึด"
                     />,
                 )}
                 </Form.Item>
                 }
+
+                {!summary && 
                 <Form.Item>
                     <Button type="primary" onClick={handlePrev}>
                     Back
@@ -206,6 +210,7 @@ function StepForm3(props) {
                     Submit
                     </Button>
                 </Form.Item>
+                }
             </Form>
         </div>
     )

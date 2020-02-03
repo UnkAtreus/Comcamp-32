@@ -8,7 +8,7 @@ const { Textarea } = Input
 
 function StepForm8(props) {
 
-    const {currentStep, handlePrev, handleNext, user} = props
+    const {currentStep, handlePrev, handleNext, user, summary } = props
 
     const alert = useAlert()
 
@@ -190,6 +190,7 @@ function StepForm8(props) {
                     )}
                 </Form.Item>
 
+                {!summary && 
                 <Form.Item>
                     <Button type="primary" onClick={handlePrev}>
                     Back
@@ -198,7 +199,7 @@ function StepForm8(props) {
                     Submit
                     </Button>
                 </Form.Item>
-                
+                }|
             </Form>
         </div>
     )

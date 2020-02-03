@@ -87,7 +87,7 @@ const province_th = [
 
 function StepForm2(props) {
 
-    const { currentStep, handlePrev, handleNext, user } = props
+    const { currentStep, handlePrev, handleNext, user, summary } = props
     const alert = useAlert()
 
     useEffect(() => {
@@ -185,6 +185,7 @@ function StepForm2(props) {
                         </Form.Item>
                     </Col>
                 </Row>
+                {!summary && 
                 <Form.Item>
                     <Button type="primary" onClick={handlePrev}>
                     Back
@@ -193,6 +194,7 @@ function StepForm2(props) {
                     Submit
                     </Button>
                 </Form.Item>
+                }
                 
             </Form>
         </div>

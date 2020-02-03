@@ -9,7 +9,7 @@ const locations = ['มา มจธ. ด้วยจนเอง', 'สาย�
 
 function StepForm7(props) {
 
-    const {currentStep, handlePrev, handleNext, user} = props
+    const {currentStep, handlePrev, handleNext, user, summary } = props
 
     const alert = useAlert()
 
@@ -64,7 +64,7 @@ function StepForm7(props) {
                 </Form.Item>
                 
                 
-
+                {!summary && 
                 <Form.Item>
                     <Button type="primary" onClick={handlePrev}>
                     Back
@@ -73,7 +73,7 @@ function StepForm7(props) {
                     Submit
                     </Button>
                 </Form.Item>
-                
+                }
             </Form>
         </div>
     )

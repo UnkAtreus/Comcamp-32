@@ -7,7 +7,7 @@ const { Option } = Select
 
 function StepForm1(props) {
 
-    const { currentStep, handlePrev, handleNext, user } = props
+    const { currentStep, handlePrev, handleNext, user, summary } = props
     
     const alert = useAlert()
     
@@ -176,6 +176,7 @@ function StepForm1(props) {
                     </Col>
                 </Row>
                 
+                {!summary && 
                 <Form.Item>
                     <Button type="primary" onClick={handlePrev}>
                     Back
@@ -184,6 +185,7 @@ function StepForm1(props) {
                     Submit
                     </Button>
                 </Form.Item>
+                }
             </Form>
         </div>
     )

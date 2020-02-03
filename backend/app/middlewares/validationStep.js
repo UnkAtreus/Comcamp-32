@@ -101,6 +101,12 @@ const step8Validation = () => {
     ]
 }
 
+const step9Validation = () => {
+    return [
+        body('tracking_number').not().isEmpty()
+    ]
+}
+
 const validate = (req, res, next) => {
     const errors = validationResult(req)
     if (errors.isEmpty()) {
@@ -123,6 +129,7 @@ module.exports = {
     step6Validation,
     step7Validation,
     step8Validation,
+    step9Validation,
     validate,
 }
   

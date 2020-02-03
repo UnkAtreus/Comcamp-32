@@ -5,7 +5,7 @@ import { Form, Input, Button, Row, Col, Select, DatePicker, InputNumber, Slider 
 
 function StepForm6(props) {
 
-    const {currentStep, handlePrev, handleNext, user} = props
+    const {currentStep, handlePrev, handleNext, user, summary } = props
 
     const alert = useAlert()
 
@@ -105,7 +105,7 @@ function StepForm6(props) {
                 </Row>
                 
                 
-
+                {!summary && 
                 <Form.Item>
                     <Button type="primary" onClick={handlePrev}>
                     Back
@@ -114,7 +114,7 @@ function StepForm6(props) {
                     Submit
                     </Button>
                 </Form.Item>
-                
+                }
             </Form>
         </div>
     )

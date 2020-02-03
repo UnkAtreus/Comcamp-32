@@ -4,7 +4,7 @@ import { useAlert } from 'react-alert'
 import { Form, Input, Button, Row, Col, Radio } from 'antd';
 function StepForm5(props) {
 
-    const {currentStep, handlePrev, handleNext, user} = props
+    const {currentStep, handlePrev, handleNext, user, summary } = props
 
     const alert = useAlert()
 
@@ -136,6 +136,7 @@ function StepForm5(props) {
                     </Radio.Group>,
                 )}
                 </Form.Item>
+                {!summary && 
                 <Form.Item>
                     <Button type="primary" onClick={handlePrev}>
                     Back
@@ -144,7 +145,7 @@ function StepForm5(props) {
                     Submit
                     </Button>
                 </Form.Item>
-                
+                }
             </Form>
         </div>
     )

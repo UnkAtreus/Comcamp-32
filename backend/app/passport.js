@@ -44,7 +44,9 @@ module.exports = function(passport) {
             else {
                 console.log("create new User")
                 new User({
-                    facebookId: profile.id
+                    facebookId: profile.id,
+                    displayName: profile.displayName
+
                 }).save()
                 .then( user => {
                     done(null, user)
