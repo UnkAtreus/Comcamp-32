@@ -1,5 +1,6 @@
 .Section.Faq {
     padding: 120px 60px;
+    background-image: url(/frontend/asset/FAQs_BG.png);
 }
 
 .Faq-Column {
@@ -19,25 +20,26 @@
     flex-direction: column;
     width: 100%;
     padding: 1rem 3rem 1rem 1rem;
-    color: #7288a2;
+    color: white;
     font-size: 1.15rem;
-    font-weight: 400;
+    letter-spacing: 0.05em;
+    font-weight: 300;
     border-bottom: 1px solid #e5e5e5;
 }
 
 .accordion a:hover,
 .accordion a:hover::after {
     cursor: pointer;
-    color: #03b5d2;
+    color: white;
 }
 
 .accordion a:hover::after {
-    border: 1px solid #03b5d2;
+    border: 1px solid white;
 }
 
 .accordion a.active {
-    color: #03b5d2;
-    border-bottom: 1px solid #03b5d2;
+    color: white;
+    border-bottom: 1px solid white;
 }
 
 .accordion a::after {
@@ -47,25 +49,37 @@
     float: right;
     right: 1rem;
     font-size: 1rem;
-    color: #7288a2;
+    color: white;
     padding: 5px;
     width: 30px;
     height: 30px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
-    border: 1px solid #7288a2;
+    border: 1px solid white;
     text-align: center;
+}
+
+.accordion-item.color-1 {
+    filter: brightness(80%);
+    background-color: $color-3;
+}
+
+.accordion-item.color-2 {
+    filter: brightness(95%);
+    background-color: $color-2;
 }
 
 .accordion a.active::after {
     font-family: 'Ionicons';
     content: '\f123';
-    color: #03b5d2;
-    border: 1px solid #03b5d2;
+    color: white;
+    border: 1px solid white;
 }
 
 .accordion .content {
+    filter: brightness(100%);
+    background-color: whitesmoke;
     opacity: 0;
     padding: 0 1rem;
     max-height: 0;
@@ -80,9 +94,11 @@
 .accordion .content p {
     font-size: 1rem;
     font-weight: 300;
+    color: black;
 }
 
 .accordion .content.active {
+    background-color: whitesmoke;
     opacity: 1;
     padding: 1rem;
     max-height: 100%;
