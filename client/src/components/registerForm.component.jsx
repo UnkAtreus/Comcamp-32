@@ -28,7 +28,7 @@ function RegisterForm(props) {
     const [currentStep, setCurrentStep] = useState(0);
     const [maxStep, setMaxStep] = useState(0);
     const [user, setUser] = useState({})
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
 
     // useEffect( () => {
     //     console.log("test", test)
@@ -74,12 +74,10 @@ function RegisterForm(props) {
             }
         }
         //go to page
-        newStep = 4
+        newStep = 1
         setCurrentStep(newStep)
         setMaxStep(newStep)
     }
-
-
     /*
     useEffect( ()=> {
         if(props.user === false) {
@@ -91,12 +89,12 @@ function RegisterForm(props) {
         }
     }, [props])
 
-
+*/
     useEffect( () => {
         checkStep(user)
     }, [loading])
 
-*/
+
     
 
     function prev() {
@@ -123,10 +121,10 @@ function RegisterForm(props) {
         // you can also just use 'scale'
         transition: transitions.SCALE
      }
-/*
+
     if(loading) {
         return <h1>Is Loading...</h1>
-    }*/
+    }
 
     return (
         <div>

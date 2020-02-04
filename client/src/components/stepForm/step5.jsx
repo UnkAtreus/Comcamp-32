@@ -2,6 +2,9 @@ import React, { useEffect } from 'react'
 import register from '../../api/register'
 import { useAlert } from 'react-alert'
 import { Form, Input, Button, Row, Col, Radio } from 'antd';
+import btn_left from '../../asset/Button_left.png';
+import btn_right from '../../asset/Button_right.png';
+
 function StepForm5(props) {
 
     const {currentStep, handlePrev, handleNext, user, summary } = props
@@ -144,12 +147,45 @@ function StepForm5(props) {
                 </Form.Item>
                 {!summary && 
                 <Form.Item>
-                    <Button type="primary" onClick={handlePrev}>
-                    Back
-                    </Button>
-                    <Button type="primary" htmlType="submit">
-                    Submit
-                    </Button>
+                    <div class="Button-Row">
+                    <div className="Button-Column right">
+                                <div className="Button-Left-Image">
+                                    <img
+                                        src={btn_left}
+                                        alt="Left button decoration"
+                                    />
+                                </div>
+                                <div className="Button-Right-Image">
+                                    <img
+                                        src={btn_right}
+                                        alt="Right button decoration"
+                                    />
+                                </div>
+                                <div className="Button-BorderImage"></div>
+                                <button className="Button-Background" htmlType="submit">
+                                    <span className="Markdown">Next</span>
+                                </button>
+                            </div>
+
+                            <div className="Button-Column left">
+                                <div className="Button-Left-Image">
+                                    <img
+                                        src={btn_left}
+                                        alt="Left button decoration"
+                                    />
+                                </div>
+                                <div className="Button-Right-Image">
+                                    <img
+                                        src={btn_right}
+                                        alt="Right button decoration"
+                                    />
+                                </div>
+                                <div className="Button-BorderImage"></div>
+                                <button className="Button-Background" onClick={handlePrev}>
+                                    <span className="Markdown">Back</span>
+                                </button>
+                            </div>
+                        </div>
                 </Form.Item>
                 }
             </Form>

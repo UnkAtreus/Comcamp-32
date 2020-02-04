@@ -2,6 +2,8 @@ import React from 'react'
 import register from '../../api/register'
 import { useAlert } from 'react-alert'
 import { Form, Input, Button, Row, Col, Radio } from 'antd';
+import btn_left from '../../asset/Button_left.png';
+import btn_right from '../../asset/Button_right.png';
 
 function StepForm0(props) {
 
