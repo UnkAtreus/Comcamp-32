@@ -74,7 +74,7 @@ function RegisterForm(props) {
             }
         }
         //go to page
-        newStep = 1
+        newStep = 9
         setCurrentStep(newStep)
         setMaxStep(newStep)
     }

@@ -29,6 +29,10 @@
         font-weight: 500;
     }
     
+    p {
+        color: rgb(204, 204, 204);
+    }
+    
     .ant-steps {
         justify-content: center;
     }
@@ -373,11 +377,11 @@
         position: relative;
         display: block;
         box-shadow: rgba(204, 95, 41, 0.15) 0px 0px 20px 5px, rgba(204, 95, 41, 0.3) 0px 6px 60px 15px;
-        min-width: 250px;
+        min-width: 200px;
         flex: 1 1 auto;
         transition: filter 0.25s cubic-bezier(0.165, 0.84, 0.44, 1) 0s, opacity 0.25s cubic-bezier(0.165, 0.84, 0.44, 1) 0s, transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
         margin: 5px 20px;
-        max-width: 250px;
+        max-width: 200px;
         cursor: pointer;
     }
     
@@ -454,14 +458,30 @@
         font-family: SourceSerifVariable, SourceSerif, serif;
         letter-spacing: 0.025em;
         cursor: inherit;
-        font-size: 1.125em;
-        height: 70px;
+        font-size: 1.1em;
+        height: 60px;
         border-width: 0px;
         border-style: initial;
         border-color: initial;
         border-image: initial;
         background-position: center center;
         padding: 0px 35px;
+    }
+    
+    .ant-btn {
+        border-color: transparent;
+        background: rgba(245, 245, 245, 0.75);
+    }
+    
+    .ant-btn>i,
+    .ant-btn>span {
+        color: black;
+    }
+    
+    .ant-btn:hover,
+    .ant-btn:focus {
+        color: black;
+        border-color: transparent;
     }
     /*label*/
     
@@ -647,4 +667,30 @@
     
     a:hover.ant-calendar-today-btn {
         color: whitesmoke;
+    }
+    /*slider*/
+    
+    .ant-slider-rail {
+        background-color: gray;
+    }
+    
+    .ant-slider-track {
+        background-color: #fecb1f;
+    }
+    
+    .ant-slider-handle.ant-tooltip-open {
+        border-color: #fecb1f;
+    }
+    
+    .ant-slider-handle {
+        background-color: #121212;
+        border: solid 2px #fecb1f;
+    }
+    
+    .ant-slider:hover .ant-slider-track {
+        background-color: #fecb1f;
+    }
+    
+    .ant-slider-handle:focus {
+        box-shadow: 0 0 0 5px #feca1f25;
     }

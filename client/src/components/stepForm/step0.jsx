@@ -91,9 +91,27 @@ function StepForm0(props) {
                     1 ชุด
                 </Col>
             </Row>
-            <Button type="primary" onClick={nextStep}>
-            ถัดไป
-                    </Button>
+            <div class="Button-Row">
+                    <div className="Button-Column right">
+                                <div className="Button-Left-Image">
+                                    <img
+                                        src={btn_left}
+                                        alt="Left button decoration"
+                                    />
+                                </div>
+                                <div className="Button-Right-Image">
+                                    <img
+                                        src={btn_right}
+                                        alt="Right button decoration"
+                                    />
+                                </div>
+                                <div className="Button-BorderImage"></div>
+                                <button className="Button-Background" htmlType="submit">
+                                    <span className="Markdown">Next</span>
+                                </button>
+                            </div>
+
+                        </div>
 
         </div>
     )

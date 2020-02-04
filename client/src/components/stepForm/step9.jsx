@@ -74,6 +74,25 @@ function StepForm9(props) {
 
                 <Form.Item>
                 <div class="Button-Row">
+
+                <div className="Button-Column right">
+                                <div className="Button-Left-Image">
+                                    <img
+                                        src={btn_left}
+                                        alt="Left button decoration"
+                                    />
+                                </div>
+                                <div className="Button-Right-Image">
+                                    <img
+                                        src={btn_right}
+                                        alt="Right button decoration"
+                                    />
+                                </div>
+                                <div className="Button-BorderImage"></div>
+                                <button className="Button-Background" htmlType="submit">
+                                    <span className="Markdown">Submit</span>
+                                </button>
+                            </div>
                             <div className="Button-Column left">
                                 <div className="Button-Left-Image">
                                     <img
@@ -90,25 +109,6 @@ function StepForm9(props) {
                                 <div className="Button-BorderImage"></div>
                                 <button className="Button-Background" onClick={handlePrev}>
                                     <span className="Markdown">Back</span>
-                                </button>
-                            </div>
-
-                            <div className="Button-Column right">
-                                <div className="Button-Left-Image">
-                                    <img
-                                        src={btn_left}
-                                        alt="Left button decoration"
-                                    />
-                                </div>
-                                <div className="Button-Right-Image">
-                                    <img
-                                        src={btn_right}
-                                        alt="Right button decoration"
-                                    />
-                                </div>
-                                <div className="Button-BorderImage"></div>
-                                <button className="Button-Background" htmlType="submit">
-                                    <span className="Markdown">Submit</span>
                                 </button>
                             </div>
                         </div>
