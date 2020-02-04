@@ -153,6 +153,7 @@ function StepForm3(props) {
                 {getFieldDecorator('disease')(
                     <Input
                     placeholder="โรคหอบหึด"
+                    disabled={summary}
                     />,
                 )}
                 </Form.Item>
@@ -160,6 +161,7 @@ function StepForm3(props) {
                 {getFieldDecorator('allergy_food')(
                     <Input
                     placeholder="ถั่วเขียว"
+                    disabled={summary}
                     />,
                 )}
                 </Form.Item>
@@ -167,6 +169,7 @@ function StepForm3(props) {
                 {getFieldDecorator('allergy_medic')(
                     <Input
                     placeholder="ยาแอมพลิซิลลิน"
+                    disabled={summary}
                     />,
                 )}
                 </Form.Item>
@@ -174,14 +177,18 @@ function StepForm3(props) {
                 {getFieldDecorator('medic_need')(
                     <Input
                     placeholder="ยาแก้หอบหึด"
+                    disabled={summary}
                     />,
                 )}
                 </Form.Item>
 
                 <Form.Item label="อุบัติเหตุในรอบ 6 เดือน">
-                {getFieldDecorator('have_accident')(
+                {getFieldDecorator('have_accident', {
+                        rules: [{ required: true, message: 'กรุณากรอกชื่อสถานศึกษา' }],
+                    })(
                     <Select
-                    placeholder="Select a option and change input text above"
+                    disabled={summary}
+                    placeholder="โปรดระบุ"
                     onChange={handleAccident}
                     >
                     <Option value="false">ไม่มี</Option>
@@ -195,6 +202,7 @@ function StepForm3(props) {
                         rules: [{required: true, message: 'กรุณาระบุสถานที่'}],
                 })(
                     <Input
+                    disabled={summary}
                     placeholder="ยาแก้หอบหึด"
                     />,
                 )}

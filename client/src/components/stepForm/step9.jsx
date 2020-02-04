@@ -19,7 +19,7 @@ const locations = ['มา มจธ. ด้วยจนเอง', 'สาย�
 
 function StepForm9(props) {
 
-    const {currentStep, handlePrev, handleNext, user} = props
+    const {currentStep, handlePrev, handleNext, user, summary } = props
 
     const alert = useAlert()
 
@@ -61,7 +61,10 @@ function StepForm9(props) {
                     {getFieldDecorator('tracking_number', {
                         rules: [{required: true, message: 'กรุณาระบุสถานที่'}],
                     })(
-                    <Input />,
+                    <Input
+                        disabled={summary}
+                        placeholder="test"
+                    />,
                     )}
                 </Form.Item>
                 
@@ -78,14 +81,6 @@ function StepForm9(props) {
                 
             </Form>
             <h1>สรุปข้อมูล</h1>
-            <StepForm1  user={user} summary={true}/>
-            <StepForm2  user={user} summary={true}/>
-            <StepForm3  user={user} summary={true}/>
-            <StepForm4  user={user} summary={true}/>
-            <StepForm5  user={user} summary={true}/>
-            <StepForm6  user={user} summary={true}/>
-            <StepForm7  user={user} summary={true}/>
-            <StepForm8  user={user} summary={true}/>
         </div>
     )
 }

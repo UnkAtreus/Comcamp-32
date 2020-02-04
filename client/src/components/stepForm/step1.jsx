@@ -61,6 +61,7 @@ function StepForm1(props) {
                 })(
                     <Input
                     placeholder="สมชาย  ใจดี"
+                    disabled={summary}
                     />,
                 )}
                 </Form.Item>
@@ -71,6 +72,7 @@ function StepForm1(props) {
                 })(
                     <Input
                     placeholder="Somchai  Jaidee"
+                    disabled={summary}
                     />,
                 )}
                 </Form.Item>
@@ -83,6 +85,7 @@ function StepForm1(props) {
                         })(
                             <Input
                             placeholder="ชัย"
+                            disabled={summary}
                             />,
                         )}
                         </Form.Item>
@@ -92,7 +95,7 @@ function StepForm1(props) {
                         {getFieldDecorator('sex', {
                             rules: [{ required: true, message: 'กรุณากรอกเพศ', enum: ['ชาย', 'หญิง']}],
                         })(
-                            <Select>
+                            <Select disabled={summary}>
                                 <Option value="ชาย">ชาย</Option>
                                 <Option value="หญิง">หญิง</Option>
                             </Select>
@@ -104,7 +107,7 @@ function StepForm1(props) {
                         <Form.Item label="วันเกิด">
                         {getFieldDecorator('birthday', {
                             rules: [{ type: 'object', required: true, message: 'กรุณาเลือกวันเกิด' }],
-                        })(<DatePicker />)}
+                        })(<DatePicker disabled={summary}/>)}
                         </Form.Item>
                     </Col>
                     <Col span={4}>
@@ -112,7 +115,7 @@ function StepForm1(props) {
                         {getFieldDecorator('bloodenum', {
                             rules: [{ required: true, message: 'กรุณากรอกเพศ', enum: ['A', 'B', 'AB', 'O']}],
                         })(
-                            <Select>
+                            <Select disabled={summary}>
                                 <Option value="A">A</Option>
                                 <Option value="B">B</Option>
                                 <Option value="AB">AB</Option>
@@ -129,6 +132,7 @@ function StepForm1(props) {
                         })(
                             <Input
                             placeholder="พุทธ"
+                            disabled={summary}
                             />,
                         )}
                         </Form.Item>
@@ -141,7 +145,7 @@ function StepForm1(props) {
                         {getFieldDecorator('shirt_size', {
                             rules: [{ required: true, message: 'กรุณาระไซต์เสื้อ', enum: ['S', 'M', 'L', 'XL']}],
                         })(
-                            <Select>
+                            <Select disabled={summary}>
                                 <Option value="S">S</Option>
                                 <Option value="M">M</Option>
                                 <Option value="L">L</Option>
@@ -158,6 +162,7 @@ function StepForm1(props) {
                             rules: [{ required: true, message: 'กรุณากรอกเบอร์โทรศัพท์ 10 หลัก', len:10}],
                         })(
                             <Input
+                            disabled={summary}
                             placeholder="0903234466"
                             />,
                         )}
@@ -169,6 +174,7 @@ function StepForm1(props) {
                             rules: [{ required: true, message: 'กรุณากรอกเบอร์โทรศัพท์ 10 หลัก', type: 'email'}],
                         })(
                             <Input
+                            disabled={summary}
                             placeholder="comcamp32@gmail.com"
                             />,
                         )}

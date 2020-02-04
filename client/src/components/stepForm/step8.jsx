@@ -57,7 +57,9 @@ function StepForm8(props) {
                     {getFieldDecorator('question1', {
                         rules: [{required: true, message: 'กรุณาระบุสถานที่'}],
                     })(
-                        <Input
+                        <Input.TextArea
+                            disabled={summary}
+                            autoSize={ {minRows: 4} }
                             placeholder="โรคหอบหึด"
                         />,
                     )}
@@ -75,7 +77,9 @@ function StepForm8(props) {
                     {getFieldDecorator('question2', {
                         rules: [{required: true, message: 'กรุณาระบุสถานที่'}],
                     })(
-                        <Input
+                        <Input.TextArea
+                        disabled={summary}
+                        autoSize={ {minRows: 4} }
                         placeholder="โรคหอบหึด"
                         />,
                     )}
@@ -98,7 +102,9 @@ function StepForm8(props) {
                     {getFieldDecorator('question3', {
                         rules: [{required: true, message: 'กรุณาระบุสถานที่'}],
                     })(
-                        <Input
+                        <Input.TextArea
+                        disabled={summary}
+                        autoSize={ {minRows: 4} }
                         placeholder="โรคหอบหึด"
                         />,
                     )}
@@ -113,7 +119,9 @@ function StepForm8(props) {
                     {getFieldDecorator('question4', {
                         rules: [{required: true, message: 'กรุณาระบุสถานที่'}],
                     })(
-                        <Input
+                        <Input.TextArea
+                        disabled={summary}
+                        autoSize={ {minRows: 4} }
                         placeholder="โรคหอบหึด"
                         />,
                     )}
@@ -128,7 +136,9 @@ function StepForm8(props) {
                     {getFieldDecorator('question5', {
                         rules: [{required: true, message: 'กรุณาระบุสถานที่'}],
                     })(
-                        <Input
+                        <Input.TextArea
+                        disabled={summary}
+                        autoSize={ {minRows: 4} }
                         placeholder="โรคหอบหึด"
                         />,
                     )}
@@ -149,7 +159,9 @@ function StepForm8(props) {
                     {getFieldDecorator('question6', {
                         rules: [{required: true, message: 'กรุณาระบุสถานที่'}],
                     })(
-                        <Input
+                        <Input.TextArea
+                        disabled={summary}
+                        autoSize={ {minRows: 4} }
                         placeholder="โรคหอบหึด"
                         />,
                     )}
@@ -165,7 +177,9 @@ function StepForm8(props) {
                     {getFieldDecorator('question7', {
                         rules: [{required: true, message: 'กรุณาระบุสถานที่'}],
                     })(
-                        <Input
+                        <Input.TextArea
+                        disabled={summary}
+                        autoSize={ {minRows: 4} }
                         placeholder="โรคหอบหึด"
                         />,
                     )}
@@ -184,7 +198,9 @@ function StepForm8(props) {
                     {getFieldDecorator('question8', {
                         rules: [{required: true, message: 'กรุณาระบุสถานที่'}],
                     })(
-                        <Input
+                        <Input.TextArea
+                        disabled={summary}
+                        autoSize={ {minRows: 4} }
                         placeholder="โรคหอบหึด"
                         />,
                     )}
@@ -193,10 +209,7 @@ function StepForm8(props) {
                 {!summary && 
                 <Form.Item>
                     <Button type="primary" onClick={handlePrev}>
-                    Back
-                    </Button>
-                    <Button type="primary" htmlType="submit">
-                    Submit
+                    กลับสู่หน้าหลัก
                     </Button>
                 </Form.Item>
                 }|

@@ -50,7 +50,7 @@ function StepForm6(props) {
                             rules: [{ required: true, message: 'กรุณาเลือกความถนัดทางด้าน Programming'}],
                             initialValue: 3
                         })(
-                            <Slider max={5} min={1} tooltipVisible />,
+                            <Slider max={5} min={1} tooltipVisible disabled={summary}/>,
                         )}
                         </Form.Item>
                     </Col>
@@ -60,7 +60,7 @@ function StepForm6(props) {
                             rules: [{ required: true, message: 'กรุณาเลือกความถนัดทางด้าน Big data' }],
                             initialValue: 3
                         })(
-                            <Slider max={5} min={1} tooltipVisible />,
+                            <Slider max={5} min={1} tooltipVisible disabled={summary}/>,
                         )}
                         </Form.Item>
                     </Col>
@@ -74,7 +74,7 @@ function StepForm6(props) {
                             rules: [{ required: true, message: 'กรุณาเลือกความถนัดทางด้าน Flow chart' }],
                             initialValue: 3
                         })(
-                            <Slider max={5} min={1} tooltipVisible />,
+                            <Slider max={5} min={1} tooltipVisible disabled={summary}/>,
                         )}
                         </Form.Item>
                     </Col>
@@ -84,7 +84,7 @@ function StepForm6(props) {
                             rules: [{ required: true, message: 'กรุณาเลือกความถนัดทางด้าน Microcontroller'}],
                             initialValue: 3
                         })(
-                            <Slider max={5} min={1} tooltipVisible />,
+                            <Slider max={5} min={1} tooltipVisible disabled={summary}/>,
                         )}
                         </Form.Item>
                     </Col>
@@ -98,7 +98,7 @@ function StepForm6(props) {
                             rules: [{ required: true, message: 'กรุณาเลือกความถนัดทางด้าน Brain storm' }],
                             initialValue: 3
                         })(
-                            <Slider max={5} min={1} tooltipVisible />,
+                            <Slider max={5} min={1} tooltipVisible disabled={summary}/>,
                         )}
                         </Form.Item>
                     </Col>
