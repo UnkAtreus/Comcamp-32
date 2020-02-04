@@ -4,7 +4,7 @@ import { useAlert } from 'react-alert'
 import { Form, Input, Button, Row, Col, Radio } from 'antd';
 function StepForm5(props) {
 
-    const {currentStep, handlePrev, handleNext, user} = props
+    const {currentStep, handlePrev, handleNext, user, summary } = props
 
     const alert = useAlert()
 
@@ -57,6 +57,7 @@ function StepForm5(props) {
                             rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
                         })(
                             <Input
+                            disabled={summary}
                             placeholder="คณะวิศวกรรมศาสตร์"
                             />,
                         )}
@@ -68,6 +69,7 @@ function StepForm5(props) {
                             rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
                         })(
                             <Input
+                            disabled={summary}
                             placeholder="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี"
                             />,
                         )}
@@ -82,6 +84,7 @@ function StepForm5(props) {
                             rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
                         })(
                             <Input
+                            disabled={summary}
                             placeholder="คณะวิศวกรรมศาสตร์"
                             />,
                         )}
@@ -93,6 +96,7 @@ function StepForm5(props) {
                             rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
                         })(
                             <Input
+                            disabled={summary}
                             placeholder="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี"
                             />,
                         )}
@@ -107,6 +111,7 @@ function StepForm5(props) {
                             rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
                         })(
                             <Input
+                            disabled={summary}
                             placeholder="คณะวิศวกรรมศาสตร์"
                             />,
                         )}
@@ -118,6 +123,7 @@ function StepForm5(props) {
                             rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
                         })(
                             <Input
+                            disabled={summary}
                             placeholder="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี"
                             />,
                         )}
@@ -129,13 +135,14 @@ function StepForm5(props) {
                 {getFieldDecorator('interest', {
                     rules: [{required: true, message: 'กรุณาเลือกหลักสูตรที่ต้องการ'}]
                 })(
-                    <Radio.Group>
+                    <Radio.Group disabled={summary}>
                     <Radio value="reg">Regular</Radio>
                     <Radio value="inter">Inter</Radio>
                     <Radio value="hds">HDS</Radio>
                     </Radio.Group>,
                 )}
                 </Form.Item>
+                {!summary && 
                 <Form.Item>
                     <Button type="primary" onClick={handlePrev}>
                     Back
@@ -144,7 +151,7 @@ function StepForm5(props) {
                     Submit
                     </Button>
                 </Form.Item>
-                
+                }
             </Form>
         </div>
     )

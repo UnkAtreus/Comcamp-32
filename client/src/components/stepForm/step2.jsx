@@ -87,7 +87,7 @@ const province_th = [
 
 function StepForm2(props) {
 
-    const { currentStep, handlePrev, handleNext, user } = props
+    const { currentStep, handlePrev, handleNext, user, summary } = props
     const alert = useAlert()
 
     useEffect(() => {
@@ -135,6 +135,7 @@ function StepForm2(props) {
                             rules: [{ required: true, message: 'กรุณากรอกชื่อสถานศึกษา' }],
                         })(
                             <Input
+                            disabled={summary}
                             placeholder="โรงเรียนคอมแคมป์ 32"
                             />,
                         )}
@@ -145,7 +146,7 @@ function StepForm2(props) {
                         {getFieldDecorator('school_province', {
                             rules: [{ required: true, message: 'กรุณากรอกชื่อสถานศึกษา' }],
                         })(
-                            <Select>
+                            <Select disabled={summary}>
                                 {
                                     province_th.map( (province) => (
                                         <Option key={province} value={province}>{province}</Option>
@@ -164,7 +165,7 @@ function StepForm2(props) {
                         {getFieldDecorator('grade', {
                             rules: [{ required: true, message: 'กรุณากรอกชั้นปีการศึกษา', enum:['4', '5', '6', 'ปวช'] }],
                         })(
-                            <Select>
+                            <Select disabled={summary}>
                                 <Option value={'4'}>ม.4</Option>
                                 <Option value={'5'}>ม.5</Option>
                                 <Option value={'6'}>ม.6</Option>
@@ -180,11 +181,13 @@ function StepForm2(props) {
                         })(
                             <InputNumber min={0} max={4} step={0.01}
                             placeholder="4.00"
+                            disabled={summary}
                             />,
                         )}
                         </Form.Item>
                     </Col>
                 </Row>
+                {!summary && 
                 <Form.Item>
                     <Button type="primary" onClick={handlePrev}>
                     Back
@@ -193,6 +196,7 @@ function StepForm2(props) {
                     Submit
                     </Button>
                 </Form.Item>
+                }
                 
             </Form>
         </div>

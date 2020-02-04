@@ -37,6 +37,7 @@ module.exports = function (app, passport) {
     app.post('/api/register/6', auth.isLoggedIn, validateStep.step6Validation(), validateStep.validate, register.step6)
     app.post('/api/register/7', auth.isLoggedIn, validateStep.step7Validation(), validateStep.validate, register.step7)
     app.post('/api/register/8', auth.isLoggedIn, validateStep.step8Validation(), validateStep.validate, register.step8)
+    app.post('/api/register/9', auth.isLoggedIn, validateStep.step9Validation(), validateStep.validate, register.step9)
     
 
 }

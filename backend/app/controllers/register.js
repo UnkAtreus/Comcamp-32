@@ -273,3 +273,20 @@ exports.step8 = (req, res) => {
         res.sendStatus(200)
     })
 }
+
+exports.step9 = (req, res) => {
+    console.log(req.user._id)
+    const id = req.user._id
+    console.log("step 9")
+    console.log(id)
+    User.findByIdAndUpdate(id, { 
+        tracking_number: req.body.tracking_number
+     }, (err, result) => {
+        console.log("update")
+        // console.log(result)
+        if (err) {
+            res.sendStatus(400)
+        }
+        res.sendStatus(200)
+    })
+}

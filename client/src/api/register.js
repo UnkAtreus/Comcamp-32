@@ -7,30 +7,6 @@ class Register {
         this.baseURL = END_POINT
     }
 
-    // sendData = async (payload) => {
-    //     await axios.post(this.baseURL, payload)
-    //     .then(res => {
-    //         console.log("Send Data")
-    //         // console.log(res.data)
-    //         if(res.status === 200) {
-    //             console.log("OK")
-    //             return true
-    //         }
-    //     })
-    //     .catch(err => {
-    //         const status = err.response.status
-    //         console.log(status)
-    //         if(status === 401) {
-    //             window.location = '/'
-    //             return false
-    //         } else if(status === 400) {
-    //             console.log("err 400")
-    //             return false
-    //         }
-    //         return false
-    //     }) 
-    // }
-
     sendData = async (step, payload) => {
         try {
             const res = await axios.post(this.baseURL + '/' + step, payload)

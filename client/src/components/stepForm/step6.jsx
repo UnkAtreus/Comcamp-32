@@ -5,7 +5,7 @@ import { Form, Input, Button, Row, Col, Select, DatePicker, InputNumber, Slider 
 
 function StepForm6(props) {
 
-    const {currentStep, handlePrev, handleNext, user} = props
+    const {currentStep, handlePrev, handleNext, user, summary } = props
 
     const alert = useAlert()
 
@@ -50,7 +50,7 @@ function StepForm6(props) {
                             rules: [{ required: true, message: 'กรุณาเลือกความถนัดทางด้าน Programming'}],
                             initialValue: 3
                         })(
-                            <Slider max={5} min={1} tooltipVisible />,
+                            <Slider max={5} min={1} tooltipVisible disabled={summary}/>,
                         )}
                         </Form.Item>
                     </Col>
@@ -60,7 +60,7 @@ function StepForm6(props) {
                             rules: [{ required: true, message: 'กรุณาเลือกความถนัดทางด้าน Big data' }],
                             initialValue: 3
                         })(
-                            <Slider max={5} min={1} tooltipVisible />,
+                            <Slider max={5} min={1} tooltipVisible disabled={summary}/>,
                         )}
                         </Form.Item>
                     </Col>
@@ -74,7 +74,7 @@ function StepForm6(props) {
                             rules: [{ required: true, message: 'กรุณาเลือกความถนัดทางด้าน Flow chart' }],
                             initialValue: 3
                         })(
-                            <Slider max={5} min={1} tooltipVisible />,
+                            <Slider max={5} min={1} tooltipVisible disabled={summary}/>,
                         )}
                         </Form.Item>
                     </Col>
@@ -84,7 +84,7 @@ function StepForm6(props) {
                             rules: [{ required: true, message: 'กรุณาเลือกความถนัดทางด้าน Microcontroller'}],
                             initialValue: 3
                         })(
-                            <Slider max={5} min={1} tooltipVisible />,
+                            <Slider max={5} min={1} tooltipVisible disabled={summary}/>,
                         )}
                         </Form.Item>
                     </Col>
@@ -98,14 +98,14 @@ function StepForm6(props) {
                             rules: [{ required: true, message: 'กรุณาเลือกความถนัดทางด้าน Brain storm' }],
                             initialValue: 3
                         })(
-                            <Slider max={5} min={1} tooltipVisible />,
+                            <Slider max={5} min={1} tooltipVisible disabled={summary}/>,
                         )}
                         </Form.Item>
                     </Col>
                 </Row>
                 
                 
-
+                {!summary && 
                 <Form.Item>
                     <Button type="primary" onClick={handlePrev}>
                     Back
@@ -114,7 +114,7 @@ function StepForm6(props) {
                     Submit
                     </Button>
                 </Form.Item>
-                
+                }
             </Form>
         </div>
     )
