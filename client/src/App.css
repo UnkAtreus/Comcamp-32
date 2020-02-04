@@ -137,6 +137,7 @@
         justify-content: flex-start;
         -webkit-box-align: center;
         align-items: center;
+        justify-content: center;
         max-width: 1600px;
         top: 20px;
         left: 0px;
@@ -151,14 +152,24 @@
         white-space: nowrap;
         font-size: 22px;
         margin-right: 30px;
+        position: absolute;
+    }
+    
+    .big-logo {
+        margin-top: 20px;
+        width: 200px;
     }
     
     .Nav-Logo {
         position: relative;
         max-width: 100%;
         display: inline-block;
-        width: 40px;
         overflow: hidden;
+    }
+    
+    .Button-Background.nav-bg {
+        height: 50px;
+        font-size: 0.8em;
     }
     
     .Nav-Links {
@@ -176,6 +187,10 @@
     
     .Nav-Links:hover {
         color: rgba(255, 255, 255, 1);
+    }
+    
+    .nav-right {
+        margin-right: auto;
     }
     
     .Heading-Text {
@@ -501,6 +516,11 @@
     .ant-radio:hover .ant-radio-inner,
     .ant-radio-input:focus+.ant-radio-inner {
         border-color: #121212;
+    }
+    
+    textarea.ant-input {
+        color: whitesmoke;
+        letter-spacing: 0.05em;
     }
     /*calender*/
     
