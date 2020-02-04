@@ -193,6 +193,16 @@
         margin-right: auto;
     }
     
+    .anticon.anticon-left.ant-select-arrow-icon {
+        font-size: 30px;
+        vertical-align: -0.325em;
+        margin-right: 10px;
+    }
+    
+    .anticon.anticon-left.ant-select-arrow-icon svg {
+        color: rgb(255, 241, 221);
+    }
+    
     .Heading-Text {
         font-family: 'Lora', serif;
         text-align: center;
