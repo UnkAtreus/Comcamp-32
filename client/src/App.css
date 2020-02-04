@@ -17,8 +17,7 @@
         font-family: Sarabun, sans-serif;
         letter-spacing: 0.05em;
         font-weight: 300;
-        font-size: 1.14em;
-        text-align: justify;
+        font-size: 14px;
         margin: 0.6em 0px;
     }
     
@@ -191,6 +190,10 @@
     
     .nav-right {
         margin-right: auto;
+    }
+    
+    .Nav-Links.Nav-Logout {
+        display: none;
     }
     
     .anticon.anticon-left.ant-select-arrow-icon {
@@ -723,4 +726,77 @@
     
     .ant-slider-handle:focus {
         box-shadow: 0 0 0 5px #feca1f25;
+    }
+    
+    @media screen and (max-width: 1200px) {
+        body {
+            padding: 0 15px;
+        }
+        .Nav-Links.Nav-Name {
+            position: absolute;
+            margin-right: 0;
+        }
+        .Nav-Links.Nav-Logout {
+            margin-right: 0;
+            display: initial;
+        }
+        .Nav-Links.nav-right.Nav-Back span {
+            display: none;
+        }
+        .Nav-Links.nav-right.Nav-Back:after {
+            content: 'Back';
+            position: absolute;
+        }
+        .Logo {
+            display: none;
+        }
+        .Button-Column.right.Nav-Btn {
+            display: none;
+        }
+        .ant-steps {
+            display: none;
+        }
+        .anticon.anticon-left.ant-select-arrow-icon {
+            margin-right: 0;
+            font-size: 20px;
+            vertical-align: -0.2em;
+        }
+    }
+    
+    @media screen and (max-width: 768px) {
+        .Button-Row {
+            display: inline-block;
+        }
+        .ant-row.ant-form-item.Right-Radio>.ant-col.ant-form-item-control-wrapper>.ant-form-item-control {
+            text-align: initial;
+        }
+        .ant-form-item-control {
+            text-align: center;
+        }
+        .Button-Column {
+            margin-bottom: 20px;
+        }
+        .ant-col-offset-3 {
+            margin: 0;
+        }
+        .ant-col-18 {
+            width: 100%;
+        }
+    }
+    
+    @media screen and (max-width: 560px) {
+        .Heading-Text {
+            font-size: 0.7em;
+            letter-spacing: 0.2em;
+        }
+        .Heading-Text h1 {
+            margin: 20px 0;
+        }
+        .Button-Background {
+            height: 50px;
+            font-size: 0.9em;
+        }
+        .Button-Column {
+            min-width: 180px;
+        }
     }

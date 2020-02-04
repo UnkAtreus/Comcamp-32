@@ -134,7 +134,7 @@ function StepForm5(props) {
                     </Col>
                 </Row>
 
-                <Form.Item label="หลักสูตรที่สนใจ">
+                <Form.Item className="Right-Radio" label="หลักสูตรที่สนใจ">
                 {getFieldDecorator('interest', {
                     rules: [{required: true, message: 'กรุณาเลือกหลักสูตรที่ต้องการ'}]
                 })(

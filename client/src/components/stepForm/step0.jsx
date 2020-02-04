@@ -91,6 +91,7 @@ function StepForm0(props) {
                     1 ชุด
                 </Col>
             </Row>
+            <Form.Item>
             <div class="Button-Row">
                     <div className="Button-Column right">
                                 <div className="Button-Left-Image">
@@ -112,6 +113,7 @@ function StepForm0(props) {
                             </div>
 
                         </div>
+                        </Form.Item>
 
         </div>
     )
