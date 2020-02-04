@@ -728,6 +728,10 @@
         box-shadow: 0 0 0 5px #feca1f25;
     }
     
+    .ant-calendar-input-wrap {
+        display: none;
+    }
+    
     @media screen and (max-width: 1200px) {
         body {
             padding: 0 15px;
