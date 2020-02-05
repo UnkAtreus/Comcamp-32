@@ -57,7 +57,7 @@ function StepForm8(props) {
                 </p>
                 <Form.Item>
                     {getFieldDecorator('question1', {
-                        rules: [{ required: true, message: 'กรุณาระบุสถานที่' }],
+                        rules: [{ required: true, message: 'กรุณาตอบคำถาม' }],
                     })(
                         <Input.TextArea
                             disabled={summary}
@@ -77,7 +77,7 @@ function StepForm8(props) {
                 </p>
                 <Form.Item>
                     {getFieldDecorator('question2', {
-                        rules: [{ required: true, message: 'กรุณาระบุสถานที่' }],
+                        rules: [{ required: true, message: 'กรุณาตอบคำถาม' }],
                     })(
                         <Input.TextArea
                             disabled={summary}
@@ -102,7 +102,7 @@ function StepForm8(props) {
 
                 <Form.Item>
                     {getFieldDecorator('question3', {
-                        rules: [{ required: true, message: 'กรุณาระบุสถานที่' }],
+                        rules: [{ required: true, message: 'กรุณาตอบคำถาม' }],
                     })(
                         <Input.TextArea
                             disabled={summary}
@@ -119,7 +119,7 @@ function StepForm8(props) {
 
                 <Form.Item>
                     {getFieldDecorator('question4', {
-                        rules: [{ required: true, message: 'กรุณาระบุสถานที่' }],
+                        rules: [{ required: true, message: 'กรุณาตอบคำถาม' }],
                     })(
                         <Input.TextArea
                             disabled={summary}
@@ -136,7 +136,7 @@ function StepForm8(props) {
 
                 <Form.Item>
                     {getFieldDecorator('question5', {
-                        rules: [{ required: true, message: 'กรุณาระบุสถานที่' }],
+                        rules: [{ required: true, message: 'กรุณาตอบคำถาม' }],
                     })(
                         <Input.TextArea
                             disabled={summary}
@@ -159,7 +159,7 @@ function StepForm8(props) {
 
                 <Form.Item>
                     {getFieldDecorator('question6', {
-                        rules: [{ required: true, message: 'กรุณาระบุสถานที่' }],
+                        rules: [{ required: true, message: 'กรุณาตอบคำถาม' }],
                     })(
                         <Input.TextArea
                             disabled={summary}
@@ -177,7 +177,7 @@ function StepForm8(props) {
 
                 <Form.Item>
                     {getFieldDecorator('question7', {
-                        rules: [{ required: true, message: 'กรุณาระบุสถานที่' }],
+                        rules: [{ required: true, message: 'กรุณาตอบคำถาม' }],
                     })(
                         <Input.TextArea
                             disabled={summary}
@@ -198,7 +198,7 @@ function StepForm8(props) {
 
                 <Form.Item>
                     {getFieldDecorator('question8', {
-                        rules: [{ required: true, message: 'กรุณาระบุสถานที่' }],
+                        rules: [{ required: true, message: 'กรุณาตอบคำถาม' }],
                     })(
                         <Input.TextArea
                             disabled={summary}

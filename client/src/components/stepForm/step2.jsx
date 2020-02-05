@@ -146,7 +146,7 @@ function StepForm2(props) {
                     <Col span={6} offset={1}>
                         <Form.Item label="จังหวัด">
                             {getFieldDecorator('school_province', {
-                                rules: [{ required: true, message: 'กรุณากรอกชื่อสถานศึกษา' }],
+                                rules: [{ required: true, message: 'กรุณากรอกจังหวัด' }],
                             })(
                                 <Select disabled={summary}>
                                     {

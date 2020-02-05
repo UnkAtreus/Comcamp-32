@@ -61,7 +61,7 @@ function StepForm9(props) {
             <Form onSubmit={handleSubmit} >
                 <Form.Item label="เลข Tracking Number">
                     {getFieldDecorator('tracking_number', {
-                        rules: [{ required: true, message: 'กรุณาระบุสถานที่' }],
+                        rules: [{ required: true, message: 'กรุณาระบุ tracking number' }],
                     })(
                         <Input
                             disabled={summary}

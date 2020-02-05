@@ -186,7 +186,7 @@ function StepForm3(props) {
 
                 <Form.Item label="อุบัติเหตุในรอบ 6 เดือน">
                     {getFieldDecorator('have_accident', {
-                        rules: [{ required: true, message: 'กรุณากรอกชื่อสถานศึกษา' }],
+                        rules: [{ required: true, message: 'กรุณากรอกข้อมูล' }],
                     })(
                         <Select
                             disabled={summary}
@@ -201,7 +201,7 @@ function StepForm3(props) {
                 {accident &&
                     <Form.Item label="เนื่องจาก">
                         {getFieldDecorator('accident', {
-                            rules: [{ required: true, message: 'กรุณาระบุสถานที่' }],
+                            rules: [{ required: true, message: 'กรุณากรอกข้อมูล' }],
                         })(
                             <Input
                                 disabled={summary}
