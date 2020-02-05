@@ -3,12 +3,17 @@ import register from '../api/register'
 import logo from '../asset/logo-big.png';
 import btn_left from '../asset/Button_left.png';
 import btn_right from '../asset/Button_right.png';
+import ColumnGroup from 'antd/lib/table/ColumnGroup';
 
-function Navbar() {
+function Navbar(props) {
+
+    const { user } = props
 
     const logout = () => {
         register.logout()
     }
+
+    console.log("navbar", user)
 
     return (
 

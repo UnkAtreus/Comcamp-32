@@ -15,9 +15,17 @@ services:
 #     - mongo
 #    #  command: node app
 #    #  -run: node app
- redis:
-    container_name: redis
-    image: redis
+#  redis:
+#     container_name: redis
+#     image: redis
+
+
+ mongo:
+    container_name: mongoDB
+    image: mongo
+    ports:
+    - "27017:27017" 
+    
  node:
     image: node:12.13.0-alpine
     container_name: node
@@ -27,16 +35,11 @@ services:
     command: sh -c "node app"
     ports:
      - "5000:5000"
-
-
- mongo:
-    container_name: mongoDB
-    image: mongo
-    ports:
-    - "27017:27017" 
-    
-#  redis: 
-#     image: redis
+    depends_on: 
+     - "mongo"
+     - "redis"
+ redis: 
+    image: redis
 
 #  nginx:
 #     image: nginx

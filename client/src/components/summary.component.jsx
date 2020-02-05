@@ -105,7 +105,7 @@ function SummaryForm(props) {
 
     return (
         <div>
-            <Navbar />
+            <Navbar user={user} />
             <AlertProvider template={AlertTemplate}{...options} >
                 <Row>
                     <Col span={18} offset={3}>
