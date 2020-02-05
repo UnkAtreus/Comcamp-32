@@ -145,7 +145,7 @@ function StepForm1(props) {
                     <Col span={4}>
                         <Form.Item label="ไซต์เสื้อ">
                             {getFieldDecorator('shirt_size', {
-                                rules: [{ required: true, message: 'กรุณาระไซต์เสื้อ', enum: ['S', 'M', 'L', 'XL'] }],
+                                rules: [{ required: true, message: 'กรุณากรอกไซต์เสื้อ', enum: ['S', 'M', 'L', 'XL'] }],
                             })(
                                 <Select disabled={summary}>
                                     <Option value="S">S</Option>
@@ -173,7 +173,7 @@ function StepForm1(props) {
                     <Col span={6} offset={1}>
                         <Form.Item label="E-mail">
                             {getFieldDecorator('email', {
-                                rules: [{ required: true, message: 'กรุณากรอกเบอร์โทรศัพท์ 10 หลัก', type: 'email' }],
+                                rules: [{ required: true, message: 'กรุณากรอกอีเมล', type: 'email' }],
                             })(
                                 <Input
                                     disabled={summary}

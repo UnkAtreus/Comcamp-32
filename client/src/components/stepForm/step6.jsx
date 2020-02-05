@@ -59,7 +59,7 @@ function StepForm6(props) {
                     <Col span={10} offset={1}>
                         <Form.Item label="บิ๊กดาต้า">
                             {getFieldDecorator('big_data', {
-                                rules: [{ required: true, message: 'กรุณาเลือกความถนัดทางด้าน Big data' }],
+                                rules: [{ required: true, message: 'กรุณาเลือกความถนัดทางด้าน machine learning' }],
                                 initialValue: 3
                             })(
                                 <Slider max={5} min={1} tooltipVisible disabled={summary} />,
