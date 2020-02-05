@@ -41,35 +41,24 @@ function RegisterForm(props) {
     function checkStep(user) {
         console.log("user", user)
         let newStep = 0
-        if (user != null) {
-            if (user.hasOwnProperty("step0")) {
-                newStep++
-            }
-            if (user.hasOwnProperty("general")) {
-                newStep++
-            }
-            if (user.hasOwnProperty("school")) {
-                newStep++
-            }
-            if (user.hasOwnProperty("disease")) {
-                newStep++
-            }
-            if (user.hasOwnProperty("address")) {
-                newStep++
-            }
-            if (user.hasOwnProperty("future")) {
-                newStep++
-            }
-            if (user.hasOwnProperty("ability")) {
-                newStep++
-            }
-            if (user.hasOwnProperty("location")) {
-                newStep++
-            }
-            if (user.hasOwnProperty("question")) {
-                newStep++
-            }
-            if (user.hasOwnProperty("tracking_number")) {
+        if(user != null) {
+            // Refactorize from this
+            // if(user.hasOwnProperty("...")) {
+            //    newStep++
+            // }
+            // ...
+            [
+                "step0",
+                "general",
+                "school",
+                "disease",
+                "address",
+                "future",
+                "ability",
+                "location",
+                "question"
+              ].reduce((step, next) => step + user.hasOwnProperty(next));
+            if(user.hasOwnProperty("tracking_number")) {
                 setFinished(true)
             }
         }
@@ -91,7 +80,7 @@ function RegisterForm(props) {
 
     useEffect(() => {
         checkStep(user)
-    }, [loading])
+    }, [loading, user])
 
 
 

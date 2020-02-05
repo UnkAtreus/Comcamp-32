@@ -32,7 +32,9 @@ function StepForm(props) {
 
   return (
     <div>
-      <span className="Heading-Text"><h1>Registration</h1></span>
+      <span className="Heading-Text">
+        <h1>Registration</h1>
+      </span>
 
       {/* <Stepper alternativeLabel nonLinear activeStep={currentStep}>
         {steps.map((label, index) => {
@@ -49,9 +51,9 @@ function StepForm(props) {
         })}
       </Stepper> */}
       <Steps current={currentStep} progressDot>
-        {
-          getSteps().map((step) => <Step key={step} title={step} />)
-        }
+        {getSteps().map(step => (
+          <Step key={step} title={step} />
+        ))}
       </Steps>
       <Divider />
     </div>
