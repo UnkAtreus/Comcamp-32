@@ -588,7 +588,7 @@ function StepForm4(props) {
                                  rules: [{ required: true, message: 'กรุณาเลือกจังหวัด' }]
                             })(
                                 <Select disabled={summary}
-                                    placeholder="--ระบุจังหวัด--"
+                                    placeholder="---ระบุจังหวัด---"
                                 >
                                     {
                                         province_th.map((province) => (

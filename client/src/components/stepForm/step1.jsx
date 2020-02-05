@@ -135,7 +135,7 @@ function StepForm1(props) {
                         </Form.Item>
                     </Col>
                     <Col xs={24} md={{span: 4, offset: 1}}>
-                        <Form.Item label="วันเกิด">
+                        <Form.Item label="วัน-เดือน-ปีเกิด">
                             {getFieldDecorator('birthday', {
                                 rules: [{ type: 'object', required: true, message: 'กรุณาเลือกวันเกิด' }],
                             })(<DatePicker 
@@ -150,7 +150,7 @@ function StepForm1(props) {
                     <Col xs={24} md={{span: 4, offset: 1}}>
                         <Form.Item label="กรุ๊ปเลือด">
                             {getFieldDecorator('bloodenum', {
-                                rules: [{ required: true, message: 'กรุณากรอกเพศ', enum: ['A', 'B', 'AB', 'O'] }],
+                                rules: [{ required: true, message: 'กรุณากรอกกรุ๊ปเลือด', enum: ['A', 'B', 'AB', 'O'] }],
                             })(
                                 <Select disabled={summary} >
                                     <Option value="A">A</Option>
@@ -197,16 +197,16 @@ function StepForm1(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="comcamp32@gmail.com"
+                                    placeholder="sample@gmail.com"
                                 />,
                             )}
                         </Form.Item>
                     </Col>
 
                     <Col xs={24} md={{span: 4, offset: 1}}>
-                        <Form.Item label="ไซต์เสื้อ">
+                        <Form.Item label="ขนาดเสื้อ">
                             {getFieldDecorator('shirt_size', {
-                                rules: [{ required: true, message: 'กรุณากรอกไซต์เสื้อ', enum: ['S', 'M', 'L', 'XL'] }],
+                                rules: [{ required: true, message: 'กรุณากรอกขนาดเสื้อ', enum: ['S', 'M', 'L', 'XL'] }],
                             })(
                                 <Select disabled={summary}>
                                     <Option value="S">S</Option>
