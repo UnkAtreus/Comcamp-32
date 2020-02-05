@@ -337,6 +337,24 @@
     .ant-input-number-input:focus {
         filter: brightness(80%) !important;
     }
+    
+    .ant-input[disabled] {
+        color: black;
+        filter: brightness(1) !important;
+    }
+    
+    .ant-input-number-disabled .ant-input-number-input {
+        color: black;
+        background-color: white;
+    }
+    
+    .ant-select-selection--single .ant-select-selection__rendered {
+        color: black;
+    }
+    
+    .ant-select-selection--single .ant-select-selection__rendered {
+        text-shadow: rgba(0, 0, 0, 0.5) 0px 0px 0px, rgba(0, 0, 0, 0.25) 0px 0px 0px;
+    }
     /*Selection*/
     
     .ant-select-selection {
@@ -540,6 +558,10 @@
         color: white;
         letter-spacing: 0.05em;
     }
+    
+    .ant-radio-disabled+span {
+        color: white;
+    }
     /*calender*/
     
     .ant-calendar {
@@ -731,6 +753,10 @@
     
     .ant-slider-handle:focus {
         box-shadow: 0 0 0 5px #feca1f25;
+    }
+    
+    .ant-slider-disabled .ant-slider-track {
+        background-color: #fecb1f !important;
     }
     
     .ant-calendar-input-wrap {

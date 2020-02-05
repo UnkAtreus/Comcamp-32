@@ -4,6 +4,8 @@ import { Form, Input, Button, Row, Col, Select } from 'antd';
 import { fetchUserAction } from '../actions/myaction'
 import { transitions, positions, Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic'
+import btn_left from '../asset/Button_left.png';
+import btn_right from '../asset/Button_right.png';
 
 import Navbar from './navbar.component'
 
@@ -109,12 +111,48 @@ function SummaryForm(props) {
                             <StepForm7  user={user} summary={true}/>
                             <StepForm8  user={user} summary={true}/>
                         </AlertProvider>
-                        <Button type="primary" >
-                        Back
-                        </Button>
-                        <Button type="primary" htmlType="submit">
-                        Submit
-                        </Button>
+
+                        <Form.Item>
+                        <div class="Button-Row">
+                            <div className="Button-Column right">
+                                <div className="Button-Left-Image">
+                                    <img
+                                        src={btn_left}
+                                        alt="Left button decoration"
+                                    />
+                                </div>
+                                <div className="Button-Right-Image">
+                                    <img
+                                        src={btn_right}
+                                        alt="Right button decoration"
+                                    />
+                                </div>
+                                <div className="Button-BorderImage"></div>
+                                <button className="Button-Background" htmlType="submit">
+                                    <span className="Markdown">Next</span>
+                                </button>
+                            </div>
+
+                            <div className="Button-Column left">
+                                <div className="Button-Left-Image">
+                                    <img
+                                        src={btn_left}
+                                        alt="Left button decoration"
+                                    />
+                                </div>
+                                <div className="Button-Right-Image">
+                                    <img
+                                        src={btn_right}
+                                        alt="Right button decoration"
+                                    />
+                                </div>
+                                <div className="Button-BorderImage"></div>
+                                <button className="Button-Background">
+                                    <span className="Markdown">Back</span>
+                                </button>
+                            </div>
+                        </div>
+                    </Form.Item>
                     </Col>
                 </Row>
             </AlertProvider>
