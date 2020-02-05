@@ -3,6 +3,8 @@
 var mongoose = require('mongoose');
 
 var generalSchema = mongoose.Schema({
+	prefix_th: {type: String, required: true},
+	prefix_eng: {type: String, required: true},
 	name_th:{type:String,required:true},
 	name_eng:{type:String,required:true},
 	nickname:{type:String,required:true},

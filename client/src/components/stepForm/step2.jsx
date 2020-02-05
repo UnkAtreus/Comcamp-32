@@ -175,12 +175,13 @@ function StepForm2(props) {
                             )}
                         </Form.Item>
                     </Col>
-                    <Col xs={24} md={{span:10, offset:1}}>
+                    <Col xs={24} md={{span:2, offset:1}}>
                         <Form.Item label="เกรดเฉลี่ย">
                             {getFieldDecorator('gpax', {
                                 rules: [{ required: true, message: 'กรุณากรอกเกรดเฉลี่ย' }],
                             })(
                                 <InputNumber min={0} max={4} step={0.01}
+                                    style={{width: '100%'}}
                                     placeholder="4.00"
                                     disabled={summary}
                                 />,

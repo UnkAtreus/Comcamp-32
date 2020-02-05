@@ -55,10 +55,21 @@ function StepForm1(props) {
 
     const { getFieldDecorator } = props.form;
 
-    const selectBefore = getFieldDecorator('prefix')(
-        <Select defaultValue="นาย" style={{ width: 90 }}>
+    const prefix_th = getFieldDecorator('prefix_th', {
+        rules: [{required: true, message: 'กรุณาระบุคำนำหน้าชื่อ'}]
+    })(
+        <Select style={{ width: 90 }}>
           <Option value="นาย">นาย</Option>
           <Option value="นางสาว">นางสาว</Option>
+        </Select>
+    );
+
+    const prefix_eng = getFieldDecorator('prefix_eng', {
+        rules: [{required: true, message: 'กรุณาระบุคำนำหน้าชื่อ'}]
+    })(
+        <Select style={{ width: 90 }}>
+          <Option value="Mr.">Mr.</Option>
+          <Option value="Mrs.">Mrs.</Option>
         </Select>
     );
 
@@ -73,7 +84,7 @@ function StepForm1(props) {
                                 rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาไทย' }],
                             })(
                                 <Input
-                                    addonBefore={selectBefore}
+                                    addonBefore={prefix_th}
                                     placeholder="สมชาย  ใจดี"
                                     disabled={summary}
                                 />,
@@ -87,6 +98,7 @@ function StepForm1(props) {
                                 rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาอังกฤษ' }],
                             })(
                                 <Input
+                                    addonBefore={prefix_eng}
                                     placeholder="Somchai  Jaidee"
                                     disabled={summary}
                                 />,

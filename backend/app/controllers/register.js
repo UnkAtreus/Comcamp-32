@@ -28,7 +28,9 @@ exports.step1 = (req, res) => {
         religion,
         shirt_size,
         telephone,
-        email
+        email,
+        prefix_th,
+        prefix_eng
     } = req.body
     console.log(birthday)
     User.findByIdAndUpdate(id, { 
@@ -42,7 +44,9 @@ exports.step1 = (req, res) => {
             religion: religion,
             shirt_size: shirt_size,
             telephone: telephone,
-            email: email
+            email: email,
+            prefix_th: prefix_th,
+            prefix_eng: prefix_eng
         }
      }, (err, result) => {
         console.log("update")
