@@ -263,7 +263,7 @@
     .ant-input:focus {
         border-color: transparent;
         border-right-width: 0px !important;
-        filter: brightness(80%) !important;
+        filter: brightness(100%) !important;
         -webkit-box-shadow: 0 0 0 0px rgba(24, 144, 255, 0.2);
         box-shadow: 0 0 0 0px rgba(24, 144, 255, 0.2);
     }
@@ -537,7 +537,7 @@
     }
     
     textarea.ant-input {
-        color: whitesmoke;
+        color: white;
         letter-spacing: 0.05em;
     }
     /*calender*/
