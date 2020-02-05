@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import register from '../../api/register'
-import { useAlert } from 'react-alert'
 import { Form, Input, Button, Row, Col, Select } from 'antd';
 import btn_left from '../../asset/Button_left.png';
 import btn_right from '../../asset/Button_right.png';
@@ -174,8 +173,6 @@ function StepForm4(props) {
     const { currentStep, handlePrev, handleNext, user, summary } = props
     const { getFieldDecorator, getFieldsValue, setFieldsValue } = props.form;
 
-    const alert = useAlert()
-
     useEffect(() => {
         if (user.hasOwnProperty("address")) {
             let addressData = user.address
@@ -223,9 +220,7 @@ function StepForm4(props) {
         if (flag) {
             console.log("Next 4")
             handleNext()
-            alert.success('บันทึกข้อมูลเสร็จสมบูรณ์')
         } else {
-            alert.error('บันทึกข้อมูลผิดพลาด')
         }
     }
     const handleSubmit = e => {
@@ -279,7 +274,7 @@ function StepForm4(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                    placeholder="123"
                                 />,
                             )}
                         </Form.Item>
@@ -291,7 +286,7 @@ function StepForm4(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                    placeholder="ถนนธนบุรี"
                                 />,
                             )}
                         </Form.Item>
@@ -304,7 +299,7 @@ function StepForm4(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                    placeholder="คอมแคมป์แลนด์"
                                 />,
                             )}
                         </Form.Item>
@@ -317,7 +312,7 @@ function StepForm4(props) {
                                 
                                 <Input
                                     disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                    placeholder="10"
                                 />,
                             )}
                         </Form.Item>
@@ -331,7 +326,7 @@ function StepForm4(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                    placeholder=""
                                 />,
                             )}
                         </Form.Item>

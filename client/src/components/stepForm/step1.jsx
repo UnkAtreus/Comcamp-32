@@ -4,6 +4,7 @@ import { useAlert } from 'react-alert'
 import { Form, Input, Button, Row, Col, Select, DatePicker } from 'antd';
 import btn_left from '../../asset/Button_left.png';
 import btn_right from '../../asset/Button_right.png';
+import moment from 'moment'
 
 const { Option } = Select
 
@@ -11,14 +12,14 @@ function StepForm1(props) {
 
     const { currentStep, handlePrev, handleNext, user, summary } = props
 
-    const alert = useAlert()
 
     useEffect(() => {
         if (user.hasOwnProperty("general")) {
             let generalData = user.general
             console.log("gen ", generalData.birthday)
             delete generalData._id
-            delete generalData.birthday
+            generalData.birthday = moment(generalData.birthday, dateFormat)
+            // delete generalData.birthday
             props.form.setFieldsValue(generalData)
         }
     }, []);
@@ -31,9 +32,7 @@ function StepForm1(props) {
         if (flag) {
             console.log("Next 2")
             handleNext()
-            alert.success('บันทึกข้อมูลเสร็จสมบูรณ์')
         } else {
-            alert.error('บันทึกข้อมูลผิดพลาด')
         }
     }
 
@@ -50,6 +49,8 @@ function StepForm1(props) {
             }
         });
     };
+
+    const dateFormat = 'YYYY/MM/DD';
 
     const { getFieldDecorator } = props.form;
 
@@ -116,7 +117,13 @@ function StepForm1(props) {
                         <Form.Item label="วันเกิด">
                             {getFieldDecorator('birthday', {
                                 rules: [{ type: 'object', required: true, message: 'กรุณาเลือกวันเกิด' }],
-                            })(<DatePicker disabled={summary} style={{width: '100%'}}/>)}
+                            })(<DatePicker 
+                                // defaultValue={moment(generalData.birthday, dateFormat)}
+                                disabled={summary} 
+                                style={{width: '100%'}}
+                                format={dateFormat}
+                                
+                                />)}
                         </Form.Item>
                     </Col>
                     <Col xs={24} md={{span: 4, offset: 1}}>

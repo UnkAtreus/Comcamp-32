@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import register from '../../api/register'
-import { useAlert } from 'react-alert'
 import { Form, Input, Button, Row, Col, Select, DatePicker, InputNumber } from 'antd';
 import btn_left from '../../asset/Button_left.png';
 import btn_right from '../../asset/Button_right.png';
@@ -11,7 +10,6 @@ const { Option } = Select
 function StepForm3(props) {
 
     const { currentStep, handlePrev, handleNext, user, summary } = props
-    const alert = useAlert()
 
     const [accident, setAccident] = useState(false)
 
@@ -40,9 +38,7 @@ function StepForm3(props) {
         if (flag) {
             console.log("Next 3")
             handleNext()
-            alert.success('บันทึกข้อมูลเสร็จสมบูรณ์')
         } else {
-            alert.error('บันทึกข้อมูลผิดพลาด')
         }
     }
 

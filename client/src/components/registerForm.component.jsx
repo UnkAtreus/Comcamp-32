@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { transitions, positions, Provider as AlertProvider } from 'react-alert'
-import AlertTemplate from 'react-alert-template-basic'
 import { Row, Col, Steps, Popover } from 'antd'
 import { fetchUserAction } from '../actions/myaction'
 
@@ -117,7 +116,6 @@ function RegisterForm(props) {
     return (
         <div>
             <Navbar user={user}/>
-            <AlertProvider template={AlertTemplate}{...options} >
                 <Row>
                     <Col span={18} offset={3}>
                         <StepForm currentStep={currentStep} maxStep={maxStep} />
@@ -133,7 +131,6 @@ function RegisterForm(props) {
                         {currentStep === 9 && <StepForm9 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user} finished={finished} />}
                     </Col>
                 </Row>
-            </AlertProvider>
         </div>
     )
 }

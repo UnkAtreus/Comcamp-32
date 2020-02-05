@@ -1,6 +1,5 @@
-import React from 'react'
+import React, {useState} from 'react'
 import register from '../../api/register'
-import { useAlert } from 'react-alert'
 import { Form, Input, Button, Row, Col, Radio } from 'antd';
 import btn_left from '../../asset/Button_left.png';
 import btn_right from '../../asset/Button_right.png';
@@ -8,7 +7,7 @@ import btn_right from '../../asset/Button_right.png';
 function StepForm0(props) {
 
     const { currentStep, handleNext } = props
-    const alert = useAlert()
+    const [ agree, setAgree ] = useState(false)  
 
     const nextStep = async () => {
         const flag = await register.sendData(currentStep, { step0: true })
@@ -16,10 +15,8 @@ function StepForm0(props) {
         console.log(flag)
         if (flag) {
             console.log("Next")
-            alert.success("บันทึกข้อมูลเสร็จสมบูรณ์")
             handleNext()
         } else {
-            alert.error('บันทึกข้อมูลผิดพลาด')
         }
     }
 
@@ -91,6 +88,7 @@ function StepForm0(props) {
                     1 ชุด
                 </Col>
             </Row>
+            
             <Form.Item>
                 <div class="Button-Row">
                     <div className="Button-Column right">
