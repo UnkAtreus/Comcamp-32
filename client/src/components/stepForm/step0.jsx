@@ -107,7 +107,7 @@ function StepForm0(props) {
                             />
                         </div>
                         <div className="Button-BorderImage"></div>
-                        <button className="Button-Background" htmlType="submit">
+                        <button className="Button-Background" htmlType="submit" onClick={nextStep}>
                             <span className="Markdown">Next</span>
                         </button>
                     </div>
