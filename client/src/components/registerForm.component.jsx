@@ -28,7 +28,7 @@ function RegisterForm(props) {
     const [currentStep, setCurrentStep] = useState(0);
     const [maxStep, setMaxStep] = useState(0);
     const [user, setUser] = useState({})
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
 
     // useEffect( () => {
     //     console.log("test", test)
@@ -47,7 +47,7 @@ function RegisterForm(props) {
             //    newStep++
             // }
             // ...
-            [
+            newStep = [
                 "step0",
                 "general",
                 "school",
@@ -57,17 +57,16 @@ function RegisterForm(props) {
                 "ability",
                 "location",
                 "question"
-              ].reduce((step, next) => step + user.hasOwnProperty(next));
+              ].reduce((step, next) => step + user.hasOwnProperty(next), 0);
             if(user.hasOwnProperty("tracking_number")) {
                 setFinished(true)
             }
         }
         //go to page
-        newStep = 9
+        // newStep = 9
         setCurrentStep(newStep)
         setMaxStep(newStep)
     }
-    /*
     
     useEffect( ()=> {
         if(props.user === false) {
@@ -78,10 +77,10 @@ function RegisterForm(props) {
             setLoading(false)
         }
     }, [props])
-*/
+
     useEffect(() => {
         checkStep(user)
-    }, [loading, user])
+    }, [loading])
 
 
 

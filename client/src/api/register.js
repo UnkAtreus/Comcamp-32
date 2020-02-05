@@ -8,6 +8,7 @@ class Register {
     }
 
     sendData = async (step, payload) => {
+        // return true
         try {
             const res = await axios.post(this.baseURL + '/' + step, payload)
             console.log("Send Data")

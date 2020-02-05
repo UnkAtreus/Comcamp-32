@@ -275,7 +275,7 @@ function StepForm4(props) {
                     <Col span={4} >
                         <Form.Item label="บ้านเลขที่">
                             {getFieldDecorator('home_number', {
-                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                rules: [{ required: true, message: 'กรุณากรอกบ้านเลขที่' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -286,8 +286,8 @@ function StepForm4(props) {
                     </Col>
                     <Col span={5} offset={1}>
                         <Form.Item label="ถนน">
-                            {getFieldDecorator('road', {
-                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                            {getFieldDecorator('road',{
+                                rules: [{ required: true, message: 'กรุณากรอกชื่อถนน' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -300,7 +300,7 @@ function StepForm4(props) {
                     <Col span={5} offset={1}>
                         <Form.Item label="หมู่">
                             {getFieldDecorator('village', {
-                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                rules: [{ required: true, message: 'กรุณากรอกหมู่' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -311,7 +311,10 @@ function StepForm4(props) {
                     </Col>
                     <Col span={5} offset={1}>
                         <Form.Item label="ซอย">
-                            {getFieldDecorator('lane')(
+                            {getFieldDecorator('lane', {
+                                 rules: [{ required: true, message: 'กรุณากรอกชื่อหรือเลขที่ซอย' }],
+                            })(
+                                
                                 <Input
                                     disabled={summary}
                                     placeholder="คณะวิศวกรรมศาสตร์"
@@ -324,7 +327,7 @@ function StepForm4(props) {
                     <Col span={4} >
                         <Form.Item label="ตำบล/แขวง">
                             {getFieldDecorator('sub_district', {
-                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                rules: [{ required: true, message: 'กรุณากรอกชื่อตำบล/แขวง' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -336,7 +339,7 @@ function StepForm4(props) {
                     <Col span={5} offset={1}>
                         <Form.Item label="อำเภอ/เขต">
                             {getFieldDecorator('district', {
-                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                rules: [{ required: true, message: 'กรุณากรอกชื่ออำเภอ/เขต' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -348,7 +351,9 @@ function StepForm4(props) {
 
                     <Col span={5} offset={1}>
                         <Form.Item label="จังหวัด">
-                            {getFieldDecorator('province', config)(
+                            {getFieldDecorator('province', config, {
+                                 rules: [{ required: true, message: 'กรุณาเลือกจังหวัด' }]
+                            })(
                                 <Select disabled={summary}>
                                     {
                                         province_th.map((province) => (
@@ -363,7 +368,7 @@ function StepForm4(props) {
                     <Col span={5} offset={1}>
                         <Form.Item label="รหัสไปรษณีย์">
                             {getFieldDecorator('postal_code', {
-                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }]
+                                rules: [{ required: true, message: 'กรุณากรอกรหัสไปรษณีย์' }]
                             })(
                                 <Input
                                     disabled={summary}
@@ -380,7 +385,7 @@ function StepForm4(props) {
                     <Col span={4} >
                         <Form.Item label="บ้านเลขที่">
                             {getFieldDecorator('home_number_regis', {
-                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                rules: [{ required: true, message: 'กรุณากรอกบ้านเลขที่' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -392,7 +397,7 @@ function StepForm4(props) {
                     <Col span={5} offset={1}>
                         <Form.Item label="ถนน">
                             {getFieldDecorator('road_regis', {
-                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                rules: [{ required: true, message: 'กรุณากรอกชื่อถนน' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -405,7 +410,7 @@ function StepForm4(props) {
                     <Col span={5} offset={1}>
                         <Form.Item label="หมู่">
                             {getFieldDecorator('village_regis', {
-                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                rules: [{ required: true, message: 'กรุณากรอกหมู่' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -416,7 +421,9 @@ function StepForm4(props) {
                     </Col>
                     <Col span={5} offset={1}>
                         <Form.Item label="ซอย">
-                            {getFieldDecorator('lane_regis')(
+                            {getFieldDecorator('lane_regis', {
+                                 rules: [{ required: true, message: 'กรุณากรอกชื่อหรือเลขที่ซอย' }],
+                            })(
                                 <Input
                                     disabled={summary}
                                     placeholder="คณะวิศวกรรมศาสตร์"
@@ -429,7 +436,7 @@ function StepForm4(props) {
                     <Col span={4} >
                         <Form.Item label="ตำบล/แขวง">
                             {getFieldDecorator('sub_district_regis', {
-                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                rules: [{ required: true, message: 'กรุณากรอกชื่อตำบล/แขวง' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -441,7 +448,7 @@ function StepForm4(props) {
                     <Col span={5} offset={1}>
                         <Form.Item label="อำเภอ/เขต">
                             {getFieldDecorator('district_regis', {
-                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                rules: [{ required: true, message: 'กรุณากรอกชื่ออำเภอ/เขต' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -453,7 +460,9 @@ function StepForm4(props) {
 
                     <Col span={5} offset={1}>
                         <Form.Item label="จังหวัด">
-                            {getFieldDecorator('province_regis', config)(
+                            {getFieldDecorator('province_regis', config, {
+                                 rules: [{ required: true, message: 'กรุณาเลือกจังหวัด' }]
+                            })(
                                 <Select disabled={summary}>
                                     {
                                         province_th.map((province) => (
@@ -468,7 +477,7 @@ function StepForm4(props) {
                     <Col span={5} offset={1}>
                         <Form.Item label="รหัสไปรษณีย์">
                             {getFieldDecorator('postal_code_regis', {
-                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }]
+                                rules: [{ required: true, message: 'กรุณากรอกรหัสไปรษณีย์' }]
                             })(
                                 <Input
                                     disabled={summary}
@@ -485,7 +494,7 @@ function StepForm4(props) {
                     <Col span={4} >
                         <Form.Item label="บ้านเลขที่">
                             {getFieldDecorator('home_number_parent', {
-                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                rules: [{ required: true, message: 'กรุณากรอกบ้านเลขที่' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -497,7 +506,7 @@ function StepForm4(props) {
                     <Col span={5} offset={1}>
                         <Form.Item label="ถนน">
                             {getFieldDecorator('road_parent', {
-                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                rules: [{ required: true, message: 'กรุณากรอกชื่อถนน' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -510,7 +519,7 @@ function StepForm4(props) {
                     <Col span={5} offset={1}>
                         <Form.Item label="หมู่">
                             {getFieldDecorator('village_parent', {
-                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                rules: [{ required: true, message: 'กรุณากรอกหมู่' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -521,7 +530,9 @@ function StepForm4(props) {
                     </Col>
                     <Col span={5} offset={1}>
                         <Form.Item label="ซอย">
-                            {getFieldDecorator('lane_parent')(
+                            {getFieldDecorator('lane_parent', {
+                                rules: [{ required: true, message: 'กรุณากรอกชื่อหรือเลขที่ซอย' }],
+                            })(
                                 <Input
                                     disabled={summary}
                                     placeholder="คณะวิศวกรรมศาสตร์"
@@ -534,7 +545,7 @@ function StepForm4(props) {
                     <Col span={4} >
                         <Form.Item label="ตำบล/แขวง">
                             {getFieldDecorator('sub_district_parent', {
-                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                rules: [{ required: true, message: 'กรุณากรอกชื่อตำบล/แขวง' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -546,7 +557,7 @@ function StepForm4(props) {
                     <Col span={5} offset={1}>
                         <Form.Item label="อำเภอ/เขต">
                             {getFieldDecorator('district_parent', {
-                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                rules: [{ required: true, message: 'กรุณากรอกคชื่ออำเภอ/เขต' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -573,7 +584,7 @@ function StepForm4(props) {
                     <Col span={5} offset={1}>
                         <Form.Item label="รหัสไปรษณีย์">
                             {getFieldDecorator('postal_code_parent', {
-                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }]
+                                rules: [{ required: true, message: 'กรุณากรอกรหัสไปรษณีย์' }]
                             })(
                                 <Input
                                     disabled={summary}
@@ -589,7 +600,7 @@ function StepForm4(props) {
                     <Col span={16}>
                         <Form.Item label="ชื่อ">
                             {getFieldDecorator('name', {
-                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                rules: [{ required: true, message: 'กรุณากรอกชื่อ' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -601,7 +612,7 @@ function StepForm4(props) {
                     <Col span={6} offset={1}>
                         <Form.Item label="ความสัมพันธ์">
                             {getFieldDecorator('relation', {
-                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                rules: [{ required: true, message: 'กรุณากรอกความสัมพันธ์' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -615,7 +626,7 @@ function StepForm4(props) {
                     <Col span={6}>
                         <Form.Item label="เบอร์โทรศัพท์">
                             {getFieldDecorator('tel', {
-                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                rules: [{ required: true, message: 'กรุณากรอกเบอร์โทรศัพท์' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -626,7 +637,9 @@ function StepForm4(props) {
                     </Col>
                     <Col span={6} offset={1}>
                         <Form.Item label="E-mail">
-                            {getFieldDecorator('email')(
+                            {getFieldDecorator('email', {
+                                rules: [{ required: true, message: 'กรุณากรอกอีเมล' }],
+                            })(
                                 <Input
                                     disabled={summary}
                                     placeholder="คณะวิศวกรรมศาสตร์"
