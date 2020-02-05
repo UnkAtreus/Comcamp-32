@@ -801,6 +801,15 @@
         border-color: white;
     }
     
+    .ant-input-group-addon {
+        border: 0px solid #d9d9d9;
+        background-color: black;
+    }
+    
+    .ant-input-group-addon .ant-select-focused .ant-select-selection {
+        color: white;
+    }
+    
     @media screen and (max-width: 1200px) {
         body {
             padding: 0 15px;
