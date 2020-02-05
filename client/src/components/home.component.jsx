@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Home () {
+function Home() {
     return (
         <div>
             <h1>Login Facebook</h1>

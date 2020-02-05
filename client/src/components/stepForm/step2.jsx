@@ -85,7 +85,7 @@ const province_th = [
     'อุตรดิตถ์',
     'อุทัยธานี',
     'อุบลราชธานี',
-  ];
+];
 
 function StepForm2(props) {
 
@@ -93,7 +93,7 @@ function StepForm2(props) {
     const alert = useAlert()
 
     useEffect(() => {
-        if(user.hasOwnProperty("school")) {
+        if (user.hasOwnProperty("school")) {
             let schoolData = user.school
             delete schoolData._id
             props.form.setFieldsValue(schoolData);
@@ -117,12 +117,12 @@ function StepForm2(props) {
     const handleSubmit = e => {
         e.preventDefault();
         props.form.validateFields((err, values) => {
-          if (!err) {
-            console.log('Received values of form: ', values);
-            nextStep(values)
-          }
+            if (!err) {
+                console.log('Received values of form: ', values);
+                nextStep(values)
+            }
         });
-      };
+    };
 
     const { getFieldDecorator } = props.form;
 
@@ -133,66 +133,66 @@ function StepForm2(props) {
                 <Row>
                     <Col span={16}>
                         <Form.Item label="ชื่อสถานศึกษา">
-                        {getFieldDecorator('school_name', {
-                            rules: [{ required: true, message: 'กรุณากรอกชื่อสถานศึกษา' }],
-                        })(
-                            <Input
-                            disabled={summary}
-                            placeholder="โรงเรียนคอมแคมป์ 32"
-                            />,
-                        )}
+                            {getFieldDecorator('school_name', {
+                                rules: [{ required: true, message: 'กรุณากรอกชื่อสถานศึกษา' }],
+                            })(
+                                <Input
+                                    disabled={summary}
+                                    placeholder="โรงเรียนคอมแคมป์ 32"
+                                />,
+                            )}
                         </Form.Item>
                     </Col>
                     <Col span={6} offset={1}>
                         <Form.Item label="จังหวัด">
-                        {getFieldDecorator('school_province', {
-                            rules: [{ required: true, message: 'กรุณากรอกชื่อสถานศึกษา' }],
-                        })(
-                            <Select disabled={summary}>
-                                {
-                                    province_th.map( (province) => (
-                                        <Option key={province} value={province}>{province}</Option>
-                                    )
-                                    )
-                                }
-                            </Select>,
-                        )}
+                            {getFieldDecorator('school_province', {
+                                rules: [{ required: true, message: 'กรุณากรอกชื่อสถานศึกษา' }],
+                            })(
+                                <Select disabled={summary}>
+                                    {
+                                        province_th.map((province) => (
+                                            <Option key={province} value={province}>{province}</Option>
+                                        )
+                                        )
+                                    }
+                                </Select>,
+                            )}
                         </Form.Item>
                     </Col>
                 </Row>
-                
+
                 <Row>
                     <Col span={10}>
                         <Form.Item label="ชั้นปี">
-                        {getFieldDecorator('grade', {
-                            rules: [{ required: true, message: 'กรุณากรอกชั้นปีการศึกษา', enum:['4', '5', '6', 'ปวช'] }],
-                        })(
-                            <Select disabled={summary}>
-                                <Option value={'4'}>ม.4</Option>
-                                <Option value={'5'}>ม.5</Option>
-                                <Option value={'6'}>ม.6</Option>
-                                <Option value={'ปวช'}>ปวช</Option>
-                            </Select>,
-                        )}
+                            {getFieldDecorator('grade', {
+                                rules: [{ required: true, message: 'กรุณากรอกชั้นปีการศึกษา', enum: ['4', '5', '6', 'ปวช'] }],
+                            })(
+                                <Select disabled={summary}>
+                                    <Option value={'4'}>ม.4</Option>
+                                    <Option value={'5'}>ม.5</Option>
+                                    <Option value={'6'}>ม.6</Option>
+                                    <Option value={'ปวช'}>ปวช</Option>
+                                </Select>,
+                            )}
                         </Form.Item>
                     </Col>
                     <Col span={10} offset={1}>
                         <Form.Item label="เกรดเฉลี่ย">
-                        {getFieldDecorator('gpax', {
-                            rules: [{ required: true, message: 'กรุณากรอกเกรดเฉลี่ย' }],
-                        })(
-                            <InputNumber min={0} max={4} step={0.01}
-                            placeholder="4.00"
-                            disabled={summary}
-                            />,
-                        )}
+                            {getFieldDecorator('gpax', {
+                                rules: [{ required: true, message: 'กรุณากรอกเกรดเฉลี่ย' }],
+                            })(
+                                <InputNumber min={0} max={4} step={0.01}
+                                    placeholder="4.00"
+                                    disabled={summary}
+                                />,
+                            )}
                         </Form.Item>
                     </Col>
                 </Row>
-                {!summary && 
-                <Form.Item>
-                    <div class="Button-Row">
-                    <div className="Button-Column right">
+                {!summary &&
+                    <Form.Item>
+                        <div class="Button-Row">
+                            <div className="Button-Column right">
                                 <div className="Button-Left-Image">
                                     <img
                                         src={btn_left}
@@ -230,12 +230,12 @@ function StepForm2(props) {
                                 </button>
                             </div>
                         </div>
-                </Form.Item>
+                    </Form.Item>
                 }
-                
+
             </Form>
         </div>
     )
 }
 
-export default Form.create({name: 'step2'})(StepForm2)
+export default Form.create({ name: 'step2' })(StepForm2)

@@ -11,23 +11,23 @@ const locations = ['มา มจธ. ด้วยจนเอง', 'สาย�
 
 function StepForm7(props) {
 
-    const {currentStep, handlePrev, handleNext, user, summary } = props
+    const { currentStep, handlePrev, handleNext, user, summary } = props
 
     const alert = useAlert()
 
     useEffect(() => {
-        if(user.hasOwnProperty("location")) {
+        if (user.hasOwnProperty("location")) {
             let locationData = user.location
-            props.form.setFieldsValue({location: locationData});
+            props.form.setFieldsValue({ location: locationData });
         }
         // props.form.setFieldsValue({have_accident: false})
     }, []);
 
     const nextStep = async (payload) => {
-        const flag =  await register.sendData(currentStep, payload)
+        const flag = await register.sendData(currentStep, payload)
         console.log("Click Next")
         console.log(flag)
-        if(flag) {
+        if (flag) {
             console.log("Next 5")
             handleNext()
             alert.success('บันทึกข้อมูลเสร็จสมบูรณ์')
@@ -38,12 +38,12 @@ function StepForm7(props) {
     const handleSubmit = e => {
         e.preventDefault();
         props.form.validateFields((err, values) => {
-          if (!err) {
-            console.log('Received values of form: ', values);
-            nextStep(values)
-          }
+            if (!err) {
+                console.log('Received values of form: ', values);
+                nextStep(values)
+            }
         });
-      };
+    };
     const { getFieldDecorator } = props.form;
     return (
         <div>
@@ -51,25 +51,25 @@ function StepForm7(props) {
             <Form onSubmit={handleSubmit} >
                 <Form.Item label="สถานที่ที่ต้องการให้พี่ค่ายไปรับ">
                     {getFieldDecorator('location', {
-                        rules: [{required: true, message: 'กรุณาระบุสถานที่'}],
-                        initialValue:"มา มจธ. ด้วยจนเอง"
+                        rules: [{ required: true, message: 'กรุณาระบุสถานที่' }],
+                        initialValue: "มา มจธ. ด้วยจนเอง"
                     })(
-                    <Select disabled={summary}>
-                    {
-                        locations.map( (location) => (
-                            <Option key={location} value={location}>{location}</Option>
-                        )
-                        )
-                    }
-                    </Select>,
+                        <Select disabled={summary}>
+                            {
+                                locations.map((location) => (
+                                    <Option key={location} value={location}>{location}</Option>
+                                )
+                                )
+                            }
+                        </Select>,
                     )}
                 </Form.Item>
-                
-                
-                {!summary && 
-                <Form.Item>
-                    <div class="Button-Row">
-                    <div className="Button-Column right">
+
+
+                {!summary &&
+                    <Form.Item>
+                        <div class="Button-Row">
+                            <div className="Button-Column right">
                                 <div className="Button-Left-Image">
                                     <img
                                         src={btn_left}
@@ -107,11 +107,11 @@ function StepForm7(props) {
                                 </button>
                             </div>
                         </div>
-                </Form.Item>
+                    </Form.Item>
                 }
             </Form>
         </div>
     )
 }
 
-export default Form.create({name: 'step7'})(StepForm7)
+export default Form.create({ name: 'step7' })(StepForm7)
