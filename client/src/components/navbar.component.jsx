@@ -63,7 +63,7 @@ function Navbar(props) {
                 <img src={btn_right} alt="Right button decoration" />
               </div>
               <div className="Button-BorderImage"></div>
-              <button className="Button-Background nav-bg" htmlType="submit">
+              <button className="Button-Background nav-bg" htmlType="submit" onClick={logout}>
                 <span className="Markdown">Log out</span>
               </button>
             </div>
