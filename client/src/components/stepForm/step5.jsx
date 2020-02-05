@@ -7,12 +7,12 @@ import btn_right from '../../asset/Button_right.png';
 
 function StepForm5(props) {
 
-    const {currentStep, handlePrev, handleNext, user, summary } = props
+    const { currentStep, handlePrev, handleNext, user, summary } = props
 
     const alert = useAlert()
 
     useEffect(() => {
-        if(user.hasOwnProperty("future")) {
+        if (user.hasOwnProperty("future")) {
             let futureData = user.future
             props.form.setFieldsValue({
                 one_faculty: futureData.one.faculty,
@@ -28,10 +28,10 @@ function StepForm5(props) {
     }, []);
 
     const nextStep = async (payload) => {
-        const flag =  await register.sendData(currentStep, payload)
+        const flag = await register.sendData(currentStep, payload)
         console.log("Click Next")
         console.log(flag)
-        if(flag) {
+        if (flag) {
             console.log("Next 4")
             handleNext()
             alert.success('บันทึกข้อมูลเสร็จสมบูรณ์')
@@ -42,12 +42,12 @@ function StepForm5(props) {
     const handleSubmit = e => {
         e.preventDefault();
         props.form.validateFields((err, values) => {
-          if (!err) {
-            console.log('Received values of form: ', values);
-            nextStep(values)
-          }
+            if (!err) {
+                console.log('Received values of form: ', values);
+                nextStep(values)
+            }
         });
-      };
+    };
     const { getFieldDecorator } = props.form;
     return (
         <div>
@@ -56,99 +56,99 @@ function StepForm5(props) {
                 <Row>
                     <Col span={10} >
                         <Form.Item label="คณะลำดับที่หนึ่ง">
-                        {getFieldDecorator('one_faculty', {
-                            rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
-                        })(
-                            <Input
-                            disabled={summary}
-                            placeholder="คณะวิศวกรรมศาสตร์"
-                            />,
-                        )}
+                            {getFieldDecorator('one_faculty', {
+                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                            })(
+                                <Input
+                                    disabled={summary}
+                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                />,
+                            )}
                         </Form.Item>
                     </Col>
                     <Col span={10} offset={1}>
                         <Form.Item label="มหาวิทยาลัยลำดับที่หนึ่ง">
-                        {getFieldDecorator('one_university', {
-                            rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
-                        })(
-                            <Input
-                            disabled={summary}
-                            placeholder="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี"
-                            />,
-                        )}
+                            {getFieldDecorator('one_university', {
+                                rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
+                            })(
+                                <Input
+                                    disabled={summary}
+                                    placeholder="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี"
+                                />,
+                            )}
                         </Form.Item>
                     </Col>
                 </Row>
-                
+
                 <Row>
                     <Col span={10}>
                         <Form.Item label="คณะลำดับที่สอง">
-                        {getFieldDecorator('two_faculty', {
-                            rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
-                        })(
-                            <Input
-                            disabled={summary}
-                            placeholder="คณะวิศวกรรมศาสตร์"
-                            />,
-                        )}
+                            {getFieldDecorator('two_faculty', {
+                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                            })(
+                                <Input
+                                    disabled={summary}
+                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                />,
+                            )}
                         </Form.Item>
                     </Col>
                     <Col span={10} offset={1}>
                         <Form.Item label="มหาวิทยาลัยลำดับที่สอง">
-                        {getFieldDecorator('two_university', {
-                            rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
-                        })(
-                            <Input
-                            disabled={summary}
-                            placeholder="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี"
-                            />,
-                        )}
+                            {getFieldDecorator('two_university', {
+                                rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
+                            })(
+                                <Input
+                                    disabled={summary}
+                                    placeholder="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี"
+                                />,
+                            )}
                         </Form.Item>
                     </Col>
                 </Row>
-                
+
                 <Row>
                     <Col span={10} >
                         <Form.Item label="คณะลำดับที่สาม">
-                        {getFieldDecorator('three_faculty', {
-                            rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
-                        })(
-                            <Input
-                            disabled={summary}
-                            placeholder="คณะวิศวกรรมศาสตร์"
-                            />,
-                        )}
+                            {getFieldDecorator('three_faculty', {
+                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                            })(
+                                <Input
+                                    disabled={summary}
+                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                />,
+                            )}
                         </Form.Item>
                     </Col>
                     <Col span={10} offset={1} >
                         <Form.Item label="มหาวิทยาลัยลำดับที่สาม">
-                        {getFieldDecorator('three_university', {
-                            rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
-                        })(
-                            <Input
-                            disabled={summary}
-                            placeholder="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี"
-                            />,
-                        )}
+                            {getFieldDecorator('three_university', {
+                                rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
+                            })(
+                                <Input
+                                    disabled={summary}
+                                    placeholder="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี"
+                                />,
+                            )}
                         </Form.Item>
                     </Col>
                 </Row>
 
                 <Form.Item className="Right-Radio" label="หลักสูตรที่สนใจ">
-                {getFieldDecorator('interest', {
-                    rules: [{required: true, message: 'กรุณาเลือกหลักสูตรที่ต้องการ'}]
-                })(
-                    <Radio.Group disabled={summary}>
-                    <Radio value="reg">Regular</Radio>
-                    <Radio value="inter">Inter</Radio>
-                    <Radio value="hds">HDS</Radio>
-                    </Radio.Group>,
-                )}
+                    {getFieldDecorator('interest', {
+                        rules: [{ required: true, message: 'กรุณาเลือกหลักสูตรที่ต้องการ' }]
+                    })(
+                        <Radio.Group disabled={summary}>
+                            <Radio value="reg">Regular</Radio>
+                            <Radio value="inter">Inter</Radio>
+                            <Radio value="hds">HDS</Radio>
+                        </Radio.Group>,
+                    )}
                 </Form.Item>
-                {!summary && 
-                <Form.Item>
-                    <div class="Button-Row">
-                    <div className="Button-Column right">
+                {!summary &&
+                    <Form.Item>
+                        <div class="Button-Row">
+                            <div className="Button-Column right">
                                 <div className="Button-Left-Image">
                                     <img
                                         src={btn_left}
@@ -186,11 +186,11 @@ function StepForm5(props) {
                                 </button>
                             </div>
                         </div>
-                </Form.Item>
+                    </Form.Item>
                 }
             </Form>
         </div>
     )
 }
 
-export default Form.create({name: 'step5'})(StepForm5)
+export default Form.create({ name: 'step5' })(StepForm5)

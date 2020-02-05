@@ -21,23 +21,23 @@ const locations = ['มา มจธ. ด้วยจนเอง', 'สาย�
 
 function StepForm9(props) {
 
-    const {currentStep, handlePrev, handleNext, user, summary } = props
+    const { currentStep, handlePrev, handleNext, user, summary } = props
 
     const alert = useAlert()
 
     useEffect(() => {
-        if(user.hasOwnProperty("tracking_number")) {
+        if (user.hasOwnProperty("tracking_number")) {
             let tracking_numbernData = user.tracking_number
-            props.form.setFieldsValue({tracking_number: tracking_numbernData});
+            props.form.setFieldsValue({ tracking_number: tracking_numbernData });
         }
         // props.form.setFieldsValue({have_accident: false})
     }, []);
 
     const nextStep = async (payload) => {
-        const flag =  await register.sendData(currentStep, payload)
+        const flag = await register.sendData(currentStep, payload)
         console.log("Click Next")
         console.log(flag)
-        if(flag) {
+        if (flag) {
             console.log("Next 5")
             alert.success('บันทึกข้อมูลเสร็จสมบูรณ์')
         } else {
@@ -47,12 +47,12 @@ function StepForm9(props) {
     const handleSubmit = e => {
         e.preventDefault();
         props.form.validateFields((err, values) => {
-          if (!err) {
-            console.log('Received values of form: ', values);
-            nextStep(values)
-          }
+            if (!err) {
+                console.log('Received values of form: ', values);
+                nextStep(values)
+            }
         });
-      };
+    };
     const { getFieldDecorator } = props.form;
     return (
         <div>
@@ -61,63 +61,63 @@ function StepForm9(props) {
             <Form onSubmit={handleSubmit} >
                 <Form.Item label="เลข Tracking Number">
                     {getFieldDecorator('tracking_number', {
-                        rules: [{required: true, message: 'กรุณาระบุสถานที่'}],
+                        rules: [{ required: true, message: 'กรุณาระบุสถานที่' }],
                     })(
-                    <Input
-                        disabled={summary}
-                        placeholder="test"
-                    />,
+                        <Input
+                            disabled={summary}
+                            placeholder="test"
+                        />,
                     )}
                 </Form.Item>
-                
-                
+
+
 
                 <Form.Item>
-                <div class="Button-Row">
+                    <div class="Button-Row">
 
-                <div className="Button-Column right">
-                                <div className="Button-Left-Image">
-                                    <img
-                                        src={btn_left}
-                                        alt="Left button decoration"
-                                    />
-                                </div>
-                                <div className="Button-Right-Image">
-                                    <img
-                                        src={btn_right}
-                                        alt="Right button decoration"
-                                    />
-                                </div>
-                                <div className="Button-BorderImage"></div>
-                                <button className="Button-Background" htmlType="submit">
-                                    <span className="Markdown">Submit</span>
-                                </button>
+                        <div className="Button-Column right">
+                            <div className="Button-Left-Image">
+                                <img
+                                    src={btn_left}
+                                    alt="Left button decoration"
+                                />
                             </div>
-                            <div className="Button-Column left">
-                                <div className="Button-Left-Image">
-                                    <img
-                                        src={btn_left}
-                                        alt="Left button decoration"
-                                    />
-                                </div>
-                                <div className="Button-Right-Image">
-                                    <img
-                                        src={btn_right}
-                                        alt="Right button decoration"
-                                    />
-                                </div>
-                                <div className="Button-BorderImage"></div>
-                                <button className="Button-Background" onClick={handlePrev}>
-                                    <span className="Markdown">Back</span>
-                                </button>
+                            <div className="Button-Right-Image">
+                                <img
+                                    src={btn_right}
+                                    alt="Right button decoration"
+                                />
                             </div>
+                            <div className="Button-BorderImage"></div>
+                            <button className="Button-Background" htmlType="submit">
+                                <span className="Markdown">Submit</span>
+                            </button>
                         </div>
+                        <div className="Button-Column left">
+                            <div className="Button-Left-Image">
+                                <img
+                                    src={btn_left}
+                                    alt="Left button decoration"
+                                />
+                            </div>
+                            <div className="Button-Right-Image">
+                                <img
+                                    src={btn_right}
+                                    alt="Right button decoration"
+                                />
+                            </div>
+                            <div className="Button-BorderImage"></div>
+                            <button className="Button-Background" onClick={handlePrev}>
+                                <span className="Markdown">Back</span>
+                            </button>
+                        </div>
+                    </div>
                 </Form.Item>
-                
+
             </Form>
             <h1>สรุปข้อมูล</h1>
         </div>
     )
 }
 
-export default Form.create({name: 'step9'})(StepForm9)
+export default Form.create({ name: 'step9' })(StepForm9)

@@ -640,7 +640,7 @@ function StepForm4(props) {
                     <Form.Item>
                         <div class="Button-Row">
 
-                        <div className="Button-Column right">
+                            <div className="Button-Column right">
                                 <div className="Button-Left-Image">
                                     <img
                                         src={btn_left}
@@ -658,7 +658,7 @@ function StepForm4(props) {
                                     <span className="Markdown">Next</span>
                                 </button>
                             </div>
-                            
+
                             <div className="Button-Column left">
                                 <div className="Button-Left-Image">
                                     <img
@@ -677,12 +677,9 @@ function StepForm4(props) {
                                     <span className="Markdown">Back</span>
                                 </button>
                             </div>
-
-                            
                         </div>
                     </Form.Item>
                 }
-
             </Form>
         </div>
     )

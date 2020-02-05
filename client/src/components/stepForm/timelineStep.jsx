@@ -1,15 +1,15 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Steps,Divider  } from 'antd';
+import { Steps, Divider } from 'antd';
 
 
 function getSteps() {
-  return ['เอกสาร', 'ข้อมูลทั่วไป', 'การศึกษา','สิ่งที่แพ้', 'ที่อยู่', 'ความสนใจ','ความถนัด', 'การเดินทาง', 'คำถาม','เสร็จสิ้น'];
+  return ['เอกสาร', 'ข้อมูลทั่วไป', 'การศึกษา', 'สิ่งที่แพ้', 'ที่อยู่', 'ความสนใจ', 'ความถนัด', 'การเดินทาง', 'คำถาม', 'เสร็จสิ้น'];
 }
 
 function StepForm(props) {
 
-  const {currentStep, maxStep} = props
+  const { currentStep, maxStep } = props
   const { Step } = Steps
 
   // const classes = useStyles();
@@ -32,8 +32,10 @@ function StepForm(props) {
 
   return (
     <div>
-      <span className="Heading-Text"><h1>Registration</h1></span>
-      
+      <span className="Heading-Text">
+        <h1>Registration</h1>
+      </span>
+
       {/* <Stepper alternativeLabel nonLinear activeStep={currentStep}>
         {steps.map((label, index) => {
           const stepProps = {};
@@ -49,9 +51,9 @@ function StepForm(props) {
         })}
       </Stepper> */}
       <Steps current={currentStep} progressDot>
-        {
-          getSteps().map( (step) => <Step key={step} title={step} />)
-        }
+        {getSteps().map(step => (
+          <Step key={step} title={step} />
+        ))}
       </Steps>
       <Divider />
     </div>

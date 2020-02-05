@@ -89,34 +89,34 @@ const province_th = [
 
 function StepForm3(props) {
 
-    const {currentStep, handlePrev, handleNext, user, summary } = props
+    const { currentStep, handlePrev, handleNext, user, summary } = props
     const alert = useAlert()
 
     const [accident, setAccident] = useState(false)
 
-    useEffect( () => {
-        async function fetchData()  {
-            if(user.hasOwnProperty("disease")) {
+    useEffect(() => {
+        async function fetchData() {
+            if (user.hasOwnProperty("disease")) {
                 let diseaseData = user.disease
                 delete diseaseData._id
-                if(diseaseData.hasOwnProperty("accident")) {
+                if (diseaseData.hasOwnProperty("accident")) {
                     await setAccident(true)
-                    await props.form.setFieldsValue({have_accident: "true"})
+                    await props.form.setFieldsValue({ have_accident: "true" })
                 } else {
                     await setAccident(false)
-                    await props.form.setFieldsValue({have_accident: "false"})
+                    await props.form.setFieldsValue({ have_accident: "false" })
                 }
                 props.form.setFieldsValue(diseaseData);
             }
-        }  
-        fetchData()  
+        }
+        fetchData()
     }, []);
 
     const nextStep = async (payload) => {
-        const flag =  await register.sendData(currentStep, payload)
+        const flag = await register.sendData(currentStep, payload)
         console.log("Click Next")
         console.log(flag)
-        if(flag) {
+        if (flag) {
             console.log("Next 3")
             handleNext()
             alert.success('บันทึกข้อมูลเสร็จสมบูรณ์')
@@ -128,19 +128,19 @@ function StepForm3(props) {
     const handleSubmit = e => {
         e.preventDefault();
         props.form.validateFields((err, values) => {
-          if (!err) {
-            console.log('Received values of form: ', values);
-            nextStep(values)
-          }
+            if (!err) {
+                console.log('Received values of form: ', values);
+                nextStep(values)
+            }
         });
-      };
+    };
 
     const { getFieldDecorator } = props.form;
 
     const handleAccident = value => {
-        if(value == "true") {
+        if (value == "true") {
             setAccident(true)
-        } else if(value == "false") {
+        } else if (value == "false") {
             setAccident(false)
         }
         console.log(accident)
@@ -152,69 +152,69 @@ function StepForm3(props) {
             <Form onSubmit={handleSubmit} >
 
                 <Form.Item label="โรคประจำตัว">
-                {getFieldDecorator('disease')(
-                    <Input
-                    placeholder="โรคหอบหึด"
-                    disabled={summary}
-                    />,
-                )}
+                    {getFieldDecorator('disease')(
+                        <Input
+                            placeholder="โรคหอบหึด"
+                            disabled={summary}
+                        />,
+                    )}
                 </Form.Item>
                 <Form.Item label="อาหารที่แพ้">
-                {getFieldDecorator('allergy_food')(
-                    <Input
-                    placeholder="ถั่วเขียว"
-                    disabled={summary}
-                    />,
-                )}
+                    {getFieldDecorator('allergy_food')(
+                        <Input
+                            placeholder="ถั่วเขียว"
+                            disabled={summary}
+                        />,
+                    )}
                 </Form.Item>
                 <Form.Item label="ยาที่แพ้">
-                {getFieldDecorator('allergy_medic')(
-                    <Input
-                    placeholder="ยาแอมพลิซิลลิน"
-                    disabled={summary}
-                    />,
-                )}
+                    {getFieldDecorator('allergy_medic')(
+                        <Input
+                            placeholder="ยาแอมพลิซิลลิน"
+                            disabled={summary}
+                        />,
+                    )}
                 </Form.Item>
                 <Form.Item label="ยาประจำตัว">
-                {getFieldDecorator('medic_need')(
-                    <Input
-                    placeholder="ยาแก้หอบหึด"
-                    disabled={summary}
-                    />,
-                )}
+                    {getFieldDecorator('medic_need')(
+                        <Input
+                            placeholder="ยาแก้หอบหึด"
+                            disabled={summary}
+                        />,
+                    )}
                 </Form.Item>
 
                 <Form.Item label="อุบัติเหตุในรอบ 6 เดือน">
-                {getFieldDecorator('have_accident', {
+                    {getFieldDecorator('have_accident', {
                         rules: [{ required: true, message: 'กรุณากรอกชื่อสถานศึกษา' }],
                     })(
-                    <Select
-                    disabled={summary}
-                    placeholder="โปรดระบุ"
-                    onChange={handleAccident}
-                    >
-                    <Option value="false">ไม่มี</Option>
-                    <Option value="true">มี</Option>
-                    </Select>
-                )}
+                        <Select
+                            disabled={summary}
+                            placeholder="โปรดระบุ"
+                            onChange={handleAccident}
+                        >
+                            <Option value="false">ไม่มี</Option>
+                            <Option value="true">มี</Option>
+                        </Select>
+                    )}
                 </Form.Item>
-                { accident && 
-                <Form.Item label="เนื่องจาก">
-                {getFieldDecorator('accident', {
-                        rules: [{required: true, message: 'กรุณาระบุสถานที่'}],
-                })(
-                    <Input
-                    disabled={summary}
-                    placeholder="ยาแก้หอบหึด"
-                    />,
-                )}
-                </Form.Item>
+                {accident &&
+                    <Form.Item label="เนื่องจาก">
+                        {getFieldDecorator('accident', {
+                            rules: [{ required: true, message: 'กรุณาระบุสถานที่' }],
+                        })(
+                            <Input
+                                disabled={summary}
+                                placeholder="ยาแก้หอบหึด"
+                            />,
+                        )}
+                    </Form.Item>
                 }
 
-                {!summary && 
-                <Form.Item>
-                    <div class="Button-Row">
-                    <div className="Button-Column right">
+                {!summary &&
+                    <Form.Item>
+                        <div class="Button-Row">
+                            <div className="Button-Column right">
                                 <div className="Button-Left-Image">
                                     <img
                                         src={btn_left}
@@ -252,11 +252,11 @@ function StepForm3(props) {
                                 </button>
                             </div>
                         </div>
-                </Form.Item>
+                    </Form.Item>
                 }
             </Form>
         </div>
     )
 }
 
-export default Form.create({name: 'step3'})(StepForm3)
+export default Form.create({ name: 'step3' })(StepForm3)

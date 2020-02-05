@@ -10,11 +10,11 @@ const { Option } = Select
 function StepForm1(props) {
 
     const { currentStep, handlePrev, handleNext, user, summary } = props
-    
+
     const alert = useAlert()
-    
+
     useEffect(() => {
-        if(user.hasOwnProperty("general")) {
+        if (user.hasOwnProperty("general")) {
             let generalData = user.general
             console.log("gen ", generalData.birthday)
             delete generalData._id
@@ -22,7 +22,7 @@ function StepForm1(props) {
             props.form.setFieldsValue(generalData)
         }
     }, []);
-    
+
     const nextStep = async (payload) => {
         console.log("payload ", payload)
         const flag = await register.sendData(currentStep, payload)
@@ -40,16 +40,16 @@ function StepForm1(props) {
     const handleSubmit = e => {
         e.preventDefault();
         props.form.validateFields((err, values) => {
-          if (!err) {
-            console.log('Received values of form: ', values)
-            console.log('birthday', values['birthday'])
-            nextStep({
-                ...values,
-                birthday: values['birthday'].format('YYYY-MM-DD')
-            })
-          }
+            if (!err) {
+                console.log('Received values of form: ', values)
+                console.log('birthday', values['birthday'])
+                nextStep({
+                    ...values,
+                    birthday: values['birthday'].format('YYYY-MM-DD')
+                })
+            }
         });
-      };
+    };
 
     const { getFieldDecorator } = props.form;
 
@@ -58,85 +58,85 @@ function StepForm1(props) {
             <h1>ข้อมูลทั่วไป</h1>
             <Form onSubmit={handleSubmit} >
                 <Form.Item label="ชื่อภาษาไทย">
-                {getFieldDecorator('name_th', {
-                    rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาไทย' }],
-                })(
-                    <Input
-                    placeholder="สมชาย  ใจดี"
-                    disabled={summary}
-                    />,
-                )}
+                    {getFieldDecorator('name_th', {
+                        rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาไทย' }],
+                    })(
+                        <Input
+                            placeholder="สมชาย  ใจดี"
+                            disabled={summary}
+                        />,
+                    )}
                 </Form.Item>
 
                 <Form.Item label="ชื่อภาษาอังกฤษ">
-                {getFieldDecorator('name_eng', {
-                    rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาอังกฤษ' }],
-                })(
-                    <Input
-                    placeholder="Somchai  Jaidee"
-                    disabled={summary}
-                    />,
-                )}
+                    {getFieldDecorator('name_eng', {
+                        rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาอังกฤษ' }],
+                    })(
+                        <Input
+                            placeholder="Somchai  Jaidee"
+                            disabled={summary}
+                        />,
+                    )}
                 </Form.Item>
 
                 <Row>
                     <Col span={4}>
                         <Form.Item label="ชื่อเล่น">
-                        {getFieldDecorator('nickname', {
-                            rules: [{ required: true, message: 'กรุณากรอกชื่อเล่น' }],
-                        })(
-                            <Input
-                            placeholder="ชัย"
-                            disabled={summary}
-                            />,
-                        )}
+                            {getFieldDecorator('nickname', {
+                                rules: [{ required: true, message: 'กรุณากรอกชื่อเล่น' }],
+                            })(
+                                <Input
+                                    placeholder="ชัย"
+                                    disabled={summary}
+                                />,
+                            )}
                         </Form.Item>
                     </Col>
                     <Col span={4} offset={1}>
                         <Form.Item label="เพศ">
-                        {getFieldDecorator('sex', {
-                            rules: [{ required: true, message: 'กรุณากรอกเพศ', enum: ['ชาย', 'หญิง']}],
-                        })(
-                            <Select disabled={summary}>
-                                <Option value="ชาย">ชาย</Option>
-                                <Option value="หญิง">หญิง</Option>
-                            </Select>
+                            {getFieldDecorator('sex', {
+                                rules: [{ required: true, message: 'กรุณากรอกเพศ', enum: ['ชาย', 'หญิง'] }],
+                            })(
+                                <Select disabled={summary}>
+                                    <Option value="ชาย">ชาย</Option>
+                                    <Option value="หญิง">หญิง</Option>
+                                </Select>
                             ,
-                        )}
+                            )}
                         </Form.Item>
                     </Col>
                     <Col span={4} offset={1}>
                         <Form.Item label="วันเกิด">
-                        {getFieldDecorator('birthday', {
-                            rules: [{ type: 'object', required: true, message: 'กรุณาเลือกวันเกิด' }],
-                        })(<DatePicker disabled={summary}/>)}
+                            {getFieldDecorator('birthday', {
+                                rules: [{ type: 'object', required: true, message: 'กรุณาเลือกวันเกิด' }],
+                            })(<DatePicker disabled={summary} />)}
                         </Form.Item>
                     </Col>
                     <Col span={4}>
                         <Form.Item label="กรุ๊ปเลือด">
-                        {getFieldDecorator('bloodenum', {
-                            rules: [{ required: true, message: 'กรุณากรอกเพศ', enum: ['A', 'B', 'AB', 'O']}],
-                        })(
-                            <Select disabled={summary}>
-                                <Option value="A">A</Option>
-                                <Option value="B">B</Option>
-                                <Option value="AB">AB</Option>
-                                <Option value="O">O</Option>
-                            </Select>
+                            {getFieldDecorator('bloodenum', {
+                                rules: [{ required: true, message: 'กรุณากรอกเพศ', enum: ['A', 'B', 'AB', 'O'] }],
+                            })(
+                                <Select disabled={summary}>
+                                    <Option value="A">A</Option>
+                                    <Option value="B">B</Option>
+                                    <Option value="AB">AB</Option>
+                                    <Option value="O">O</Option>
+                                </Select>
                             ,
-                        )}
+                            )}
                         </Form.Item>
                     </Col>
                     <Col span={4} offset={1}>
                         <Form.Item label="ศาสนา">
-                        {getFieldDecorator('religion', {
-                            rules: [{ required: true, message: 'กรุณากรอกศาสนา' }],
-                        })(
-                            <Input
-                            placeholder="พุทธ"
-                            disabled={summary}
-                            />,
-                        )}
+                            {getFieldDecorator('religion', {
+                                rules: [{ required: true, message: 'กรุณากรอกศาสนา' }],
+                            })(
+                                <Input
+                                    placeholder="พุทธ"
+                                    disabled={summary}
+                                />,
+                            )}
                         </Form.Item>
                     </Col>
                 </Row>
@@ -144,50 +144,50 @@ function StepForm1(props) {
                 <Row>
                     <Col span={4}>
                         <Form.Item label="ไซต์เสื้อ">
-                        {getFieldDecorator('shirt_size', {
-                            rules: [{ required: true, message: 'กรุณาระไซต์เสื้อ', enum: ['S', 'M', 'L', 'XL']}],
-                        })(
-                            <Select disabled={summary}>
-                                <Option value="S">S</Option>
-                                <Option value="M">M</Option>
-                                <Option value="L">L</Option>
-                                <Option value="XL">XL</Option>
-                            </Select>
+                            {getFieldDecorator('shirt_size', {
+                                rules: [{ required: true, message: 'กรุณาระไซต์เสื้อ', enum: ['S', 'M', 'L', 'XL'] }],
+                            })(
+                                <Select disabled={summary}>
+                                    <Option value="S">S</Option>
+                                    <Option value="M">M</Option>
+                                    <Option value="L">L</Option>
+                                    <Option value="XL">XL</Option>
+                                </Select>
                             ,
-                        )}
+                            )}
                         </Form.Item>
                     </Col>
 
                     <Col span={4} offset={1}>
                         <Form.Item label="เบอร์โทรศัพท์">
-                        {getFieldDecorator('telephone', {
-                            rules: [{ required: true, message: 'กรุณากรอกเบอร์โทรศัพท์ 10 หลัก', len:10}],
-                        })(
-                            <Input
-                            disabled={summary}
-                            placeholder="0903234466"
-                            />,
-                        )}
+                            {getFieldDecorator('telephone', {
+                                rules: [{ required: true, message: 'กรุณากรอกเบอร์โทรศัพท์ 10 หลัก', len: 10 }],
+                            })(
+                                <Input
+                                    disabled={summary}
+                                    placeholder="0903234466"
+                                />,
+                            )}
                         </Form.Item>
                     </Col>
                     <Col span={6} offset={1}>
                         <Form.Item label="E-mail">
-                        {getFieldDecorator('email', {
-                            rules: [{ required: true, message: 'กรุณากรอกเบอร์โทรศัพท์ 10 หลัก', type: 'email'}],
-                        })(
-                            <Input
-                            disabled={summary}
-                            placeholder="comcamp32@gmail.com"
-                            />,
-                        )}
+                            {getFieldDecorator('email', {
+                                rules: [{ required: true, message: 'กรุณากรอกเบอร์โทรศัพท์ 10 หลัก', type: 'email' }],
+                            })(
+                                <Input
+                                    disabled={summary}
+                                    placeholder="comcamp32@gmail.com"
+                                />,
+                            )}
                         </Form.Item>
                     </Col>
                 </Row>
-                
-                {!summary && 
-                <Form.Item>
-                    <div class="Button-Row">
-                    <div className="Button-Column right">
+
+                {!summary &&
+                    <Form.Item>
+                        <div class="Button-Row">
+                            <div className="Button-Column right">
                                 <div className="Button-Left-Image">
                                     <img
                                         src={btn_left}
@@ -225,11 +225,11 @@ function StepForm1(props) {
                                 </button>
                             </div>
                         </div>
-                </Form.Item>
+                    </Form.Item>
                 }
             </Form>
         </div>
     )
 }
 
-export default Form.create({name: 'step1'})(StepForm1)
+export default Form.create({ name: 'step1' })(StepForm1)
