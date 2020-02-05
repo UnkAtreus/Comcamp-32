@@ -28,7 +28,7 @@ function RegisterForm(props) {
     const [currentStep, setCurrentStep] = useState(0);
     const [maxStep, setMaxStep] = useState(0);
     const [user, setUser] = useState({})
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
 
     // useEffect( () => {
     //     console.log("test", test)
@@ -68,15 +68,15 @@ function RegisterForm(props) {
         setMaxStep(newStep)
     }
     
-    useEffect( ()=> {
-        if(props.user === false) {
-            props.history.push('/')
-        }
-        if(user != null && props.user) {
-            setUser(props.user)
-            setLoading(false)
-        }
-    }, [props])
+    // useEffect( ()=> {
+    //     if(props.user === false) {
+    //         props.history.push('/')
+    //     }
+    //     if(user != null && props.user) {
+    //         setUser(props.user)
+    //         setLoading(false)
+    //     }
+    // }, [props])
 
     useEffect(() => {
         checkStep(user)
