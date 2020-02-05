@@ -168,6 +168,13 @@ const config = {
     }]
 }
 
+const selectBefore = (
+    <Select defaultValue="นาย" style={{ width: 90 }}>
+      <Option value="นาย">นาย</Option>
+      <Option value="นางสาว">นางสาว</Option>
+    </Select>
+  );
+
 function StepForm4(props) {
 
     const { currentStep, handlePrev, handleNext, user, summary } = props
@@ -274,7 +281,33 @@ function StepForm4(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="123"
+                                    placeholder="10"
+                                />,
+                            )}
+                        </Form.Item>
+                    </Col>
+                    <Col span={5} offset={1}>
+                        <Form.Item label="หมู่">
+                            {getFieldDecorator('village', {
+                                rules: [{ required: true, message: 'กรุณากรอกหมู่' }],
+                            })(
+                                <Input
+                                    disabled={summary}
+                                    placeholder="หมู่บ้านวิศวกรรมคอมพิวเตอร์"
+                                />,
+                            )}
+                        </Form.Item>
+                    </Col>
+
+                    <Col span={5} offset={1}>
+                        <Form.Item label="ซอย">
+                            {getFieldDecorator('lane', {
+                                    rules: [{ required: true, message: 'กรุณากรอกชื่อหรือเลขที่ซอย' }],
+                            })(
+                                
+                                <Input
+                                    disabled={summary}
+                                    placeholder="32"
                                 />,
                             )}
                         </Form.Item>
@@ -286,37 +319,12 @@ function StepForm4(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="ถนนธนบุรี"
+                                    placeholder="วิศววัฒนะ"
                                 />,
                             )}
                         </Form.Item>
                     </Col>
 
-                    <Col span={5} offset={1}>
-                        <Form.Item label="หมู่">
-                            {getFieldDecorator('village', {
-                                rules: [{ required: true, message: 'กรุณากรอกหมู่' }],
-                            })(
-                                <Input
-                                    disabled={summary}
-                                    placeholder="คอมแคมป์แลนด์"
-                                />,
-                            )}
-                        </Form.Item>
-                    </Col>
-                    <Col span={5} offset={1}>
-                        <Form.Item label="ซอย">
-                            {getFieldDecorator('lane', {
-                                 rules: [{ required: true, message: 'กรุณากรอกชื่อหรือเลขที่ซอย' }],
-                            })(
-                                
-                                <Input
-                                    disabled={summary}
-                                    placeholder="10"
-                                />,
-                            )}
-                        </Form.Item>
-                    </Col>
                 </Row>
                 <Row>
                     <Col span={4} >
@@ -326,7 +334,7 @@ function StepForm4(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder=""
+                                    placeholder="บางมด"
                                 />,
                             )}
                         </Form.Item>
@@ -338,7 +346,7 @@ function StepForm4(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                    placeholder="ทุ่งครุ"
                                 />,
                             )}
                         </Form.Item>
@@ -349,7 +357,9 @@ function StepForm4(props) {
                             {getFieldDecorator('province', config, {
                                  rules: [{ required: true, message: 'กรุณาเลือกจังหวัด' }]
                             })(
-                                <Select disabled={summary}>
+                                <Select disabled={summary}
+                                    placeholder="--ระบุจังหวัด--"
+                                >
                                     {
                                         province_th.map((province) => (
                                             <Option key={province} value={province}>{province}</Option>
@@ -367,7 +377,7 @@ function StepForm4(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                    placeholder="10032"
                                 />,
                             )}
                         </Form.Item>
@@ -384,19 +394,7 @@ function StepForm4(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
-                                />,
-                            )}
-                        </Form.Item>
-                    </Col>
-                    <Col span={5} offset={1}>
-                        <Form.Item label="ถนน">
-                            {getFieldDecorator('road_regis', {
-                                rules: [{ required: true, message: 'กรุณากรอกชื่อถนน' }],
-                            })(
-                                <Input
-                                    disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                    placeholder="10"
                                 />,
                             )}
                         </Form.Item>
@@ -409,7 +407,7 @@ function StepForm4(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                    placeholder="หมู่บ้านวิศวกรรมคอมพิวเตอร์"
                                 />,
                             )}
                         </Form.Item>
@@ -417,11 +415,23 @@ function StepForm4(props) {
                     <Col span={5} offset={1}>
                         <Form.Item label="ซอย">
                             {getFieldDecorator('lane_regis', {
-                                 rules: [{ required: true, message: 'กรุณากรอกชื่อหรือเลขที่ซอย' }],
+                                rules: [{ required: true, message: 'กรุณากรอกชื่อหรือเลขที่ซอย' }],
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                    placeholder="32"
+                                />,
+                            )}
+                        </Form.Item>
+                    </Col>
+                    <Col span={5} offset={1}>
+                        <Form.Item label="ถนน">
+                            {getFieldDecorator('road_regis', {
+                                rules: [{ required: true, message: 'กรุณากรอกชื่อถนน' }],
+                            })(
+                                <Input
+                                    disabled={summary}
+                                    placeholder="หมู่บ้านวิศวกรรมคอมพิวเตอร์"
                                 />,
                             )}
                         </Form.Item>
@@ -435,7 +445,7 @@ function StepForm4(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                    placeholder="บางมด"
                                 />,
                             )}
                         </Form.Item>
@@ -447,7 +457,7 @@ function StepForm4(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                    placeholder="ทุ่งครุ"
                                 />,
                             )}
                         </Form.Item>
@@ -458,7 +468,9 @@ function StepForm4(props) {
                             {getFieldDecorator('province_regis', config, {
                                  rules: [{ required: true, message: 'กรุณาเลือกจังหวัด' }]
                             })(
-                                <Select disabled={summary}>
+                                <Select disabled={summary}
+                                    placeholder="--ระบุจังหวัด--"
+                                >
                                     {
                                         province_th.map((province) => (
                                             <Option key={province} value={province}>{province}</Option>
@@ -476,7 +488,7 @@ function StepForm4(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                    placeholder="10032"
                                 />,
                             )}
                         </Form.Item>
@@ -493,19 +505,7 @@ function StepForm4(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
-                                />,
-                            )}
-                        </Form.Item>
-                    </Col>
-                    <Col span={5} offset={1}>
-                        <Form.Item label="ถนน">
-                            {getFieldDecorator('road_parent', {
-                                rules: [{ required: true, message: 'กรุณากรอกชื่อถนน' }],
-                            })(
-                                <Input
-                                    disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                    placeholder="10"
                                 />,
                             )}
                         </Form.Item>
@@ -518,7 +518,7 @@ function StepForm4(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                    placeholder="หมู่บ้านวิศวกรรมคอมพิวเตอร์"
                                 />,
                             )}
                         </Form.Item>
@@ -530,7 +530,19 @@ function StepForm4(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                    placeholder="32"
+                                />,
+                            )}
+                        </Form.Item>
+                    </Col>
+                    <Col span={5} offset={1}>
+                        <Form.Item label="ถนน">
+                            {getFieldDecorator('road_parent', {
+                                rules: [{ required: true, message: 'กรุณากรอกชื่อถนน' }],
+                            })(
+                                <Input
+                                    disabled={summary}
+                                    placeholder="วิศววัฒนะ"
                                 />,
                             )}
                         </Form.Item>
@@ -544,7 +556,7 @@ function StepForm4(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                    placeholder="บางมด"
                                 />,
                             )}
                         </Form.Item>
@@ -556,7 +568,7 @@ function StepForm4(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                    placeholder="ทุ่งครุ"
                                 />,
                             )}
                         </Form.Item>
@@ -565,7 +577,9 @@ function StepForm4(props) {
                     <Col span={5} offset={1}>
                         <Form.Item label="จังหวัด">
                             {getFieldDecorator('province_parent', config)(
-                                <Select disabled={summary}>
+                                <Select disabled={summary}
+                                    placeholder="--ระบุจังหวัด--"
+                                >
                                     {
                                         province_th.map((province) => (
                                             <Option key={province} value={province}>{province}</Option>
@@ -583,7 +597,7 @@ function StepForm4(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                    placeholder="10032"
                                 />,
                             )}
                         </Form.Item>
@@ -597,7 +611,8 @@ function StepForm4(props) {
                             {getFieldDecorator('name', {
                                 rules: [{ required: true, message: 'กรุณากรอกชื่อ' }],
                             })(
-                                <Input
+                                <Input 
+                                    addonBefore={selectBefore}
                                     disabled={summary}
                                     placeholder="คณะวิศวกรรมศาสตร์"
                                 />,

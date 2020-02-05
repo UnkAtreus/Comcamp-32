@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react'
 import register from '../../api/register'
-import { useAlert } from 'react-alert'
 import { Form, Input, Button, Row, Col, Select, DatePicker } from 'antd';
 import btn_left from '../../asset/Button_left.png';
 import btn_right from '../../asset/Button_right.png';
 import moment from 'moment'
 
 const { Option } = Select
+
+
 
 function StepForm1(props) {
 
@@ -54,6 +55,13 @@ function StepForm1(props) {
 
     const { getFieldDecorator } = props.form;
 
+    const selectBefore = getFieldDecorator('prefix')(
+        <Select defaultValue="นาย" style={{ width: 90 }}>
+          <Option value="นาย">นาย</Option>
+          <Option value="นางสาว">นางสาว</Option>
+        </Select>
+    );
+
     return (
         <div>
             <h1>ข้อมูลทั่วไป</h1>
@@ -65,6 +73,7 @@ function StepForm1(props) {
                                 rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาไทย' }],
                             })(
                                 <Input
+                                    addonBefore={selectBefore}
                                     placeholder="สมชาย  ใจดี"
                                     disabled={summary}
                                 />,
