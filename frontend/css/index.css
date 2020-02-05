@@ -1060,23 +1060,23 @@
 }
 
 .Subject-SpriteHeroes.One {
-  background-position: 0px -200px;
+  background-position: 0px 0px;
 }
 
 .Subject-SpriteHeroes.Two {
-  background-position: -100px -200px;
+  background-position: 0px -200px;
 }
 
 .Subject-SpriteHeroes.Three {
-  background-position: -200px -200px;
+  background-position: -100px -200px;
 }
 
 .Subject-SpriteHeroes.Four {
-  background-position: -300px -200px;
+  background-position: -200px -200px;
 }
 
 .Subject-SpriteHeroes.Five {
-  background-position: 0px 0px;
+  background-position: -300px -200px;
 }
 
 .Subject-BorderPortrait {
@@ -1103,7 +1103,13 @@
   padding: 0px 20px 40px;
 }
 
+.Subject-Silde-Pic {
+  width: 40%;
+  margin: auto;
+}
+
 .Subject-Slide-Row {
+  background-position: center;
   margin-left: auto;
   margin-right: auto;
   -webkit-box-pack: center;
@@ -1116,42 +1122,43 @@
   height: 700px;
   pointer-events: none;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 15px 40px 4px;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 15px 40px 4px;
+  /*box-shadow: rgba(0, 0, 0, 0.5) 0px 15px 40px 4px;*/
+  box-shadow: inset rgba(0, 0, 0, 0.5) 0px 20px 50px 10px;
   display: block;
   position: relative;
   background-size: auto;
   text-align: left;
   background-color: #5e2821;
-  background-image: url(https://bnetcmsus-a.akamaihd.net/cms/template_resource/1GD95QCE6XUR1541005871979.jpg);
   background-repeat: no-repeat;
   overflow: hidden;
-  padding: 80px 30px;
-  background-position: 0px 0px;
+  padding: 30px 30px 30px 30px;
 }
 
 .Subject-Slide-Row.One {
-  background-image: url(https://bnetcmsus-a.akamaihd.net/cms/template_resource/1GD95QCE6XUR1541005871979.jpg);
+  background-image: url(/frontend/asset/banner_flow.jpg);
 }
 
 .Subject-Slide-Row.Two {
-  background-image: url(https://bnetcmsus-a.akamaihd.net/cms/template_resource/JSI85TCWHOYP1541005872566.jpg);
+  background-image: url(/frontend/asset/banner_c-programming.jpg);
 }
 
 .Subject-Slide-Row.Three {
-  background-image: url(https://bnetcmsus-a.akamaihd.net/cms/template_resource/7OJ2ONNBEPVL1541005873020.jpg);
+  background-image: url(/frontend/asset/banner_micro.jpg);
 }
 
 .Subject-Slide-Row.Four {
-  background-image: url(https://bnetcmsus-a.akamaihd.net/cms/page_media/2BDE1F9BBAJ21561587221767.jpg);
+  background-image: url(/frontend/asset/banner_machine.jpg);
 }
 
 .Subject-Slide-Row.Five {
-  background-image: url(https://bnetcmsus-a.akamaihd.net/cms/template_resource/JSI85TCWHOYP1541005872566.jpg);
+  background-image: url(/frontend/asset/banner_brain.jpg);
 }
 
 .Subject-Slide-Content-Column {
+  margin: auto;
+  text-align: center;
   white-space: normal;
-  max-width: 500px;
+  max-width: 800px;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
@@ -1160,7 +1167,7 @@
 .Subject-Slide-Content-Heading {
   font-family: 'Lora', serif;
   line-height: 1;
-  margin-bottom: 0.4em;
+  margin-bottom: 0.6em;
   color: white;
   letter-spacing: 0.05em;
   font-size: 50px;
@@ -1171,15 +1178,34 @@
   font-family: 'Lora', serif;
   font-weight: normal;
   margin: 0px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.Subject-Slide-Content-Heading-TH {
+  font-family: 'Sarabun', sans-serif;
+  line-height: 1;
+  margin-bottom: 1.5em;
+  color: white;
+  letter-spacing: 0.05em;
+  font-size: 45px;
+}
+
+.Subject-Slide-Content-Heading-Title-TH {
+  font-size: inherit;
+  font-family: 'Sarabun', sans-serif;
+  font-weight: normal;
+  margin: 0px;
+  font-weight: 600;
 }
 
 .Subject-Content-Text {
   font-family: 'Sarabun', sans-serif;
-  line-height: 1.6;
+  line-height: 2;
   letter-spacing: 0.05em;
-  font-size: 1.14em;
+  font-size: 1.36em;
   text-align: left;
-  color: rgba(255, 255, 255, 0.8);
+  color: white;
 }
 
 .Subject-Slide-Art {
@@ -1379,6 +1405,12 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .Subject-Slide-Content-Heading {
+    font-size: 40px;
+  }
+}
+
 @media screen and (max-width: 540px) {
   .About-Dots-Container button.owl-dot {
     display: none;
@@ -1388,6 +1420,12 @@
 @media screen and (max-width: 480px) {
   .Subject-Slide-Content-Heading {
     font-size: 28px;
+  }
+  .Subject-Content-Text {
+    font-size: 1.2em;
+  }
+  .Subject-Silde-Pic {
+    width: 60%;
   }
 }
 
