@@ -48,7 +48,7 @@ function Navbar(props) {
             </a>
 
             <div className="Nav-Links Nav-Name">
-              <span>Test User</span>
+              <span>{user.displayName}</span>
             </div>
 
             <div className="Nav-Links Nav-Logout">
