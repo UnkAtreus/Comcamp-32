@@ -130,20 +130,23 @@ function StepForm2(props) {
         <div>
             <h1>ประวัติการศึกษา</h1>
             <Form onSubmit={handleSubmit} >
-                <Row>
-                    <Col span={16}>
+                    <Row>
+                        <Col xs={24} md={{span: 20}}>
                         <Form.Item label="ชื่อสถานศึกษา">
                             {getFieldDecorator('school_name', {
                                 rules: [{ required: true, message: 'กรุณากรอกชื่อสถานศึกษา' }],
                             })(
                                 <Input
-                                    disabled={summary}
-                                    placeholder="โรงเรียนคอมแคมป์ 32"
+                                disabled={summary}
+                                placeholder="โรงเรียนคอมแคมป์ 32"
                                 />,
                             )}
                         </Form.Item>
-                    </Col>
-                    <Col span={6} offset={1}>
+                        </Col>
+                    </Row>
+                    
+                    <Row>
+                        <Col xs={24} md={{span:10}}>
                         <Form.Item label="จังหวัด">
                             {getFieldDecorator('school_province', {
                                 rules: [{ required: true, message: 'กรุณากรอกจังหวัด' }],
@@ -158,17 +161,17 @@ function StepForm2(props) {
                                 </Select>,
                             )}
                         </Form.Item>
-                    </Col>
-                </Row>
+                        </Col>
+                    </Row>
 
                 <Row>
-                    <Col span={10}>
-                        <Form.Item label="ชั้นปี">
+                    <Col xs={24} md={{span:5}}>
+                        <Form.Item label="ระดับการศึกษา">
                             {getFieldDecorator('grade', {
                                 rules: [{ required: true, message: 'กรุณากรอกชั้นปีการศึกษา', enum: ['4', '5', '6', 'ปวช'] }],
                             })(
                                 <Select disabled={summary}>
-                                    <Option value={'4'}>ม.4</Option>
+                                    <Option value={'4'}>ม.4 ขึ้น ม.5</Option>
                                     <Option value={'5'}>ม.5</Option>
                                     <Option value={'6'}>ม.6</Option>
                                     <Option value={'ปวช'}>ปวช</Option>
@@ -176,7 +179,7 @@ function StepForm2(props) {
                             )}
                         </Form.Item>
                     </Col>
-                    <Col span={10} offset={1}>
+                    <Col xs={24} md={{span:10, offset:1}}>
                         <Form.Item label="เกรดเฉลี่ย">
                             {getFieldDecorator('gpax', {
                                 rules: [{ required: true, message: 'กรุณากรอกเกรดเฉลี่ย' }],
