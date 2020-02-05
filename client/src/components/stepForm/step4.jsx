@@ -564,7 +564,7 @@ function StepForm4(props) {
                     <Col span={5} offset={1}>
                         <Form.Item label="อำเภอ/เขต">
                             {getFieldDecorator('district_parent', {
-                                rules: [{ required: true, message: 'กรุณากรอกคชื่ออำเภอ/เขต' }],
+                                rules: [{ required: true, message: 'กรุณากรอกชื่ออำเภอ/เขต' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -578,7 +578,7 @@ function StepForm4(props) {
                         <Form.Item label="จังหวัด">
                             {getFieldDecorator('province_parent', config)(
                                 <Select disabled={summary}
-                                    placeholder="--ระบุจังหวัด--"
+                                    placeholder="---ระบุจังหวัด---"
                                 >
                                     {
                                         province_th.map((province) => (
@@ -614,7 +614,7 @@ function StepForm4(props) {
                                 <Input 
                                     addonBefore={selectBefore}
                                     disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                    placeholder="วิศวะ กรรมศาสตร์"
                                 />,
                             )}
                         </Form.Item>
@@ -626,7 +626,7 @@ function StepForm4(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                    placeholder="บิดา"
                                 />,
                             )}
                         </Form.Item>
@@ -640,7 +640,7 @@ function StepForm4(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                    placeholder="0812345678"
                                 />,
                             )}
                         </Form.Item>
@@ -652,7 +652,7 @@ function StepForm4(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                    placeholder="sample32@gmail.com"
                                 />,
                             )}
                         </Form.Item>

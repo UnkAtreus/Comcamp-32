@@ -47,7 +47,7 @@ function StepForm9(props) {
                     })(
                         <Input
                             disabled={summary}
-                            placeholder="test"
+                            placeholder="TH1234567890"
                         />,
                     )}
                 </Form.Item>

@@ -58,7 +58,7 @@ function StepForm8(props) {
                         <Input.TextArea
                             disabled={summary}
                             autoSize={{ minRows: 4 }}
-                            placeholder="โรคหอบหึด"
+                            placeholder="...."
                         />,
                     )}
                 </Form.Item>
@@ -78,7 +78,7 @@ function StepForm8(props) {
                         <Input.TextArea
                             disabled={summary}
                             autoSize={{ minRows: 4 }}
-                            placeholder="โรคหอบหึด"
+                            placeholder="...."
                         />,
                     )}
                 </Form.Item>
@@ -103,7 +103,8 @@ function StepForm8(props) {
                         <Input.TextArea
                             disabled={summary}
                             autoSize={{ minRows: 4 }}
-                            placeholder="โรคหอบหึด"
+                            placeholder="...."
+
                         />,
                     )}
                 </Form.Item>
@@ -120,7 +121,8 @@ function StepForm8(props) {
                         <Input.TextArea
                             disabled={summary}
                             autoSize={{ minRows: 4 }}
-                            placeholder="โรคหอบหึด"
+                            placeholder="...."
+
                         />,
                     )}
                 </Form.Item>
@@ -137,7 +139,8 @@ function StepForm8(props) {
                         <Input.TextArea
                             disabled={summary}
                             autoSize={{ minRows: 4 }}
-                            placeholder="โรคหอบหึด"
+                            placeholder="...."
+
                         />,
                     )}
                 </Form.Item>
@@ -160,7 +163,8 @@ function StepForm8(props) {
                         <Input.TextArea
                             disabled={summary}
                             autoSize={{ minRows: 4 }}
-                            placeholder="โรคหอบหึด"
+                            placeholder="...."
+
                         />,
                     )}
                 </Form.Item>
@@ -178,7 +182,8 @@ function StepForm8(props) {
                         <Input.TextArea
                             disabled={summary}
                             autoSize={{ minRows: 4 }}
-                            placeholder="โรคหอบหึด"
+                            placeholder="...."
+
                         />,
                     )}
                 </Form.Item>
@@ -199,7 +204,8 @@ function StepForm8(props) {
                         <Input.TextArea
                             disabled={summary}
                             autoSize={{ minRows: 4 }}
-                            placeholder="โรคหอบหึด"
+                            placeholder="...."
+
                         />,
                     )}
                 </Form.Item>
