@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import register from '../../api/register'
-import { Form, Input, Button, Row, Col, Radio } from 'antd';
+import { Form, Checkbox, Button, Row, Col, Radio } from 'antd';
 import btn_left from '../../asset/Button_left.png';
 import btn_right from '../../asset/Button_right.png';
 
@@ -19,6 +19,18 @@ function StepForm0(props) {
         } else {
         }
     }
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        props.form.validateFields((err, values) => {
+            if (!err) {
+                console.log('Received values of form: ', values);
+                nextStep(values)
+            }
+        });
+    };
+
+    const {getFieldDecorator} = props.form
 
     return (
         <div>
@@ -88,33 +100,41 @@ function StepForm0(props) {
                     1 ชุด
                 </Col>
             </Row>
-            
-            <Form.Item>
-                <div class="Button-Row">
-                    <div className="Button-Column right">
-                        <div className="Button-Left-Image">
-                            <img
-                                src={btn_left}
-                                alt="Left button decoration"
-                            />
+            <Form onSubmit={handleSubmit}>
+                <Form.Item className="Right-Radio">
+                    {getFieldDecorator('interest', {
+                        rules: [{ required: true, message: 'กรุณาอ่านข้อมูลการสมัครให้ครบถ้วน' }]
+                    })(
+                        <Checkbox.Group options={['ข้าพเจ้าได้อ่านข้อมูลการสมัครทั้งหมดแล้ว']} />,
+                    )}
+                </Form.Item>
+                <Form.Item>
+                    <div class="Button-Row">
+                        <div className="Button-Column right">
+                            <div className="Button-Left-Image">
+                                <img
+                                    src={btn_left}
+                                    alt="Left button decoration"
+                                />
+                            </div>
+                            <div className="Button-Right-Image">
+                                <img
+                                    src={btn_right}
+                                    alt="Right button decoration"
+                                />
+                            </div>
+                            <div className="Button-BorderImage"></div>
+                            <button className="Button-Background" htmlType="submit" >
+                                <span className="Markdown">Next</span>
+                            </button>
                         </div>
-                        <div className="Button-Right-Image">
-                            <img
-                                src={btn_right}
-                                alt="Right button decoration"
-                            />
-                        </div>
-                        <div className="Button-BorderImage"></div>
-                        <button className="Button-Background" htmlType="submit" onClick={nextStep}>
-                            <span className="Markdown">Next</span>
-                        </button>
-                    </div>
 
-                </div>
-            </Form.Item>
+                    </div>
+                </Form.Item>
+            </Form>
 
         </div>
     )
 }
 
-export default StepForm0
+export default Form.create({ name: 'step0' })(StepForm0)

@@ -171,12 +171,7 @@ const config = {
     }]
 }
 
-const selectBefore = (
-    <Select defaultValue="นาย" style={{ width: 90 }}>
-      <Option value="นาย">นาย</Option>
-      <Option value="นางสาว">นางสาว</Option>
-    </Select>
-);
+
 
 function StepForm4(props) {
 
@@ -285,6 +280,15 @@ function StepForm4(props) {
     function onSelect(value) {
         console.log('onSelect', value);
     }
+
+    const selectBefore = getFieldDecorator('prefix_th', {
+        rules: [{required: true, message: 'กรุณาระบุคำนำหน้าชื่อ'}]
+        })(
+        <Select style={{ width: 90 }}>
+          <Option value="นาย">นาย</Option>
+          <Option value="นางสาว">นางสาว</Option>
+        </Select>
+    );
     
 
     return (
@@ -471,7 +475,7 @@ function StepForm4(props) {
                                 })(
                                     <Input
                                         disabled={summary}
-                                        placeholder="หมู่บ้านวิศวกรรมคอมพิวเตอร์"
+                                        placeholder="วิศววัฒนะ"
                                     />,
                                 )}
                             </Form.Item>
@@ -583,7 +587,7 @@ function StepForm4(props) {
                                 })(
                                     <Input
                                         disabled={summary}
-                                        placeholder="หมู่บ้านวิศวกรรมคอมพิวเตอร์"
+                                        placeholder="วิศววัฒนะ"
                                     />,
                                 )}
                             </Form.Item>

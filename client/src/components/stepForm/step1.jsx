@@ -59,6 +59,8 @@ function StepForm1(props) {
         rules: [{required: true, message: 'กรุณาระบุคำนำหน้าชื่อ'}]
     })(
         <Select style={{ width: 90 }}>
+            <Option value="ด.ช.">ด.ช.</Option>
+            <Option value="ด.ญ.">ด.ญ.</Option>
           <Option value="นาย">นาย</Option>
           <Option value="นางสาว">นางสาว</Option>
         </Select>
@@ -212,10 +214,10 @@ function StepForm1(props) {
                                 rules: [{ required: true, message: 'กรุณากรอกขนาดเสื้อ', enum: ['S', 'M', 'L', 'XL'] }],
                             })(
                                 <Select disabled={summary}>
-                                    <Option value="S">S</Option>
-                                    <Option value="M">M</Option>
-                                    <Option value="L">L</Option>
-                                    <Option value="XL">XL</Option>
+                                    <Option value="S">S รอบอก 34</Option>
+                                    <Option value="M">M รอบอก 36</Option>
+                                    <Option value="L">L รอบอก 38</Option>
+                                    <Option value="XL">XL รอบอก 40</Option>
                                 </Select>
                             ,
                             )}

@@ -62,7 +62,7 @@ function RegisterForm(props) {
             }
         }
         //go to page
-        //  newStep = 4
+        //   newStep = 5
         setCurrentStep(newStep)
         setMaxStep(newStep)
     }
@@ -110,7 +110,7 @@ function RegisterForm(props) {
     }
 
     if (loading) {
-        return <h1>Is Loading...</h1>
+        return <div></div>
     }
 
     return (

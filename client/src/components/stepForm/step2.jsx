@@ -170,9 +170,9 @@ function StepForm2(props) {
                                     <Option value={'4'}>ม.4 ขึ้น ม.5</Option>
                                     <Option value={'5'}>ม.5 ขึ้น ม.6</Option>
                                     <Option value={'6'}>ม.6 ขึ้น มหาลัย</Option>
-                                    <Option value={'ปวช 1'}>ปวช</Option>
-                                    <Option value={'ปวช 1'}>ปวช</Option>
-                                    <Option value={'ปวช 1'}>ปวช</Option>
+                                    <Option value={'ปวช 1'}>ปวช ชั้นปีที่ 1 ขึ้น ชั้นปีที่ 2</Option>
+                                    <Option value={'ปวช 2'}>ปวช ชั้นปีที่ 2 ขึ้น ชั้นปีที่ 3</Option>
+                                    <Option value={'ปวช 3'}>ปวช ชั้นปีที่ 3 จบการศึกษา</Option>
                                 </Select>,
                             )}
                         </Form.Item>
