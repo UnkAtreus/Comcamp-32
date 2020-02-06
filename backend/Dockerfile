@@ -6,4 +6,4 @@ RUN mkdir -p /src && cp -a /tmp/node_modules /src/
 ADD . ./src
 WORKDIR /src
 CMD ["node", "app"]
-EXPOSE 5000
+EXPOSE 5000 443
