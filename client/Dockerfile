@@ -1,10 +1,11 @@
 FROM node:12
-# cache dependencies
-ADD package-lock.json /tmp/package-lock.json
+ADD yarn.lock /tmp/yarn.lock
 ADD package.json /tmp/package.json
 RUN cd /tmp && yarn install
 RUN mkdir -p /src && cp -a /tmp/node_modules /src/
 ADD . ./src
 WORKDIR /src
-CMD ["node", "app"]
-EXPOSE 5000
+RUN yarn global add serve
+RUN yarn build
+CMD ["serve", "-l", "3000", "-s", "./build"]
+EXPOSE 3000
