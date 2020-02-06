@@ -13,12 +13,10 @@ module.exports = function (app, passport) {
         res.send("Recasdasdasdasdieve Connection")
     });
 
-    app.get('/auth/facebook', passport.authenticate('facebook'), (req, res) => {
-        return res.redirect(`http://${process.env.HOST}:3000/register`)
-    })
+    app.get('/auth/facebook', passport.authenticate('facebook'))
     app.get('/auth/facebook/callback', passport.authenticate('facebook', { session: true }), (req, res) => {
         // res.redirect('/register')
-        return res.redirect(`http://${process.env.HOST}:3000/register`)
+        return res.redirect(`http://${process.env.HOST}/register`)
     });
 
     app.get('/api/logout', (req, res) => {

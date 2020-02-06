@@ -6,7 +6,7 @@ services:
       - "5000:5000"
     build: ./backend
     environment:
-      HOST: '206.189.149.84'
+      HOST: '206.189.149.84:3000'
       # HOST: 'localhost'
   frontend:
     container_name: frontend-cc
