@@ -68,7 +68,7 @@ const step5Validation = () => {
         body('two_university').not().isEmpty(),        
         body('three_faculty').not().isEmpty(),
         body('three_university').not().isEmpty(),
-        body('interest').isIn(['reg', 'inter', 'hds']),
+        // body('interest').isIn(['reg', 'inter', 'hds']),
     ]
 }
 

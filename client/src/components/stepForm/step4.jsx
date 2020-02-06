@@ -389,7 +389,7 @@ function StepForm4(props) {
                         </Form.Item>
                     </Col>
                     <Col xs={24} md={{span: 10, offset: 1}}>
-                        <h1 style={{display: 'inline', 'margin-right': '1em'}}>ที่อยู่ตามทะเบียนบ้าน</h1>
+                        <h1 style={{display: 'inline-block', 'margin-right': '1em'}}>ที่อยู่ตามทะเบียนบ้าน</h1>
                         {!summary && <Button onClick={copyLocationRegis}>เหมือนที่อยู่ปัจจุบัน</Button>}
                         <Row>
                             <Col md={{span:5}}>
@@ -502,7 +502,7 @@ function StepForm4(props) {
 
                 <Row>
                     <Col xs={24} md={{span: 10}}>
-                    <h1 style={{display: 'inline', 'margin-right': '1em'}}>ที่อยู่ตามทะเบียนผู้ปกครอง</h1>
+                    <h1 style={{display: 'inline-block', 'margin-right': '1em'}}>ที่อยู่ตามทะเบียนผู้ปกครอง</h1>
                     {!summary && <Button onClick={copyLocationParent}>เหมือนที่อยู่ปัจจุบัน</Button>}
                     <Row>
                             <Col md={{span:5}}>

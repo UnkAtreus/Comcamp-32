@@ -97,7 +97,6 @@ function StepForm9(props) {
                 </Form.Item>
 
             </Form>
-            <h1>สรุปข้อมูล</h1>
         </div>
     )
 }

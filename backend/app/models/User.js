@@ -70,7 +70,7 @@ var futureSchema = mongoose.Schema({
 	one:future_info,
 	two:future_info,
 	three:future_info,
-	interest:{type:String}
+	interest:[{type:String}]
 });
 
 var abilitySchema = mongoose.Schema({

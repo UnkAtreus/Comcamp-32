@@ -1,8 +1,14 @@
 import React, { useEffect } from 'react'
 import register from '../../api/register'
-import { Form, Input, Button, Row, Col, Radio } from 'antd';
+import { Form, Input, Checkbox, Row, Col, Radio } from 'antd';
 import btn_left from '../../asset/Button_left.png';
 import btn_right from '../../asset/Button_right.png';
+
+const options = [
+    { label: 'HDS', value: 'HDS' },
+    { label: 'Inter', value: 'Inter' },
+    { label: 'Regualar', value: 'Reg' },
+  ];
 
 function StepForm5(props) {
 
@@ -43,13 +49,17 @@ function StepForm5(props) {
             }
         });
     };
+
+    function onChange(checkedValues) {
+        console.log('checked = ', checkedValues);
+    }
     const { getFieldDecorator } = props.form;
     return (
         <div>
             <h1>ความสนใจ</h1>
             <Form onSubmit={handleSubmit} >
                 <Row>
-                    <Col span={10} >
+                    <Col md={{span:11}} xs={24}>
                         <Form.Item label="คณะลำดับที่หนึ่ง">
                             {getFieldDecorator('one_faculty', {
                                 rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
@@ -61,7 +71,7 @@ function StepForm5(props) {
                             )}
                         </Form.Item>
                     </Col>
-                    <Col span={10} offset={1}>
+                    <Col md={{span:11,offset:2}} xs={24}>
                         <Form.Item label="มหาวิทยาลัยลำดับที่หนึ่ง">
                             {getFieldDecorator('one_university', {
                                 rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
@@ -76,7 +86,7 @@ function StepForm5(props) {
                 </Row>
 
                 <Row>
-                    <Col span={10}>
+                    <Col md={{span:11}} xs={24}>
                         <Form.Item label="คณะลำดับที่สอง">
                             {getFieldDecorator('two_faculty', {
                                 rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
@@ -88,7 +98,7 @@ function StepForm5(props) {
                             )}
                         </Form.Item>
                     </Col>
-                    <Col span={10} offset={1}>
+                    <Col md={{span:11,offset:2}} xs={24}>
                         <Form.Item label="มหาวิทยาลัยลำดับที่สอง">
                             {getFieldDecorator('two_university', {
                                 rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
@@ -103,7 +113,7 @@ function StepForm5(props) {
                 </Row>
 
                 <Row>
-                    <Col span={10} >
+                    <Col md={{span:11}} xs={24}>
                         <Form.Item label="คณะลำดับที่สาม">
                             {getFieldDecorator('three_faculty', {
                                 rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
@@ -115,7 +125,7 @@ function StepForm5(props) {
                             )}
                         </Form.Item>
                     </Col>
-                    <Col span={10} offset={1} >
+                    <Col md={{span:11,offset:2}} xs={24}>
                         <Form.Item label="มหาวิทยาลัยลำดับที่สาม">
                             {getFieldDecorator('three_university', {
                                 rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
@@ -133,11 +143,7 @@ function StepForm5(props) {
                     {getFieldDecorator('interest', {
                         rules: [{ required: true, message: 'กรุณาเลือกหลักสูตรที่ต้องการ' }]
                     })(
-                        <Radio.Group disabled={summary}>
-                            <Radio value="reg">Regular</Radio>
-                            <Radio value="inter">Inter</Radio>
-                            <Radio value="hds">HDS</Radio>
-                        </Radio.Group>,
+                        <Checkbox.Group options={options} onChange={onChange} />,
                     )}
                 </Form.Item>
                 {!summary &&

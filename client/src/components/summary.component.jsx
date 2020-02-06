@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { Form, Input, Button, Row, Col, Select } from 'antd';
 import { fetchUserAction } from '../actions/myaction'
 import { transitions, positions, Provider as AlertProvider } from 'react-alert'
-import AlertTemplate from 'react-alert-template-basic'
 import btn_left from '../asset/Button_left.png';
 import btn_right from '../asset/Button_right.png';
 
@@ -27,7 +26,7 @@ function SummaryForm(props) {
     const [currentStep, setCurrentStep] = useState(0);
     const [maxStep, setMaxStep] = useState(0);
     const [user, setUser] = useState({})
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
 
     // useEffect( () => {
     //     console.log("test", test)
@@ -37,7 +36,7 @@ function SummaryForm(props) {
         props.fetch_user()
     }, [currentStep])
 
-    function checkStep(user) {
+    async function checkStep(user) {
         console.log("user", user)
         let newStep = 0
         if(user != null) {
@@ -46,7 +45,7 @@ function SummaryForm(props) {
             //    newStep++
             // }
             // ...
-            [
+            newStep = await [
               "step0",
               "general",
               "school",
@@ -56,7 +55,7 @@ function SummaryForm(props) {
               "ability",
               "location",
               "question"
-            ].reduce((step, next) => step + user.hasOwnProperty(next));
+            ].reduce((step, next) => step + user.hasOwnProperty(next), 0);
             if(user.hasOwnProperty("tracking_number")) {
                 setFinished(true)
             }
@@ -85,23 +84,12 @@ function SummaryForm(props) {
         return <h1>Is Loading...</h1>
     }
 
-    const options = {
-        // you can also just use 'bottom center'
-        position: positions.BOTTOM_CENTER,
-        timeout: 5000,
-        offset: '30px',
-        // you can also just use 'scale'
-        transition: transitions.SCALE
-    }
-
     return (
         <div>
             <Navbar user={user} />
-            <AlertProvider template={AlertTemplate}{...options} >
                 <Row>
                     <Col span={18} offset={3}>
                         <h1>สรุปข้อมูล</h1>
-                        <AlertProvider template={AlertTemplate}{...options} >
                             <StepForm1  user={user} summary={true}/>
                             <StepForm2  user={user} summary={true}/>
                             <StepForm3  user={user} summary={true}/>
@@ -110,7 +98,6 @@ function SummaryForm(props) {
                             <StepForm6  user={user} summary={true}/>
                             <StepForm7  user={user} summary={true}/>
                             <StepForm8  user={user} summary={true}/>
-                        </AlertProvider>
 
                         <Form.Item>
                         <div class="Button-Row">
@@ -155,7 +142,6 @@ function SummaryForm(props) {
                     </Form.Item>
                     </Col>
                 </Row>
-            </AlertProvider>
         </div>
     )
 }

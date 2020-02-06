@@ -41,7 +41,7 @@ function StepForm6(props) {
             <h1>ความถนัด</h1>
             <Form onSubmit={handleSubmit} >
                 <Row>
-                    <Col span={10}>
+                    <Col md={{span:11}} xs={24}>
                         <Form.Item label="โปรแกรมมิ่ง">
                             {getFieldDecorator('programming', {
                                 rules: [{ required: true, message: 'กรุณาเลือกความถนัดทางด้าน Programming' }],
@@ -51,7 +51,7 @@ function StepForm6(props) {
                             )}
                         </Form.Item>
                     </Col>
-                    <Col span={10} offset={1}>
+                    <Col md={{span:11, offset:2}}>
                         <Form.Item label="บิ๊กดาต้า">
                             {getFieldDecorator('big_data', {
                                 rules: [{ required: true, message: 'กรุณาเลือกความถนัดทางด้าน machine learning' }],
@@ -65,7 +65,7 @@ function StepForm6(props) {
 
                 <Row>
 
-                    <Col span={10} >
+                    <Col md={{span:11}} xs={24} >
                         <Form.Item label="ผังงาน">
                             {getFieldDecorator('flow_chart', {
                                 rules: [{ required: true, message: 'กรุณาเลือกความถนัดทางด้าน Flow chart' }],
@@ -75,7 +75,7 @@ function StepForm6(props) {
                             )}
                         </Form.Item>
                     </Col>
-                    <Col span={10} offset={1}>
+                    <Col md={{span:11, offset:2}}>
                         <Form.Item label="ไมโครคอนโทรลเลอร์">
                             {getFieldDecorator('microcontroller', {
                                 rules: [{ required: true, message: 'กรุณาเลือกความถนัดทางด้าน Microcontroller' }],
@@ -89,7 +89,7 @@ function StepForm6(props) {
 
                 <Row>
 
-                    <Col span={10}>
+                    <Col md={{span:11}} xs={24}>
                         <Form.Item label="ระดมสมอง">
                             {getFieldDecorator('brain_storm', {
                                 rules: [{ required: true, message: 'กรุณาเลือกความถนัดทางด้าน Brain storm' }],
