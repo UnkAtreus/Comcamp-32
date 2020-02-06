@@ -146,6 +146,85 @@ function StepForm5(props) {
                         <Checkbox.Group options={options} onChange={onChange} />,
                     )}
                 </Form.Item>
+                <h1>ค่ายที่เคยเข้าร่วม</h1>
+                <Row>
+                    <Col md={{span:11}} xs={24}>
+                        <Form.Item label="ค่ายที่เคยเข้าร่วม">
+                            {getFieldDecorator('one_camp', {
+                                // rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                            })(
+                                <Input
+                                    disabled={summary}
+                                    placeholder="ค่าย Comcamp32"
+                                />,
+                            )}
+                        </Form.Item>
+                    </Col>
+                    <Col md={{span:11,offset:2}} xs={24}>
+                        <Form.Item label="มหาวิทยาลัย">
+                            {getFieldDecorator('one_university_camp', {
+                                // rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
+                            })(
+                                <Input
+                                    disabled={summary}
+                                    placeholder="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี"
+                                />,
+                            )}
+                        </Form.Item>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col md={{span:11}} xs={24}>
+                        <Form.Item label="ค่ายที่เคยเข้าร่วม">
+                            {getFieldDecorator('two_camp', {
+                                // rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                            })(
+                                <Input
+                                    disabled={summary}
+                                    placeholder="ค่าย Comcamp32"
+                                />,
+                            )}
+                        </Form.Item>
+                    </Col>
+                    <Col md={{span:11,offset:2}} xs={24}>
+                        <Form.Item label="มหาวิทยาลัย">
+                            {getFieldDecorator('two_university_camp', {
+                                // rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
+                            })(
+                                <Input
+                                    disabled={summary}
+                                    placeholder="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี"
+                                />,
+                            )}
+                        </Form.Item>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col md={{span:11}} xs={24}>
+                        <Form.Item label="ค่ายที่เคยเข้าร่วม">
+                            {getFieldDecorator('three_camp', {
+                                // rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                            })(
+                                <Input
+                                    disabled={summary}
+                                    placeholder="ค่าย Comcamp32"
+                                />,
+                            )}
+                        </Form.Item>
+                    </Col>
+                    <Col md={{span:11,offset:2}} xs={24}>
+                        <Form.Item label="มหาวิทยาลัย">
+                            {getFieldDecorator('three_university_camp', {
+                                // rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
+                            })(
+                                <Input
+                                    disabled={summary}
+                                    placeholder="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี"
+                                />,
+                            )}
+                        </Form.Item>
+                    </Col>
+                </Row>
                 {!summary &&
                     <Form.Item>
                         <div class="Button-Row">
