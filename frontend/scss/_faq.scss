@@ -7,6 +7,10 @@
     margin: 0px 10% 0px 10%;
 }
 
+accordion-a-color {
+    color: black !important;
+}
+
 .accordion a {
     position: relative;
     display: -webkit-box;
@@ -61,13 +65,13 @@
 }
 
 .accordion-item.color-1 {
-    filter: brightness(80%);
-    background-color: $color-3;
+    //filter: brightness(80%);
+    background-color: #291920d0;
 }
 
 .accordion-item.color-2 {
-    filter: brightness(95%);
-    background-color: $color-2;
+    //filter: brightness(95%);
+    background-color: #521b26d0;
 }
 
 .accordion a.active::after {
