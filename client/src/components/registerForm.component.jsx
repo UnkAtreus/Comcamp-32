@@ -27,7 +27,7 @@ function RegisterForm(props) {
     const [currentStep, setCurrentStep] = useState(0);
     const [maxStep, setMaxStep] = useState(0);
     const [user, setUser] = useState({})
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
 
     // useEffect( () => {
     //     console.log("test", test)

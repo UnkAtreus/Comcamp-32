@@ -289,7 +289,7 @@ function StepForm4(props) {
 
     return (
         <div>
-            <h1>ที่อยู่</h1>
+           
             <Form onSubmit={handleSubmit} >
                 <Row>
                     <Col xs={24} md={{span: 10}}>

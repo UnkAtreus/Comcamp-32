@@ -346,6 +346,7 @@
     .ant-input-number-disabled .ant-input-number-input {
         color: black;
         background-color: white;
+        filter: brightness(2);
     }
     
     .ant-select-selection--single .ant-select-selection__rendered {
@@ -365,6 +366,10 @@
     .ant-select-selection {
         border: 0px solid #d9d9d9;
         background-color: black;
+    }
+    
+    .ant-select-selection-selected-value {
+        color: white;
     }
     /*Dropdown*/
     
@@ -522,6 +527,10 @@
         border-image: initial;
         background-position: center center;
         padding: 0px 35px;
+    }
+    
+    .ant-btn {
+        margin-bottom: 20px;
     }
     
     .ant-btn {
