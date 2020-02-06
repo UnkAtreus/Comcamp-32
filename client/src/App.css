@@ -416,6 +416,14 @@
     .ant-select-dropdown-menu-item-active:not(.ant-select-dropdown-menu-item-disabled) {
         background-color: #121212;
     }
+    
+    .ant-select-disabled {
+        background-color: whitesmoke;
+    }
+    
+    .ant-input-group-addon:first-child {
+        top: 1px;
+    }
     /*Button*/
     
     .Button-Row {
