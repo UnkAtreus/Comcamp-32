@@ -1,0 +1,33 @@
+.git
+.github
+.vscode
+coverage
+docker-compose.yml
+README.md
+
+node_modules
+npm-debug.log
+npm-debug.log.*
+
+# backend
+./backend/.git
+./backend/.github
+./backend/.vscode
+./backend/coverage
+./backend/docker-compose.yml
+./backend/README.md
+./backend/node_modules
+./backend/dist
+
+# frontend
+./client/.git
+./client/.github
+./client/.vscode
+./client/coverage
+./client/docker-compose.yml
+./client/README.md
+./client/node_modules
+./client/dist
+
+# persistance
+./mongo

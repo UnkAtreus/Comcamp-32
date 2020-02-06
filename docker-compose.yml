@@ -1,0 +1,38 @@
+version: "3.4"
+services:
+  backend:
+    container_name: backend-cc
+    ports:
+      - "5000:5000"
+    build: ./backend
+    environment:
+      HOST: "206.189.149.84:3000"
+  frontend:
+    container_name: frontend-cc
+    ports:
+      - "3000:3000"
+    build: ./client
+  mongocc32:
+    image: mongo:bionic
+    container_name: mongo-cc-2
+    restart: on-failure
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongo:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: comcamp32dbeuei
+  redis:
+    image: "bitnami/redis:5.0"
+    container_name: redis
+    restart: on-failure
+    environment:
+      # ALLOW_EMPTY_PASSWORD is recommended only for development.
+      - ALLOW_EMPTY_PASSWORD=yes
+      - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
+    # ports:
+    #   - "6379:6379"
+    logging:
+      options:
+        max-size: 50m

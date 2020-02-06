@@ -1,5 +1,6 @@
 .DS_Store
 node_modules
+/mongo
 
 # local env files
 .env.local
@@ -25,3 +26,22 @@ yarn.lock*
 
 *.zip
 *.rar
+
+# backend
+/backend/.git
+/backend/.github
+/backend/.vscode
+/backend/coverage
+/backend/docker-compose.yml
+/backend/README.md
+/backend/node_modules
+
+# frontend
+/client/.git
+/client/.github
+/client/.vscode
+/client/coverage
+/client/docker-compose.yml
+/client/README.md
+/client/node_modules
+/client/build
