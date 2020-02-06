@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import register from '../../api/register'
-import { Form, Input, Button, Row, Col, Select } from 'antd';
+import { Form, Input, Button, Row, Col, Select, AutoComplete } from 'antd';
 import btn_left from '../../asset/Button_left.png';
 import btn_right from '../../asset/Button_right.png';
 
 const { Option } = Select
+
 
 const province_th = [
     'กรุงเทพฯ',
@@ -88,83 +89,85 @@ const province_th = [
 
 const config = {
     rules: [{
-        required: true, message: 'กรุณากรอกจังหวัด', enum: ['กรุงเทพฯ',
-            'กระบี่',
-            'กาญจนบุรี',
-            'กาฬสินธุ์',
-            'กำแพงเพชร',
-            'ขอนแก่น',
-            'จันทบุรี',
-            'ฉะเชิงเทรา',
-            'ชลบุรี',
-            'ชัยนาท',
-            'ชัยภูมิ',
-            'ชุมพร',
-            'เชียงใหม่',
-            'เชียงราย',
-            'ตรัง',
-            'ตราด',
-            'ตาก',
-            'นครนายก',
-            'นครปฐม',
-            'นครพนม',
-            'นครราชสีมา',
-            'นครศรีธรรมราช',
-            'นครสวรรค์',
-            'นนทบุรี',
-            'นราธิวาส',
-            'น่าน',
-            'บึงกาฬ',
-            'บุรีรัมย์',
-            'ปทุมธานี',
-            'ประจวบคีรีขันธ์',
-            'ปราจีนบุรี',
-            'ปัตตานี',
-            'พระนครศรีอยุธยา',
-            'พะเยา',
-            'พังงา',
-            'พัทลุง',
-            'พิจิตร',
-            'พิษณุโลก',
-            'เพชรบุรี',
-            'เพชรบูรณ์',
-            'แพร่',
-            'ภูเก็ต',
-            'มหาสารคาม',
-            'มุกดาหาร',
-            'แม่ฮ่องสอน',
-            'ยโสธร',
-            'ยะลา',
-            'ร้อยเอ็ด',
-            'ระนอง',
-            'ระยอง',
-            'ราชบุรี',
-            'ลพบุรี',
-            'ลำปาง',
-            'ลำพูน',
-            'เลย',
-            'ศรีสะเกษ',
-            'สกลนคร',
-            'สงขลา',
-            'สตูล',
-            'สมุทรปราการ',
-            'สมุทรสงคราม',
-            'สมุทรสาคร',
-            'สระแก้ว',
-            'สระบุรี',
-            'สิงห์บุรี',
-            'สุโขทัย',
-            'สุพรรณบุรี',
-            'สุราษฎร์ธานี',
-            'สุรินทร์',
-            'หนองคาย',
-            'หนองบัวลำภู',
-            'อ่างทอง',
-            'อำนาจเจริญ',
-            'อุดรธานี',
-            'อุตรดิตถ์',
-            'อุทัยธานี',
-            'อุบลราชธานี']
+        required: true, 
+        message: 'กรุณากรอกจังหวัด', 
+        enum: ['กรุงเทพฯ',
+        'กระบี่',
+        'กาญจนบุรี',
+        'กาฬสินธุ์',
+        'กำแพงเพชร',
+        'ขอนแก่น',
+        'จันทบุรี',
+        'ฉะเชิงเทรา',
+        'ชลบุรี',
+        'ชัยนาท',
+        'ชัยภูมิ',
+        'ชุมพร',
+        'เชียงใหม่',
+        'เชียงราย',
+        'ตรัง',
+        'ตราด',
+        'ตาก',
+        'นครนายก',
+        'นครปฐม',
+        'นครพนม',
+        'นครราชสีมา',
+        'นครศรีธรรมราช',
+        'นครสวรรค์',
+        'นนทบุรี',
+        'นราธิวาส',
+        'น่าน',
+        'บึงกาฬ',
+        'บุรีรัมย์',
+        'ปทุมธานี',
+        'ประจวบคีรีขันธ์',
+        'ปราจีนบุรี',
+        'ปัตตานี',
+        'พระนครศรีอยุธยา',
+        'พะเยา',
+        'พังงา',
+        'พัทลุง',
+        'พิจิตร',
+        'พิษณุโลก',
+        'เพชรบุรี',
+        'เพชรบูรณ์',
+        'แพร่',
+        'ภูเก็ต',
+        'มหาสารคาม',
+        'มุกดาหาร',
+        'แม่ฮ่องสอน',
+        'ยโสธร',
+        'ยะลา',
+        'ร้อยเอ็ด',
+        'ระนอง',
+        'ระยอง',
+        'ราชบุรี',
+        'ลพบุรี',
+        'ลำปาง',
+        'ลำพูน',
+        'เลย',
+        'ศรีสะเกษ',
+        'สกลนคร',
+        'สงขลา',
+        'สตูล',
+        'สมุทรปราการ',
+        'สมุทรสงคราม',
+        'สมุทรสาคร',
+        'สระแก้ว',
+        'สระบุรี',
+        'สิงห์บุรี',
+        'สุโขทัย',
+        'สุพรรณบุรี',
+        'สุราษฎร์ธานี',
+        'สุรินทร์',
+        'หนองคาย',
+        'หนองบัวลำภู',
+        'อ่างทอง',
+        'อำนาจเจริญ',
+        'อุดรธานี',
+        'อุตรดิตถ์',
+        'อุทัยธานี',
+        'อุบลราชธานี']
     }]
 }
 
@@ -179,6 +182,9 @@ function StepForm4(props) {
 
     const { currentStep, handlePrev, handleNext, user, summary } = props
     const { getFieldDecorator, getFieldsValue, setFieldsValue } = props.form;
+
+    const [value, setValue] = useState('')
+    const [dataSource, setDataSource] = useState([])
 
     useEffect(() => {
         if (user.hasOwnProperty("address")) {
@@ -267,6 +273,19 @@ function StepForm4(props) {
             postal_code_parent: location.postal_code,
         })
     }
+
+    const onSearch = searchText => {
+        setDataSource(!searchText ? [] : province_th)
+      };
+    
+    const onChange = value => {
+        setValue(value);
+    };
+
+    function onSelect(value) {
+        console.log('onSelect', value);
+    }
+    
 
     return (
         <div>
@@ -360,7 +379,7 @@ function StepForm4(props) {
                         
 
 
-                        <Form.Item label="จังหวัด">
+                        {/* <Form.Item label="จังหวัด">
                             {getFieldDecorator('province', config, {
                                  rules: [{ required: true, message: 'กรุณาเลือกจังหวัด' }]
                             })(
@@ -375,7 +394,21 @@ function StepForm4(props) {
                                     }
                                 </Select>,
                             )}
-                        </Form.Item>
+                        </Form.Item> */}
+
+                        <Form.Item label="จังหวัด">
+                            {getFieldDecorator('province', config)(
+                                <AutoComplete
+                                    dataSource={dataSource}
+                                    onSelect={onSelect}
+                                    onSearch={onSearch}
+                                    placeholder="ระบุจังหวัด"
+                                    filterOption={(inputValue, option) =>
+                                        option.props.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
+                                    }
+                                />
+                            )}
+                        </Form.Item> 
 
                         <Form.Item label="รหัสไปรษณีย์">
                             {getFieldDecorator('postal_code', {
@@ -474,16 +507,15 @@ function StepForm4(props) {
                             {getFieldDecorator('province_regis', config, {
                                  rules: [{ required: true, message: 'กรุณาเลือกจังหวัด' }]
                             })(
-                                <Select disabled={summary}
-                                    placeholder="--ระบุจังหวัด--"
-                                >
-                                    {
-                                        province_th.map((province) => (
-                                            <Option key={province} value={province}>{province}</Option>
-                                        )
-                                        )
+                                <AutoComplete
+                                    dataSource={dataSource}
+                                    onSelect={onSelect}
+                                    onSearch={onSearch}
+                                    placeholder="ระบุจังหวัด"
+                                    filterOption={(inputValue, option) =>
+                                        option.props.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
                                     }
-                                </Select>,
+                                />,
                             )}
                         </Form.Item>
                         <Form.Item label="รหัสไปรษณีย์">
@@ -587,16 +619,15 @@ function StepForm4(props) {
                             {getFieldDecorator('province_parent', config, {
                                  rules: [{ required: true, message: 'กรุณาเลือกจังหวัด' }]
                             })(
-                                <Select disabled={summary}
-                                    placeholder="---ระบุจังหวัด---"
-                                >
-                                    {
-                                        province_th.map((province) => (
-                                            <Option key={province} value={province}>{province}</Option>
-                                        )
-                                        )
+                                <AutoComplete
+                                    dataSource={dataSource}
+                                    onSelect={onSelect}
+                                    onSearch={onSearch}
+                                    placeholder="ระบุจังหวัด"
+                                    filterOption={(inputValue, option) =>
+                                        option.props.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
                                     }
-                                </Select>,
+                                />,
                             )}
                         </Form.Item>
                         <Form.Item label="รหัสไปรษณีย์">
@@ -620,7 +651,7 @@ function StepForm4(props) {
                                     <Input 
                                         addonBefore={selectBefore}
                                         disabled={summary}
-                                        placeholder="คณะวิศวกรรมศาสตร์"
+                                        placeholder="นายสมคิด ใจมา"
                                     />,
                                 )}
                             </Form.Item>
@@ -631,7 +662,7 @@ function StepForm4(props) {
                                 })(
                                     <Input
                                         disabled={summary}
-                                        placeholder="คณะวิศวกรรมศาสตร์"
+                                        placeholder="บิดา"
                                     />,
                                 )}
                             </Form.Item>
@@ -642,7 +673,7 @@ function StepForm4(props) {
                                 })(
                                     <Input
                                         disabled={summary}
-                                        placeholder="คณะวิศวกรรมศาสตร์"
+                                        placeholder="0903234432"
                                     />,
                                 )}
                             </Form.Item>
@@ -653,7 +684,7 @@ function StepForm4(props) {
                                 })(
                                     <Input
                                         disabled={summary}
-                                        placeholder="คณะวิศวกรรมศาสตร์"
+                                        placeholder="example@mail.com"
                                     />,
                                 )}
                             </Form.Item>

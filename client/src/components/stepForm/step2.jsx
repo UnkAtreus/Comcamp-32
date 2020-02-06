@@ -168,9 +168,11 @@ function StepForm2(props) {
                             })(
                                 <Select disabled={summary}>
                                     <Option value={'4'}>ม.4 ขึ้น ม.5</Option>
-                                    <Option value={'5'}>ม.5</Option>
-                                    <Option value={'6'}>ม.6</Option>
-                                    <Option value={'ปวช'}>ปวช</Option>
+                                    <Option value={'5'}>ม.5 ขึ้น ม.6</Option>
+                                    <Option value={'6'}>ม.6 ขึ้น มหาลัย</Option>
+                                    <Option value={'ปวช 1'}>ปวช</Option>
+                                    <Option value={'ปวช 1'}>ปวช</Option>
+                                    <Option value={'ปวช 1'}>ปวช</Option>
                                 </Select>,
                             )}
                         </Form.Item>

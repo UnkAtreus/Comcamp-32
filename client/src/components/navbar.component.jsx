@@ -21,7 +21,7 @@ function Navbar(props) {
           <div id="nav" class="Nav-Row">
             <a
               data-scroll
-              href="#intro"
+              href="/"
               id="nav-home"
               class="Nav-Links nav-right Nav-Back">
               <i
@@ -41,7 +41,7 @@ function Navbar(props) {
               </i>
               <span>Back to Home Page</span>
             </a>
-            <a href="#intro" class="Logo">
+            <a href="/" class="Logo">
               <div className="Nav-Logo">
                 <img className="big-logo" src={logo} alt="Comcamp 32" />
               </div>
