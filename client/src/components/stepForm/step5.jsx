@@ -18,13 +18,22 @@ function StepForm5(props) {
         if (user.hasOwnProperty("future")) {
             let futureData = user.future
             props.form.setFieldsValue({
+                one_department: futureData.one.department,
                 one_faculty: futureData.one.faculty,
                 one_university: futureData.one.university,
+                two_department: futureData.two.department,
                 two_faculty: futureData.two.faculty,
                 two_university: futureData.two.university,
+                three_department: futureData.three.department,
                 three_faculty: futureData.three.faculty,
                 three_university: futureData.three.university,
-                interest: futureData.interest
+                interest: futureData.interest,
+                one_camp: futureData.one_camp.camp,
+                one_camp_university: futureData.one_camp.university,
+                two_camp: futureData.two_camp.camp,
+                two_camp_university: futureData.two_camp.university,
+                three_camp: futureData.three_camp.camp,
+                three_camp_university: futureData.three_camp.university,
             });
         }
         // props.form.setFieldsValue({have_accident: false})
@@ -198,7 +207,7 @@ function StepForm5(props) {
                     </Col>
                     <Col md={{span:11,offset:2}} xs={24}>
                         <Form.Item label="มหาวิทยาลัย">
-                            {getFieldDecorator('one_university_camp', {
+                            {getFieldDecorator('one_camp_university', {
                                 // rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
                             })(
                                 <Input
@@ -224,7 +233,7 @@ function StepForm5(props) {
                     </Col>
                     <Col md={{span:11,offset:2}} xs={24}>
                         <Form.Item label="มหาวิทยาลัย">
-                            {getFieldDecorator('two_university_camp', {
+                            {getFieldDecorator('two_camp_university', {
                                 // rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
                             })(
                                 <Input
@@ -250,7 +259,7 @@ function StepForm5(props) {
                     </Col>
                     <Col md={{span:11,offset:2}} xs={24}>
                         <Form.Item label="มหาวิทยาลัย">
-                            {getFieldDecorator('three_university_camp', {
+                            {getFieldDecorator('three_camp_university', {
                                 // rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
                             })(
                                 <Input
