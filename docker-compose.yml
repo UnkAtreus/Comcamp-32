@@ -8,9 +8,7 @@ services:
     build: ./backend
     environment:
       HOST: "206.189.149.84"
-      HOST: "localhost"
       FRONT_END: "206.189.149.84:3000"
-      # FRONT_END: "localhost:3000"
   frontend:
     container_name: frontend-cc
     ports:
