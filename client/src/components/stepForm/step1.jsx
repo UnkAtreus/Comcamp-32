@@ -59,6 +59,8 @@ function StepForm1(props) {
         rules: [{required: true, message: 'กรุณาระบุคำนำหน้าชื่อ'}]
     })(
         <Select style={{ width: 90 }}>
+            <Option value="ด.ช.">ด.ช.</Option>
+            <Option value="ด.ญ.">ด.ญ.</Option>
           <Option value="นาย">นาย</Option>
           <Option value="นางสาว">นางสาว</Option>
         </Select>

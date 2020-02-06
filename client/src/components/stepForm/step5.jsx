@@ -62,7 +62,7 @@ function StepForm5(props) {
                     <Col md={{span:11}} xs={24}>
                         <Form.Item label="คณะลำดับที่หนึ่ง">
                             {getFieldDecorator('one_faculty', {
-                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                // rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -74,7 +74,7 @@ function StepForm5(props) {
                     <Col md={{span:11,offset:2}} xs={24}>
                         <Form.Item label="มหาวิทยาลัยลำดับที่หนึ่ง">
                             {getFieldDecorator('one_university', {
-                                rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
+                                // rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -89,7 +89,7 @@ function StepForm5(props) {
                     <Col md={{span:11}} xs={24}>
                         <Form.Item label="คณะลำดับที่สอง">
                             {getFieldDecorator('two_faculty', {
-                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                // rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -101,7 +101,7 @@ function StepForm5(props) {
                     <Col md={{span:11,offset:2}} xs={24}>
                         <Form.Item label="มหาวิทยาลัยลำดับที่สอง">
                             {getFieldDecorator('two_university', {
-                                rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
+                                // rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -116,7 +116,7 @@ function StepForm5(props) {
                     <Col md={{span:11}} xs={24}>
                         <Form.Item label="คณะลำดับที่สาม">
                             {getFieldDecorator('three_faculty', {
-                                rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                // rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -128,7 +128,7 @@ function StepForm5(props) {
                     <Col md={{span:11,offset:2}} xs={24}>
                         <Form.Item label="มหาวิทยาลัยลำดับที่สาม">
                             {getFieldDecorator('three_university', {
-                                rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
+                                // rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -141,7 +141,7 @@ function StepForm5(props) {
 
                 <Form.Item className="Right-Radio" label="หลักสูตรที่สนใจ">
                     {getFieldDecorator('interest', {
-                        rules: [{ required: true, message: 'กรุณาเลือกหลักสูตรที่ต้องการ' }]
+                        // rules: [{ required: true, message: 'กรุณาเลือกหลักสูตรที่ต้องการ' }]
                     })(
                         <Checkbox.Group options={options} onChange={onChange} />,
                     )}
