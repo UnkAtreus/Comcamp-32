@@ -14,11 +14,11 @@ module.exports = function (app, passport) {
     });
 
     app.get('/auth/facebook', passport.authenticate('facebook'))
-    app.get('/auth/facebook/callback', passport.authenticate('facebook', {session: true}), (req, res) => {
+    app.get('/auth/facebook/callback', passport.authenticate('facebook', { session: true }), (req, res) => {
         // res.redirect('/register')
-        return res.redirect('http://localhost:3000/register')
+        return res.redirect(`http://${process.env.HOST || 'localhost'}:3000/register`)
     });
-    
+
     app.get('/api/logout', (req, res) => {
         console.log("logout")
         req.logout()
@@ -39,6 +39,6 @@ module.exports = function (app, passport) {
     app.post('/api/register/7', auth.isLoggedIn, validateStep.step7Validation(), validateStep.validate, register.step7)
     app.post('/api/register/8', auth.isLoggedIn, validateStep.step8Validation(), validateStep.validate, register.step8)
     app.post('/api/register/9', auth.isLoggedIn, validateStep.step9Validation(), validateStep.validate, register.step9)
-    
+
 
 }
