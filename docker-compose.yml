@@ -1,0 +1,23 @@
+version: "3.4"
+services:
+  backend:
+    container_name: backend-cc
+    ports:
+      - "5000:5000"
+    build: ./backend
+  frontend:
+    container_name: frontend-cc
+    ports:
+      - "3000:3000"
+    build: ./client
+  mongocc32:
+    image: mongo:bionic
+    container_name: mongo-cc-2
+    restart: on-failure
+    ports:
+        - "27017:27017"
+    volumes:
+        - ./mongo:/data/db
+    environment:
+        MONGO_INITDB_ROOT_USERNAME: root
+        MONGO_INITDB_ROOT_PASSWORD: comcamp32dbeuei
