@@ -1,5 +1,4 @@
 FROM node:12
-ADD yarn.lock /tmp/yarn.lock
 ADD package.json /tmp/package.json
 RUN cd /tmp && yarn install
 RUN mkdir -p /src && cp -a /tmp/node_modules /src/
