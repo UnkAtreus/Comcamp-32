@@ -525,6 +525,10 @@
     }
     
     .ant-btn {
+        margin-bottom: 20px;
+    }
+    
+    .ant-btn {
         border-color: transparent;
         background: rgba(245, 245, 245, 0.75);
     }
