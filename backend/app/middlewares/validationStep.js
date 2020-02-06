@@ -62,12 +62,12 @@ const step4Validation = () => {
 
 const step5Validation = () => {
     return [
-        body('one_faculty').not().isEmpty(),
-        body('one_university').not().isEmpty(),
-        body('two_faculty').not().isEmpty(),
-        body('two_university').not().isEmpty(),        
-        body('three_faculty').not().isEmpty(),
-        body('three_university').not().isEmpty(),
+        // body('one_faculty').not().isEmpty(),
+        // body('one_university').not().isEmpty(),
+        // body('two_faculty').not().isEmpty(),
+        // body('two_university').not().isEmpty(),        
+        // body('three_faculty').not().isEmpty(),
+        // body('three_university').not().isEmpty(),
         // body('interest').isIn(['reg', 'inter', 'hds']),
     ]
 }
