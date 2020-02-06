@@ -67,7 +67,10 @@ function StepForm1(props) {
     const prefix_eng = getFieldDecorator('prefix_eng', {
         rules: [{required: true, message: 'กรุณาระบุคำนำหน้าชื่อ'}]
     })(
-        <Select style={{ width: 90 }}>
+        <Select style={{ width: 90 }}
+            disabled={summary}
+            defaultValue={"Mr."}
+        >
           <Option value="Mr.">Mr.</Option>
           <Option value="Mrs.">Mrs.</Option>
         </Select>
