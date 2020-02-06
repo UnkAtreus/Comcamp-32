@@ -6,8 +6,8 @@ services:
       - "5000:5000"
     build: ./backend
     environment:
-      HOST: "206.189.149.84:5000"
-      FRONT_END: "206.189.149.84:3000"
+      HOST: "localhost:5000"
+      FRONT_END: "localhost:3000"
   frontend:
     container_name: frontend-cc
     ports:
