@@ -105,7 +105,8 @@ var userSchema = mongoose.Schema({
 	ability: abilitySchema,
 	location: {type: String},
 	question: questionSchema,
-	tracking_number: {type: String}
+	tracking_number: {type: String},
+	news: [{type: String}]
 });
 
 //create the model for users and expose it to our app
