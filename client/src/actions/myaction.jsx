@@ -1,7 +1,9 @@
 import axios from 'axios'
+// const END_POINT = 'http://localhost:5000'
+const END_POINT = 'http://206.189.149.84:5000'
 
 const i  = axios.create({
-    baseURL: 'http://localhost:5000',
+    baseURL: END_POINT,
     withCredentials: true
 })
 
