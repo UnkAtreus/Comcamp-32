@@ -1,8 +1,12 @@
 var express = require('express');
+const https = require('https')
+const path = require('path')
+const fs = require('fs')
 
 var app = express();
 
-var port = process.env.PORT || 5000;
+// var port = process.env.PORT || 5000;
+var port = 5000;
 var mongoose = require('mongoose');
 var passport = require('passport');
 
@@ -58,7 +62,7 @@ app.use(session({
     store: new RedisStore({ client: redisClient, }),
     secret: 'WeLoveComcamp32EiEi',
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     cookie: { maxAge: 30 * 60 * 1000 }
 }));
 
@@ -71,6 +75,12 @@ require('./app/routes.js')(app, passport); // load our routes and pass in our ap
 
 //launch ======================================================================
 app.listen(port);
+https.createServer({
+    key: fs.readFileSync(path.join(__dirname, '/credentials', 'server.key')),
+    cert: fs.readFileSync(path.join(__dirname, '/credentials', 'server.cert'))
+  }, app).listen(443, () => {
+    console.log('Listening 443')
+  })
 console.log('The magic happens on port ' + port);
 
 exports = module.exports = app;
