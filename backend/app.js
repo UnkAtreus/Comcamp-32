@@ -7,10 +7,15 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 
 const session = require('express-session')
-// const redis = require('redis')
+const redis = require('redis')
 
-// let RedisStore = require('connect-redis')(session)
-// let redisClient = redis.createClient()
+let RedisStore = require('connect-redis')(session)
+let redisClient = redis.createClient({
+    host: 'redis',
+    // host: 'localhost',
+    connect_timeout: 3600000,
+    retry_strategy: 15,
+})
 
 var bodyParser = require('body-parser');
 
@@ -50,7 +55,7 @@ app.use(cors({
 
 //session required for passport
 app.use(session({
-    // store: new RedisStore({ host: 'localhost', port: 6379, client: redisClient}),
+    store: new RedisStore({ client: redisClient, }),
     secret: 'WeLoveComcamp32EiEi',
     resave: false,
     saveUninitialized: true,
