@@ -274,7 +274,8 @@ exports.step7 = (req, res) => {
     console.log("step 7")
     console.log(id)
     User.findByIdAndUpdate(id, { 
-        location: req.body.location
+        location: req.body.location,
+        news: req.body.news,
      }, (err, result) => {
         console.log("update")
         // console.log(result)
