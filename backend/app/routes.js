@@ -15,7 +15,8 @@ module.exports = function (app, passport) {
 
     app.get('/auth/facebook', passport.authenticate('facebook'))
     app.get('/auth/facebook/callback', passport.authenticate('facebook', {session: true}), (req, res) => {
-        res.redirect('/register')
+        // res.redirect('/register')
+        return res.redirect('http://localhost:3000/register')
     });
     
     app.get('/api/logout', (req, res) => {
