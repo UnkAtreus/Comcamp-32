@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <!-- Preload -->
+    <!-- <link rel="preload" as="font" href="font/SarunsJackSparrow.eot">
+    <link rel="preload" as="font" href="font/SarunsJackSparrow.woff2">
+    <link rel="preload" as="font" href="font/SarunsJackSparrow.otf">
+    <link rel="preload" as="font" href="font/SarunsJackSparrow.svg"> -->
+    <link rel="preload" as="font" href="font/SarunsJackSparrow.ttf" />
+    <link rel="preload" as="font" href="font/SarunsJackSparrow.woff" />
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/" />
+    <link rel="preconnect" href="https://code.ionicframework.com/" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com/" />
+
+    <!-- DNS-prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com/" />
+    <link rel="dns-prefetch" href="https://code.ionicframework.com/" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/" />
+
+    <!-- General metas -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Title -->
+    <title>Comcomp 32</title>
+    <meta name="title" content="Comcamp 32" />
+    <meta name="description" content="---DESCRIPTION---" />
+
+    <!-- OG/Fb -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.comcamp.io/" />
+    <meta property="og:title" content="Comcamp 32" />
+    <meta property="og:description" content="---DESCRIPTION---" />
+    <meta property="og:image" content="---IMAGE---" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.comcamp.io/" />
+    <meta property="twitter:title" content="Comcamp 32" />
+    <meta property="twitter:description" content="---DESCRIPTION---" />
+    <meta property="twitter:image" content="---IMAGE---" />
+
+    <!-- Colors -->
+    <meta name="theme-color" content="#FFF" />
+    <meta name="msapplication-navbutton-color" content="#FFF" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <!-- Favicons -->
+    <!-- ...place favicons meta under here -->
+
+    <!-- Stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Pridi:300,400|Sarabun:400,500,600,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css" type="text/plain" />
+    <!-- ย้าย owl carousel ไปโหลดใต้ body เพราะไม่ได้เห็นทันทีเมื่อเปิดเว็บ -->
+    <link rel="stylesheet" href="/css/core.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+</head>
+
+<body>
+    <!-- Intro & Navbar -->
+    <nav id="Nav-mobile" class="Nav-mobile">
+        <div class="Nvmb-dim" onclick="toggleMobileNav()"></div>
+        <div class="Nvmb-background"></div>
+        <div role="button" aria-label="Mobile navigation menu toggler" class="Nvmb-start" onclick="toggleMobileNav()">
+            <div></div>
+        </div>
+        <div class="Nvmb-middle">
+            <a data-scroll href="#intro" class="Logo">
+                <img class="lazy" data-src="asset/logo-small.png" alt="Comcamp 32" />
+            </a>
+        </div>
+        <div class="Nvmb-end"></div>
+
+        <div class="Nvmb-menu">
+            <a data-scroll href="#intro" id="nav-mobile-home" class="Nav-Links" onclick="toggleMobileNav()">
+                <span>Home</span></a>
+            <a data-scroll href="#about" id="nav-mobile-about" class="Nav-Links" onclick="toggleMobileNav()">
+                <span>About</span></a>
+            <a data-scroll href="#subject" id="nav-mobile-subject" class="Nav-Links" onclick="toggleMobileNav()">
+                <span>Learning</span></a>
+            <a data-scroll href="#timeline" id="nav-mobile-timeline" class="Nav-Links" onclick="toggleMobileNav()">
+                <span>Schedule</span></a>
+            <a data-scroll href="#faq" id="nav-mobile-faq" class="Nav-Links" onclick="toggleMobileNav()">
+                <span>FAQ</span></a>
+            <a data-scroll href="#contact" id="nav-mobile-contact" class="Nav-Links" onclick="toggleMobileNav()">
+                <span>Contact</span></a>
+        </div>
+    </nav>
+
+    <div class="Section-Background" id="particles-js"> </div>
+    <div id="intro" class="Section">
+        <div class="Section-Content" id="intro-section">
+            <div class="Section-Row">
+                <div class="Nav-Sticky">
+                    <nav class="Nav-Sticky-Content">
+                        <div class="Nav-Fade-Black"></div>
+                        <div id="nav" class="Nav-Row">
+                            <a data-scroll href="#intro" class="Logo">
+                                <div class="Nav-Logo">
+                                    <img class="lazy" data-src="asset/logo-small.png" alt="Comcamp 32" />
+                                </div>
+                            </a>
+                            <a data-scroll href="#intro" id="nav-home" class="Nav-Links">
+                                <span>Home</span></a>
+                            <a data-scroll href="#about" id="nav-about" class="Nav-Links">
+                                <span>About</span></a>
+                            <a data-scroll href="#subject" id="nav-subject" class="Nav-Links">
+                                <span>Learning</span></a>
+                            <a data-scroll href="#timeline" id="nav-timeline" class="Nav-Links">
+                                <span>Schedule</span></a>
+                            <a data-scroll href="#faq" id="nav-faq" class="Nav-Links">
+                                <span>FAQ</span></a>
+                            <a data-scroll href="#contact" id="nav-contact" class="Nav-Links">
+                                <span>Contact</span></a>
+                        </div>
+                    </nav>
+                    <div class="Intro-Column">
+                        <div class="Intro-Row">
+                            <div class="Intro-Image"><img class="lazy" data-src="asset/logo-big.png" alt="Comcamp 32" /> </div><span class="Intro-Text">
+                                <span class="Markdown">Department of Computer Engineering </span>
+                            <span class="Markdown">King Mongkut's University of Technology Thonburi</span></span>
+                            <div class="Button-Row">
+                                <a href="#section-cta" url="#section-cta" class="Button-Link">
+                                    <div class="Button-Column">
+                                        <div class="Button-Left-Image">
+                                            <img class="lazy" data-src="asset/Button_left.png" alt="Left button decoration" />
+                                        </div>
+                                        <div class="Button-Right-Image">
+                                            <img class="lazy" data-src="asset/Button_right.png" alt="Right button decoration" />
+                                        </div>
+                                        <div class="Button-BorderImage"></div>
+                                        <button class="Button-Background">
+                                            <span class="Markdown">Register Now</span>
+                                        </button>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="Line-Section"></div>
+
+    <!-- About -->
+    <div id="about" class="Section About">
+        <div class="Section-Background">
+            <div class="Background"> </div>
+        </div>
+        <div class="About-Content" id="about-section">
+            <div class="About-Head-Row">
+                <div class="About-Head-Column">
+                    <div class="Heading">
+                        <h1><span class="Markdown">About</span></h1>
+                    </div>
+                    <div class="Schematic-Image">
+                        <img class="lazy" data-src="asset/Underline.png" alt="Title seperator" />
+                    </div>
+                </div>
+            </div>
+            <div class="About-Content-Row">
+                <div class="About-Text-Column">
+                    <span class="About-Text-Header">
+                        <span class="Markdown">WHAT IS COMCAMP</span></span>
+                    <span class="About-Text-Header-TH">
+                        <span class="Markdown"><span>คอมแคมป์</span><span>คือ</span><span>อะไร</span></span>
+                    </span>
+                    <br />
+                    <span class="About-Text-Content-TH">
+                        <span class="Markdown">โครงการฝึกอบรมเชิงปฏิบัติการคอมพิวเตอร์เบื้องต้น ครั้งที่ 32
+                            น้อง ๆ เคยสงสัยกันบ้างหรือเปล่า ว่าวิศวะคอมทำอะไรกัน? สนุกไหม?
+                            แล้วเสน่ห์ของวิศวะคอมคืออะไรกันนะ? งั้นมาเข้าค่าย Comcamp 32<sup>nd</sup> กันเถอะ!
+                            มาลองสัมผัสความเป็นนักศึกษาวิศวะคอมพิวเตอร์ มาเรียนรู้ มาลงมือทำจริง
+                            ซึมซับประสบการณ์ใหม่ ๆ และมาพับกบ เอ้ย! พบกับเพื่อน ๆ มากหน้าหลายตา
+                            และที่สำคัญค่ายนี้... ฟรีทั้งค่าย
+                            พี่ ๆ กำลังรอน้อง ๆ มาเป็นส่วนหนึ่งของค่ายอยู่นะ
+                            รีบสมัครกันเข้ามาเยอะ ๆ น้า</span></span>
+                </div>
+                <div class="About-Album-Column">
+                    <div class="Schematic-Column">
+                        <div class="About-BorderImage"></div>
+                        <div class="Gellary">
+                            <img class="lazy" data-src="asset/pic1.jpg" alt="Comcamp Activity" style="width:100%" />
+                            <img class="lazy" data-src="asset/pic2.jpg" alt="Comcamp Activity" style="width:100%" />
+                            <img class="lazy" data-src="asset/pic3.jpg" alt="Comcamp Activity" style="width:100%" />
+                            <img class="lazy" data-src="asset/pic4.jpg" alt="Comcamp Activity" style="width:100%" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="Line"> </div>
+
+    <!-- Subject -->
+    <div id="subject" class="Section Subject">
+        <div class="Subject-Content" id="subject-section">
+            <div class="About-Head-Row Learnging">
+                <div class="About-Head-Column">
+                    <div class="Heading">
+                        <h1><span class="Markdown">Learning</span></h1>
+                    </div>
+                    <div class="Schematic-Image">
+                        <img class="lazy" data-src="asset/Underline.png" alt="Title seperator" />
+                    </div>
+                </div>
+            </div>
+            <div class="Spacer-Subject"></div>
+            <div class="Subject-SectionFullWidth">
+                <div class="slider-control-topcenter" style="position: absolute;top: 0;left: 50%;transform: translateX(-50%);">
+                    <div class="Subject-Carousel-Pager active" style="display: inline-block;">
+                        <div class="Subject-Column-Out">
+                            <div class="Subject-Column-In">
+                                <div class="Subject-Art">
+                                    <div class="Subject-Art-Border">
+                                        <div class="Subject-Size">
+                                            <div class="Subject-Art-Content">
+                                                <div class="Subject-SpriteHeroes One"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Subject-BorderPortrait One"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Subject-Carousel-Pager" style="display: inline-block;">
+                        <div class="Subject-Column-Out">
+                            <div class="Subject-Column-In">
+                                <div class="Subject-Art">
+                                    <div class="Subject-Art-Border">
+                                        <div class="Subject-Size">
+                                            <div class="Subject-Art-Content">
+                                                <div class="Subject-SpriteHeroes Two"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Subject-BorderPortrait Two"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Subject-Carousel-Pager" style="display: inline-block;">
+                        <div class="Subject-Column-Out">
+                            <div class="Subject-Column-In">
+                                <div class="Subject-Art">
+                                    <div class="Subject-Art-Border">
+                                        <div class="Subject-Size">
+                                            <div class="Subject-Art-Content">
+                                                <div class="Subject-SpriteHeroes Three"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Subject-BorderPortrait Three"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Subject-Carousel-Pager" style="display: inline-block;">
+                        <div class="Subject-Column-Out">
+                            <div class="Subject-Column-In">
+                                <div class="Subject-Art">
+                                    <div class="Subject-Art-Border">
+                                        <div class="Subject-Size">
+                                            <div class="Subject-Art-Content">
+                                                <div class="Subject-SpriteHeroes Four"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Subject-BorderPortrait Four"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Subject-Carousel-Pager" style="display: inline-block;">
+                        <div class="Subject-Column-Out" style="margin-right: 0;">
+                            <div class="Subject-Column-In">
+                                <div class="Subject-Art">
+                                    <div class="Subject-Art-Border">
+                                        <div class="Subject-Size">
+                                            <div class="Subject-Art-Content">
+                                                <div class="Subject-SpriteHeroes Five"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Subject-BorderPortrait Five"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="owl-carousel owl-theme">
+                    <div class="Subject-Slide-Column">
+                        <div class="Subject-Slide-Row One">
+                            <div class="Subject-Slide-Content-Column">
+                                <div class="Subject-Silde-Pic">
+                                    <img class="lazy" data-src="asset/icon-flow.png" alt="Placeholder image" />
+                                </div>
+                                <div class="Subject-Slide-Content-Heading">
+                                    <h2 class="Subject-Slide-Content-Heading-Title"><span class="Markdown" content="" textpreview="Humans">Pre programming</span></h2>
+                                </div>
+                                <span class="Subject-Content-Text"><span class="Markdown" content="">เตรียมพร้อมสำหรับการผจญภัย ผ่านการเรียนรู้และฝึกกระบวนการคิดโดยใช้ผังงาน (Flowchart) รวมทั้งการแปลงความหมายออกมาเป็นรหัสเทียม (Pseudo code) เพื่อให้คำสั่งจากภารกิจยาก ๆ สามารถเข้าใจได้ง่ายยิ่งขึ้น!</span>
+                                </span>
+                                <div class="Spacer"></div>
+                                <!--<img class="lazy" data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/73AN3GCF9TCP1541005872849.png" alt="Placeholder image" /> -->
+                            </div>
+                            <div class="Subject-BorderSimple"></div>
+                        </div>
+                    </div>
+                    <div class="Subject-Slide-Column">
+                        <div class="Subject-Slide-Row Two">
+                            <div class="Subject-Slide-Content-Column">
+                                <div class="Subject-Silde-Pic">
+                                    <img class="lazy" data-src="asset/icon-c.png" alt="Placeholder image" />
+                                </div>
+                                <div class="Subject-Slide-Content-Heading">
+                                    <h2 class="Subject-Slide-Content-Heading-Title"><span class="Markdown" content="">C programming</span></h2>
+                                </div><span class="Subject-Content-Text"><span class="Markdown"
+                                        content="">ร่ำเรียนเคล็ดวิชาลับภาษาซี ตั้งแต่ขั้นพื้นฐานจนถึงขั้นประยุกต์ เพื่อให้เหล่าผู้กล้าสามารถบรรลุภารกิจพื้นฐาน และใช้ศึกษากระบวนท่าภาษาอื่นต่อได้ พร้อมทั้งมีโจทย์สุดท้าทายที่รอทดสอบความสามารถของผู้กล้าทุกท่านอยู่!</span>
+                                </span>
+                                <div class="Spacer"></div>
+                                <!--<img class="lazy" data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/73AN3GCF9TCP1541005872849.png" alt="Placeholder image" /> -->
+                            </div>
+                            <div class="Subject-BorderSimple"></div>
+                        </div>
+                    </div>
+                    <div class="Subject-Slide-Column">
+                        <div class="Subject-Slide-Row Three">
+                            <div class="Subject-Slide-Content-Column">
+                                <div class="Subject-Silde-Pic">
+                                    <img class="lazy" data-src="asset/icon-micro.png" alt="Placeholder image" />
+                                </div>
+                                <div class="Subject-Slide-Content-Heading">
+                                    <h2 class="Subject-Slide-Content-Heading-Title small-content"><span class="Markdown" content="">Microcontroller board</span></h2>
+                                </div><span class="Subject-Content-Text"><span class="Markdown" content="">สัมผัสเครื่องมือสุดล้ำค่าอย่าง Microcontroller board และร่วมศึกษาทักษะสำคัญในการควบคุมบอร์ดผ่าน Arduino IDE ตั้งแต่พื้นฐานไปจนถึงขั้นประยุกต์จนเป็นเครื่องมือที่น่าอัศจรรย์นามว่า Internet of things (IOT)</span>
+                                </span>
+                                <div class="Spacer"></div>
+                                <!--<img class="lazy" data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/73AN3GCF9TCP1541005872849.png" alt="Placeholder image" /> -->
+                            </div>
+                            <div class="Subject-BorderSimple"></div>
+                        </div>
+                    </div>
+                    <div class="Subject-Slide-Column">
+                        <div class="Subject-Slide-Row Four">
+                            <div class="Subject-Slide-Content-Column">
+                                <div class="Subject-Silde-Pic">
+                                    <img class="lazy" data-src="asset/icon-machine.png" alt="Placeholder image" />
+                                </div>
+                                <div class="Subject-Slide-Content-Heading">
+                                    <h2 class="Subject-Slide-Content-Heading-Title"><span class="Markdown" content="">Machine Learning</span></h2>
+                                </div><span class="Subject-Content-Text"><span class="Markdown"
+                                        content="">เหนือกว่าด้วยความสามารถสุดพิเศษที่มนุษย์คนใดไม่อาจเทียบได้ ทำความเข้าใจศาสตร์แห่ง Machine learning ด้วยภาษา Python ขั้นต้นและลงมือสร้าง machine learning ขึ้นมาเป็นของตนเอง!</span>
+                                </span>
+                                <div class="Spacer"></div>
+                                <!--<img class="lazy" data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/73AN3GCF9TCP1541005872849.png" alt="Placeholder image" /> -->
+                            </div>
+                            <div class="Subject-BorderSimple"></div>
+                        </div>
+                    </div>
+                    <div class="Subject-Slide-Column">
+                        <div class="Subject-Slide-Row Five">
+                            <div class="Subject-Slide-Content-Column">
+                                <div class="Subject-Silde-Pic">
+                                    <img class="lazy" data-src="asset/icon-brain.png" alt="Placeholder image" />
+                                </div>
+                                <div class="Subject-Slide-Content-Heading">
+                                    <h2 class="Subject-Slide-Content-Heading-Title"><span class="Markdown" content="">Brainstorm Techniques</span></h2>
+                                </div><span class="Subject-Content-Text"><span class="Markdown"
+                                        content="">ฝึกกลยุทธ์ให้เชี่ยวชาญและมีประสิทธิภาพสูงสุด ผ่านภารกิจสุดสนุกแต่แฝงไปด้วยหลักการและเทคนิคอันน่าอัศจรรย์ เพื่อดึงศักยภาพของเหล่าผู้กล้าออกมาอย่างสร้างสรรค์และติดตัวไปใช้ได้แม้อยู่ภายนอกเกม!</span>
+                                </span>
+                                <div class="Spacer"></div>
+                                <!--<img class="lazy" data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/73AN3GCF9TCP1541005872849.png" alt="Placeholder image" /> -->
+                            </div>
+                            <div class="Subject-BorderSimple"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Line"></div>
+
+    <!-- Timeline -->
+    <div id="timeline" class="Section Timeline">
+        <div class="Timeline-Content" id="timeline-section">
+            <div class="Head-Row">
+                <div class="Head-Column">
+                    <div class="Heading">
+                        <h1><span class="Markdown">Registration</span></h1>
+                    </div>
+                    <div class="Schematic-Image">
+                        <img class="lazy" data-src="asset/Underline.png" alt="Title seperator" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="Register-Row">
+                <div class="Register-Column">
+                    <div class="Register-Image One"> </div>
+                    <span class="Register-Text-TH">
+                        <span class="Markdown">กำลังศึกษาอยู่ในระดับชั้นมัธยมศึกษาปีที่ 4-6 สายวิทย์ฯ หรือ ปวช.
+                            ฐานวิทยาศาสตร์</span>
+                    </span>
+                </div>
+                <div class="Register-Column">
+                    <div class="Register-Image Two"> </div>
+                    <span class="Register-Text-TH">
+                        <span class="Markdown">มีความสนใจในด้านคอมพิวเตอร์โดยไม่จำเป็นต้องมีพื้นฐานมาก่อน</span>
+                    </span>
+                </div>
+                <div class="Register-Column">
+                    <div class="Register-Image Three"> </div>
+                    <span class="Register-Text-TH">
+                        <span class="Markdown">ผู้ปกครองอนุญาตให้นักเรียนคนดังกล่าวเข้าร่วมกิจกรรม</span>
+                    </span>
+                </div>
+                <div class="Register-Column">
+                    <div class="Register-Image Four"> </div>
+                    <span class="Register-Text-TH">
+                        <span class="Markdown">สามารถเข้าพักในระยะเวลาและสถานที่ที่กำหนดได้ตลอดระยะเวลาโครงการ</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="Timeline-Head">
+                <div class="Timeline-Head-Text-TH">
+                    <span class="Markdown">
+                        Timeline
+                    </span>
+                </div>
+            </div>
+
+            <div class="Timeline-Row-Out">
+                <ul class="timeline">
+                    <!-- Item 1 -->
+                    <li>
+                        <div class="direction-r">
+                            <div class="flag-wrapper">
+                                <span class="flag">เปิดรับสมัคร</span>
+                                <span class="time-wrapper"><span class="time">7 Feb 2020</span></span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Item 2 -->
+                    <li>
+                        <div class="direction-l">
+                            <div class="flag-wrapper">
+                                <span class="flag">ปิดรับสมัคร</span>
+                                <span class="time-wrapper"><span class="time">9 Mar 2020</span></span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Item 3 -->
+                    <li>
+                        <div class="direction-r">
+                            <div class="flag-wrapper">
+                                <span class="flag">ประกาศผล</span>
+                                <span class="time-wrapper"><span class="time">2 Apr 2020</span></span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="direction-l">
+                            <div class="flag-wrapper">
+                                <span class="flag">เปิดค่าย</span>
+                                <span class="time-wrapper"><span class="time">11 Apr 2020</span></span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="direction-r">
+                            <div class="flag-wrapper">
+                                <span class="flag">ปิดค่าย</span>
+                                <span class="time-wrapper"><span class="time">15 Apr 2020</span></span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="Timeline-Row-In">
+                    <div class="Timeline-Line"></div>
+
+                    <div class="Timeline-Column One">
+                        <span class="Timeline-Text Top Left">
+                            <span class="Markdown" content="">เปิดรับสมัคร</span>
+                        <span class="Markdown" content="">7 Feb 2020</span></span>
+                        </span>
+                        <div class="Timeline-Image-Top">
+                            <img class="lazy" data-src="asset/regis_point_small_up_active.png" alt="Timeline image" />
+                        </div>
+                    </div>
+                    <div class="Timeline-Column Two">
+                        <span class="Timeline-Text Bottom Left">
+                            <span class="Markdown" content="">ปิดรับสมัคร</span>
+                        <span class="Markdown" content="">9 Mar 2020</span></span>
+                        <div class="Timeline-Image-Bottom">
+                            <img class="lazy" data-src="asset/regis_point_small_down.png" alt="Timeline image" />
+                        </div>
+                    </div>
+
+                    <div class="Timeline-Column-Three">
+                        <div class="Timeline-Row">
+                            <div class="Timeline-Content-Row">
+                                <div class="Timeline-Content-Column">
+                                    <span class="Timeline-Text-Center">
+                                        <span class="Markdown" content="">ประกาศผล</span>
+                                    <span class="Markdown" content="">2 Apr 2020</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Timeline-Image-Center">
+                            <img class="lazy" data-src="asset/regis_point_large.png" alt="Timeline image" />
+                        </div>
+                    </div>
+
+                    <div class="Timeline-Column Four">
+                        <span class="Timeline-Text Bottom Right">
+                            <span class="Markdown" content="">เปิดค่าย</span>
+                        <span class="Markdown" content="">11 Apr 2020</span></span>
+                        <div class="Timeline-Image-Bottom">
+                            <img class="lazy" data-src="asset/regis_point_small_down.png" alt="Timeline image" />
+                        </div>
+                    </div>
+                    <div class="Timeline-Column Five">
+                        <span class="Timeline-Text Top Right">
+                            <span class="Markdown" content="">ปิดค่าย</span>
+                        <span class="Markdown" content="">15 Apr 2020</span></span>
+                        <div class="Timeline-Image-Top">
+                            <img class="lazy" data-src="asset/regis_point_small_up.png" alt="Timeline image" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Line"></div>
+    <!-- Faq -->
+    <div id="faq" class="Section Faq">
+        <div class="Faq-Content" id="faq-section">
+            <div class="Head-Row">
+                <div class="Head-Column">
+                    <div class="Heading">
+                        <h1><span class="Markdown">Faq</span></h1>
+                    </div>
+                    <div class="Schematic-Image">
+                        <img class="lazy" data-src="asset/Underline.png" alt="Title seperator" />
+                    </div>
+                </div>
+            </div>
+            <div class="Faq-Column">
+                <div class="accordion">
+                    <div class="accordion-item color-2">
+                        <a>ค่ายจัดขึ้นที่ไหนคะ?</a>
+                        <div class="content">
+                            <p>ค่าย Comcamp ครั้งที่ 32 ของเรา จัดขึ้นที่ภาควิชาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรีค่ะ
+                            </p>
+                        </div>
+                    </div>
+                    <div class="accordion-item color-1">
+                        <a>ค่ายจัดวันไหนครับ?</a>
+                        <div class="content">
+                            <p>ค่าย Comcamp ครั้งที่ 32 ของเรา จัดขึ้นในวันที่ 11 - 15 เมษายน พ.ศ.2563 ครับ</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item color-2">
+                        <a>รับจำนวนกี่คนคะ?</a>
+                        <div class="content">
+                            <p>ค่าย Comcamp ครั้งที่ 32 ของเรา รับนักเรียนเข้าร่วมโครงการจำนวน 100 คนค่ะ ซึ่งทางเราจะทำการคัดเลือกน้อง ๆ จากคำถามรับสมัคร และจะติดต่อกลับเมื่อน้อง ๆ ได้รับคัดเลือกเข้าร่วมโครงการค่ะ
+                            </p>
+                        </div>
+                    </div>
+                    <div class="accordion-item color-1">
+                        <a>รับนักเรียนชั้นไหนบ้าง และผมอยู่ ม.3 ขึ้น ม.4 เข้าร่วมได้ไหมครับ?</a>
+                        <div class="content">
+                            <p>ค่าย Comcamp ครั้งที่ 32 ของเรา รับนักเรียนระดับชั้นมัธยมศึกษาปีที่ 4 - 6 ปีการศึกษา 2562 และน้อง ๆ ปวช. เท่านั้นครับ (น้อง ๆ ม.3 ขึ้น ม.4 ต้องรบกวนให้รอปีหน้าครับ)
+                            </p>
+                        </div>
+                    </div>
+                    <div class="accordion-item color-2">
+                        <a>เสียค่าใช้จ่ายกี่บาท และต้องจ่ายค่าอาหารเองไหมคะ?</a>
+                        <div class="content">
+                            <p>ค่าย Comcamp ครั้งที่ 32 ของเราเป็นค่ายฟรีค่ะ น้อง ๆ จะไม่ต้องจ่ายค่าอาหาร รวมถึงค่าที่พัก แต่จะมีค่ายืนยันสิทธิก่อนเข้าค่ายจำนวน 200 บาท ซึ่งทางค่ายจะคืนเงินจำนวนดังกล่าวให้เมื่อน้องเข้าร่วมครบเวลากิจกรรมค่ะ
+                            </p>
+                        </div>
+                    </div>
+                    <div class="accordion-item color-1">
+                        <a>ต้องเข้าร่วมทุกวันใช่หรือเปล่าครับ?</a>
+                        <div class="content">
+                            <p>ใช่ครับ เพื่อให้น้อง ๆ สะดวกต่อการทำกิจกรรม พี่ ๆ จึงจัดให้น้อง ๆ ได้เข้าพักในหอพักนักศึกษา ซึ่งสะดวกสบายและง่ายต่อการทำกิจกรรมของน้อง ๆ และที่สำคัญ พี่ ๆ จะดูแลน้องได้ตลอด 24 ชั่วโมงตลอดโครงการ น้อง ๆ สบายใจได้ครับ</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item color-2">
+                        <a>ถ้าได้เข้าค่ายจะมีโควต้าพิเศษเข้ามหาลัยไหมคะ?</a>
+                        <div class="content">
+                            <p>ทางภาควิชาวิศวกรรมคอมพิวเตอร์ จะไม่มีการเปิดรับนักเรียนด้วยโควต้าของค่าย Comcamp ค่ะ แต่น้อง ๆ สามารถนำประกาศนียบัตรและรูปผลงานภายในค่ายแนบกับ Portfoilo มาสัมภาษณ์ในรอบต่าง ๆ ได้ค่ะ
+                            </p>
+                        </div>
+                    </div>
+                    <div class="accordion-item color-1">
+                        <a>สามารถสมัครค่ายได้อย่างไรครับ?</a>
+                        <div class="content">
+                            <p>น้อง ๆ ที่สนใจเข้าร่วมค่ายสามารถสมัครได้ผ่านทางเว็บไซต์ ตั้งแต่วันที่ 7 กุมภาพันธ์ 2563 ถึงวันที่ 9 กุมภาพันธ์ 2563 ครับ
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Line"></div>
+
+    <!-- Contact -->
+    <div id="contact" class="Section Contact">
+        <div class="Contact-Content" id="contact-section">
+            <div class="Head-Row">
+                <div class="Head-Column">
+                    <div class="Heading">
+                        <h1><span class="Markdown">Contact</span></h1>
+                    </div>
+                    <div class="Schematic-Image">
+                        <img class="lazy" data-src="asset/Underline.png" alt="Title seperator" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="Contact-Row">
+                <div class="Contact-Column-Social">
+                    <iframe title="Facebook Fanpage" class="lazy" data-src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FKMUTTcomcamp%2F&tabs=timeline%2Cmessages&width=340&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=902141913296049"
+                        width="340" height="600" style="border:none;overflow:hidden" scrolling="yes" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+
+                </div>
+                <div class="Contact-Column">
+                    <div class="About-BorderImage Contect" style="max-width: 500px;">
+                        <div class="Contant-Text">
+                            <span class="Contact-Text-Header">
+                                <span class="Markdown">ADDRESS</span>
+                            </span>
+                            <span class="Contact-Text-Content-TH"><span class="Markdown">ภาควิชาวิศวกรรมคอมพิวเตอร์
+                                    คณะวิศวกรรมศาสตร์
+                                    มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี
+                                    ชั้น 10 อาคารวิศวะวัฒนะ
+                                    126 ถ.ประชาอุทิศ แขวงบางมด
+                                    เขตทุ่งครุ กรุงเทพฯ 10140</span></span>
+                        </div>
+                    </div>
+                    <div class="About-BorderImage Contect" style="max-width: 500px;top: 350px; pointer-events: auto;">
+                        <div class="Contant-Text">
+                            <span class="Contact-Text-Header">
+                                <span class="Markdown">PHONE</span>
+                            </span>
+                            <span class="Contact-Text-Content-TH">
+                                <span class="Markdown">พี่เส้นหมี่: <a href="tel:+66844397535">084 439 7535</a></span>
+                            <span class="Markdown">พี่โฟ: <a href="tel:+66863624948">086 362 4948</a></span>
+                            <span class="Markdown">พี่ไบร์ท: <a href="tel:+66936658793">093 665 8793</a></span>
+                            <span class="Markdown">พี่หมิว: <a href="tel:+66869060938">086 906 0938</a></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Line"></div>
+
+    <!-- Sponsors 
+    <div id="sponsor" class="Section Sponsor">
+        <div class="Sponsor-Content" id="sponsor-section">
+        </div>
+    </div>
+    <div class="Line"></div>-->
+    <!-- spacer ช่วยคราว -->
+
+    <!-- Footer -->
+    <div id="copyright" class="Section Footer">
+        <div class="Footer-Section-Background">
+            <div class="Footer-Area"></div>
+        </div>
+        <div class="Footer-Section-Content">
+            <div class="Footer-Row">
+                &copy; 2020 Comcamp 32<sup style="top:-1.25em">nd</sup> All Rights Reserved. Designed and developed by CPE#33
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/yall.min.js"></script>
+    <script src="js/smooth-scroll.polyfills.min.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/main.immediate.js"></script>
+
+    <script>
+        if ($.browser.msie && parseInt($.browser.version) <= 8) {
+            $('body').html('<span> This site does not support IE8 or below.</span>')
+        }
+    </script>
+
+    <!-- Styles / Scripts that can be loaded later -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
+    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <script src="js/owl.carousel.js"></script>
+
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>
