@@ -15,8 +15,7 @@ module.exports = function (app, passport) {
 
     app.get('/auth/facebook', passport.authenticate('facebook'))
     app.get('/auth/facebook/callback', passport.authenticate('facebook', { session: true }), (req, res) => {
-        // res.redirect('/register')
-        return res.redirect(`http://${process.env.HOST}/register`)
+        return res.redirect(`http://${process.env.FRONT_END}/register`)
     });
 
     app.get('/api/logout', (req, res) => {
