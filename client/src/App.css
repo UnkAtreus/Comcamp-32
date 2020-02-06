@@ -346,6 +346,7 @@
     .ant-input-number-disabled .ant-input-number-input {
         color: black;
         background-color: white;
+        filter: brightness(2);
     }
     
     .ant-select-selection--single .ant-select-selection__rendered {
