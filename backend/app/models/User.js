@@ -58,19 +58,24 @@ var addressSchema = mongoose.Schema({
 });
 
 var recent_camp = mongoose.Schema({
-	name: {type:String}
+	camp: {type:String},
+	university:{type:String}
 })
 
 var future_info = mongoose.Schema({
-	faculty:{type:String,required:true},
-	university:{type:String,required:true}
+	department: {type: String},
+	faculty:{type:String},
+	university:{type:String}
 });
 
 var futureSchema = mongoose.Schema({
 	one:future_info,
 	two:future_info,
 	three:future_info,
-	interest:[{type:String}]
+	interest:[{type:String}],
+	one_camp: recent_camp,
+	two_camp: recent_camp,
+	three_camp: recent_camp,
 });
 
 var abilitySchema = mongoose.Schema({

@@ -192,30 +192,54 @@ exports.step5 = (req, res) => {
     console.log("step 5")
     const id = req.user._id
     const {
+        one_department,
         one_faculty,
         one_university,
+        two_department,
         two_faculty,
         two_university,
+        three_department,
         three_faculty,
         three_university,
-        interest
+        interest,
+        one_camp,
+        one_camp_university,
+        two_camp,
+        two_camp_university,
+        three_camp,
+        three_camp_university,
 
     } = req.body
     console.log(id)
     User.findByIdAndUpdate(id, { future : {
         one: {
+            department: one_department,
             faculty: one_faculty,
             university: one_university,
         },
         two: {
+            department: two_department,
             faculty: two_faculty,
             university: two_university,
         },
         three: {
+            department: three_department,
             faculty: three_faculty,
             university: three_university,
         },
-        interest:interest
+        interest:interest,
+        one_camp: {
+            camp: one_camp,
+            university: one_camp_university
+        },
+        two_camp: {
+            camp: two_camp,
+            university: two_camp_university
+        },
+        three_camp: {
+            camp: three_camp,
+            university: three_camp_university
+        },
     }
      }, (err, result) => {
         console.log("update")
