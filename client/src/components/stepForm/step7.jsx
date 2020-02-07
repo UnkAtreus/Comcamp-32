@@ -54,7 +54,7 @@ function StepForm7(props) {
                 <Form.Item label="สถานที่ที่ต้องการให้พี่ค่ายไปรับ">
                     {getFieldDecorator('location', {
                         rules: [{ required: true, message: 'กรุณาระบุสถานที่' }],
-                        initialValue: "มา มจธ. ด้วยตนเอง"
+                        // initialValue: "มา มจธ. ด้วยตนเอง"
                     })(
                         <Select disabled={summary}>
                             {
