@@ -81,8 +81,18 @@ function SummaryForm(props) {
     }, [loading])
 
     if (loading) {
-        return <h1>Is Loading...</h1>
+        return <h1></h1>
     }
+
+    useEffect( () => {
+        if(!loading && user) {
+            if(finished) {
+                if (props.user === false) {
+                    props.history.push('/')
+                }
+            }
+        }
+    })
 
     return (
         <div>
