@@ -19,8 +19,10 @@ exports.step1 = (req, res) => {
     const id = req.user._id
     console.log("STEP 1")
     const {
-        name_th,
-        name_eng,
+        fname_th,
+        lname_th,
+        fname_eng,
+        lname_eng,
         nickname,
         sex,
         birthday,
@@ -35,8 +37,10 @@ exports.step1 = (req, res) => {
     console.log(birthday)
     User.findByIdAndUpdate(id, { 
         general: {
-            name_th: name_th,
-            name_eng: name_eng,
+            fname_th: fname_th,
+            lname_th: lname_th,
+            fname_eng: fname_eng,
+            lname_eng: lname_eng,
             nickname: nickname,
             sex: sex,
             birthday: birthday,

@@ -86,7 +86,7 @@ function StepForm1(props) {
             <Form onSubmit={handleSubmit} >
                 <Row>
                     <Col xs={24} md={{span: 4}}>
-                        <Form.Item label="ชื่อภาษาไทย">
+                        <Form.Item label="ชื่อ (ภาษาไทย)">
                             {getFieldDecorator('fname_th', {
                                 rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาไทย' }],
                             })(
@@ -100,7 +100,7 @@ function StepForm1(props) {
                     
                     </Col>
                     <Col xs={24} md={{span: 4, offset:1}}>
-                        <Form.Item label="ชื่อภาษาไทย">
+                        <Form.Item label="นามสกุล (ภาษาไทย)">
                             {getFieldDecorator('lname_th', {
                                 rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาไทย' }],
                             })(
@@ -112,14 +112,26 @@ function StepForm1(props) {
                         </Form.Item>
                     
                     </Col>
-                    <Col xs={24} md={{span: 10, offset: 2}}>
-                        <Form.Item label="ชื่อภาษาอังกฤษ">
-                            {getFieldDecorator('name_eng', {
+                    <Col xs={24} md={{span: 4, offset: 2}}>
+                        <Form.Item label="ชื่อ (ภาษาอังกฤษ)">
+                            {getFieldDecorator('fname_eng', {
                                 rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาอังกฤษ' }],
                             })(
                                 <Input
                                     addonBefore={prefix_eng}
-                                    placeholder="Somchai  Jaidee"
+                                    placeholder="Somchai"
+                                    disabled={summary}
+                                />,
+                            )}
+                        </Form.Item>
+                    </Col>
+                    <Col xs={24} md={{span: 4, offset: 1}}>
+                        <Form.Item label="นามสกุล (ภาษาอังกฤษ)">
+                            {getFieldDecorator('lname_eng', {
+                                rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาอังกฤษ' }],
+                            })(
+                                <Input
+                                    placeholder="Jaidee"
                                     disabled={summary}
                                 />,
                             )}
