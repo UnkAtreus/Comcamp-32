@@ -38,10 +38,8 @@ function SummaryForm(props) {
 
     useEffect( () => {
         if(!loading && user) {
-            if(finished) {
-                if (props.user === false) {
-                    props.history.push('/')
-                }
+            if(!finished) {
+                props.history.push('/')
             }
         }
     }, [loading, finished])
