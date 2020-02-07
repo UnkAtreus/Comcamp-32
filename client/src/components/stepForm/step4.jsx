@@ -321,7 +321,7 @@ function StepForm4(props) {
                                     })(
                                         <Input
                                             disabled={summary}
-                                            placeholder="หมู่บ้านวิศวกรรมคอมพิวเตอร์"
+                                            placeholder="หมู่ 32"
                                         />,
                                     )}
                                 </Form.Item>
@@ -338,7 +338,7 @@ function StepForm4(props) {
                                         
                                         <Input
                                             disabled={summary}
-                                            placeholder="32"
+                                            placeholder="คอมแคมป์ 32"
                                         />,
                                     )}
                                 </Form.Item>
@@ -452,7 +452,7 @@ function StepForm4(props) {
                                     })(
                                         <Input
                                             disabled={summary}
-                                            placeholder="หมู่บ้านวิศวกรรมคอมพิวเตอร์"
+                                            placeholder="หมู่ 32"
                                         />,
                                     )}
                                 </Form.Item>
@@ -467,7 +467,7 @@ function StepForm4(props) {
                                     })(
                                         <Input
                                             disabled={summary}
-                                            placeholder="32"
+                                            placeholder="คอมแคมป์ 32"
                                         />,
                                     )}
                                 </Form.Item>
@@ -565,7 +565,7 @@ function StepForm4(props) {
                                     })(
                                         <Input
                                             disabled={summary}
-                                            placeholder="หมู่บ้านวิศวกรรมคอมพิวเตอร์"
+                                            placeholder="หมู่ 32"
                                         />,
                                     )}
                                 </Form.Item>
@@ -580,7 +580,7 @@ function StepForm4(props) {
                                     })(
                                         <Input
                                             disabled={summary}
-                                            placeholder="32"
+                                            placeholder="คอมแคมป์ 32"
                                         />,
                                     )}
                                 </Form.Item>
@@ -661,7 +661,7 @@ function StepForm4(props) {
                                     <Input 
                                         addonBefore={selectBefore}
                                         disabled={summary}
-                                        placeholder="นายสมคิด ใจมา"
+                                        placeholder="สมคิด ใจมา"
                                     />,
                                 )}
                             </Form.Item>
@@ -683,7 +683,7 @@ function StepForm4(props) {
                                 })(
                                     <Input
                                         disabled={summary}
-                                        placeholder="0903234432"
+                                        placeholder="08xxxxxxxx"
                                     />,
                                 )}
                             </Form.Item>
@@ -694,7 +694,7 @@ function StepForm4(props) {
                                 })(
                                     <Input
                                         disabled={summary}
-                                        placeholder="example@mail.com"
+                                        placeholder="sample@gmail.com"
                                     />,
                                 )}
                             </Form.Item>
