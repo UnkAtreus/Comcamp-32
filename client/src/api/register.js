@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const END_POINT = '/api/register';
+const END_POINT = 'http://206.189.149.84:5000/api/register';
 
 class Register {
     constructor() {
@@ -10,7 +10,9 @@ class Register {
     sendData = async (step, payload) => {
         // return true
         try {
-            const res = await axios.post(this.baseURL + '/' + step, payload)
+            const res = await axios.post(this.baseURL + '/' + step, payload, {
+		withCredentials: true
+	})
             console.log("Send Data")
             if(res.status === 200) {
                 console.log("success")
