@@ -1,9 +1,9 @@
 @font-face {
   font-family: CenturyGothicStd;
-  src: url("/frontend/font/CenturyGothicStd-Bold.eot");
+  src: url("/font/CenturyGothicStd-Bold.eot");
   /*src: url("/font/CenturyGothicStd.eot");*/
   /* IE9 Compat Modes */
-  src: url("/frontend/font/CenturyGothicStd.eot?#iefix") format("embedded-opentype"), url("/frontend/font/CenturyGothicStd.woff") format("woff"), url("/frontend/font/CenturyGothicStd.ttf") format("truetype"), url("/frontend/font/CenturyGothicStd.svg#svgFontName") format("svg");
+  src: url("/font/CenturyGothicStd.eot?#iefix") format("embedded-opentype"), url("/font/CenturyGothicStd.woff") format("woff"), url("/font/CenturyGothicStd.ttf") format("truetype"), url("/font/CenturyGothicStd.svg#svgFontName") format("svg");
   /* Legacy iOS */
   font-display: swap;
 }
@@ -11,18 +11,18 @@
 @font-face {
   font-family: CenturyGothicStd-Bold;
   font-weight: bold;
-  src: url("/frontend/font/CenturyGothicStd-Bold.eot");
+  src: url("/font/CenturyGothicStd-Bold.eot");
   /* IE9 Compat Modes */
-  src: url("/frontend/font/CenturyGothicStd-Bold.eot?#iefix") format("embedded-opentype"), url("/frontend/font/CenturyGothicStd-Bold.woff") format("woff"), url("/frontend/font/CenturyGothicStd-Bold.ttf") format("truetype"), url("/frontend/font/CenturyGothicStd-Bold.svg#svgFontName") format("svg");
+  src: url("/font/CenturyGothicStd-Bold.eot?#iefix") format("embedded-opentype"), url("/font/CenturyGothicStd-Bold.woff") format("woff"), url("/font/CenturyGothicStd-Bold.ttf") format("truetype"), url("/font/CenturyGothicStd-Bold.svg#svgFontName") format("svg");
   /* Legacy iOS */
   font-display: swap;
 }
 
 @font-face {
   font-family: SarunsJackSparrow;
-  src: url("/frontend/font/SarunsJackSparrow.eot");
+  src: url("/font/SarunsJackSparrow.eot");
   /* IE9 Compat Modes */
-  src: url("/frontend/font/SarunsJackSparrow.eot?#iefix") format("embedded-opentype"), url("/frontend/font/SarunsJackSparrow.woff") format("woff"), url("/frontend/font/SarunsJackSparrow.ttf") format("truetype"), url("/frontend/font/SarunsJackSparrow.svg#svgFontName") format("svg");
+  src: url("/font/SarunsJackSparrow.eot?#iefix") format("embedded-opentype"), url("/font/SarunsJackSparrow.woff") format("woff"), url("/font/SarunsJackSparrow.ttf") format("truetype"), url("/font/SarunsJackSparrow.svg#svgFontName") format("svg");
   /* Legacy iOS */
   font-display: swap;
 }
@@ -333,7 +333,7 @@
           box-sizing: border-box;
   color: #cccccc;
   background-color: #1a1814;
-  background-image: url(/frontend/asset/General_BG_new.png);
+  background-image: url(/asset/General_BG_new.png);
   background-size: auto;
   max-width: 2400px;
   font-size: 17.778px;
@@ -558,7 +558,7 @@
 }
 
 .Button-BorderImage {
-  border-image-source: url(/frontend/asset/Button_Frame.png);
+  border-image-source: url(/asset/Button_Frame.png);
   border-image-width: 22px 42px;
   border-image-repeat: round;
   position: absolute;
@@ -580,7 +580,7 @@
   color: #ffeecc;
   font-weight: bold;
   text-shadow: rgba(0, 0, 0, 0.6) 0px 1px 2px, rgba(0, 0, 0, 0.4) 0px 2px 4px;
-  background-image: url(/frontend/asset/Button_Highlight/CC_Button_middle.png);
+  background-image: url(/asset/Button_Highlight/CC_Button_middle.png);
   background-size: 500px 170px;
   font-family: SourceSerifVariable, SourceSerif, serif;
   letter-spacing: 0.025em;
@@ -603,7 +603,7 @@
   max-width: 2400px;
   height: 47px;
   width: 100%;
-  background-image: url(/frontend/asset/CC_seperate.png);
+  background-image: url(/asset/CC_seperate.png);
   background-size: 600px 47px;
   z-index: 5;
   -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 24px 8px, rgba(0, 0, 0, 0.33) 0px 0px 12px;
@@ -630,7 +630,7 @@
     color: #cccccc;
     font-size: 15.802px;
     background-color: #1a1814;
-    background-image: url(/frontend/asset/General_BG_new.png);
+    background-image: url(/asset/General_BG_new.png);
     background-size: auto;
     max-width: 2400px;
     background-position: center top;
@@ -794,7 +794,7 @@
 }
 
 .About-BorderImage {
-  border-image-source: url(/frontend/asset/fame.png);
+  border-image-source: url(/asset/fame.png);
   border-image-width: 22px;
   /* border-image-repeat: round; */
   position: absolute;
@@ -840,7 +840,7 @@
   height: 33px;
   width: 100%;
   background-color: #333333;
-  background-image: url(/frontend/asset/CC_seperate.png);
+  background-image: url(/asset/CC_seperate.png);
   background-size: 600px 33px;
   z-index: 5;
   -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 24px 8px, rgba(0, 0, 0, 0.33) 0px 0px 12px;
@@ -866,7 +866,7 @@
   width: 50px;
   height: 7px;
   display: inline-block;
-  background-image: url(/frontend/asset/Button_Highlight/CC_Button_middle.png);
+  background-image: url(/asset/Button_Highlight/CC_Button_middle.png);
   background-size: 70px 20px;
   border-width: 0px;
   border-style: initial;
@@ -925,7 +925,7 @@
 
 .Section.Subject {
   padding: 100px 40px;
-  background-image: url(/frontend/asset/Background1.png);
+  background-image: url(/asset/Background1.png);
 }
 
 .Spacer {
@@ -1044,7 +1044,7 @@
 }
 
 .Subject-SpriteHeroes {
-  background-image: url(/frontend/asset/charactor.jpg);
+  background-image: url(/asset/charactor.jpg);
   background-size: 400px 400px;
   width: 100px;
   height: 100px;
@@ -1082,7 +1082,7 @@
 
 .Subject-BorderPortrait {
   position: absolute;
-  background-image: url(/frontend/asset/ring.png);
+  background-image: url(/asset/ring.png);
   width: 144px;
   height: 144px;
   left: -12px;
@@ -1136,23 +1136,23 @@
 }
 
 .Subject-Slide-Row.One {
-  background-image: url(/frontend/asset/banner_flow.jpg);
+  background-image: url(/asset/banner_flow.jpg);
 }
 
 .Subject-Slide-Row.Two {
-  background-image: url(/frontend/asset/banner_c-programming.jpg);
+  background-image: url(/asset/banner_c-programming.jpg);
 }
 
 .Subject-Slide-Row.Three {
-  background-image: url(/frontend/asset/banner_micro.jpg);
+  background-image: url(/asset/banner_micro.jpg);
 }
 
 .Subject-Slide-Row.Four {
-  background-image: url(/frontend/asset/banner_machine.jpg);
+  background-image: url(/asset/banner_machine.jpg);
 }
 
 .Subject-Slide-Row.Five {
-  background-image: url(/frontend/asset/banner_brain.jpg);
+  background-image: url(/asset/banner_brain.jpg);
 }
 
 .Subject-Slide-Content-Column {
@@ -1990,7 +1990,7 @@
     position: absolute;
     top: -35px;
     left: 50%;
-    content: url(/frontend/asset/regis_point_large_active.png);
+    content: url(/asset/regis_point_large_active.png);
     display: block;
     -webkit-transform: scale(0.5);
             transform: scale(0.5);
@@ -2109,7 +2109,7 @@
 
 .Section.Faq {
   padding: 120px 60px;
-  background-image: url(/frontend/asset/FAQs_BG.png);
+  background-image: url(/asset/FAQs_BG.png);
 }
 
 .Faq-Column {

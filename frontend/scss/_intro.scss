@@ -4,7 +4,7 @@
     box-sizing: border-box;
     color: rgb(204, 204, 204);
     background-color: rgb(26, 24, 20);
-    background-image: url(/frontend/asset/General_BG_new.png);
+    background-image: url(/asset/General_BG_new.png);
     background-size: auto;
     max-width: 2400px;
     font-size: 17.778px;
@@ -193,7 +193,7 @@
 }
 
 .Button-BorderImage {
-    border-image-source: url(/frontend/asset/Button_Frame.png);
+    border-image-source: url(/asset/Button_Frame.png);
     border-image-width: 22px 42px;
     border-image-repeat: round;
     position: absolute;
@@ -215,7 +215,7 @@
     color: rgb(255, 238, 204);
     font-weight: bold;
     text-shadow: rgba(0, 0, 0, 0.6) 0px 1px 2px, rgba(0, 0, 0, 0.4) 0px 2px 4px;
-    background-image: url(/frontend/asset/Button_Highlight/CC_Button_middle.png);
+    background-image: url(/asset/Button_Highlight/CC_Button_middle.png);
     background-size: 500px 170px;
     font-family: SourceSerifVariable, SourceSerif, serif;
     letter-spacing: 0.025em;
@@ -236,7 +236,7 @@
     max-width: 2400px;
     height: 47px;
     width: 100%;
-    background-image: url(/frontend/asset/CC_seperate.png);
+    background-image: url(/asset/CC_seperate.png);
     background-size: 600px 47px;
     z-index: 5;
     box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 24px 8px, rgba(0, 0, 0, 0.33) 0px 0px 12px;
@@ -261,7 +261,7 @@
         color: rgb(204, 204, 204);
         font-size: 15.802px;
         background-color: rgb(26, 24, 20);
-        background-image: url(/frontend/asset/General_BG_new.png);
+        background-image: url(/asset/General_BG_new.png);
         background-size: auto;
         max-width: 2400px;
         background-position: center top;
