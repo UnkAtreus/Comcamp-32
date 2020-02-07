@@ -10,7 +10,9 @@ class Register {
     sendData = async (step, payload) => {
         // return true
         try {
-            const res = await axios.post(this.baseURL + '/' + step, payload)
+            const res = await axios.post(this.baseURL + '/' + step, payload, {
+                withCredentials: true
+            })
             console.log("Send Data")
             if(res.status === 200) {
                 console.log("success")
@@ -20,7 +22,7 @@ class Register {
             console.log("Error")
             const status = err.response.status
             if(status === 401) {
-                window.location = '/'
+                // window.location = '/'
                 return false
             } else {
                 return false
