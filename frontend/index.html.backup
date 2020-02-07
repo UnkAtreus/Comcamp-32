@@ -126,7 +126,22 @@
                             <div class="Intro-Image"><img class="lazy" data-src="asset/logo-big.png" alt="Comcamp 32" /> </div><span class="Intro-Text">
                                 <span class="Markdown">Department of Computer Engineering </span>
                             <span class="Markdown">King Mongkut's University of Technology Thonburi</span></span>
-                            
+                            <div class="Button-Row">
+                                <a href="#section-cta" url="#section-cta" class="Button-Link">
+                                    <div class="Button-Column">
+                                        <div class="Button-Left-Image">
+                                            <img class="lazy" data-src="asset/Button_left.png" alt="Left button decoration" />
+                                        </div>
+                                        <div class="Button-Right-Image">
+                                            <img class="lazy" data-src="asset/Button_right.png" alt="Right button decoration" />
+                                        </div>
+                                        <div class="Button-BorderImage"></div>
+                                        <button class="Button-Background">
+                                            <span class="Markdown">Register Now</span>
+                                        </button>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -375,6 +390,164 @@
     </div>
     <div class="Line"></div>
 
+    <!-- Timeline -->
+    <div id="timeline" class="Section Timeline">
+        <div class="Timeline-Content" id="timeline-section">
+            <div class="Head-Row">
+                <div class="Head-Column">
+                    <div class="Heading">
+                        <h1><span class="Markdown">Registration</span></h1>
+                    </div>
+                    <div class="Schematic-Image">
+                        <img class="lazy" data-src="/asset/Underline.png" alt="Title seperator" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="Register-Row">
+                <div class="Register-Column">
+                    <div class="Register-Image One"> </div>
+                    <span class="Register-Text-TH">
+                        <span class="Markdown">กำลังศึกษาอยู่ในระดับชั้นมัธยมศึกษาปีที่ 4-6 สายวิทย์ฯ หรือ ปวช.
+                            ฐานวิทยาศาสตร์</span>
+                    </span>
+                </div>
+                <div class="Register-Column">
+                    <div class="Register-Image Two"> </div>
+                    <span class="Register-Text-TH">
+                        <span class="Markdown">มีความสนใจในด้านคอมพิวเตอร์โดยไม่จำเป็นต้องมีพื้นฐานมาก่อน</span>
+                    </span>
+                </div>
+                <div class="Register-Column">
+                    <div class="Register-Image Three"> </div>
+                    <span class="Register-Text-TH">
+                        <span class="Markdown">ผู้ปกครองอนุญาตให้นักเรียนคนดังกล่าวเข้าร่วมกิจกรรม</span>
+                    </span>
+                </div>
+                <div class="Register-Column">
+                    <div class="Register-Image Four"> </div>
+                    <span class="Register-Text-TH">
+                        <span class="Markdown">สามารถเข้าพักในระยะเวลาและสถานที่ที่กำหนดได้ตลอดระยะเวลาโครงการ</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="Timeline-Head">
+                <div class="Timeline-Head-Text-TH">
+                    <span class="Markdown">
+                        Timeline
+                    </span>
+                </div>
+            </div>
+
+            <div class="Timeline-Row-Out">
+                <ul class="timeline">
+                    <!-- Item 1 -->
+                    <li>
+                        <div class="direction-r">
+                            <div class="flag-wrapper">
+                                <span class="flag">เปิดรับสมัคร</span>
+                                <span class="time-wrapper"><span class="time">7 Feb 2020</span></span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Item 2 -->
+                    <li>
+                        <div class="direction-l">
+                            <div class="flag-wrapper">
+                                <span class="flag">ปิดรับสมัคร</span>
+                                <span class="time-wrapper"><span class="time">9 Mar 2020</span></span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Item 3 -->
+                    <li>
+                        <div class="direction-r">
+                            <div class="flag-wrapper">
+                                <span class="flag">ประกาศผล</span>
+                                <span class="time-wrapper"><span class="time">2 Apr 2020</span></span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="direction-l">
+                            <div class="flag-wrapper">
+                                <span class="flag">เปิดค่าย</span>
+                                <span class="time-wrapper"><span class="time">11 Apr 2020</span></span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="direction-r">
+                            <div class="flag-wrapper">
+                                <span class="flag">ปิดค่าย</span>
+                                <span class="time-wrapper"><span class="time">15 Apr 2020</span></span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="Timeline-Row-In">
+                    <div class="Timeline-Line"></div>
+
+                    <div class="Timeline-Column One">
+                        <span class="Timeline-Text Top Left">
+                            <span class="Markdown" content="">เปิดรับสมัคร</span>
+                        <span class="Markdown" content="">7 Feb 2020</span></span>
+                        </span>
+                        <div class="Timeline-Image-Top">
+                            <img class="lazy" data-src="asset/regis_point_small_up_active.png" alt="Timeline image" />
+                        </div>
+                    </div>
+                    <div class="Timeline-Column Two">
+                        <span class="Timeline-Text Bottom Left">
+                            <span class="Markdown" content="">ปิดรับสมัคร</span>
+                        <span class="Markdown" content="">9 Mar 2020</span></span>
+                        <div class="Timeline-Image-Bottom">
+                            <img class="lazy" data-src="asset/regis_point_small_down.png" alt="Timeline image" />
+                        </div>
+                    </div>
+
+                    <div class="Timeline-Column-Three">
+                        <div class="Timeline-Row">
+                            <div class="Timeline-Content-Row">
+                                <div class="Timeline-Content-Column">
+                                    <span class="Timeline-Text-Center">
+                                        <span class="Markdown" content="">ประกาศผล</span>
+                                    <span class="Markdown" content="">2 Apr 2020</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Timeline-Image-Center">
+                            <img class="lazy" data-src="asset/regis_point_large.png" alt="Timeline image" />
+                        </div>
+                    </div>
+
+                    <div class="Timeline-Column Four">
+                        <span class="Timeline-Text Bottom Right">
+                            <span class="Markdown" content="">เปิดค่าย</span>
+                        <span class="Markdown" content="">11 Apr 2020</span></span>
+                        <div class="Timeline-Image-Bottom">
+                            <img class="lazy" data-src="asset/regis_point_small_down.png" alt="Timeline image" />
+                        </div>
+                    </div>
+                    <div class="Timeline-Column Five">
+                        <span class="Timeline-Text Top Right">
+                            <span class="Markdown" content="">ปิดค่าย</span>
+                        <span class="Markdown" content="">15 Apr 2020</span></span>
+                        <div class="Timeline-Image-Top">
+                            <img class="lazy" data-src="asset/regis_point_small_up.png" alt="Timeline image" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Line"></div>
     <!-- Faq -->
     <div id="faq" class="Section Faq">
         <div class="Faq-Content" id="faq-section">
