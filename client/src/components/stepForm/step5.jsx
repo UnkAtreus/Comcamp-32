@@ -188,7 +188,7 @@ function StepForm5(props) {
                     {getFieldDecorator('interest', {
                         // rules: [{ required: true, message: 'กรุณาเลือกหลักสูตรที่ต้องการ' }]
                     })(
-                        <Checkbox.Group options={options} onChange={onChange} />,
+                        <Checkbox.Group options={options} onChange={onChange} disabled={summary}/>,
                     )}
                 </Form.Item>
                 <h1>ค่ายที่เคยเข้าร่วม</h1>

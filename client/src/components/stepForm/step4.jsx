@@ -284,7 +284,9 @@ function StepForm4(props) {
     const selectBefore = getFieldDecorator('prefix_th', {
         rules: [{required: true, message: 'กรุณาระบุคำนำหน้าชื่อ'}]
         })(
-        <Select style={{ width: 90 }}>
+        <Select style={{ width: 90 }}
+            disabled={summary}    
+        >
           <Option value="นาย">นาย</Option>
           <Option value="นางสาว">นางสาว</Option>
         </Select>
@@ -403,6 +405,7 @@ function StepForm4(props) {
                         <Form.Item label="จังหวัด">
                             {getFieldDecorator('province', config)(
                                 <AutoComplete
+                                    disabled={summary}
                                     dataSource={dataSource}
                                     onSelect={onSelect}
                                     onSearch={onSearch}
@@ -512,6 +515,7 @@ function StepForm4(props) {
                                  rules: [{ required: true, message: 'กรุณาเลือกจังหวัด' }]
                             })(
                                 <AutoComplete
+                                    disabled={summary}
                                     dataSource={dataSource}
                                     onSelect={onSelect}
                                     onSearch={onSearch}
@@ -624,6 +628,7 @@ function StepForm4(props) {
                                  rules: [{ required: true, message: 'กรุณาเลือกจังหวัด' }]
                             })(
                                 <AutoComplete
+                                    disabled={summary}
                                     dataSource={dataSource}
                                     onSelect={onSelect}
                                     onSearch={onSearch}
