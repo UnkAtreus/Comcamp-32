@@ -85,14 +85,27 @@ function StepForm1(props) {
             <h1>ข้อมูลทั่วไป</h1>
             <Form onSubmit={handleSubmit} >
                 <Row>
-                    <Col xs={24} md={{span: 10}}>
+                    <Col xs={24} md={{span: 4}}>
                         <Form.Item label="ชื่อภาษาไทย">
-                            {getFieldDecorator('name_th', {
+                            {getFieldDecorator('fname_th', {
                                 rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาไทย' }],
                             })(
                                 <Input
                                     addonBefore={prefix_th}
-                                    placeholder="สมชาย  ใจดี"
+                                    placeholder="สมชาย"
+                                    disabled={summary}
+                                />,
+                            )}
+                        </Form.Item>
+                    
+                    </Col>
+                    <Col xs={24} md={{span: 4, offset:1}}>
+                        <Form.Item label="ชื่อภาษาไทย">
+                            {getFieldDecorator('lname_th', {
+                                rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาไทย' }],
+                            })(
+                                <Input
+                                    placeholder="ใจดี"
                                     disabled={summary}
                                 />,
                             )}
@@ -144,9 +157,12 @@ function StepForm1(props) {
                     <Col xs={24} md={{span: 4, offset: 1}}>
                         <Form.Item label="วัน-เดือน-ปีเกิด">
                             {getFieldDecorator('birthday', {
+                                initialValue:moment('2001/01/01', dateFormat),
                                 rules: [{ type: 'object', required: true, message: 'กรุณาเลือกวันเกิด' }],
-                            })(<DatePicker 
-                                // defaultValue={moment(generalData.birthday, dateFormat)}
+                            }, 
+                            
+                            )(<DatePicker 
+                                defaultValue={moment('2015/01/01', dateFormat)} 
                                 disabled={summary} 
                                 style={{width: '100%'}}
                                 format={dateFormat}
@@ -192,7 +208,7 @@ function StepForm1(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="0903234466"
+                                    placeholder="08xxxxxxxx"
                                 />,
                             )}
                         </Form.Item>
@@ -216,10 +232,13 @@ function StepForm1(props) {
                                 rules: [{ required: true, message: 'กรุณากรอกขนาดเสื้อ', enum: ['S', 'M', 'L', 'XL'] }],
                             })(
                                 <Select disabled={summary}>
-                                    <Option value="S">S รอบอก 34</Option>
-                                    <Option value="M">M รอบอก 36</Option>
-                                    <Option value="L">L รอบอก 38</Option>
-                                    <Option value="XL">XL รอบอก 40</Option>
+                                    <Option value="SS">SS รอบอก 34</Option>
+                                    <Option value="S">S รอบอก 36</Option>
+                                    <Option value="M">M รอบอก 38</Option>
+                                    <Option value="L">L รอบอก 40</Option>
+                                    <Option value="XL">XL รอบอก 42</Option>
+                                    <Option value="XXL">XXL รอบอก 44</Option>
+                                    <Option value="3XL">3XL รอบอก 48</Option>
                                 </Select>
                             ,
                             )}

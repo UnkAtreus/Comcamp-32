@@ -3,6 +3,7 @@ import register from '../../api/register'
 import { Form, Input, Button, Row, Col, Select } from 'antd';
 import btn_left from '../../asset/Button_left.png';
 import btn_right from '../../asset/Button_right.png';
+import img3 from '../../image/DungeonMap.png'
 
 const { Textarea } = Input
 
@@ -89,6 +90,11 @@ function StepForm8(props) {
                     พบว่าภายในถ้ำนั้นเป็นเขาวงกตที่ซับซ้อน โชคดีที่ Noobmaster69 เป็นผู้เล่นสายเติมเงิน จึงได้รับแผนที่ของ
                     ดันเจี้ยนนี้มาไว้ในมือ โดยระบุจำนวนมอนสเตอร์ที่ต้องเจอระหว่างทางเอาไว้ด้วย
                 </p>
+                <Row>
+                    <Col md={{span:18, offset:2}} >
+                        <img src={img3} style={{width: '100%'}}/>
+                    </Col>
+                </Row>
                 <p>
                     น้อง ๆ รู้เส้นทางแล้ว แต่เพื่อนอีก 2 คนไม่เข้าใจว่าทำไมน้องจึงเลือกเส้นทางนั้น น้อง ๆ จึงต้องอธิบายวิธีหา
                     เส้นทางที่ง่ายที่สุด เจอมอนสเตอร์ระหว่างทางน้อยที่สุด เพื่อผ่านเข้าไปเอาชนะบอสหรือหัวหน้าของเหล่ามอน

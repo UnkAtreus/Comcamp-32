@@ -215,7 +215,7 @@ function StepForm4(props) {
                 relation: addressData.parent.relation,
                 name: addressData.parent.name,
                 tel: addressData.parent.tel,
-                email: addressData.parent.name,
+                email: addressData.parent.email,
                 prefix_th: addressData.parent.prefix_th
             });
         }

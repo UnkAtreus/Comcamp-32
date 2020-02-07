@@ -15,7 +15,7 @@ const step1Validation = () => {
         body('birthday').isISO8601().toDate(),
         body('bloodenum').isIn(['A','B','AB','O']),
         body('religion').not().isEmpty(),
-        body('shirt_size').isIn(['S','M','L','XL']),
+        // body('shirt_size').isIn(['S','M','L','XL']),
         body('telephone').not().isEmpty(),
         body('email').isEmail(),
     ]
