@@ -23,12 +23,13 @@
     display: block;
     flex: 0 0 auto;
     text-align: center;
+    margin-right: 155px;
 }
 
 .Contact-Column {
     max-width: 600px;
     text-align: center;
-    margin-left: 100px;
+    margin-left: 0px;
 }
 
 .Contact-Text-Content-TH {
@@ -86,6 +87,9 @@
     }
     .Contact-Column {
         margin: 0 0px;
+    }
+    .Contact-Column-Social {
+        margin-right: 0px;
     }
 }
 
