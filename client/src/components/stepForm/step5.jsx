@@ -147,8 +147,8 @@ function StepForm5(props) {
 
                 <Row>
                     <Col md={{span:6 }} xs={24}>
-                        <Form.Item label="ภาควิชาลำดับที่หนึ่ง">
-                            {getFieldDecorator('one_department', {
+                        <Form.Item label="ภาควิชาลำดับที่สาม">
+                            {getFieldDecorator('three_department', {
                                 // rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
                             })(
                                 <Input

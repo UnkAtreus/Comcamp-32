@@ -25,7 +25,7 @@ function StepForm0(props) {
         props.form.validateFields((err, values) => {
             if (!err) {
                 console.log('Received values of form: ', values);
-                nextStep(values)
+                nextStep()
             }
         });
     };
@@ -102,7 +102,7 @@ function StepForm0(props) {
             </Row>
             <Form onSubmit={handleSubmit}>
                 <Form.Item className="Right-Radio">
-                    {getFieldDecorator('interest', {
+                    {getFieldDecorator('agree', {
                         rules: [{ required: true, message: 'กรุณาอ่านข้อมูลการสมัครให้ครบถ้วน' }]
                     })(
                         <Checkbox.Group options={['ข้าพเจ้าได้อ่านข้อมูลการสมัครทั้งหมดแล้ว']} />,

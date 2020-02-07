@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import register from '../../api/register'
-import { Form, Input, Button, Row, Col, Select } from 'antd';
+import { Form, Input, Checkbox, Row, Col, Select } from 'antd';
 import btn_left from '../../asset/Button_left.png';
 import btn_right from '../../asset/Button_right.png';
 
@@ -16,6 +16,10 @@ function StepForm7(props) {
         if (user.hasOwnProperty("location")) {
             let locationData = user.location
             props.form.setFieldsValue({ location: locationData });
+        }
+        if (user.hasOwnProperty("news")) {
+            let newsData = user.news
+            props.form.setFieldsValue({ news: newsData });
         }
         // props.form.setFieldsValue({have_accident: false})
     }, []);
@@ -39,15 +43,18 @@ function StepForm7(props) {
             }
         });
     };
+    function onChange(checkedValues) {
+        console.log('checked = ', checkedValues);
+    }
     const { getFieldDecorator } = props.form;
     return (
         <div>
-            <h1>สถานที่ที่งการให้พี่ค่ายไปรับ</h1>
+            <h1>สถานที่ที่ต้องการให้พี่ค่ายไปรับ</h1>
             <Form onSubmit={handleSubmit} >
                 <Form.Item label="สถานที่ที่ต้องการให้พี่ค่ายไปรับ">
                     {getFieldDecorator('location', {
                         rules: [{ required: true, message: 'กรุณาระบุสถานที่' }],
-                        initialValue: "มา มจธ. ด้วยตนเอง"
+                        // initialValue: "มา มจธ. ด้วยตนเอง"
                     })(
                         <Select disabled={summary}>
                             {
@@ -59,7 +66,38 @@ function StepForm7(props) {
                         </Select>,
                     )}
                 </Form.Item>
-
+                <h1>ได้รับข่าวสารการจัดค่ายจากที่ใด</h1>
+                <Form.Item className="Right-Radio">
+                    {getFieldDecorator('news', {
+                        // rules: [{ required: true, message: 'กรุณาเลือกหลักสูตรที่ต้องการ' }]
+                })(
+                <Checkbox.Group style={{ width: '100%' }} onChange={onChange}>
+                <Row>
+                    <Col md={{span:8}}>
+                        <Checkbox value="facebook">Facebook Page</Checkbox>
+                    </Col>
+                    <Col md={{span:8}}>
+                        <Checkbox value="instagram">Instagram</Checkbox>
+                    </Col>
+                    <Col md={{span:8}}>
+                        <Checkbox value="senior">การแนะนำจากรุ่นพี่</Checkbox>
+                    </Col>
+                    <Col md={{span:8}}>
+                        <Checkbox value="friend">การแนะนำจากเพื่อน</Checkbox>
+                    </Col>
+                    <Col md={{span:8}}>
+                        <Checkbox value="teacher">การแนะนำจากครูแนะแนว</Checkbox>
+                    </Col>
+                    <Col md={{span:8}}>
+                        <Checkbox value="camphub">เว็บไซต์ Camphub</Checkbox>
+                    </Col>
+                    <Col md={{span:8}}>
+                        <Checkbox value="openhouse">งาน Open House</Checkbox>
+                    </Col>
+                    </Row>
+                </Checkbox.Group>
+                )}
+                </Form.Item>
 
                 {!summary &&
                     <Form.Item>

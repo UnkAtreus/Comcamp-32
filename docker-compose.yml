@@ -9,11 +9,13 @@ services:
     environment:
       HOST: "206.189.149.84"
       FRONT_END: "206.189.149.84:3000"
-  frontend:
-    container_name: frontend-cc
-    ports:
-      - "3000:3000"
-    build: ./client
+      # HOST: "localhost:5000"
+      # FRONT_END: "localhost:3000"
+  # frontend:
+  #   container_name: frontend-cc
+  #   ports:
+  #     - "3000:3000"
+  #   build: ./client
   mongocc32:
     image: mongo:bionic
     container_name: mongo-cc-2
