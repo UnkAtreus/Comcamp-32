@@ -42,7 +42,7 @@ function SummaryForm(props) {
                 props.history.push('/')
             }
         }
-    }, [loading, finished])
+    }, [finished])
 
     async function checkStep(user) {
         console.log("user", user)
