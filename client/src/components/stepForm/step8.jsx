@@ -59,7 +59,7 @@ function StepForm8(props) {
                         <Input.TextArea
                             disabled={summary}
                             autoSize={{ minRows: 4 }}
-                            placeholder="...."
+                            placeholder="กรอกคำตอบที่นี่..."
                         />,
                     )}
                 </Form.Item>
@@ -79,7 +79,7 @@ function StepForm8(props) {
                         <Input.TextArea
                             disabled={summary}
                             autoSize={{ minRows: 4 }}
-                            placeholder="...."
+                            placeholder="กรอกคำตอบที่นี่..."
                         />,
                     )}
                 </Form.Item>
@@ -109,7 +109,7 @@ function StepForm8(props) {
                         <Input.TextArea
                             disabled={summary}
                             autoSize={{ minRows: 4 }}
-                            placeholder="...."
+                            placeholder="กรอกคำตอบที่นี่..."
 
                         />,
                     )}
@@ -127,7 +127,7 @@ function StepForm8(props) {
                         <Input.TextArea
                             disabled={summary}
                             autoSize={{ minRows: 4 }}
-                            placeholder="...."
+                            placeholder="กรอกคำตอบที่นี่..."
 
                         />,
                     )}
@@ -145,7 +145,7 @@ function StepForm8(props) {
                         <Input.TextArea
                             disabled={summary}
                             autoSize={{ minRows: 4 }}
-                            placeholder="...."
+                            placeholder="กรอกคำตอบที่นี่..."
 
                         />,
                     )}
@@ -169,7 +169,7 @@ function StepForm8(props) {
                         <Input.TextArea
                             disabled={summary}
                             autoSize={{ minRows: 4 }}
-                            placeholder="...."
+                            placeholder="กรอกคำตอบที่นี่..."
 
                         />,
                     )}
@@ -188,7 +188,7 @@ function StepForm8(props) {
                         <Input.TextArea
                             disabled={summary}
                             autoSize={{ minRows: 4 }}
-                            placeholder="...."
+                            placeholder="กรอกคำตอบที่นี่..."
 
                         />,
                     )}
@@ -210,7 +210,7 @@ function StepForm8(props) {
                         <Input.TextArea
                             disabled={summary}
                             autoSize={{ minRows: 4 }}
-                            placeholder="...."
+                            placeholder="กรอกคำตอบที่นี่..."
 
                         />,
                     )}

@@ -184,7 +184,7 @@ function StepForm5(props) {
                     </Col>
                 </Row>
 
-                <Form.Item className="Right-Radio" label="หลักสูตรของภาควิชาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี ที่สนใจ">
+                <Form.Item className="Right-Checkbox" label="หลักสูตรของภาควิชาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี ที่สนใจ">
                     {getFieldDecorator('interest', {
                         // rules: [{ required: true, message: 'กรุณาเลือกหลักสูตรที่ต้องการ' }]
                     })(
@@ -200,7 +200,7 @@ function StepForm5(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="ค่าย Comcamp32"
+                                    placeholder="ค่าย Comcamp31"
                                 />,
                             )}
                         </Form.Item>
@@ -226,7 +226,7 @@ function StepForm5(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="ค่าย Comcamp32"
+                                    placeholder="ค่าย Comcamp30"
                                 />,
                             )}
                         </Form.Item>
@@ -252,7 +252,7 @@ function StepForm5(props) {
                             })(
                                 <Input
                                     disabled={summary}
-                                    placeholder="ค่าย Comcamp32"
+                                    placeholder="ค่าย Comcamp29"
                                 />,
                             )}
                         </Form.Item>
