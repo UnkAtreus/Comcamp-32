@@ -5,8 +5,10 @@ var mongoose = require('mongoose');
 var generalSchema = mongoose.Schema({
 	prefix_th: {type: String, required: true},
 	prefix_eng: {type: String, required: true},
-	name_th:{type:String,required:true},
-	name_eng:{type:String,required:true},
+	fname_th:{type:String,required:true},
+	lname_th:{type:String,required:true},
+	fname_eng:{type:String,required:true},
+	lname_eng:{type:String,required:true},
 	nickname:{type:String,required:true},
 	sex:{type:String,required:true,enum:['ชาย','หญิง']},
 	birthday:{type:Date,required:true},

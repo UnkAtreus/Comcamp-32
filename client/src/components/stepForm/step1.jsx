@@ -85,7 +85,7 @@ function StepForm1(props) {
             <h1>ข้อมูลทั่วไป</h1>
             <Form onSubmit={handleSubmit} >
                 <Row>
-                    <Col xs={24} md={{span: 4}}>
+                    <Col xs={24} md={{span: 5}}>
                         <Form.Item label="ชื่อ (ภาษาไทย)">
                             {getFieldDecorator('fname_th', {
                                 rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาไทย' }],
@@ -99,7 +99,7 @@ function StepForm1(props) {
                         </Form.Item>
                     
                     </Col>
-                    <Col xs={24} md={{span: 4, offset:1}}>
+                    <Col xs={25} md={{span: 5, offset:1}}>
                         <Form.Item label="นามสกุล (ภาษาไทย)">
                             {getFieldDecorator('lname_th', {
                                 rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาไทย' }],
@@ -112,7 +112,7 @@ function StepForm1(props) {
                         </Form.Item>
                     
                     </Col>
-                    <Col xs={24} md={{span: 4, offset: 2}}>
+                    <Col xs={24} md={{span: 5, offset: 2}}>
                         <Form.Item label="ชื่อ (ภาษาอังกฤษ)">
                             {getFieldDecorator('fname_eng', {
                                 rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาอังกฤษ' }],
@@ -125,7 +125,7 @@ function StepForm1(props) {
                             )}
                         </Form.Item>
                     </Col>
-                    <Col xs={24} md={{span: 4, offset: 1}}>
+                    <Col xs={24} md={{span: 5, offset: 1}}>
                         <Form.Item label="นามสกุล (ภาษาอังกฤษ)">
                             {getFieldDecorator('lname_eng', {
                                 rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาอังกฤษ' }],
