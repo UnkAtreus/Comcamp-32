@@ -80,6 +80,9 @@ function StepForm7(props) {
                         <Checkbox value="instagram">Instagram</Checkbox>
                     </Col>
                     <Col md={{span:8}}>
+                        <Checkbox value="camphub">เว็บไซต์ Camphub</Checkbox>
+                    </Col>
+                    <Col md={{span:8}}>
                         <Checkbox value="senior">การแนะนำจากรุ่นพี่</Checkbox>
                     </Col>
                     <Col md={{span:8}}>
@@ -87,9 +90,6 @@ function StepForm7(props) {
                     </Col>
                     <Col md={{span:8}}>
                         <Checkbox value="teacher">การแนะนำจากครูแนะแนว</Checkbox>
-                    </Col>
-                    <Col md={{span:8}}>
-                        <Checkbox value="camphub">เว็บไซต์ Camphub</Checkbox>
                     </Col>
                     <Col md={{span:8}}>
                         <Checkbox value="openhouse">งาน Open House</Checkbox>

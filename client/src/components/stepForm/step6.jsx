@@ -44,7 +44,6 @@ function StepForm6(props) {
                     <Col md={{span:11}} xs={24}>
                         <Form.Item label="โปรแกรมมิ่ง (Programming)">
                             {getFieldDecorator('programming', {
-                                rules: [{  message: 'กรุณาเลือกความถนัดทางด้าน Programming' }],
                                 initialValue: 3
                             })(
                                 <Slider max={5} min={1} tooltipVisible disabled={summary} />,
@@ -54,7 +53,6 @@ function StepForm6(props) {
                     <Col md={{span:11, offset:2}}>
                         <Form.Item label="แมชชิน เลิร์นนิ่ง (Machine Learning)">
                             {getFieldDecorator('big_data', {
-                                rules: [{  message: 'กรุณาเลือกความถนัดทางด้าน Machine Learning' }],
                                 initialValue: 3
                             })(
                                 <Slider max={5} min={1} tooltipVisible disabled={summary} />,
@@ -68,7 +66,6 @@ function StepForm6(props) {
                     <Col md={{span:11}} xs={24} >
                         <Form.Item label="ผังงาน (Flowchart)">
                             {getFieldDecorator('flow_chart', {
-                                rules: [{  message: 'กรุณาเลือกความถนัดทางด้าน Flow chart' }],
                                 initialValue: 3
                             })(
                                 <Slider max={5} min={1} tooltipVisible disabled={summary} />,
@@ -78,7 +75,6 @@ function StepForm6(props) {
                     <Col md={{span:11, offset:2}}>
                         <Form.Item label="ไมโครคอนโทรลเลอร์ (Microcontroller)">
                             {getFieldDecorator('microcontroller', {
-                                rules: [{  message: 'กรุณาเลือกความถนัดทางด้าน Microcontroller' }],
                                 initialValue: 3
                             })(
                                 <Slider max={5} min={1} tooltipVisible disabled={summary} />,
@@ -92,7 +88,6 @@ function StepForm6(props) {
                     <Col md={{span:11}} xs={24}>
                         <Form.Item label="ระดมสมอง (Brain Storming)">
                             {getFieldDecorator('brain_storm', {
-                                rules: [{  message: 'กรุณาเลือกความถนัดทางด้าน Brain storm' }],
                                 initialValue: 3
                             })(
                                 <Slider max={5} min={1} tooltipVisible disabled={summary} />,
