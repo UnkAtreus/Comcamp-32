@@ -36,6 +36,16 @@ function SummaryForm(props) {
         props.fetch_user()
     }, [currentStep])
 
+    useEffect( () => {
+        if(!loading && user) {
+            if(finished) {
+                if (props.user === false) {
+                    props.history.push('/')
+                }
+            }
+        }
+    }, [loading, finished])
+
     async function checkStep(user) {
         console.log("user", user)
         let newStep = 0
@@ -84,15 +94,7 @@ function SummaryForm(props) {
         return <h1></h1>
     }
 
-    useEffect( () => {
-        if(!loading && user) {
-            if(finished) {
-                if (props.user === false) {
-                    props.history.push('/')
-                }
-            }
-        }
-    })
+    
 
     return (
         <div>
