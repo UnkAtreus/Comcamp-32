@@ -216,6 +216,7 @@ function StepForm4(props) {
                 name: addressData.parent.name,
                 tel: addressData.parent.tel,
                 email: addressData.parent.name,
+                prefix_th: addressData.parent.prefix_th
             });
         }
         // props.form.setFieldsValue({have_accident: false})
@@ -283,10 +284,12 @@ function StepForm4(props) {
 
     const selectBefore = getFieldDecorator('prefix_th', {
         rules: [{required: true, message: 'กรุณาระบุคำนำหน้าชื่อ'}]
-        })(
+    })(
         <Select style={{ width: 90 }}
-            disabled={summary}    
+            disabled={summary}
         >
+            <Option value="ด.ช.">ด.ช.</Option>
+            <Option value="ด.ญ.">ด.ญ.</Option>
           <Option value="นาย">นาย</Option>
           <Option value="นางสาว">นางสาว</Option>
         </Select>

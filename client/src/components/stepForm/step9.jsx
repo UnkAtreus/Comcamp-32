@@ -82,6 +82,7 @@ function StepForm9(props) {
                                     alt="Left button decoration"
                                 />
                             </div>
+                            
                             <div className="Button-Right-Image">
                                 <img
                                     src={btn_right}

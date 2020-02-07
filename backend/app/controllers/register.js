@@ -135,6 +135,7 @@ exports.step4 = (req, res) => {
         name,
         tel,
         email,
+        prefix_th
 
     } = req.body
     console.log(id)
@@ -174,7 +175,8 @@ exports.step4 = (req, res) => {
                 relation:relation,
                 name: name,
                 tel: tel,
-                email: email
+                email: email,
+                prefix_th: prefix_th
             }
         }
     }, (err, result) => {
