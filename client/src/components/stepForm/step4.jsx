@@ -288,8 +288,6 @@ function StepForm4(props) {
         <Select style={{ width: 90 }}
             disabled={summary}
         >
-            <Option value="ด.ช.">ด.ช.</Option>
-            <Option value="ด.ญ.">ด.ญ.</Option>
           <Option value="นาย">นาย</Option>
           <Option value="นางสาว">นางสาว</Option>
         </Select>
