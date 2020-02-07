@@ -8,8 +8,10 @@ const step0Validation = () => {
 
 const step1Validation = () => {
     return [
-        body('name_th').not().isEmpty(),
-        body('name_eng').not().isEmpty(),
+        body('fname_th').not().isEmpty(),
+        body('lname_th').not().isEmpty(),
+        body('fname_eng').not().isEmpty(),
+        body('lname_eng').not().isEmpty(),
         body('nickname').not().isEmpty(),
         body('sex').isIn(['ชาย','หญิง']),
         body('birthday').isISO8601().toDate(),
