@@ -136,12 +136,14 @@ exports.step4 = (req, res) => {
         postal_code_parent,
 
         relation,
-        name,
+        fname,
+        lname,
         tel,
         email,
         prefix_th,
         relation2,
-        name2,
+        fname2,
+        lname2,
         tel2,
         email2,
         prefix_th2,
@@ -182,14 +184,16 @@ exports.step4 = (req, res) => {
             },
             parent: {
                 relation:relation,
-                name: name,
+                fname: fname,
+                lname: lname,
                 tel: tel,
                 email: email,
                 prefix_th: prefix_th
             },
             parent2: {
                 relation:relation2,
-                name: name2,
+                fname: fname2,
+                lname: lname2,
                 tel: tel2,
                 email: email2,
                 prefix_th: prefix_th2
