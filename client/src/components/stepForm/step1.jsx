@@ -227,7 +227,7 @@ function StepForm1(props) {
                     <Col xs={24} md={{span: 4}}>
                         <Form.Item label="เบอร์โทรศัพท์">
                             {getFieldDecorator('telephone', {
-                                rules: [{ required: true, message: 'กรุณากรอกเบอร์โทรศัพท์ 10 หลัก', len: 10, pattern: new RegExp(/^[0-9]{10}$/)}],
+                                rules: [{ required: true, message: 'กรุณากรอกเบอร์โทรศัพท์ 10 หลัก',  pattern: new RegExp(/^[0-9]{10}$/)}],
                             })(
                                 <Input
                                     disabled={summary}
