@@ -965,3 +965,11 @@
     .ant-input-group-addon:first-child {
         top: 0px;
     }
+
+    .ant-select-disabled {
+        top: 1px !important;
+    }
+    
+    .ant-input[disabled] {
+        background-color: #000;
+    }
