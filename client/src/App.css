@@ -345,6 +345,7 @@
     .ant-input[disabled] {
         color: white;
         filter: brightness(1) !important;
+        pointer-events: none;
     }
     
     .ant-input-number-disabled .ant-input-number-input {
@@ -352,9 +353,19 @@
         background-color: white;
         filter: brightness(2);
     }
+    .ant-input-number-disabled {
+        pointer-events: none !important;
+
+    }
+
+    .ant-input ant-select-search__field {
+        border: 0 solid #0c0c0c;
+    }
     
     .ant-select-selection--single .ant-select-selection__rendered {
         color: black;
+        
+        
     }
     
     .ant-select-selection--single .ant-select-selection__rendered {
@@ -371,6 +382,7 @@
     .ant-select-selection {
         border: 0px solid #d9d9d9;
         background-color: black;
+        pointer-events: none;
     }
     
     .ant-select-selection-selected-value {
@@ -412,6 +424,7 @@
     
     .ant-select-dropdown-menu-item-selected {
         background-color: #121212;
+        
     }
     
     .ant-select-dropdown-menu-item-active:not(.ant-select-dropdown-menu-item-disabled) {
@@ -420,6 +433,7 @@
     
     .ant-select-disabled {
         background-color: whitesmoke;
+        pointer-events: none;
     }
     
     .ant-input-group-addon:first-child {
@@ -985,10 +999,12 @@
 
     .ant-input-number-input{   
         background-color: #000 !important;
+        pointer-events: none;
     }
 
     .ant-checkbox-disabled span {
         color: #bfbfbf !important;
+        pointer-events: none;
     }
     .ant-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
         color: rgba(255,255,255,0.3);
@@ -1000,4 +1016,7 @@
     }
     .no{
         color: #bfbfbf;
+    }
+    .ant-input-number-input-wrap{
+        pointer-events: none;
     }
