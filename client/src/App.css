@@ -973,3 +973,12 @@
     .ant-input[disabled] {
         background-color: #000;
     }
+
+    .ant-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: rgba(255,255,255,0.3);
+        opacity: 1; /* Firefox */
+    }
+    .ant-select-selection__placeholder {
+        color: rgba(255,255,255,0.3);
+        opacity: 1; /* Firefox */
+    }
