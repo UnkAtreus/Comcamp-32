@@ -213,15 +213,15 @@ function StepForm4(props) {
                 postal_code_parent: addressData.address_parent.postal_code,
 
                 relation: addressData.parent.relation,
-                fname: addressData.parent.name,
-                lname: addressData.parent.name,
+                fname: addressData.parent.fname,
+                lname: addressData.parent.lname,
                 tel: addressData.parent.tel,
                 email: addressData.parent.email,
                 prefix_th: addressData.parent.prefix_th,
 
                 relation2: addressData.parent2.relation,
-                fname2: addressData.parent2.name,
-                lname2: addressData.parent2.name,
+                fname2: addressData.parent2.fname,
+                lname2: addressData.parent2.lname,
                 tel2: addressData.parent2.tel,
                 email2: addressData.parent2.email,
                 prefix_th2: addressData.parent2.prefix_th
@@ -302,7 +302,6 @@ function StepForm4(props) {
     );
 
     const selectBefore2 = getFieldDecorator('prefix_th2', {
-        rules: [{required: true, message: 'กรุณาระบุคำนำหน้าชื่อ'}]
     })(
         <Select style={{ width: 90 }}
             disabled={summary}
@@ -718,9 +717,9 @@ function StepForm4(props) {
                             </Form.Item>
                         </Col>
                         <Col md={{span:6 , offset:1}}>
-                            <Form.Item label="E-mail">
+                            <Form.Item label="E-mail (หากมี)">
                             {getFieldDecorator('email', {
-                            rules: [{ required: true, message: 'กรุณากรอกอีเมล' , type: 'email'}],
+                            rules: [{ message: 'กรุณากรอกอีเมล' , type: 'email'}],
                             })(
                             <Input
                             disabled={summary}
@@ -786,7 +785,7 @@ function StepForm4(props) {
                         </Form.Item>
                     </Col>
                     <Col md={{span:6 , offset:1}}>
-                        <Form.Item label="E-mail">
+                        <Form.Item label="E-mail (หากมี)">
                         {getFieldDecorator('email2', {
                         rules: [{  message: 'กรุณากรอกอีเมล' , type: 'email'}],
                         })(

@@ -75,7 +75,7 @@ function StepForm6(props) {
                             <Input.TextArea
                                 autoSize={{ minRows: 4 }}
                                 disabled={summary}
-                                placeholder="ภาษา C , Python , NSC , ศิลปะหัตถกรรม"
+                                placeholder="ภาษา C, Python, NSC, ศิลปหัตถกรรม"
                             />,
                         )}
                     </Form.Item>
