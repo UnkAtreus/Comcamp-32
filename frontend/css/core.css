@@ -350,23 +350,37 @@ iframe {
   }
 }
 
-@media (max-width: 670px) {
+@media (min-width: 300px) {
   .arrow {
     width: 100px;
+    margin-top: -20px;
+  }
+}
+
+@media (min-width: 500px) {
+  .arrow {
+    margin-top: -10px;
+  }
+}
+
+@media (min-width: 670px) {
+  .arrow {
+    width: 200px;
+    margin-top: -20px;
   }
 }
 .arrow {
-  margin-top: -50px;
+  margin-top: -10px;
   -webkit-transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
   -o-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
-  -webkit-animation: blink 1s;
+  -webkit-animation: blink 2s;
   -webkit-animation-iteration-count: infinite;
-  -moz-animation: blink 1s;
+  -moz-animation: blink 2s;
   -moz-animation-iteration-count: infinite;
-  -o-animation: blink 1s;
+  -o-animation: blink 2s;
   -o-animation-iteration-count: infinite;
 }
 /*# sourceMappingURL=core.css.map */
