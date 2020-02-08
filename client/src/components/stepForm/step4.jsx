@@ -675,7 +675,7 @@ function StepForm4(props) {
                     <Col md={{span:4 , offset:1}}>
                         <Form.Item label="เบอร์โทรศัพท์">
                         {getFieldDecorator('tel', {
-                        rules: [{ required: true, message: 'กรุณากรอกเบอร์โทรศัพท์' }],
+                        rules: [{ required: true, message: 'กรุณากรอกเบอร์โทรศัพท์' ,  pattern: new RegExp(/^[0-9]{10}$/)}],
                         })(
                         <Input
                         disabled={summary}
@@ -687,7 +687,7 @@ function StepForm4(props) {
                      <Col md={{span:6 , offset:1}}>
                         <Form.Item label="E-mail">
                         {getFieldDecorator('email', {
-                        rules: [{ required: true, message: 'กรุณากรอกอีเมล' }],
+                        rules: [{ required: true, message: 'กรุณากรอกอีเมล' , type: 'email'}],
                         })(
                         <Input
                         disabled={summary}
@@ -728,7 +728,7 @@ function StepForm4(props) {
                     <Col md={{span:4 , offset:1}}>
                         <Form.Item label="เบอร์โทรศัพท์">
                         {getFieldDecorator('tel', {
-                        rules: [{ required: true, message: 'กรุณากรอกเบอร์โทรศัพท์' }],
+                        rules: [{ required: true, message: 'กรุณากรอกเบอร์โทรศัพท์',  pattern: new RegExp(/^[0-9]{10}$/) }],
                         })(
                         <Input
                         disabled={summary}
@@ -740,7 +740,7 @@ function StepForm4(props) {
                      <Col md={{span:6 , offset:1}}>
                         <Form.Item label="E-mail">
                         {getFieldDecorator('email', {
-                        rules: [{ required: true, message: 'กรุณากรอกอีเมล' }],
+                        rules: [{ required: true, message: 'กรุณากรอกอีเมล' , type: 'email'}],
                         })(
                         <Input
                         disabled={summary}
