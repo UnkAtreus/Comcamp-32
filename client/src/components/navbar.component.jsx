@@ -18,19 +18,19 @@ function Navbar(props) {
     return (
       <div>
         <nav>
-          <div id="nav" class="Nav-Row">
+          <div id="nav" className="Nav-Row">
             <a
               data-scroll
               href="/"
               id="nav-home"
-              class="Nav-Links nav-right Nav-Back">
+              className="Nav-Links nav-right Nav-Back">
               <i
                 aria-label="icon: left"
-                class="anticon anticon-left ant-select-arrow-icon">
+                className="anticon anticon-left ant-select-arrow-icon">
                 <svg
                   viewBox="64 64 896 896"
                   focusable="false"
-                  class=""
+                  className=""
                   data-icon="left"
                   width="1em"
                   height="1em"
@@ -41,7 +41,7 @@ function Navbar(props) {
               </i>
               <span>Back to Home Page</span>
             </a>
-            <a href="/" class="Logo">
+            <a href="/" className="Logo">
               <div className="Nav-Logo">
                 <img className="big-logo" src={logo} alt="Comcamp 32" />
               </div>
