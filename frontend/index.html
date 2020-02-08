@@ -14,11 +14,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" />
     <link rel="preconnect" href="https://code.ionicframework.com/" />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com/" />
+    <link rel="preconnect" href="https://bnetcmsus-a.akamaihd.net/" />
 
     <!-- DNS-prefetch -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com/" />
     <link rel="dns-prefetch" href="https://code.ionicframework.com/" />
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/" />
+    <link rel="dns-prefetch" href="https://bnetcmsus-a.akamaihd.net/" />
 
     <!-- General metas -->
     <meta charset="UTF-8" />
@@ -26,7 +28,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <!-- Title -->
-    <title>Comcomp 32</title>
+    <title>Comcamp 32</title>
     <meta name="title" content="Comcamp 32" />
     <meta name="description" content="---DESCRIPTION---" />
 
@@ -55,10 +57,7 @@
 
     <!-- Stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Pridi:300,400|Sarabun:400,500,600,700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
-    <link rel="stylesheet" href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css" type="text/plain" />
-    <!-- ย้าย owl carousel ไปโหลดใต้ body เพราะไม่ได้เห็นทันทีเมื่อเปิดเว็บ -->
+    <!-- ย้าย icons, animate, owl carousel ไปโหลดใต้ body เพราะไม่ได้เห็นทันทีเมื่อเปิดเว็บ -->
     <link rel="stylesheet" href="css/core.css" />
     <link rel="stylesheet" href="css/index.css" />
 </head>
@@ -95,7 +94,7 @@
     </nav>
 
     <div class="Section-Background" id="particles-js"> </div>
-    <div id="intro" class="Section">
+    <div id="intro" class="Section lazy-bg">
         <div class="Section-Content" id="intro-section">
             <div class="Section-Row">
                 <div class="Nav-Sticky">
@@ -123,9 +122,13 @@
                     </nav>
                     <div class="Intro-Column">
                         <div class="Intro-Row">
-                            <div class="Intro-Image"><img class="lazy" data-src="asset/logo-big.png" alt="Comcamp 32" /> </div><span class="Intro-Text">
+                            <div class="Intro-Image">
+                                <img class="lazy" data-src="asset/logo-big.png" alt="Comcamp 32" />
+                            </div>
+                            <span class="Intro-Text">
                                 <span class="Markdown">Department of Computer Engineering </span>
-                            <span class="Markdown">King Mongkut's University of Technology Thonburi</span></span>
+                                <span class="Markdown">King Mongkut's University of Technology Thonburi</span>
+                            </span>
                             <div class="Button-Row">
                                 <a href="#section-cta" url="#section-cta" class="Button-Link">
                                     <div class="Button-Column">
@@ -135,14 +138,14 @@
                                         <div class="Button-Right-Image">
                                             <img class="lazy" data-src="asset/Button_right.png" alt="Right button decoration" />
                                         </div>
-                                        <div class="Button-BorderImage"></div>
-                                        <button class="Button-Background">
+                                        <div class="Button-BorderImage lazy-bg"></div>
+                                        <button class="Button-Background lazy-bg">
                                             <span class="Markdown">Register Now</span>
                                         </button>
                                     </div>
                                 </a>
                             </div>
-                            <img src="asset/arrow.png" alt="" srcset="" class="arrow">
+                            <!-- <img class="arrow lazy" data-src="asset/arrow.png" alt="Please scroll"> -->
                         </div>
                     </div>
                 </div>
@@ -150,10 +153,10 @@
         </div>
     </div>
 
-    <div class="Line-Section"></div>
+    <div class="Line-Section lazy-bg"></div>
 
     <!-- About -->
-    <div id="about" class="Section About">
+    <div id="about" class="Section About lazy-bg">
         <div class="Section-Background">
             <div class="Background"> </div>
         </div>
@@ -187,7 +190,7 @@
                 </div>
                 <div class="About-Album-Column">
                     <div class="Schematic-Column">
-                        <div class="About-BorderImage"></div>
+                        <div class="About-BorderImage lazy-bg"></div>
                         <div class="Gellary">
                             <img class="lazy" data-src="asset/pic1.jpg" alt="Comcamp Activity" style="width:100%" />
                             <img class="lazy" data-src="asset/pic2.jpg" alt="Comcamp Activity" style="width:100%" />
@@ -200,10 +203,10 @@
         </div>
     </div>
 
-    <div class="Line"> </div>
+    <div class="Line lazy-bg"> </div>
 
     <!-- Subject -->
-    <div id="subject" class="Section Subject">
+    <div id="subject" class="Section Subject lazy-bg">
         <div class="Subject-Content" id="subject-section">
             <div class="About-Head-Row Learnging">
                 <div class="About-Head-Column">
@@ -225,12 +228,12 @@
                                     <div class="Subject-Art-Border">
                                         <div class="Subject-Size">
                                             <div class="Subject-Art-Content">
-                                                <div class="Subject-SpriteHeroes One"></div>
+                                                <div class="Subject-SpriteHeroes One lazy-bg"></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="Subject-BorderPortrait One"></div>
+                                <div class="Subject-BorderPortrait One lazy-bg"></div>
                             </div>
                         </div>
                     </div>
@@ -241,12 +244,12 @@
                                     <div class="Subject-Art-Border">
                                         <div class="Subject-Size">
                                             <div class="Subject-Art-Content">
-                                                <div class="Subject-SpriteHeroes Two"></div>
+                                                <div class="Subject-SpriteHeroes Two lazy-bg"></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="Subject-BorderPortrait Two"></div>
+                                <div class="Subject-BorderPortrait Two lazy-bg"></div>
                             </div>
                         </div>
                     </div>
@@ -257,12 +260,12 @@
                                     <div class="Subject-Art-Border">
                                         <div class="Subject-Size">
                                             <div class="Subject-Art-Content">
-                                                <div class="Subject-SpriteHeroes Three"></div>
+                                                <div class="Subject-SpriteHeroes Three lazy-bg"></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="Subject-BorderPortrait Three"></div>
+                                <div class="Subject-BorderPortrait Three lazy-bg"></div>
                             </div>
                         </div>
                     </div>
@@ -273,12 +276,12 @@
                                     <div class="Subject-Art-Border">
                                         <div class="Subject-Size">
                                             <div class="Subject-Art-Content">
-                                                <div class="Subject-SpriteHeroes Four"></div>
+                                                <div class="Subject-SpriteHeroes Four lazy-bg"></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="Subject-BorderPortrait Four"></div>
+                                <div class="Subject-BorderPortrait Four lazy-bg"></div>
                             </div>
                         </div>
                     </div>
@@ -289,19 +292,19 @@
                                     <div class="Subject-Art-Border">
                                         <div class="Subject-Size">
                                             <div class="Subject-Art-Content">
-                                                <div class="Subject-SpriteHeroes Five"></div>
+                                                <div class="Subject-SpriteHeroes Five lazy-bg"></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="Subject-BorderPortrait Five"></div>
+                                <div class="Subject-BorderPortrait Five lazy-bg"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="owl-carousel owl-theme">
                     <div class="Subject-Slide-Column">
-                        <div class="Subject-Slide-Row One">
+                        <div class="Subject-Slide-Row One lazy-bg">
                             <div class="Subject-Slide-Content-Column">
                                 <div class="Subject-Silde-Pic">
                                     <img class="lazy" data-src="/asset/icon-flow.png" alt="Placeholder image" />
@@ -318,7 +321,7 @@
                         </div>
                     </div>
                     <div class="Subject-Slide-Column">
-                        <div class="Subject-Slide-Row Two">
+                        <div class="Subject-Slide-Row Two lazy-bg">
                             <div class="Subject-Slide-Content-Column">
                                 <div class="Subject-Silde-Pic">
                                     <img class="lazy" data-src="/asset/icon-c.png" alt="Placeholder image" />
@@ -335,7 +338,7 @@
                         </div>
                     </div>
                     <div class="Subject-Slide-Column">
-                        <div class="Subject-Slide-Row Three">
+                        <div class="Subject-Slide-Row Three lazy-bg">
                             <div class="Subject-Slide-Content-Column">
                                 <div class="Subject-Silde-Pic">
                                     <img class="lazy" data-src="/asset/icon-micro.png" alt="Placeholder image" />
@@ -351,7 +354,7 @@
                         </div>
                     </div>
                     <div class="Subject-Slide-Column">
-                        <div class="Subject-Slide-Row Four">
+                        <div class="Subject-Slide-Row Four lazy-bg">
                             <div class="Subject-Slide-Content-Column">
                                 <div class="Subject-Silde-Pic">
                                     <img class="lazy" data-src="/asset/icon-machine.png" alt="Placeholder image" />
@@ -368,7 +371,7 @@
                         </div>
                     </div>
                     <div class="Subject-Slide-Column">
-                        <div class="Subject-Slide-Row Five">
+                        <div class="Subject-Slide-Row Five lazy-bg">
                             <div class="Subject-Slide-Content-Column">
                                 <div class="Subject-Silde-Pic">
                                     <img class="lazy" data-src="/asset/icon-brain.png" alt="Placeholder image" />
@@ -388,9 +391,9 @@
             </div>
         </div>
     </div>
-    <div class="Line"></div>
+    <div class="Line lazy-bg"></div>
     <!-- Timeline -->
-    <div id="timeline" class="Section Timeline">
+    <div id="timeline" class="Section Timeline lazy-bg">
         <div class="Timeline-Content" id="timeline-section">
             <div class="Head-Row">
                 <div class="Head-Column">
@@ -445,7 +448,7 @@
                     <li>
                         <div class="direction-r">
                             <div class="flag-wrapper">
-                                <span class="flag">เปิดรับสมัคร</span>
+                                <span class="flag lazy-bg">เปิดรับสมัคร</span>
                                 <span class="time-wrapper"><span class="time">7 Feb 2020</span></span>
                             </div>
                         </div>
@@ -455,7 +458,7 @@
                     <li>
                         <div class="direction-l">
                             <div class="flag-wrapper">
-                                <span class="flag">ปิดรับสมัคร</span>
+                                <span class="flag lazy-bg">ปิดรับสมัคร</span>
                                 <span class="time-wrapper"><span class="time">9 Mar 2020</span></span>
                             </div>
                         </div>
@@ -465,7 +468,7 @@
                     <li>
                         <div class="direction-r">
                             <div class="flag-wrapper">
-                                <span class="flag">ประกาศผล</span>
+                                <span class="flag lazy-bg">ประกาศผล</span>
                                 <span class="time-wrapper"><span class="time">2 Apr 2020</span></span>
                             </div>
                         </div>
@@ -474,7 +477,7 @@
                     <li>
                         <div class="direction-l">
                             <div class="flag-wrapper">
-                                <span class="flag">เปิดค่าย</span>
+                                <span class="flag lazy-bg">เปิดค่าย</span>
                                 <span class="time-wrapper"><span class="time">11 Apr 2020</span></span>
                             </div>
                         </div>
@@ -483,7 +486,7 @@
                     <li>
                         <div class="direction-r">
                             <div class="flag-wrapper">
-                                <span class="flag">ปิดค่าย</span>
+                                <span class="flag lazy-bg">ปิดค่าย</span>
                                 <span class="time-wrapper"><span class="time">15 Apr 2020</span></span>
                             </div>
                         </div>
@@ -546,9 +549,9 @@
             </div>
         </div>
     </div>
-    <div class="Line"></div>
+    <div class="Line lazy-bg"></div>
     <!-- Faq -->
-    <div id="faq" class="Section Faq">
+    <div id="faq" class="Section Faq lazy-bg">
         <div class="Faq-Content" id="faq-section">
             <div class="Head-Row">
                 <div class="Head-Column">
@@ -619,10 +622,10 @@
             </div>
         </div>
     </div>
-    <div class="Line"></div>
+    <div class="Line lazy-bg"></div>
 
     <!-- Contact -->
-    <div id="contact" class="Section Contact">
+    <div id="contact" class="Section Contact lazy-bg">
         <div class="Contact-Content" id="contact-section">
             <div class="Head-Row">
                 <div class="Head-Column">
@@ -642,7 +645,7 @@
 
                 </div>
                 <div class="Contact-Column">
-                    <div class="About-BorderImage Contect" style="max-width: 500px;">
+                    <div class="About-BorderImage Contect lazy-bg" style="max-width: 500px;">
                         <div class="Contant-Text">
                             <span class="Contact-Text-Header">
                                 <span class="Markdown">ADDRESS</span>
@@ -658,7 +661,7 @@
                             </span>
                         </div>
                     </div>
-                    <div class="About-BorderImage Contect" style="max-width: 500px;top: 350px; pointer-events: auto;">
+                    <div class="About-BorderImage Contect lazy-bg" style="max-width: 500px;top: 350px; pointer-events: auto;">
                         <div class="Contant-Text">
                             <span class="Contact-Text-Header">
                                 <span class="Markdown">TEL</span>
@@ -675,24 +678,24 @@
             </div>
         </div>
     </div>
-    <div class="Line"></div>
+    <div class="Line lazy-bg"></div>
 
     <!-- Sponsors 
-    <div id="sponsor" class="Section Sponsor">
+    <div id="sponsor" class="Section Sponsor lazy-bg">
         <div class="Sponsor-Content" id="sponsor-section">
         </div>
     </div>
-    <div class="Line"></div>-->
+    <div class="Line lazy-bg"></div>-->
     <!-- spacer ช่วยคราว -->
 
     <!-- Footer -->
-    <div id="copyright" class="Section Footer">
+    <div id="copyright" class="Section Footer lazy-bg">
         <div class="Footer-Section-Background">
             <div class="Footer-Area"></div>
         </div>
         <div class="Footer-Section-Content">
             <div class="Footer-Row">
-                &copy; 2020 Comcamp 32<sup style="top:-1.25em">nd</sup> All Rights Reserved. Designed and developed by CPE#33
+                &copy; 2020 Comcamp 32<sup>nd</sup> All Rights Reserved. Designed and developed by CPE#33
             </div>
         </div>
     </div>
@@ -705,14 +708,17 @@
     <script src="js/main.immediate.js"></script>
 
     <!-- Styles / Scripts that can be loaded later -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css" type="text/plain" />    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
 
     <link rel="stylesheet" href="css/owl.carousel.css" />
     <link rel="stylesheet" href="css/owl.theme.default.css" />
     <link rel="stylesheet" href="css/owl.carousel.min.css" />
     <link rel="stylesheet" href="css/owl.theme.default.min.css" />
-    <script src="js/owl.carousel.js"></script>
+    <script async src="js/owl.carousel.js"></script>
 
     <script src="js/main.js" defer></script>
 </body>

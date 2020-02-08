@@ -1,6 +1,9 @@
 .Section.Faq {
     padding: 120px 60px;
-    background-image: url(/asset/FAQs_BG.png);
+
+    &.lazy-bg-loaded {
+        background-image: url(/asset/FAQs_BG.jpg);
+    }
 }
 
 .Faq-Column {

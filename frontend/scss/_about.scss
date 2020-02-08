@@ -114,7 +114,9 @@
 }
 
 .About-BorderImage {
-    border-image-source: url(/asset/fame.png);
+    &.lazy-bg-loaded {
+        border-image-source: url(/asset/fame.png);
+    }
     border-image-width: 22px;
     /* border-image-repeat: round; */
     position: absolute;
@@ -157,7 +159,9 @@
     height: 33px;
     width: 100%;
     background-color: rgb(51, 51, 51);
-    background-image: url(/asset/CC_seperate.png);
+    &.lazy-bg-loaded {
+        background-image: url(/asset/CC_seperate.jpg);
+    }
     background-size: 600px 33px;
     z-index: 5;
     box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 24px 8px, rgba(0, 0, 0, 0.33) 0px 0px 12px;
