@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const END_POINT = 'http://206.189.149.84:5000/api/register';
+const END_POINT = 'https://comcamp.io/api/register';
 
 class Register {
     constructor() {

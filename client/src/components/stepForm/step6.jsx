@@ -1,12 +1,16 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import register from '../../api/register'
 import { Form, Input, Button, Row, Col, Select, DatePicker, InputNumber, Slider } from 'antd';
 import btn_left from '../../asset/Button_left.png';
 import btn_right from '../../asset/Button_right.png';
 
+const { Option } = Select
+
 function StepForm6(props) {
 
     const { currentStep, handlePrev, handleNext, user, summary } = props
+
+    const [accident, setAccident] = useState(false)
 
     useEffect(() => {
         if (user.hasOwnProperty("ability")) {
@@ -36,65 +40,46 @@ function StepForm6(props) {
         });
     };
     const { getFieldDecorator } = props.form;
+
+    const handleAccident = value => {
+        if (value == "true") {
+            setAccident(true)
+        } else if (value == "false") {
+            setAccident(false)
+        }
+        console.log(accident)
+    }
     return (
         <div>
             <h1>ความถนัด</h1>
             <Form onSubmit={handleSubmit} >
-                <Row>
-                    <Col md={{span:11}} xs={24}>
-                        <Form.Item label="โปรแกรมมิ่ง (Programming)">
-                            {getFieldDecorator('programming', {
-                                initialValue: 3
-                            })(
-                                <Slider max={5} min={1} tooltipVisible disabled={summary} style={{'margin-top':'50px'}} />,
-                            )}
-                        </Form.Item>
-                    </Col>
-                    <Col md={{span:11, offset:2}}>
-                        <Form.Item label="แมชชิน เลิร์นนิ่ง (Machine Learning)">
-                            {getFieldDecorator('big_data', {
-                                initialValue: 3
-                            })(
-                                <Slider max={5} min={1} tooltipVisible disabled={summary} />,
-                            )}
-                        </Form.Item>
-                    </Col>
-                </Row>
-
-                <Row>
-
-                    <Col md={{span:11}} xs={24} >
-                        <Form.Item label="ผังงาน (Flowchart)">
-                            {getFieldDecorator('flow_chart', {
-                                initialValue: 3
-                            })(
-                                <Slider max={5} min={1} tooltipVisible disabled={summary} />,
-                            )}
-                        </Form.Item>
-                    </Col>
-                    <Col md={{span:11, offset:2}}>
-                        <Form.Item label="ไมโครคอนโทรลเลอร์ (Microcontroller)">
-                            {getFieldDecorator('microcontroller', {
-                                initialValue: 3
-                            })(
-                                <Slider max={5} min={1} tooltipVisible disabled={summary} />,
-                            )}
-                        </Form.Item>
-                    </Col>
-                </Row>
-
-                <Row>
-
-                    <Col md={{span:11}} xs={24}>
-                        <Form.Item label="ระดมสมอง (Brain Storming)">
-                            {getFieldDecorator('brain_storm', {
-                                initialValue: 3
-                            })(
-                                <Slider max={5} min={1} tooltipVisible disabled={summary} />,
-                            )}
-                        </Form.Item>
-                    </Col>
-                </Row>
+            <Form.Item label="อุบัติเหตุในรอบ 6 เดือน">
+                    {getFieldDecorator('have_accident', {
+                        rules: [{ required: true, message: 'กรุณากรอกข้อมูล' }],
+                    })(
+                        <Select
+                            disabled={summary}
+                            placeholder="โปรดระบุ"
+                            onChange={handleAccident}
+                        >
+                            <Option value="false">ไม่มี</Option>
+                            <Option value="true">มี</Option>
+                        </Select>
+                    )}
+                </Form.Item>
+                {accident &&
+                    <Form.Item label="เนื่องจาก">
+                        {getFieldDecorator('accident', {
+                            rules: [{ required: true, message: 'กรุณากรอกข้อมูล' }],
+                        })(
+                            <Input.TextArea
+                                autoSize={{ minRows: 4 }}
+                                disabled={summary}
+                                placeholder="อุบัติเหตุทางรถยนต์"
+                            />,
+                        )}
+                    </Form.Item>
+                }
 
 
                 {!summary &&
