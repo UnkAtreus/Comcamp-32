@@ -139,7 +139,12 @@ exports.step4 = (req, res) => {
         name,
         tel,
         email,
-        prefix_th
+        prefix_th,
+        relation2,
+        name2,
+        tel2,
+        email2,
+        prefix_th2,
 
     } = req.body
     console.log(id)
@@ -183,11 +188,11 @@ exports.step4 = (req, res) => {
                 prefix_th: prefix_th
             },
             parent2: {
-                relation:relation,
-                name: name,
-                tel: tel,
-                email: email,
-                prefix_th: prefix_th
+                relation:relation2,
+                name: name2,
+                tel: tel2,
+                email: email2,
+                prefix_th: prefix_th2
             }
         }
     }, (err, result) => {
