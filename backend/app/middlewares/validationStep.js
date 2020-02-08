@@ -76,17 +76,17 @@ const step5Validation = () => {
 
 const step6Validation = () => {
     return [
-        body('programming').not().isEmpty(),
-        body('big_data').not().isEmpty(),
-        body('flow_chart').not().isEmpty(),
-        body('microcontroller').not().isEmpty(),
-        body('brain_storm').not().isEmpty(),
+        // body('programming').not().isEmpty(),
+        // body('big_data').not().isEmpty(),
+        // body('flow_chart').not().isEmpty(),
+        // body('microcontroller').not().isEmpty(),
+        // body('brain_storm').not().isEmpty(),
     ]
 }
 
 const step7Validation = () => {
     return [
-        body('location').isIn(['มา มจธ. ด้วยจนเอง', 'สายใต้ใหม่ ถนนบรม (ใต้)', 'ขนส่งเอกมัย (ตะวันออก)', 'หัวลำโพง (รถไฟ)', 'อนุเสาวรีย์ชัยสมรถภูมิ (รถตู้)'])
+        // body('location').isIn(['มา มจธ. ด้วยจนเอง', 'สายใต้ใหม่ ถนนบรม (ใต้)', 'ขนส่งเอกมัย (ตะวันออก)', 'หัวลำโพง (รถไฟ)', 'อนุเสาวรีย์ชัยสมรถภูมิ (รถตู้)'])
     ]
 }
 

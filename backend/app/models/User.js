@@ -36,7 +36,8 @@ var diseaseSchema = mongoose.Schema({
 
 var parent_info = mongoose.Schema({
 	relation: {type:String,required:true},
-	name:{type:String,required:true},
+	fname:{type:String,required:true},
+	lname:{type:String,required:true},
 	tel:{type:String,required:true},
 	email:{type:String,required:true},
 	prefix_th: {type: String, required:true}

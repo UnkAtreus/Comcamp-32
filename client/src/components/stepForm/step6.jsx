@@ -55,7 +55,7 @@ function StepForm6(props) {
             <Form onSubmit={handleSubmit} >
             <Form.Item label="เคยเขียนภาษาคอมพิวเตอร์มาก่อนหรือไม่">
                     {getFieldDecorator('have_accident', {
-                        rules: [{ required: true, message: 'กรุณากรอกข้อมูล' }],
+                        rules: [{ required: !summary, message: 'กรุณากรอกข้อมูล' }],
                     })(
                         <Select
                             disabled={summary}
@@ -70,12 +70,12 @@ function StepForm6(props) {
                 {accident &&
                     <Form.Item label="ภาษาที่เคยเขียน หรือ ผลงานที่เคยทำ">
                         {getFieldDecorator('accident', {
-                            rules: [{ required: true, message: 'กรุณากรอกข้อมูล' }],
+                            rules: [{ required: !summary, message: 'กรุณากรอกข้อมูล' }],
                         })(
                             <Input.TextArea
                                 autoSize={{ minRows: 4 }}
                                 disabled={summary}
-                                placeholder="ภาษา C , Python , NSC , ศิลปะหัตถกรรม"
+                                placeholder="ภาษา C, Python, NSC, ศิลปหัตถกรรม"
                             />,
                         )}
                     </Form.Item>
