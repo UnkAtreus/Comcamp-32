@@ -53,7 +53,7 @@ function StepForm6(props) {
         <div>
             <h1>ความถนัด</h1>
             <Form onSubmit={handleSubmit} >
-            <Form.Item label="อุบัติเหตุในรอบ 6 เดือน">
+            <Form.Item label="เคยเขียนภาษาคอมพิวเตอร์มาก่อนหรือไม่">
                     {getFieldDecorator('have_accident', {
                         rules: [{ required: true, message: 'กรุณากรอกข้อมูล' }],
                     })(
@@ -62,20 +62,20 @@ function StepForm6(props) {
                             placeholder="โปรดระบุ"
                             onChange={handleAccident}
                         >
-                            <Option value="false">ไม่มี</Option>
-                            <Option value="true">มี</Option>
+                            <Option value="false">ไม่เคย</Option>
+                            <Option value="true">เคย</Option>
                         </Select>
                     )}
                 </Form.Item>
                 {accident &&
-                    <Form.Item label="เนื่องจาก">
+                    <Form.Item label="ภาษาที่เคยเขียน หรือ ผลงานที่เคยทำ">
                         {getFieldDecorator('accident', {
                             rules: [{ required: true, message: 'กรุณากรอกข้อมูล' }],
                         })(
                             <Input.TextArea
                                 autoSize={{ minRows: 4 }}
                                 disabled={summary}
-                                placeholder="อุบัติเหตุทางรถยนต์"
+                                placeholder="ภาษา C , Python , NSC , ศิลปะหัตถกรรม"
                             />,
                         )}
                     </Form.Item>
