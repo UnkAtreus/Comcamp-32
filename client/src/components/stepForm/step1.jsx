@@ -56,7 +56,7 @@ function StepForm1(props) {
     const prefix_th = getFieldDecorator('prefix_th', {
         rules: [{required: true, message: 'กรุณาระบุคำนำหน้าชื่อ'}]
     })(
-        <Select style={{ width: 90 }}
+        <Select style={{ width: 90 ,'margin-top':'-5px' }}
             disabled={summary}
         >
             <Option value="ด.ช.">ด.ช.</Option>
@@ -106,7 +106,9 @@ function StepForm1(props) {
                     <Col xs={25} md={{span: 5, offset:1}}>
                         <Form.Item label="นามสกุล (ภาษาไทย)">
                             {getFieldDecorator('lname_th', {
-                                rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาไทย', pattern: new RegExp(/^[กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮฯะัาำิีึืฺุูเแโใไๅๆ็่้๊๋์]+$/) }],
+                                rules: [{ required: true, 
+                                    message: 'กรุณากรอกชื่อภาษาไทย', 
+                                    pattern: new RegExp(/^[กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮฯะัาำิีึืฺุูเแโใไๅๆ็่้๊๋์]+$/) }],
                             })(
                                 <Input
                                     placeholder="ใจดี"
@@ -168,7 +170,7 @@ function StepForm1(props) {
                             {getFieldDecorator('sex', {
                                 rules: [{ required: true, message: 'กรุณากรอกเพศ', enum: ['ชาย', 'หญิง'] }],
                             })(
-                                <Select disabled={summary}>
+                                <Select disabled={summary} placeholder="ระบุเพศ">
                                     <Option value="ชาย">ชาย</Option>
                                     <Option value="หญิง">หญิง</Option>
                                 </Select>
@@ -196,7 +198,7 @@ function StepForm1(props) {
                             {getFieldDecorator('bloodenum', {
                                 rules: [{ required: true, message: 'กรุณากรอกกรุ๊ปเลือด', enum: ['A', 'B', 'AB', 'O'] }],
                             })(
-                                <Select disabled={summary} >
+                                <Select disabled={summary} placeholder="ระบุกรุ๊ปเลือด">
                                     <Option value="A">A</Option>
                                     <Option value="B">B</Option>
                                     <Option value="AB">AB</Option>
@@ -234,7 +236,7 @@ function StepForm1(props) {
                             )}
                         </Form.Item>
                     </Col>
-                    <Col xs={24} md={{span: 4, offset: 1}}>
+                    <Col xs={24} md={{span: 6, offset: 1}}>
                         <Form.Item label="E-mail">
                             {getFieldDecorator('email', {
                                 rules: [{ required: true, message: 'กรุณากรอกอีเมล', type: 'email' }],
@@ -250,16 +252,17 @@ function StepForm1(props) {
                     <Col xs={24} md={{span: 4, offset: 1}}>
                         <Form.Item label="ขนาดเสื้อ">
                             {getFieldDecorator('shirt_size', {
-                                rules: [{ required: true, message: 'กรุณากรอกขนาดเสื้อ', enum: ['S', 'M', 'L', 'XL'] }],
+                                rules: [{ required: true, message: 'กรุณากรอกขนาดเสื้อ', enum: ['S', 'M', 'L', 'XL','XXL','3XL','4XL'] }],
                             })(
-                                <Select disabled={summary}>
-                                    <Option value="SS">SS รอบอก 34</Option>
-                                    <Option value="S">S รอบอก 36</Option>
-                                    <Option value="M">M รอบอก 38</Option>
+                                <Select disabled={summary} placeholder="ระบุขนาดเสื้อ">
+                                
+                                    <Option value="S">S รอบอก 32</Option>
+                                    <Option value="M">M รอบอก 36</Option>
                                     <Option value="L">L รอบอก 40</Option>
-                                    <Option value="XL">XL รอบอก 42</Option>
-                                    <Option value="XXL">XXL รอบอก 44</Option>
-                                    <Option value="3XL">3XL รอบอก 48</Option>
+                                    <Option value="XL">XL รอบอก 44</Option>
+                                    <Option value="XXL">XXL รอบอก 48</Option>
+                                    <Option value="3XL">3XL รอบอก 52</Option>
+                                    <Option value="4XL">4XL รอบอก 54</Option>
                                 </Select>
                             ,
                             )}

@@ -46,7 +46,7 @@ function StepForm6(props) {
                             {getFieldDecorator('programming', {
                                 initialValue: 3
                             })(
-                                <Slider max={5} min={1} tooltipVisible disabled={summary} />,
+                                <Slider max={5} min={1} tooltipVisible disabled={summary} style={{'margin-top':'50px'}} />,
                             )}
                         </Form.Item>
                     </Col>
