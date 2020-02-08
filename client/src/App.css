@@ -343,7 +343,7 @@
     }
     
     .ant-input[disabled] {
-        color: black;
+        color: white;
         filter: brightness(1) !important;
     }
     
