@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react'
 import register from '../../api/register'
-import { Form, Input, Button, Row, Col, Select, DatePicker } from 'antd';
+import { Form, Input, Row, Col, Select, DatePicker } from 'antd';
 import btn_left from '../../asset/Button_left.png';
 import btn_right from '../../asset/Button_right.png';
 import moment from 'moment'
 
 const { Option } = Select
-
-
 
 function StepForm1(props) {
 
@@ -88,7 +86,13 @@ function StepForm1(props) {
                     <Col xs={24} md={{span: 5}}>
                         <Form.Item label="ชื่อ (ภาษาไทย)">
                             {getFieldDecorator('fname_th', {
-                                rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาไทย' }],
+                                rules: [
+                                    { 
+                                        required: true, 
+                                        message: 'กรุณากรอกชื่อภาษาไทย', 
+                                        pattern: new RegExp(/^[กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮฯะัาำิีึืฺุูเแโใไๅๆ็่้๊๋์]+$/) 
+                                    }
+                                ],
                             })(
                                 <Input
                                     addonBefore={prefix_th}
@@ -102,7 +106,7 @@ function StepForm1(props) {
                     <Col xs={25} md={{span: 5, offset:1}}>
                         <Form.Item label="นามสกุล (ภาษาไทย)">
                             {getFieldDecorator('lname_th', {
-                                rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาไทย' }],
+                                rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาไทย', pattern: new RegExp(/^[กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮฯะัาำิีึืฺุูเแโใไๅๆ็่้๊๋์]+$/) }],
                             })(
                                 <Input
                                     placeholder="ใจดี"
@@ -115,7 +119,13 @@ function StepForm1(props) {
                     <Col xs={24} md={{span: 5, offset: 2}}>
                         <Form.Item label="ชื่อ (ภาษาอังกฤษ)">
                             {getFieldDecorator('fname_eng', {
-                                rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาอังกฤษ' }],
+                                rules: [
+                                    { 
+                                        required: true, 
+                                        message: 'กรุณากรอกชื่อภาษาอังกฤษ', 
+                                        pattern: new RegExp(/^[A-Za-z]+$/)
+                                    }
+                                ],
                             })(
                                 <Input
                                     addonBefore={prefix_eng}
@@ -128,7 +138,7 @@ function StepForm1(props) {
                     <Col xs={24} md={{span: 5, offset: 1}}>
                         <Form.Item label="นามสกุล (ภาษาอังกฤษ)">
                             {getFieldDecorator('lname_eng', {
-                                rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาอังกฤษ' }],
+                                rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาอังกฤษ', pattern: new RegExp(/^[A-Za-z]+$/)}],
                             })(
                                 <Input
                                     placeholder="Jaidee"
@@ -174,7 +184,6 @@ function StepForm1(props) {
                             }, 
                             
                             )(<DatePicker 
-                                defaultValue={moment('2015/01/01', dateFormat)} 
                                 disabled={summary} 
                                 style={{width: '100%'}}
                                 format={dateFormat}
@@ -216,7 +225,7 @@ function StepForm1(props) {
                     <Col xs={24} md={{span: 4}}>
                         <Form.Item label="เบอร์โทรศัพท์">
                             {getFieldDecorator('telephone', {
-                                rules: [{ required: true, message: 'กรุณากรอกเบอร์โทรศัพท์ 10 หลัก', len: 10 }],
+                                rules: [{ required: true, message: 'กรุณากรอกเบอร์โทรศัพท์ 10 หลัก', len: 10, pattern: new RegExp(/^[0-9]+$/)}],
                             })(
                                 <Input
                                     disabled={summary}
@@ -260,7 +269,7 @@ function StepForm1(props) {
 
                 {!summary &&
                     <Form.Item>
-                        <div class="Button-Row">
+                        <div className="Button-Row">
                             <div className="Button-Column right">
                                 <div className="Button-Left-Image">
                                     <img
