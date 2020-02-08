@@ -363,6 +363,7 @@
     
     .ant-select-selection__placeholder,
     .ant-select-search__field__placeholder {
+        color: #bfbfbf;
         filter: brightness(0.5);
     }
     /*Selection*/
@@ -586,7 +587,7 @@
     }
     
     .ant-radio-disabled+span {
-        color: white;
+        color: white !important;
     }
     /*calender*/
     
@@ -596,7 +597,7 @@
     }
     
     span {
-        color: whitesmoke;
+        color: whitesmoke !important;
     }
     
     .ant-calendar-header .ant-calendar-century-select,
@@ -972,4 +973,20 @@
     
     .ant-input[disabled] {
         background-color: #000;
+    }
+
+    .ant-select-selection--single{
+        background-color: #000 !important;
+    }
+    
+    .ant-checkbox-group{
+    color: #bfbfbf;  
+    }
+
+    .ant-input-number-input{   
+        background-color: #000 !important;
+    }
+
+    .ant-checkbox-disabled span {
+        color: #bfbfbf !important;
     }
