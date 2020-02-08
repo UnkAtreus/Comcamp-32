@@ -83,7 +83,7 @@ function StepForm1(props) {
             <h1>ข้อมูลทั่วไป</h1>
             <Form onSubmit={handleSubmit} >
                 <Row>
-                    <Col xs={24} md={{span: 5}}>
+                    <Col xs={24} md={{span: 8}}>
                         <Form.Item label="ชื่อ (ภาษาไทย)">
                             {getFieldDecorator('fname_th', {
                                 rules: [
@@ -103,7 +103,7 @@ function StepForm1(props) {
                         </Form.Item>
                     
                     </Col>
-                    <Col xs={25} md={{span: 5, offset:1}}>
+                    <Col xs={24} md={{span: 8, offset:1}}>
                         <Form.Item label="นามสกุล (ภาษาไทย)">
                             {getFieldDecorator('lname_th', {
                                 rules: [{ required: true, 
@@ -116,10 +116,24 @@ function StepForm1(props) {
                                 />,
                             )}
                         </Form.Item>
-                    
                     </Col>
-                    <Col xs={24} md={{span: 5, offset: 2}}>
-                        <Form.Item label="ชื่อ (ภาษาอังกฤษ)">
+                    <Col md={{span:4 , offset:1}}>
+                        <Form.Item label="ชื่อเล่น">
+                            {getFieldDecorator('nickname', {
+                                rules: [{ required: true, message: 'กรุณากรอกชื่อเล่น' }],
+                            })(
+                                <Input
+                                    placeholder="ชัย"
+                                    disabled={summary}
+                                />,
+                            )}
+                        </Form.Item>
+                    </Col>
+                </Row>
+                
+                <Row>
+                    <Col xs={24} md={{span: 8}}>
+                        <Form.Item label="Firstname">
                             {getFieldDecorator('fname_eng', {
                                 rules: [
                                     { 
@@ -137,8 +151,8 @@ function StepForm1(props) {
                             )}
                         </Form.Item>
                     </Col>
-                    <Col xs={24} md={{span: 5, offset: 1}}>
-                        <Form.Item label="นามสกุล (ภาษาอังกฤษ)">
+                    <Col xs={24} md={{span: 8, offset: 1}}>
+                        <Form.Item label="Lastname">
                             {getFieldDecorator('lname_eng', {
                                 rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาอังกฤษ', pattern: new RegExp(/^[A-Za-z]+$/)}],
                             })(
@@ -149,23 +163,7 @@ function StepForm1(props) {
                             )}
                         </Form.Item>
                     </Col>
-                </Row>
-
-
-                <Row>
-                    <Col xs={24} md={4}>
-                        <Form.Item label="ชื่อเล่น">
-                            {getFieldDecorator('nickname', {
-                                rules: [{ required: true, message: 'กรุณากรอกชื่อเล่น' }],
-                            })(
-                                <Input
-                                    placeholder="ชัย"
-                                    disabled={summary}
-                                />,
-                            )}
-                        </Form.Item>
-                    </Col>
-                    <Col xs={24} md={{span: 4, offset: 1}} >
+                    <Col md={{span:4 , offset:1}}>
                         <Form.Item label="เพศ">
                             {getFieldDecorator('sex', {
                                 rules: [{ required: true, message: 'กรุณากรอกเพศ', enum: ['ชาย', 'หญิง'] }],
@@ -178,11 +176,16 @@ function StepForm1(props) {
                             )}
                         </Form.Item>
                     </Col>
-                    <Col xs={24} md={{span: 4, offset: 1}}>
+                </Row>
+
+
+                <Row>
+                                     
+                    <Col xs={24} md={{span: 4}}>
                         <Form.Item label="วัน-เดือน-ปีเกิด">
                             {getFieldDecorator('birthday', {
                                 initialValue:moment('2001/01/01', dateFormat),
-                                rules: [{ type: 'object', required: true, message: 'กรุณาเลือกวันเกิด' }],
+                                rules: [{ type: 'object', required: true, message: 'กรุณาเลือกวันเกิด' ,pattern: new RegExp(/[0-3][0-9]-[0-1][0-9]-[0-2][0-9][0-9]/)}],
                             }, 
                             
                             )(<DatePicker 

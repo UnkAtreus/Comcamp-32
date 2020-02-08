@@ -56,7 +56,7 @@ function StepForm7(props) {
                         rules: [{ required: true, message: 'กรุณาระบุสถานที่' }],
                         // initialValue: "มา มจธ. ด้วยตนเอง"
                     })(
-                        <Select disabled={summary}>
+                        <Select disabled={summary} placeholder='ระบุสถานที่'>
                             {
                                 locations.map((location) => (
                                     <Option key={location} value={location}>{location}</Option>

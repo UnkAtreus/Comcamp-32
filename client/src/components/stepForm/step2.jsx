@@ -147,7 +147,7 @@ function StepForm2(props) {
                             {getFieldDecorator('school_province', {
                                 rules: [{ required: true, message: 'กรุณากรอกจังหวัด' }],
                             })(
-                                <Select disabled={summary}>
+                                <Select disabled={summary} placeholder='ระบุจังหวัด'>
                                     {
                                         province_th.map((province) => (
                                             <Option key={province} value={province}>{province}</Option>
@@ -166,7 +166,7 @@ function StepForm2(props) {
                             {getFieldDecorator('grade', {
                                 rules: [{ required: true, message: 'กรุณากรอกชั้นปีการศึกษา', enum: ['4', '5', '6', 'ปวช'] }],
                             })(
-                                <Select disabled={summary}>
+                                <Select disabled={summary} placeholder='ระบุระดับการศึกษา '>
                                     <Option value={'4'}>ม.4 ขึ้น ม.5</Option>
                                     <Option value={'5'}>ม.5 ขึ้น ม.6</Option>
                                     <Option value={'6'}>ม.6 ขึ้น มหาวิทยาลัย</Option>
@@ -180,7 +180,7 @@ function StepForm2(props) {
                     <Col xs={24} md={{span:3, offset:1}} lg={{span: 2, offset:1}}>
                         <Form.Item label="เกรดเฉลี่ย">
                             {getFieldDecorator('gpax', {
-                                rules: [{ required: true, message: 'กรุณากรอกเกรดเฉลี่ย' }],
+                                rules: [{ required: true, message: 'กรุณากรอกเกรดเฉลี่ย' ,pattern: new RegExp(/^[0-9]+(\.[0-9]{0,2})?$/) }],
                             })(
                                 <InputNumber min={0} max={4} step={0.01}
                                     style={{width: '100%'}}

@@ -213,10 +213,18 @@ function StepForm4(props) {
                 postal_code_parent: addressData.address_parent.postal_code,
 
                 relation: addressData.parent.relation,
-                name: addressData.parent.name,
+                fname: addressData.parent.name,
+                lname: addressData.parent.name,
                 tel: addressData.parent.tel,
                 email: addressData.parent.email,
-                prefix_th: addressData.parent.prefix_th
+                prefix_th: addressData.parent.prefix_th,
+
+                relation2: addressData.parent2.relation,
+                fname2: addressData.parent2.name,
+                lname2: addressData.parent2.name,
+                tel2: addressData.parent2.tel,
+                email2: addressData.parent2.email,
+                prefix_th2: addressData.parent2.prefix_th
             });
         }
         // props.form.setFieldsValue({have_accident: false})
@@ -283,6 +291,17 @@ function StepForm4(props) {
     }
 
     const selectBefore = getFieldDecorator('prefix_th', {
+        rules: [{required: true, message: 'กรุณาระบุคำนำหน้าชื่อ'}]
+    })(
+        <Select style={{ width: 90 }}
+            disabled={summary}
+        >
+          <Option value="นาย">นาย</Option>
+          <Option value="นางสาว">นางสาว</Option>
+        </Select>
+    );
+
+    const selectBefore2 = getFieldDecorator('prefix_th2', {
         rules: [{required: true, message: 'กรุณาระบุคำนำหน้าชื่อ'}]
     })(
         <Select style={{ width: 90 }}
@@ -397,7 +416,7 @@ function StepForm4(props) {
                             <Col md={{span: 4 , offset: 1}}>
                                 <Form.Item label="รหัสไปรษณีย์">
                                 {getFieldDecorator('postal_code', {
-                                    rules: [{ required: true, message: 'กรุณากรอกรหัสไปรษณีย์' }]
+                                    rules: [{ required: true, message: 'กรุณากรอกรหัสไปรษณีย์' ,pattern: new RegExp(/^[0-9]{5}$/)}]
                                 })(
                                     <Input
                                         disabled={summary}
@@ -513,7 +532,7 @@ function StepForm4(props) {
                             <Col md={{span: 4 , offset: 1}}>
                                 <Form.Item label="รหัสไปรษณีย์">
                                 {getFieldDecorator('postal_code_regis', {
-                                    rules: [{ required: true, message: 'กรุณากรอกรหัสไปรษณีย์' }]
+                                    rules: [{ required: true, message: 'กรุณากรอกรหัสไปรษณีย์',pattern: new RegExp(/^[0-9]{5}$/) }]
                                 })(
                                     <Input
                                         disabled={summary}
@@ -628,7 +647,7 @@ function StepForm4(props) {
                             <Col md={{span: 4 , offset: 1}}>
                                 <Form.Item label="รหัสไปรษณีย์">
                                 {getFieldDecorator('postal_code_parent', {
-                                    rules: [{ required: true, message: 'กรุณากรอกรหัสไปรษณีย์' }]
+                                    rules: [{ required: true, message: 'กรุณากรอกรหัสไปรษณีย์', pattern: new RegExp(/^[0-9]{5}$/)}]
                                 })(
                                     <Input
                                         disabled={summary}
@@ -649,74 +668,103 @@ function StepForm4(props) {
                 <Row>
                     <Col md={{span:8}}>
                         <Form.Item label="ชื่อ">
-                        {getFieldDecorator('name', {
+                        {getFieldDecorator('fname', {
                         rules: [{ required: true, message: 'กรุณากรอกชื่อ' }],
                         })(
                         <Input
                         addonBefore={selectBefore}
                         disabled={summary}
-                        placeholder="สมคิด ใจมา"
+                        placeholder="สมคิด"
                         />,
                         )}
                         </Form.Item>
                     </Col>
-                    <Col  md={{span:3 , offset:1}}>
-                        <Form.Item label="ความสัมพันธ์">
-                        {getFieldDecorator('relation', {
-                        rules: [{ required: true, message: 'กรุณากรอกความสัมพันธ์' }],
+                    <Col md={{span:8  , offset:1}}>
+                        <Form.Item label="นามสกุล">
+                        {getFieldDecorator('lname', {
+                        rules: [{ required: true, message: 'กรุณากรอกนามสกุล' }],
                         })(
                         <Input
                         disabled={summary}
-                        placeholder="บิดา"
+                        placeholder="ใจมา"
                         />,
                         )}
                         </Form.Item>
                     </Col>
-                    <Col md={{span:4 , offset:1}}>
-                        <Form.Item label="เบอร์โทรศัพท์">
-                        {getFieldDecorator('tel', {
-                        rules: [{ required: true, message: 'กรุณากรอกเบอร์โทรศัพท์' ,  pattern: new RegExp(/^[0-9]{10}$/)}],
-                        })(
-                        <Input
-                        disabled={summary}
-                        placeholder="08xxxxxxxx"
-                        />,
-                        )}
-                        </Form.Item>
-                    </Col>
-                     <Col md={{span:6 , offset:1}}>
-                        <Form.Item label="E-mail">
-                        {getFieldDecorator('email', {
-                        rules: [{ required: true, message: 'กรุณากรอกอีเมล' , type: 'email'}],
-                        })(
-                        <Input
-                        disabled={summary}
-                        placeholder="sample@gmail.com"
-                        />,
-                        )}
-                        </Form.Item>
-                    </Col>
-
                 </Row>
+                <Row>
+                        <Col  md={{span:3}}>
+                            <Form.Item label="ความสัมพันธ์">
+                            {getFieldDecorator('relation', {
+                            rules: [{ required: true, message: 'กรุณากรอกความสัมพันธ์' }],
+                            })(
+                            <Input
+                            disabled={summary}
+                            placeholder="บิดา"
+                            />,
+                            )}
+                            </Form.Item>
+                        </Col>
+                        <Col md={{span:4 , offset:1}}>
+                            <Form.Item label="เบอร์โทรศัพท์">
+                            {getFieldDecorator('tel', {
+                            rules: [{ required: true, message: 'กรุณากรอกเบอร์โทรศัพท์' ,  pattern: new RegExp(/^[0-9]{10}$/)}],
+                            })(
+                            <Input
+                            disabled={summary}
+                            placeholder="08xxxxxxxx"
+                            />,
+                            )}
+                            </Form.Item>
+                        </Col>
+                        <Col md={{span:6 , offset:1}}>
+                            <Form.Item label="E-mail">
+                            {getFieldDecorator('email', {
+                            rules: [{ required: true, message: 'กรุณากรอกอีเมล' , type: 'email'}],
+                            })(
+                            <Input
+                            disabled={summary}
+                            placeholder="sample@gmail.com"
+                            />,
+                            )}
+                            </Form.Item>
+                        </Col>
+                </Row>
+
+                
 
                 <Row>
                     <Col md={{span:8}}>
                         <Form.Item label="ชื่อ">
-                        {getFieldDecorator('name', {
-                        rules: [{ required: true, message: 'กรุณากรอกชื่อ' }],
+                        {getFieldDecorator('fname2', {
+                        rules: [{  message: 'กรุณากรอกชื่อ' }],
                         })(
                         <Input
-                        addonBefore={selectBefore}
+                        addonBefore={selectBefore2}
                         disabled={summary}
-                        placeholder="สมพร ใจมา"
+                        placeholder="สมพร"
                         />,
                         )}
                         </Form.Item>
                     </Col>
-                    <Col  md={{span:3 , offset:1}}>
+                    <Col md={{span:8 , offset:1}}>
+                        <Form.Item label="นามสกุล">
+                        {getFieldDecorator('lname2', {
+                        rules: [{  message: 'กรุณากรอกนามสกุล' }],
+                        })(
+                        <Input
+                        disabled={summary}
+                        placeholder="ใจมา"
+                        />,
+                        )}
+                        </Form.Item>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col  md={{span:3}}>
                         <Form.Item label="ความสัมพันธ์">
-                        {getFieldDecorator('relation', {
-                        rules: [{ required: true, message: 'กรุณากรอกความสัมพันธ์' }],
+                        {getFieldDecorator('relation2', {
+                        rules: [{  message: 'กรุณากรอกความสัมพันธ์' }],
                         })(
                         <Input
                         disabled={summary}
@@ -727,8 +775,8 @@ function StepForm4(props) {
                     </Col>
                     <Col md={{span:4 , offset:1}}>
                         <Form.Item label="เบอร์โทรศัพท์">
-                        {getFieldDecorator('tel', {
-                        rules: [{ required: true, message: 'กรุณากรอกเบอร์โทรศัพท์',  pattern: new RegExp(/^[0-9]{10}$/) }],
+                        {getFieldDecorator('tel2', {
+                        rules: [{  message: 'กรุณากรอกเบอร์โทรศัพท์',  pattern: new RegExp(/^[0-9]{10}$/) }],
                         })(
                         <Input
                         disabled={summary}
@@ -737,10 +785,10 @@ function StepForm4(props) {
                         )}
                         </Form.Item>
                     </Col>
-                     <Col md={{span:6 , offset:1}}>
+                    <Col md={{span:6 , offset:1}}>
                         <Form.Item label="E-mail">
-                        {getFieldDecorator('email', {
-                        rules: [{ required: true, message: 'กรุณากรอกอีเมล' , type: 'email'}],
+                        {getFieldDecorator('email2', {
+                        rules: [{  message: 'กรุณากรอกอีเมล' , type: 'email'}],
                         })(
                         <Input
                         disabled={summary}
@@ -749,8 +797,8 @@ function StepForm4(props) {
                         )}
                         </Form.Item>
                     </Col>
-
                 </Row>
+
 
 
                 {!summary &&
