@@ -56,9 +56,9 @@ const step4Validation = () => {
         body('province_parent').not().isEmpty(),
         body('postal_code_parent').not().isEmpty(),
 
-        body('relation').not().isEmpty(),
-        body('name').not().isEmpty(),
-        body('tel').not().isEmpty(),
+        // body('relation').not().isEmpty(),
+        // body('name').not().isEmpty(),
+        // body('tel').not().isEmpty(),
     ]
 }
 

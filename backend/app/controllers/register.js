@@ -181,6 +181,13 @@ exports.step4 = (req, res) => {
                 tel: tel,
                 email: email,
                 prefix_th: prefix_th
+            },
+            parent2: {
+                relation:relation,
+                name: name,
+                tel: tel,
+                email: email,
+                prefix_th: prefix_th
             }
         }
     }, (err, result) => {

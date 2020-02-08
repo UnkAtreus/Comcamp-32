@@ -58,6 +58,7 @@ var addressSchema = mongoose.Schema({
 	address_regis:locationSchema,
 	address_parent:locationSchema,
 	parent:parent_info,
+	parent2:parent_info,
 });
 
 var recent_camp = mongoose.Schema({
