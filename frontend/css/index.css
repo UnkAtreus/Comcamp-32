@@ -463,6 +463,10 @@
   display: block;
 }
 
+.Markdown span {
+  display: inline-block;
+}
+
 .Button-Row {
   position: relative;
   margin-left: auto;
