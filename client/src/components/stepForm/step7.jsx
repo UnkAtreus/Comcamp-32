@@ -53,7 +53,7 @@ function StepForm7(props) {
             <Form onSubmit={handleSubmit} >
                 <Form.Item label="สถานที่ที่ต้องการให้พี่ค่ายไปรับ">
                     {getFieldDecorator('location', {
-                        rules: [{ required: true, message: 'กรุณาระบุสถานที่' }],
+                        rules: [{ required: !summary, message: 'กรุณาระบุสถานที่' }],
                         // initialValue: "มา มจธ. ด้วยตนเอง"
                     })(
                         <Select disabled={summary} placeholder='ระบุสถานที่'>
@@ -69,7 +69,7 @@ function StepForm7(props) {
                 <h1>ได้รับข่าวสารการจัดค่ายจากที่ใด</h1>
                 <Form.Item className="Right-Radio">
                     {getFieldDecorator('news', {
-                        // rules: [{ required: true, message: 'กรุณาเลือกหลักสูตรที่ต้องการ' }]
+                        // rules: [{ required: !summary, message: 'กรุณาเลือกหลักสูตรที่ต้องการ' }]
                 })(
                 <Checkbox.Group style={{ width: '100%' }} onChange={onChange} disabled={summary}>
                 <Row>
