@@ -481,7 +481,7 @@
   -ms-flex-align: stretch;
       align-items: stretch;
   text-align: center;
-  min-height: 250px;
+  /* min-height: 250px; */
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   width: 80%;
@@ -622,7 +622,13 @@
 
 @media screen and (max-width: 680px) {
   .Section-Row {
-    min-height: 570px;
+    min-height: 700px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .Section-Row {
+    min-height: 1000px;
   }
 }
 
