@@ -109,7 +109,7 @@ function SummaryForm(props) {
         transition: transitions.SCALE
     }
 
-    const handleConfirmed = () => {
+    const handleConfirmed = async () => {
         const flag = await register.sendData(10, { confirmed: true })
         console.log("Click Next")
         console.log(flag)
