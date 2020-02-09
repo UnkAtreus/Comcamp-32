@@ -34,16 +34,15 @@ function SummaryForm(props) {
     useEffect(() => {
         props.fetch_user()
     }, [currentStep])
-
     
-    // useEffect( () => {
-    //      if(!loading) {
-    //          if(!finished) {
-    //              props.history.push('/')
-    //          }
-    //      }
-    //  }, [loading, finished])
-     
+    useEffect( () => {
+         if(!loading) {
+             if(!finished) {
+                 props.history.push('/')
+             }
+         }
+     }, [loading, finished])
+    
 
     async function checkStep(user) {
         console.log("user", user)
