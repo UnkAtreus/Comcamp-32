@@ -337,7 +337,7 @@ function StepForm4(props) {
                             <Col md={{span:3 , offset: 1}}>
                                 <Form.Item label="หมู่">
                                     {getFieldDecorator('village', {
-                                        rules: [{ required: !summary, message: 'กรุณากรอกหมู่' }],
+                                        // rules: [{ required: !summary, message: 'กรุณากรอกหมู่' }],
                                     })(
                                         <Input
                                             disabled={summary}
@@ -349,7 +349,7 @@ function StepForm4(props) {
                             <Col md={{span:6 , offset: 1}}>
                                 <Form.Item label="ซอย">
                                     {getFieldDecorator('lane', {
-                                            rules: [{ required: !summary, message: 'กรุณากรอกชื่อหรือเลขที่ซอย' }],
+                                            // rules: [{ required: !summary, message: 'กรุณากรอกชื่อหรือเลขที่ซอย' }],
                                     })(
                                         
                                         <Input
@@ -453,7 +453,7 @@ function StepForm4(props) {
                             <Col md={{span:3 , offset: 1}}>
                                 <Form.Item label="หมู่">
                                     {getFieldDecorator('village_regis', {
-                                        rules: [{ required: !summary, message: 'กรุณากรอกหมู่' }],
+                                        // rules: [{ required: !summary, message: 'กรุณากรอกหมู่' }],
                                     })(
                                         <Input
                                             disabled={summary}
@@ -465,7 +465,7 @@ function StepForm4(props) {
                             <Col md={{span:6 , offset: 1}}>
                                 <Form.Item label="ซอย">
                                     {getFieldDecorator('lane_regis', {
-                                            rules: [{ required: !summary, message: 'กรุณากรอกชื่อหรือเลขที่ซอย' }],
+                                            // rules: [{ required: !summary, message: 'กรุณากรอกชื่อหรือเลขที่ซอย' }],
                                     })(
                                         
                                         <Input
@@ -568,7 +568,7 @@ function StepForm4(props) {
                             <Col md={{span:3 , offset: 1}}>
                                 <Form.Item label="หมู่">
                                     {getFieldDecorator('village_parent', {
-                                        rules: [{ required: !summary, message: 'กรุณากรอกหมู่' }],
+                                        // rules: [{ required: !summary, message: 'กรุณากรอกหมู่' }],
                                     })(
                                         <Input
                                             disabled={summary}
@@ -580,7 +580,7 @@ function StepForm4(props) {
                             <Col md={{span:6 , offset: 1}}>
                                 <Form.Item label="ซอย">
                                     {getFieldDecorator('lane_parent', {
-                                            rules: [{ required: !summary, message: 'กรุณากรอกชื่อหรือเลขที่ซอย' }],
+                                            // rules: [{ required: !summary, message: 'กรุณากรอกชื่อหรือเลขที่ซอย' }],
                                     })(
                                         
                                         <Input
