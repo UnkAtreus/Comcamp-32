@@ -7,15 +7,27 @@ services:
       - "443:443"
     build: ./backend
     environment:
-      HOST: "206.189.149.84"
-      FRONT_END: "206.189.149.84:3000"
+      HOST: "122.155.177.244:5000"
+      FRONT_END: "122.155.177.244:3000"
       # HOST: "localhost:5000"
       # FRONT_END: "localhost:3000"
-  # frontend:
-  #   container_name: frontend-cc
-  #   ports:
-  #     - "3000:3000"
-  #   build: ./client
+    deploy:
+      resources:
+        limits:
+          cpus: "6.0"
+        reservations:
+          cpus: "0.50"
+  frontend:
+    container_name: frontend-cc
+    ports:
+      - "3000:3000"
+    build: ./client
+    deploy:
+      resources:
+        limits:
+          cpus: "3.0"
+        reservations:
+          cpus: "0.50"
   mongocc32:
     image: mongo:bionic
     container_name: mongo-cc-2

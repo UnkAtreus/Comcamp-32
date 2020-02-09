@@ -130,7 +130,7 @@ function StepForm2(props) {
                         <Col xs={24} md={{span: 20}}>
                         <Form.Item label="ชื่อสถานศึกษา">
                             {getFieldDecorator('school_name', {
-                                rules: [{ required: true, message: 'กรุณากรอกชื่อสถานศึกษา' }],
+                                rules: [{ required: !summary, message: 'กรุณากรอกชื่อสถานศึกษา' }],
                             })(
                                 <Input
                                 disabled={summary}
@@ -145,7 +145,7 @@ function StepForm2(props) {
                         <Col xs={24} md={{span:10}}>
                         <Form.Item label="จังหวัด">
                             {getFieldDecorator('school_province', {
-                                rules: [{ required: true, message: 'กรุณากรอกจังหวัด' }],
+                                rules: [{ required: !summary, message: 'กรุณากรอกจังหวัด' }],
                             })(
                                 <Select disabled={summary} placeholder='ระบุจังหวัด'>
                                     {
@@ -164,7 +164,7 @@ function StepForm2(props) {
                     <Col xs={24} md={{span:10}} lg={{span: 7}}>
                         <Form.Item label="ระดับการศึกษา">
                             {getFieldDecorator('grade', {
-                                rules: [{ required: true, message: 'กรุณากรอกชั้นปีการศึกษา', enum: ['4', '5', '6', 'ปวช'] }],
+                                rules: [{ required: !summary, message: 'กรุณากรอกชั้นปีการศึกษา', enum: ['4', '5', '6', 'ปวช'] }],
                             })(
                                 <Select disabled={summary} placeholder='ระบุระดับการศึกษา '>
                                     <Option value={'4'}>ม.4 ขึ้น ม.5</Option>
@@ -180,7 +180,7 @@ function StepForm2(props) {
                     <Col xs={24} md={{span:3, offset:1}} lg={{span: 2, offset:1}}>
                         <Form.Item label="เกรดเฉลี่ย">
                             {getFieldDecorator('gpax', {
-                                rules: [{ required: true, message: 'กรุณากรอกเกรดเฉลี่ย' ,pattern: new RegExp(/^[0-9]+(\.[0-9]{0,2})?$/) }],
+                                rules: [{ required: !summary, message: 'กรุณากรอกเกรดเฉลี่ย' ,pattern: new RegExp(/^[0-9]+(\.[0-9]{0,2})?$/) }],
                             })(
                                 <InputNumber min={0} max={4} step={0.01}
                                     style={{width: '100%'}}

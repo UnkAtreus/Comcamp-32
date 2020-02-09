@@ -54,7 +54,7 @@ function StepForm1(props) {
     const { getFieldDecorator } = props.form;
 
     const prefix_th = getFieldDecorator('prefix_th', {
-        rules: [{required: true, message: 'กรุณาระบุคำนำหน้าชื่อ'}]
+        rules: [{required: !summary, message: 'กรุณาระบุคำนำหน้าชื่อ'}]
     })(
         <Select style={{ 'width':'90px'}}
             disabled={summary}
@@ -67,7 +67,7 @@ function StepForm1(props) {
     );
 
     const prefix_eng = getFieldDecorator('prefix_eng', {
-        rules: [{required: true, message: 'กรุณาระบุคำนำหน้าชื่อ'}]
+        rules: [{required: !summary, message: 'กรุณาระบุคำนำหน้าชื่อ'}]
     })(
         <Select style={{ width: 90 }}
             disabled={summary}
@@ -88,7 +88,7 @@ function StepForm1(props) {
                             {getFieldDecorator('fname_th', {
                                 rules: [
                                     { 
-                                        required: true, 
+                                        required: !summary, 
                                         message: 'กรุณากรอกชื่อภาษาไทย', 
                                         pattern: new RegExp(/^[กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮฯะัาำิีึืฺุูเแโใไๅๆ็่้๊๋์]+$/) 
                                     }
@@ -106,7 +106,7 @@ function StepForm1(props) {
                     <Col xs={24} md={{span: 8, offset:1}}>
                         <Form.Item label="นามสกุล (ภาษาไทย)">
                             {getFieldDecorator('lname_th', {
-                                rules: [{ required: true, 
+                                rules: [{ required: !summary, 
                                     message: 'กรุณากรอกชื่อภาษาไทย', 
                                     pattern: new RegExp(/^[กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮฯะัาำิีึืฺุูเแโใไๅๆ็่้๊๋์]+$/) }],
                             })(
@@ -120,7 +120,7 @@ function StepForm1(props) {
                     <Col md={{span:4 , offset:1}}>
                         <Form.Item label="ชื่อเล่น">
                             {getFieldDecorator('nickname', {
-                                rules: [{ required: true, message: 'กรุณากรอกชื่อเล่น' }],
+                                rules: [{ required: !summary, message: 'กรุณากรอกชื่อเล่น' }],
                             })(
                                 <Input
                                     placeholder="ชัย"
@@ -137,7 +137,7 @@ function StepForm1(props) {
                             {getFieldDecorator('fname_eng', {
                                 rules: [
                                     { 
-                                        required: true, 
+                                        required: !summary, 
                                         message: 'กรุณากรอกชื่อภาษาอังกฤษ', 
                                         pattern: new RegExp(/^[A-Za-z]+$/)
                                     }
@@ -154,7 +154,7 @@ function StepForm1(props) {
                     <Col xs={24} md={{span: 8, offset: 1}}>
                         <Form.Item label="Lastname">
                             {getFieldDecorator('lname_eng', {
-                                rules: [{ required: true, message: 'กรุณากรอกชื่อภาษาอังกฤษ', pattern: new RegExp(/^[A-Za-z]+$/)}],
+                                rules: [{ required: !summary, message: 'กรุณากรอกชื่อภาษาอังกฤษ', pattern: new RegExp(/^[A-Za-z]+$/)}],
                             })(
                                 <Input
                                     placeholder="Jaidee"
@@ -166,7 +166,7 @@ function StepForm1(props) {
                     <Col md={{span:4 , offset:1}}>
                         <Form.Item label="เพศ">
                             {getFieldDecorator('sex', {
-                                rules: [{ required: true, message: 'กรุณากรอกเพศ', enum: ['ชาย', 'หญิง'] }],
+                                rules: [{ required: !summary, message: 'กรุณากรอกเพศ', enum: ['ชาย', 'หญิง'] }],
                             })(
                                 <Select disabled={summary} placeholder="ระบุเพศ">
                                     <Option value="ชาย">ชาย</Option>
@@ -185,7 +185,7 @@ function StepForm1(props) {
                         <Form.Item label="วัน-เดือน-ปีเกิด">
                             {getFieldDecorator('birthday', {
                                 initialValue:moment('2001/01/01', dateFormat),
-                                rules: [{ type: 'object', required: true, message: 'กรุณาเลือกวันเกิด' ,pattern: new RegExp(/[0-3][0-9]-[0-1][0-9]-[0-2][0-9][0-9]/)}],
+                                rules: [{ type: 'object', required: !summary, message: 'กรุณาเลือกวันเกิด' ,pattern: new RegExp(/[0-3][0-9]-[0-1][0-9]-[0-2][0-9][0-9]/)}],
                             }, 
                             
                             )(<DatePicker 
@@ -199,7 +199,7 @@ function StepForm1(props) {
                     <Col xs={24} md={{span: 4, offset: 1}}>
                         <Form.Item label="กรุ๊ปเลือด">
                             {getFieldDecorator('bloodenum', {
-                                rules: [{ required: true, message: 'กรุณากรอกกรุ๊ปเลือด', enum: ['A', 'B', 'AB', 'O'] }],
+                                rules: [{ required: !summary, message: 'กรุณากรอกกรุ๊ปเลือด', enum: ['A', 'B', 'AB', 'O'] }],
                             })(
                                 <Select disabled={summary} placeholder="ระบุกรุ๊ปเลือด">
                                     <Option value="A">A</Option>
@@ -214,7 +214,7 @@ function StepForm1(props) {
                     <Col xs={24} md={{span: 4, offset: 1}}>
                         <Form.Item label="ศาสนา">
                             {getFieldDecorator('religion', {
-                                rules: [{ required: true, message: 'กรุณากรอกศาสนา' }],
+                                rules: [{ required: !summary, message: 'กรุณากรอกศาสนา' }],
                             })(
                                 <Input
                                     placeholder="พุทธ"
@@ -230,7 +230,7 @@ function StepForm1(props) {
                     <Col xs={24} md={{span: 4}}>
                         <Form.Item label="เบอร์โทรศัพท์">
                             {getFieldDecorator('telephone', {
-                                rules: [{ required: true, message: 'กรุณากรอกเบอร์โทรศัพท์ 10 หลัก', pattern: new RegExp(/^[0-9]{10}$/)}],
+                                rules: [{ required: !summary, message: 'กรุณากรอกเบอร์โทรศัพท์ 10 หลัก', pattern: new RegExp(/^[0-9]{10}$/)}],
                             })(
                                 <Input
                                     disabled={summary}
@@ -242,7 +242,7 @@ function StepForm1(props) {
                     <Col xs={24} md={{span: 6, offset: 1}}>
                         <Form.Item label="E-mail">
                             {getFieldDecorator('email', {
-                                rules: [{ required: true, message: 'กรุณากรอกอีเมล', type: 'email' }],
+                                rules: [{ required: !summary, message: 'กรุณากรอกอีเมล', type: 'email' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -255,7 +255,7 @@ function StepForm1(props) {
                     <Col xs={24} md={{span: 4, offset: 1}}>
                         <Form.Item label="ขนาดเสื้อ">
                             {getFieldDecorator('shirt_size', {
-                                rules: [{ required: true, message: 'กรุณากรอกขนาดเสื้อ', enum: ['S', 'M', 'L', 'XL','XXL','3XL','4XL'] }],
+                                rules: [{ required: !summary, message: 'กรุณากรอกขนาดเสื้อ', enum: ['S', 'M', 'L', 'XL','XXL','3XL','4XL'] }],
                             })(
                                 <Select disabled={summary} placeholder="ระบุขนาดเสื้อ">
                                 
