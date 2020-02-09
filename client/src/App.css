@@ -982,7 +982,7 @@
     .ant-checkbox:hover .ant-checkbox-inner,
     .ant-checkbox-input:focus+.ant-checkbox-inner {
         border-color: #fecb1f;
-        pointer-events: none;
+        /* pointer-events: none; */
 
     }
 
@@ -1039,7 +1039,8 @@
     }
 
     .ant-checkbox-wrapper{
-        pointer-events: none;
+        color: white;
+        /* pointer-events: none; */
     }
     
     .ant-select-selection--single{
