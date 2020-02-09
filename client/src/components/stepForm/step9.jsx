@@ -24,11 +24,23 @@ function StepForm9(props) {
         console.log("Click Next")
         console.log(flag)
         if (flag) {
-            window.location = '/summary'
             console.log("Next 5")
+            window.location = '/register'
         } else {
         }
     }
+
+    const backtosummary = async (payload) => {
+        const flag = await register.sendData(10, {confirmed: false})
+        console.log("Click Next")
+        console.log(flag)
+        if (flag) {
+            console.log("Next 5")
+            window.location = 'register'
+        } else {
+        }
+    }
+
     const handleSubmit = e => {
         e.preventDefault();
         props.form.validateFields((err, values) => {
@@ -82,6 +94,25 @@ function StepForm9(props) {
                             <div className="Button-BorderImage"></div>
                             <button className="Button-Background" htmlType="submit">
                                 <span className="Markdown">Submit</span>
+                            </button>
+                        </div>
+                        <div className="Button-Column left">
+                            <div className="Button-Left-Image">
+                                <img
+                                    src={btn_left}
+                                    alt="Left button decoration"
+                                />
+                            </div>
+                            
+                            <div className="Button-Right-Image">
+                                <img
+                                    src={btn_right}
+                                    alt="Right button decoration"
+                                />
+                            </div>
+                            <div className="Button-BorderImage"></div>
+                            <button className="Button-Background" onClick={bacntosummary}>
+                                <span className="Markdown">Back</span>
                             </button>
                         </div>
                     </div>

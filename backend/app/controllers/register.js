@@ -346,7 +346,7 @@ exports.step10 = (req, res) => {
     console.log(req.user._id)
     const id = req.user._id
     console.log(id)
-    User.findByIdAndUpdate(id, { confirmed: true }, (err, result) => {
+    User.findByIdAndUpdate(id, { confirmed: req.body.confirmed }, (err, result) => {
         console.log("update")
         // console.log(result)
         if (err) {
