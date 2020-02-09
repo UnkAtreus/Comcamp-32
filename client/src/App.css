@@ -343,13 +343,13 @@
     }
     
     .ant-input[disabled] {
-        color: white;
+        color: white ;
         filter: brightness(1) !important;
         pointer-events: none;
     }
     
     .ant-input-number-disabled .ant-input-number-input {
-        color: black;
+        /* color: black; */
         background-color: white;
         filter: brightness(2);
     }
@@ -358,12 +358,13 @@
 
     }
 
-    .ant-input ant-select-search__field {
+    .ant-input .ant-select-search__field {
         border: 0 solid #0c0c0c;
     }
     
     .ant-select-selection--single .ant-select-selection__rendered {
         color: black;
+
         
         
     }
@@ -562,7 +563,7 @@
     
     .ant-btn {
         border-color: transparent;
-        background: rgba(245, 245, 245, 0.75);
+        background: rgba(255, 255, 255, 0.842);
     }
     
     .ant-btn>i,
@@ -610,7 +611,10 @@
         border: 0px solid #121212;
     }
     
-    span {
+    .black {
+        color: black !important;
+    }
+    .white {
         color: whitesmoke !important;
     }
     
@@ -893,7 +897,7 @@
             display: none;
         }
         .Nav-Links.nav-right.Nav-Back:after {
-            content: 'Home';
+            content: 'Back';
             position: absolute;
         }
         .Logo {
@@ -975,6 +979,8 @@
     .ant-checkbox:hover .ant-checkbox-inner,
     .ant-checkbox-input:focus+.ant-checkbox-inner {
         border-color: #fecb1f;
+        pointer-events: none;
+
     }
 
     .ant-input-group-addon:first-child {
@@ -991,6 +997,7 @@
 
     .ant-select-selection--single{
         background-color: #000 !important;
+        color: white !important;
     }
     
     .ant-checkbox-group{
@@ -999,7 +1006,7 @@
 
     .ant-input-number-input{   
         background-color: #000 !important;
-        pointer-events: none;
+        /* pointer-events: none; */
     }
 
     .ant-checkbox-disabled span {
@@ -1007,7 +1014,7 @@
         pointer-events: none;
     }
     .ant-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-        color: rgba(255,255,255,0.3);
+        color: rgba(255, 255, 255, 0.3);
         opacity: 1; /* Firefox */
     }
     .ant-select-selection__placeholder {
@@ -1018,9 +1025,20 @@
         color: #bfbfbf;
     }
     .ant-input-number-input-wrap{
-        pointer-events: none;
+        color: white;
+        /* pointer-events: none; */
     }
 
-    hr.break-line {
-        border: 0.5px solid;
+    .ant-checkbox-disabled + span{
+        color: white;
+        pointer-events: none;
+
+    }
+
+    .ant-checkbox-wrapper{
+        pointer-events: none;
+    }
+    
+    .ant-select-selection--single{
+        color: white;
     }

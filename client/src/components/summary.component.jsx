@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { Form, Input, Button, Row, Col, Select } from 'antd';
 import { fetchUserAction } from '../actions/myaction'
-import { transitions, positions, Provider as AlertProvider } from 'react-alert'
 import btn_left from '../asset/Button_left.png';
 import btn_right from '../asset/Button_right.png';
 
@@ -35,8 +34,7 @@ function SummaryForm(props) {
     useEffect(() => {
         props.fetch_user()
     }, [currentStep])
-
-    /*    
+    
     useEffect( () => {
          if(!loading) {
              if(!finished) {
@@ -44,7 +42,7 @@ function SummaryForm(props) {
              }
          }
      }, [loading, finished])
-     */
+    
 
     async function checkStep(user) {
         console.log("user", user)
