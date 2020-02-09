@@ -11,6 +11,12 @@ services:
       FRONT_END: "122.155.177.244:3000"
       # HOST: "localhost:5000"
       # FRONT_END: "localhost:3000"
+    deploy:
+      resources:
+        limits:
+          cpus: "6.0"
+        reservations:
+          cpus: "0.50"
   frontend:
     container_name: frontend-cc
     ports:
