@@ -211,17 +211,17 @@ const options = [
                         // rules: [{ required: !summary, message: 'กรุณาเลือกหลักสูตรที่ต้องการ' }]
                     })(
                         <Checkbox.Group style={{ width: '100%'}} onChange={onChange} disabled={summary}>
-                <Row >
-                    <Col md={{span:22, offset:2}} label>
+                <Row style={{'text-align': 'left'}}>
+                    <Col md={{span:22, offset:2}} xs={{span: 24, offset: 2}} style={{'margin-bottom': '10px'}}>
                         <Checkbox value="Reg" className="white" >หลักสูตรวิศวกรรมคอมพิวเตอร์</Checkbox>
                     </Col>
-                    <Col md={{span:22, offset:2}}>
+                    <Col md={{span:22, offset:2}} xs={{span: 24, offset: 2}} style={{'margin-bottom': '10px'}}>
                         <Checkbox value="Inter" className="white">หลักสูตรวิศวกรรมคอมพิวเตอร์ (นานาชาติ)</Checkbox>
                     </Col>
-                    <Col md={{span:22, offset:2}}>
+                    <Col md={{span:22, offset:2}} xs={{span: 24, offset: 2}} style={{'margin-bottom': '10px'}}>
                         <Checkbox value="HDS" className="white">หลักสูตรวิทยาศาสตร์ข้อมูลสุขภาพ</Checkbox>
                     </Col>
-                    <Col md={{span:22, offset:2}}>
+                    <Col md={{span:22, offset:2}} xs={{span: 24, offset: 2}} style={{'margin-bottom': '10px'}}>
                         <Checkbox value="RC" className="white">หลักสูตร Residential College</Checkbox>
                     </Col>
                     

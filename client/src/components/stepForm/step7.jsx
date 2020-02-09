@@ -72,26 +72,26 @@ function StepForm7(props) {
                         // rules: [{ required: !summary, message: 'กรุณาเลือกหลักสูตรที่ต้องการ' }]
                 })(
                 <Checkbox.Group onChange={onChange} disabled={summary}>
-                <Row>
-                    <Col md={{span:8}}>
+                <Row style={{'text-align': 'left'}}>
+                    <Col md={{span:8}} xs={{span: 24, offset: 2}} style={{'margin-bottom': '10px'}}>
                         <Checkbox value="facebook">Facebook Page</Checkbox>
                     </Col>
-                    <Col md={{span:8}}>
+                    <Col md={{span:8}} xs={{span: 24, offset: 2}} style={{'margin-bottom': '10px'}}>
                         <Checkbox value="instagram">Instagram</Checkbox>
                     </Col>
-                    <Col md={{span:8}}>
+                    <Col md={{span:8}} xs={{span: 24, offset: 2}} style={{'margin-bottom': '10px'}}>
                         <Checkbox value="camphub">เว็บไซต์ Camphub</Checkbox>
                     </Col>
-                    <Col md={{span:8}}>
+                    <Col md={{span:8}} xs={{span: 24, offset: 2}} style={{'margin-bottom': '10px'}}>
                         <Checkbox value="senior">การแนะนำจากรุ่นพี่</Checkbox>
                     </Col>
-                    <Col md={{span:8}}>
+                    <Col md={{span:8}} xs={{span: 24, offset: 2}} style={{'margin-bottom': '10px'}}>
                         <Checkbox value="friend">การแนะนำจากเพื่อน</Checkbox>
                     </Col>
-                    <Col md={{span:8}}>
+                    <Col md={{span:8}} xs={{span: 24, offset: 2}} style={{'margin-bottom': '10px'}}>
                         <Checkbox value="teacher">การแนะนำจากครูแนะแนว</Checkbox>
                     </Col>
-                    <Col md={{span:8}}>
+                    <Col md={{span:8}} xs={{span: 24, offset: 2}} style={{'margin-bottom': '10px'}}>
                         <Checkbox value="openhouse">งาน Open House</Checkbox>
                     </Col>
                     </Row>
