@@ -1,7 +1,7 @@
 var express = require('express');
-const https = require('https')
-const path = require('path')
-const fs = require('fs')
+// const https = require('https')
+// const path = require('path')
+// const fs = require('fs')
 
 var app = express();
 
@@ -75,12 +75,12 @@ require('./app/routes.js')(app, passport); // load our routes and pass in our ap
 
 //launch ======================================================================
 app.listen(port);
-https.createServer({
-    key: fs.readFileSync(path.join(__dirname, '/credentials', 'server.key')),
-    cert: fs.readFileSync(path.join(__dirname, '/credentials', 'server.cert'))
-  }, app).listen(443, () => {
-    console.log('Listening 443')
-  })
+// https.createServer({
+//     key: fs.readFileSync(path.join(__dirname, '/credentials', 'server.key')),
+//     cert: fs.readFileSync(path.join(__dirname, '/credentials', 'server.cert'))
+//   }, app).listen(443, () => {
+//     console.log('Listening 443')
+//   })
 console.log('The magic happens on port ' + port);
 
 exports = module.exports = app;

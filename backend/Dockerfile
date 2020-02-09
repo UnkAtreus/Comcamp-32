@@ -7,4 +7,4 @@ ADD . ./src
 WORKDIR /src
 RUN npm install pm2 -g
 CMD ["pm2-runtime", "ecosystem.config.js"]
-EXPOSE 5000 443
+EXPOSE 5000
