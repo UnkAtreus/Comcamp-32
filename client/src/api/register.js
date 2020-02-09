@@ -23,7 +23,7 @@ class Register {
             console.log("Error")
             const status = err.response.status
             if(status === 401) {
-                window.location = '/'
+                window.location = 'https://comcamp.io'
                 return false
             } else {
                 return false
@@ -36,7 +36,7 @@ class Register {
             const res = await axios.get('/api/logout')
             console.log("Send Data2")
             if(res.status === 200) {
-                window.location = '/'
+                window.location = 'https://comcamp.io'
                 return true
             }
         } catch(err) {
