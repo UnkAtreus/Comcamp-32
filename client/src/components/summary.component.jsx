@@ -110,14 +110,11 @@ function SummaryForm(props) {
     }
 
     const handleConfirmed = () => {
-        const nextStep = async () => {
-            const flag = await register.sendData(10, { confirmed: true })
-            console.log("Click Next")
-            console.log(flag)
-            if (flag) {
-                console.log("Next")
-            } else {
-            }
+        const flag = await register.sendData(10, { confirmed: true })
+        console.log("Click Next")
+        console.log(flag)
+        if (flag) {
+            console.log("Next")
         }
     }
 
