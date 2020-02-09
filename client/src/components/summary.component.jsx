@@ -26,7 +26,7 @@ function SummaryForm(props) {
     const [currentStep, setCurrentStep] = useState(0);
     const [maxStep, setMaxStep] = useState(0);
     const [user, setUser] = useState({})
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
 
     // useEffect( () => {
     //     console.log("test", test)
@@ -36,13 +36,15 @@ function SummaryForm(props) {
         props.fetch_user()
     }, [currentStep])
 
-    // useEffect( () => {
-    //     if(!loading && user) {
-    //         if(!finished) {
-    //             props.history.push('/')
-    //         }
-    //     }
-    // }, [finished])
+    
+    useEffect( () => {
+         if(!loading) {
+             if(!finished) {
+                 props.history.push('/')
+             }
+         }
+     }, [loading, finished])
+     
 
     async function checkStep(user) {
         console.log("user", user)
@@ -66,7 +68,9 @@ function SummaryForm(props) {
             ].reduce((step, next) => step + user.hasOwnProperty(next), 0);
             if(user.hasOwnProperty("tracking_number")) {
                 setFinished(true)
-            }
+            } else {
+		setFinished(false)
+	    }
         }
         // newStep = 3
         setCurrentStep(newStep)

@@ -23,7 +23,7 @@ class Register {
             console.log("Error")
             const status = err.response.status
             if(status === 401) {
-                // window.location = '/'
+                window.location = '/'
                 return false
             } else {
                 return false
