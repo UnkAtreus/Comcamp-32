@@ -617,6 +617,9 @@
     .white {
         color: whitesmoke !important;
     }
+    .CC {
+        color: #CCC !important;
+    }
     
     .ant-calendar-header .ant-calendar-century-select,
     .ant-calendar-header .ant-calendar-decade-select,
