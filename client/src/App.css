@@ -1047,3 +1047,7 @@
     .ant-select-selection--single{
         color: white;
     }
+
+    .ant-checkbox-wrapper-disabled {
+        pointer-events: none;
+    }
