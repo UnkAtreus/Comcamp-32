@@ -14,11 +14,21 @@ function StepForm6(props) {
     
     let abilityData = {}
     useEffect(() => {
-        if (user.hasOwnProperty("ability")) {
-            abilityData = user.ability
-            props.form.setFieldsValue(abilityData);
+        async function fetchData() {
+            if (user.hasOwnProperty("ability")) {
+                abilityData = user.ability
+                delete abilityData._id
+                if (abilityData.hasOwnProperty("language")) {
+                    await setAccident(true)
+                    await props.form.setFieldsValue({ have_language: "true" })
+                } else {
+                    await setAccident(false)
+                    await props.form.setFieldsValue({ have_language: "false" })
+                }
+                props.form.setFieldsValue(abilityData);
+            }
         }
-        // props.form.setFieldsValue({have_accident: false})
+        fetchData()
     }, []);
 
     const nextStep = async (payload) => {
