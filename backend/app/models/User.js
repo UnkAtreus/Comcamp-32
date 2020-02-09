@@ -84,11 +84,8 @@ var futureSchema = mongoose.Schema({
 });
 
 var abilitySchema = mongoose.Schema({
-	programming:{type:Number,required:true},
-	big_data:{type:Number,required:true},
-	flow_chart:{type:Number,required:true},
-	microcontroller:{type:Number,required:true},
-	brain_storm:{type:Number,required:true},
+	achieve: {type: String},
+	language: {type: String}
 });
 
 var questionSchema = mongoose.Schema({

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { Form, Input, Button, Row, Col, Select } from 'antd';
 import { fetchUserAction } from '../actions/myaction'
-import { transitions, positions, Provider as AlertProvider } from 'react-alert'
 import btn_left from '../asset/Button_left.png';
 import btn_right from '../asset/Button_right.png';
 
@@ -26,7 +25,7 @@ function SummaryForm(props) {
     const [currentStep, setCurrentStep] = useState(0);
     const [maxStep, setMaxStep] = useState(0);
     const [user, setUser] = useState({})
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
 
     // useEffect( () => {
     //     console.log("test", test)
@@ -36,13 +35,15 @@ function SummaryForm(props) {
         props.fetch_user()
     }, [currentStep])
 
+    
     // useEffect( () => {
-    //     if(!loading && user) {
-    //         if(!finished) {
-    //             props.history.push('/')
-    //         }
-    //     }
-    // }, [finished])
+    //      if(!loading) {
+    //          if(!finished) {
+    //              props.history.push('/')
+    //          }
+    //      }
+    //  }, [loading, finished])
+     
 
     async function checkStep(user) {
         console.log("user", user)
@@ -66,22 +67,24 @@ function SummaryForm(props) {
             ].reduce((step, next) => step + user.hasOwnProperty(next), 0);
             if(user.hasOwnProperty("tracking_number")) {
                 setFinished(true)
-            }
+            } else {
+		setFinished(false)
+	    }
         }
         // newStep = 3
         setCurrentStep(newStep)
         setMaxStep(newStep)
     }
 
-    // useEffect(() => {
-    //     if (props.user === false) {
-    //         props.history.push('/')
-    //     }
-    //     if (user != null && props.user) {
-    //         setUser(props.user)
-    //         setLoading(false)
-    //     }
-    // }, [props, user])
+    useEffect(() => {
+        if (props.user === false) {
+            props.history.push('/')
+        }
+        if (user != null && props.user) {
+            setUser(props.user)
+            setLoading(false)
+        }
+    }, [props, user])
 
 
     useEffect(() => {
