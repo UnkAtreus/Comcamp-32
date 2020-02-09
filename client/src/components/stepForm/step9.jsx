@@ -3,11 +3,14 @@ import register from '../../api/register'
 import { Form, Input, Button, Row, Col, Select } from 'antd';
 import btn_left from '../../asset/Button_left.png';
 import btn_right from '../../asset/Button_right.png';
+import { useAlert } from 'react-alert'
+
+
 
 function StepForm9(props) {
 
     const { currentStep, handlePrev, handleNext, user, summary } = props
-
+    const alert = useAlert()
 
     useEffect(() => {
         if (user.hasOwnProperty("tracking_number")) {
@@ -22,6 +25,7 @@ function StepForm9(props) {
         console.log("Click Next")
         console.log(flag)
         if (flag) {
+            alert.success('บันทึกข้อมูลเสร็จสิ้น')
             console.log("Next 5")
         } else {
         }
@@ -37,6 +41,7 @@ function StepForm9(props) {
     };
     const { getFieldDecorator } = props.form;
     return (
+        
         <div>
             <h1>เสร็จสิ้น</h1>
             โปรดส่งเอกสารมาตามที่อยู่นี้ โครงการฝึกอบรมเชิงปฏิบัติการคอมพิวเตอร์เบื้องตน ครั้งที่ 32 ภาควิชาวิศวกรรมคอมพิวเตอร์คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี 126 ถนนประชาอุทิศ 
