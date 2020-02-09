@@ -35,13 +35,13 @@ function SummaryForm(props) {
         props.fetch_user()
     }, [currentStep])
     
-    useEffect( () => {
-         if(!loading) {
-             if(!finished) {
-                window.location = 'https://comcamp.io'
-             }
-         }
-     }, [currentStep, finished])
+    // useEffect( () => {
+    //      if(!loading) {
+    //          if(!finished) {
+    //             window.location = 'https://comcamp.io'
+    //          }
+    //      }
+    //  }, [currentStep, finished])
     
 
     async function checkStep(user) {
@@ -88,7 +88,9 @@ function SummaryForm(props) {
         checkStep(user)
     }, [loading])
 
-    if (loading || !finished) {
+
+    // if (loading || !finished) {
+    if (loading) {
         return <h1></h1>
     }
 
