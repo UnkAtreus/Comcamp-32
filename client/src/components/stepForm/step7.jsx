@@ -67,7 +67,7 @@ function StepForm7(props) {
                     )}
                 </Form.Item>
                 <h1>ได้รับข่าวสารการจัดค่ายจากที่ใด</h1>
-                <Form.Item className="Right-Radio">
+                <Form.Item >
                     {getFieldDecorator('news', {
                         // rules: [{ required: !summary, message: 'กรุณาเลือกหลักสูตรที่ต้องการ' }]
                 })(
