@@ -129,7 +129,6 @@ function SummaryForm(props) {
                 <Row>
                     <Col span={24}>
                         <h1>สรุปข้อมูล</h1>
-                            <AlertProvider template={AlertTemplate} {...options}>
                             <hr className="break-line"/>
                             <StepForm1  user={user} summary={true}/>
                             <hr className="break-line"/>
@@ -195,7 +194,7 @@ function SummaryForm(props) {
                 </Row>
         </div>
     )
-}
+} 
 
 const mapStateToProps = (state) => {
     return {
