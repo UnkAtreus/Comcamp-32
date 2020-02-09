@@ -893,7 +893,7 @@
             display: none;
         }
         .Nav-Links.nav-right.Nav-Back:after {
-            content: 'Back';
+            content: 'Home';
             position: absolute;
         }
         .Logo {
@@ -1019,4 +1019,8 @@
     }
     .ant-input-number-input-wrap{
         pointer-events: none;
+    }
+
+    hr.break-line {
+        border: 0.5px solid;
     }

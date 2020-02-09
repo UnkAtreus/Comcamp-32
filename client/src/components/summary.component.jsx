@@ -77,15 +77,15 @@ function SummaryForm(props) {
         setMaxStep(newStep)
     }
 
-    useEffect(() => {
-        if (props.user === false) {
-            props.history.push('/')
-        }
-        if (user != null && props.user) {
-            setUser(props.user)
-            setLoading(false)
-        }
-    }, [props, user])
+    // useEffect(() => {
+    //     if (props.user === false) {
+    //         props.history.push('/')
+    //     }
+    //     if (user != null && props.user) {
+    //         setUser(props.user)
+    //         setLoading(false)
+    //     }
+    // }, [props, user])
 
 
     useEffect(() => {
@@ -104,14 +104,23 @@ function SummaryForm(props) {
                 <Row>
                     <Col span={18} offset={3}>
                         <h1>สรุปข้อมูล</h1>
+                            <hr className="break-line"/>
                             <StepForm1  user={user} summary={true}/>
+                            <hr className="break-line"/>
                             <StepForm2  user={user} summary={true}/>
+                            <hr className="break-line"/>
                             <StepForm3  user={user} summary={true}/>
+                            <hr className="break-line"/>
                             <StepForm4  user={user} summary={true}/>
+                            <hr className="break-line"/>
                             <StepForm5  user={user} summary={true}/>
+                            <hr className="break-line"/>
                             <StepForm6  user={user} summary={true}/>
+                            <hr className="break-line"/>
                             <StepForm7  user={user} summary={true}/>
+                            <hr className="break-line"/>
                             <StepForm8  user={user} summary={true}/>
+                            
 
                         <Form.Item>
                         <div class="Button-Row">

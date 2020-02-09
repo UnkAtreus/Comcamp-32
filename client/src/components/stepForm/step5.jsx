@@ -8,6 +8,7 @@ const options = [
     { label: 'หลักสูตรวิศวกรรมคอมพิวเตอร์', value: 'Reg' },
     { label: 'หลักสูตรวิศวกรรมคอมพิวเตอร์ (นานาชาติ)', value: 'Inter' },
     { label: 'หลักสูตรวิทยาศาสตร์ข้อมูลสุขภาพ', value: 'HDS' },
+    { label: 'หลักสูตร Residential College', value: 'RC' },
   ];
 
   
@@ -68,7 +69,7 @@ const options = [
     const { getFieldDecorator } = props.form;
     return (
         <div>
-            <h1>ความสนใจ</h1>
+            <h1>คณะที่สนใจ</h1>
             <Form onSubmit={handleSubmit} >
                 <Row>
                     {(!summary || futureData.one_department)&&
@@ -204,15 +205,31 @@ const options = [
                     </Col>
                 }
                 </Row>
-
-                <Form.Item className="Right-Checkbox" label="หลักสูตรของภาควิชาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี ที่สนใจ">
+                <h1>หลักสูตรที่สนใจ</h1>
+                <Form.Item className="Right-Checkbox" >
                     {getFieldDecorator('interest', {
                         // rules: [{ required: !summary, message: 'กรุณาเลือกหลักสูตรที่ต้องการ' }]
                     })(
-                        <Checkbox.Group options={options} onChange={onChange} disabled={summary}/>,
+                        <Checkbox.Group style={{ width: '100%'}} onChange={onChange} disabled={summary}>
+                <Row>
+                    <Col md={{span:22, offset:2}} label>
+                        <Checkbox value="Reg">หลักสูตรวิศวกรรมคอมพิวเตอร์</Checkbox>
+                    </Col>
+                    <Col md={{span:22, offset:2}}>
+                        <Checkbox value="Inter">หลักสูตรวิศวกรรมคอมพิวเตอร์ (นานาชาติ)</Checkbox>
+                    </Col>
+                    <Col md={{span:22, offset:2}}>
+                        <Checkbox value="HDS">หลักสูตรวิทยาศาสตร์ข้อมูลสุขภาพ</Checkbox>
+                    </Col>
+                    <Col md={{span:22, offset:2}}>
+                        <Checkbox value="RC">หลักสูตร Residential College</Checkbox>
+                    </Col>
+                    
+                    </Row>
+                </Checkbox.Group>
                         )}
                 </Form.Item>
-                {(!summary && futureData.one_camp && futureData.two_camp && futureData.three_camp) && 
+                {(!summary || futureData.one_camp || futureData.two_camp || futureData.three_camp) && 
                 <h1>ค่ายที่เคยเข้าร่วม</h1>
                 }
                 <Row>
