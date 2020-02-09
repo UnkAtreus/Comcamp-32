@@ -436,7 +436,7 @@ function StepForm4(props) {
                 <Row xs={24} md={{span: 24}}>
                     <Col>
                         <h1 style={{display: 'inline-block', 'margin-right': '1em'}}>ที่อยู่ตามทะเบียนบ้าน</h1>
-                        {!summary && <Button onClick={copyLocationRegis} >เหมือนที่อยู่ปัจจุบัน</Button>}
+                        {!summary && <Button onClick={copyLocationRegis} className="black" >เหมือนที่อยู่ปัจจุบัน</Button>}
                         <Row>
                             <Col md={{span:6}}>
                             <Form.Item label="บ้านเลขที่">
