@@ -10,7 +10,6 @@ import SummaryForm from '../summary.component'
 function StepForm9(props) {
 
     const { currentStep, handlePrev, handleNext, user, summary } = props
-    const [confirmed, setConfirmed] = useState(false);
 
     useEffect(() => {
         if (user.hasOwnProperty("tracking_number")) {
@@ -25,6 +24,7 @@ function StepForm9(props) {
         console.log("Click Next")
         console.log(flag)
         if (flag) {
+            window.location = '/summary'
             console.log("Next 5")
         } else {
         }
@@ -41,7 +41,7 @@ function StepForm9(props) {
     const { getFieldDecorator } = props.form;
 
     if(!user.hasOwnProperty("confirmed")) {
-        return <SummaryForm summary={true} user={user} step9={true} handlePrev={handlePrev} setConfirmed={setConfirmed}/>
+        return <SummaryForm summary={true} step9={true} handlePrev={handlePrev} />
     }
 
     return (
@@ -82,25 +82,6 @@ function StepForm9(props) {
                             <div className="Button-BorderImage"></div>
                             <button className="Button-Background" htmlType="submit">
                                 <span className="Markdown">Submit</span>
-                            </button>
-                        </div>
-                        <div className="Button-Column left">
-                            <div className="Button-Left-Image">
-                                <img
-                                    src={btn_left}
-                                    alt="Left button decoration"
-                                />
-                            </div>
-                            
-                            <div className="Button-Right-Image">
-                                <img
-                                    src={btn_right}
-                                    alt="Right button decoration"
-                                />
-                            </div>
-                            <div className="Button-BorderImage"></div>
-                            <button className="Button-Background" onClick={handlePrev}>
-                                <span className="Markdown">Back</span>
                             </button>
                         </div>
                     </div>

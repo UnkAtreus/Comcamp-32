@@ -25,7 +25,7 @@ const step1Validation = () => {
 const step2Validation = () => {
     return [
         body('gpax').not().isEmpty(),
-        body('grade').isIn(['4', '5', '6', 'ปวช']),
+        // body('grade').isIn(['4', '5', '6', 'ปวช']),
         body('school_name').not().isEmpty(),
         body('school_province').not().isEmpty(),
     ]

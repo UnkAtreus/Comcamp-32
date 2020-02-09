@@ -1041,7 +1041,7 @@
 
     .ant-checkbox-wrapper{
         color: white;
-        pointer-events: none;
+        /* pointer-events: none; */
     }
     
     .ant-select-selection--single{
