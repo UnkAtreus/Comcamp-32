@@ -4,6 +4,7 @@ import { Form, Input, Button, Row, Col, Select } from 'antd';
 import btn_left from '../../asset/Button_left.png';
 import btn_right from '../../asset/Button_right.png';
 import img3 from '../../image/DungeonMap.png'
+import { useAlert } from 'react-alert'
 
 const { Textarea } = Input
 
@@ -11,6 +12,7 @@ const { Textarea } = Input
 function StepForm8(props) {
 
     const { currentStep, handlePrev, handleNext, user, summary } = props
+    const alert = useAlert()
 
 
     useEffect(() => {
@@ -28,6 +30,7 @@ function StepForm8(props) {
         console.log(flag)
         if (flag) {
             console.log("Next 5")
+            alert.success("บันทึกข้อมูลเสร็จสิ้น")
             handleNext()
         } else {
         }

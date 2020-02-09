@@ -113,7 +113,8 @@ var userSchema = mongoose.Schema({
 	location: {type: String},
 	question: questionSchema,
 	tracking_number: {type: String},
-	news: [{type: String}]
+	news: [{type: String}],
+	confirmed: {type: Boolean}
 });
 
 //create the model for users and expose it to our app

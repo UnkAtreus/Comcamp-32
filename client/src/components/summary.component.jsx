@@ -64,7 +64,7 @@ function SummaryForm(props) {
               "location",
               "question"
             ].reduce((step, next) => step + user.hasOwnProperty(next), 0);
-            if(user.hasOwnProperty("tracking_number")) {
+            if(user.hasOwnProperty("confirmed")) {
                 setFinished(true)
             } 
         }
@@ -88,7 +88,7 @@ function SummaryForm(props) {
         checkStep(user)
     }, [loading])
 
-    if (loading) {
+    if (loading || !finished) {
         return <h1></h1>
     }
 

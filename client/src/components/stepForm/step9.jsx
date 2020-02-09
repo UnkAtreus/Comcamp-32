@@ -3,14 +3,13 @@ import register from '../../api/register'
 import { Form, Input, Button, Row, Col, Select } from 'antd';
 import btn_left from '../../asset/Button_left.png';
 import btn_right from '../../asset/Button_right.png';
-import { useAlert } from 'react-alert'
+
 
 
 
 function StepForm9(props) {
 
     const { currentStep, handlePrev, handleNext, user, summary } = props
-    const alert = useAlert()
 
     useEffect(() => {
         if (user.hasOwnProperty("tracking_number")) {

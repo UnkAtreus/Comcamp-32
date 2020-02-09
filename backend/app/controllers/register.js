@@ -341,3 +341,17 @@ exports.step9 = (req, res) => {
         res.sendStatus(200)
     })
 }
+
+exports.step10 = (req, res) => {
+    console.log(req.user._id)
+    const id = req.user._id
+    console.log(id)
+    User.findByIdAndUpdate(id, { confirmed: true }, (err, result) => {
+        console.log("update")
+        // console.log(result)
+        if (err) {
+            res.sendStatus(400)
+        }
+        res.sendStatus(200)
+    })
+}
