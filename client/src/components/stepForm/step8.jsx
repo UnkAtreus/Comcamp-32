@@ -3,7 +3,7 @@ import register from '../../api/register'
 import { Form, Input, Button, Row, Col, Select } from 'antd';
 import btn_left from '../../asset/Button_left.png';
 import btn_right from '../../asset/Button_right.png';
-import img3 from '../../image/DungeonMap.png'
+import img8 from '../../image/img8.png'
 import { useAlert } from 'react-alert'
 
 const { Textarea } = Input
@@ -198,8 +198,8 @@ function StepForm8(props) {
                 </p>
 
                     <Row>
-                        <Col md={{span:18, offset:2}} >
-                            <img src={img3} style={{width: '100%'}}/>
+                        <Col md={{span:16, offset: 4}} >
+                            <img src={img8} style={{'width': '100%'}}/>
                         </Col>
                     </Row>
 
@@ -208,6 +208,7 @@ function StepForm8(props) {
                         rules: [{ required: !summary, message: 'กรุณาตอบคำถาม' }],
                     })(
                         <Input.TextArea
+                        style={{'margin-top': '20px'}}
                         disabled={summary}
                         autoSize={{ minRows: 4 }}
                             placeholder="กรอกคำตอบที่นี่..."
