@@ -4,6 +4,8 @@ import { Form, Input, Button, Row, Col, Select } from 'antd';
 import { fetchUserAction } from '../actions/myaction'
 import btn_left from '../asset/Button_left.png';
 import btn_right from '../asset/Button_right.png';
+import { transitions, positions, Provider as AlertProvider } from 'react-alert'
+import AlertTemplate from 'react-alert-template-basic'
 
 import Navbar from './navbar.component'
 
@@ -94,7 +96,15 @@ function SummaryForm(props) {
         return <h1></h1>
     }
 
-    
+        // optional cofiguration
+        const options = {
+            // you can also just use 'bottom center'
+            position: positions.BOTTOM_CENTER,
+            timeout: 5000,
+            offset: '30px',
+            // you can also just use 'scale'
+            transition: transitions.SCALE
+        }
 
     return (
         <div>
@@ -102,6 +112,7 @@ function SummaryForm(props) {
                 <Row>
                     <Col span={18} offset={3}>
                         <h1>สรุปข้อมูล</h1>
+                            <AlertProvider template={AlertTemplate} {...options}>
                             <hr className="break-line"/>
                             <StepForm1  user={user} summary={true}/>
                             <hr className="break-line"/>
@@ -118,6 +129,7 @@ function SummaryForm(props) {
                             <StepForm7  user={user} summary={true}/>
                             <hr className="break-line"/>
                             <StepForm8  user={user} summary={true}/>
+                            </AlertProvider>
                             
 
                         <Form.Item>
