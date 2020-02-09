@@ -1,11 +1,11 @@
 module.exports = {
     apps: [{
       name: 'frontend',
-      script: 'serve -l 3000 -s ./build',
+      script: 'server.js',
       instances: 3,
       autorestart: true,
       watch: false,
-      max_memory_restart: '1G',
+      max_memory_restart: '512M',
       env: {
         NODE_ENV: 'development'
       },
