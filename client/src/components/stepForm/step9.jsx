@@ -31,7 +31,7 @@ function StepForm9(props) {
     }
 
     const backtosummary = async (payload) => {
-        const flag = await register.sendData(10, {confirmed: false})
+        const flag = await register.sendData(10, { confirmed: false })
         console.log("Click Next")
         console.log(flag)
         if (flag) {
@@ -52,7 +52,7 @@ function StepForm9(props) {
     };
     const { getFieldDecorator } = props.form;
 
-    if(!user.hasOwnProperty("confirmed")) {
+    if(!user.hasOwnProperty("confirmed") || user.confirmed === false) {
         return <SummaryForm summary={true} step9={true} handlePrev={handlePrev} />
     }
 
