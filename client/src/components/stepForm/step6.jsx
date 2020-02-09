@@ -11,10 +11,11 @@ function StepForm6(props) {
     const { currentStep, handlePrev, handleNext, user, summary } = props
 
     const [accident, setAccident] = useState(false)
-
+    
+    let abilityData = {}
     useEffect(() => {
         if (user.hasOwnProperty("ability")) {
-            let abilityData = user.ability
+            abilityData = user.ability
             props.form.setFieldsValue(abilityData);
         }
         // props.form.setFieldsValue({have_accident: false})
@@ -54,7 +55,7 @@ function StepForm6(props) {
             <h1>ความถนัด</h1>
             <Form onSubmit={handleSubmit} >
             <Form.Item label="เคยเขียนภาษาคอมพิวเตอร์มาก่อนหรือไม่">
-                    {getFieldDecorator('have_accident', {
+                    {getFieldDecorator('have_language', {
                         rules: [{ required: !summary, message: 'กรุณากรอกข้อมูล' }],
                     })(
                         <Select
@@ -68,19 +69,31 @@ function StepForm6(props) {
                     )}
                 </Form.Item>
                 {accident &&
-                    <Form.Item label="ภาษาที่เคยเขียน หรือ ผลงานที่เคยทำ">
-                        {getFieldDecorator('accident', {
+                    <Form.Item label="ภาษาที่เคยเขียน">
+                        {getFieldDecorator('language', {
                             rules: [{ required: !summary, message: 'กรุณากรอกข้อมูล' }],
                         })(
                             <Input.TextArea
                                 autoSize={{ minRows: 4 }}
                                 disabled={summary}
-                                placeholder="ภาษา C, Python, NSC, ศิลปหัตถกรรม"
+                                placeholder="ภาษา C, Python"
                             />,
                         )}
                     </Form.Item>
                 }
-
+            <h1>ผลงาน</h1>
+                    <Form.Item label="ผลงานที่เคยทำ">
+                        {getFieldDecorator('achieve', {
+                            rules: [{ message: 'กรุณากรอกข้อมูล' }],
+                        })(
+                            <Input.TextArea
+                                autoSize={{ minRows: 4 }}
+                                disabled={summary}
+                                placeholder="NSC, ศิลปหัตถกรรม, ประกวดร้องเพลง, สภานักเรียน"
+                            />,
+                        )}
+                    </Form.Item>
+            
 
                 {!summary &&
                     <Form.Item>

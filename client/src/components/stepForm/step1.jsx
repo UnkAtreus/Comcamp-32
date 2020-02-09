@@ -70,7 +70,7 @@ function StepForm1(props) {
         rules: [{required: !summary, message: 'กรุณาระบุคำนำหน้าชื่อ'}]
     })(
         <Select style={{ width: 90 }}
-            disabled={summary}
+        disabled={summary}
             defaultValue={"Mr."}
         >
           <Option value="Mr.">Mr.</Option>

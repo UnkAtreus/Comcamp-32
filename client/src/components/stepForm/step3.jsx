@@ -67,7 +67,7 @@ function StepForm3(props) {
 
     return (
         <div>
-            <h1>สิ่งที่แพ้</h1>
+            <h1>ข้อมูลสุขภาพ</h1>
             <Form onSubmit={handleSubmit} >
 
                 {(!summary || diseaseData.disease) && 
@@ -96,6 +96,16 @@ function StepForm3(props) {
                     {getFieldDecorator('allergy_medic')(
                         <Input
                             placeholder="ยาแอมพลิซิลลิน"
+                            disabled={summary}
+                        />,
+                    )}
+                </Form.Item>
+                }
+                {(!summary || diseaseData.medic_other) && 
+                <Form.Item label="อาการแพ้อื่นๆ">
+                    {getFieldDecorator('medic_other')(
+                        <Input
+                            placeholder="แพ้แป้งฝุ่น แพ้สารเคมี"
                             disabled={summary}
                         />,
                     )}
