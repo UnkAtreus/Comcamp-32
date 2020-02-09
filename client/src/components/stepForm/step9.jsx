@@ -111,7 +111,7 @@ function StepForm9(props) {
                                 />
                             </div>
                             <div className="Button-BorderImage"></div>
-                            <button className="Button-Background" onClick={bacntosummary}>
+                            <button className="Button-Background" onClick={backtosummary}>
                                 <span className="Markdown">Back</span>
                             </button>
                         </div>
