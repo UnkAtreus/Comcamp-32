@@ -975,7 +975,6 @@
         background-color: #000;
     }
 
-<<<<<<< HEAD
     .ant-select-selection--single{
         background-color: #000 !important;
     }
@@ -991,7 +990,6 @@
     .ant-checkbox-disabled span {
         color: #bfbfbf !important;
     }
-=======
     .ant-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
         color: rgba(255,255,255,0.3);
         opacity: 1; /* Firefox */
@@ -1000,4 +998,3 @@
         color: rgba(255,255,255,0.3);
         opacity: 1; /* Firefox */
     }
->>>>>>> 528c3ceca350a2fd03a81d665f2b3c5292848dbd
