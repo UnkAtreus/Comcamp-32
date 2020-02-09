@@ -22,7 +22,7 @@ import StepForm8 from './stepForm/step8'
 
 function SummaryForm(props) {
 
-    const { step9, handlePrev, handleNext } = props
+    const { step9, handlePrev, setConfirmed } = props
 
     console.log("prop user", props.user)
 
@@ -115,6 +115,7 @@ function SummaryForm(props) {
         console.log(flag)
         if (flag) {
             console.log("Next")
+            setConfirmed(true)
         }
     }
 
