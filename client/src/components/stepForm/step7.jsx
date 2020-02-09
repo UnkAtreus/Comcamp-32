@@ -71,7 +71,7 @@ function StepForm7(props) {
                     {getFieldDecorator('news', {
                         // rules: [{ required: !summary, message: 'กรุณาเลือกหลักสูตรที่ต้องการ' }]
                 })(
-                <Checkbox.Group style={{ width: '100%' }} onChange={onChange} disabled={summary}>
+                <Checkbox.Group onChange={onChange} disabled={summary}>
                 <Row>
                     <Col md={{span:8}}>
                         <Checkbox value="facebook">Facebook Page</Checkbox>

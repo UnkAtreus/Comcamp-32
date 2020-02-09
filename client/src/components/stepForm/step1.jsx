@@ -141,7 +141,7 @@ function StepForm1(props) {
                                     { 
                                         required: !summary, 
                                         message: 'กรุณากรอกชื่อภาษาอังกฤษ', 
-                                        pattern: new RegExp(/^[A-Za-z]+$/)
+                                        pattern: new RegExp(/^[A-Za-z-]+$/)
                                     }
                                 ],
                             })(
@@ -156,7 +156,7 @@ function StepForm1(props) {
                     <Col md={{span: 8, offset: 1}}>
                         <Form.Item label="Lastname">
                             {getFieldDecorator('lname_eng', {
-                                rules: [{ required: !summary, message: 'กรุณากรอกชื่อภาษาอังกฤษ', pattern: new RegExp(/^[A-Za-z]+$/)}],
+                                rules: [{ required: !summary, message: 'กรุณากรอกชื่อภาษาอังกฤษ', pattern: new RegExp(/^[A-Za-z-]+$/)}],
                             })(
                                 <Input
                                     placeholder="Jaidee"
