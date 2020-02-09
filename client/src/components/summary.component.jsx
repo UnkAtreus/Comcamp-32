@@ -38,10 +38,10 @@ function SummaryForm(props) {
     useEffect( () => {
          if(!loading) {
              if(!finished) {
-                 props.history.push('/')
+                window.location = 'https://comcamp.io'
              }
          }
-     }, [loading, finished])
+     }, [currentStep, finished])
     
 
     async function checkStep(user) {
@@ -66,9 +66,7 @@ function SummaryForm(props) {
             ].reduce((step, next) => step + user.hasOwnProperty(next), 0);
             if(user.hasOwnProperty("tracking_number")) {
                 setFinished(true)
-            } else {
-		setFinished(false)
-	    }
+            } 
         }
         // newStep = 3
         setCurrentStep(newStep)
@@ -77,7 +75,7 @@ function SummaryForm(props) {
 
     useEffect(() => {
         if (props.user === false) {
-            props.history.push('/')
+            window.location = 'https://comcamp.io'
         }
         if (user != null && props.user) {
             setUser(props.user)
