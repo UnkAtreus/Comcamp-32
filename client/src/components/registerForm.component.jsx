@@ -72,7 +72,7 @@ function RegisterForm(props) {
    
     useEffect( ()=> {
         if(props.user === false) {
-            props.history.push('/')
+            window.location = 'https://comcamp.io'
         }
         if(user != null && props.user) {
             setUser(props.user)
