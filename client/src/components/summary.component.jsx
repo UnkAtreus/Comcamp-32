@@ -88,7 +88,9 @@ function SummaryForm(props) {
         checkStep(user)
     }, [loading])
 
-    if (loading || !finished) {
+
+    // if (loading || !finished) {
+    if (loading) {
         return <h1></h1>
     }
 
