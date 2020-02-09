@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { Form, Input, Button, Row, Col, Select } from 'antd';
 import { fetchUserAction } from '../actions/myaction'
-import { transitions, positions, Provider as AlertProvider } from 'react-alert'
 import btn_left from '../asset/Button_left.png';
 import btn_right from '../asset/Button_right.png';
 
@@ -37,13 +36,13 @@ function SummaryForm(props) {
     }, [currentStep])
 
     
-    useEffect( () => {
-         if(!loading) {
-             if(!finished) {
-                 props.history.push('/')
-             }
-         }
-     }, [loading, finished])
+    // useEffect( () => {
+    //      if(!loading) {
+    //          if(!finished) {
+    //              props.history.push('/')
+    //          }
+    //      }
+    //  }, [loading, finished])
      
 
     async function checkStep(user) {
@@ -77,15 +76,15 @@ function SummaryForm(props) {
         setMaxStep(newStep)
     }
 
-    // useEffect(() => {
-    //     if (props.user === false) {
-    //         props.history.push('/')
-    //     }
-    //     if (user != null && props.user) {
-    //         setUser(props.user)
-    //         setLoading(false)
-    //     }
-    // }, [props, user])
+    useEffect(() => {
+        if (props.user === false) {
+            props.history.push('/')
+        }
+        if (user != null && props.user) {
+            setUser(props.user)
+            setLoading(false)
+        }
+    }, [props, user])
 
 
     useEffect(() => {
