@@ -22,6 +22,12 @@ services:
     ports:
       - "3000:3000"
     build: ./client
+    deploy:
+      resources:
+        limits:
+          cpus: "3.0"
+        reservations:
+          cpus: "0.50"
   mongocc32:
     image: mongo:bionic
     container_name: mongo-cc-2
