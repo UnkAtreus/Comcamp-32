@@ -7,7 +7,6 @@ import btn_right from '../../asset/Button_right.png';
 function StepForm0(props) {
 
     const { currentStep, handleNext } = props
-    const [ agree, setAgree ] = useState(false)  
 
     const nextStep = async () => {
         const flag = await register.sendData(currentStep, { step0: true })
