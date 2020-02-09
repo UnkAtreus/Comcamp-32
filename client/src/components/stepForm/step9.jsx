@@ -25,7 +25,6 @@ function StepForm9(props) {
         console.log("Click Next")
         console.log(flag)
         if (flag) {
-            alert.success('บันทึกข้อมูลเสร็จสิ้น')
             console.log("Next 5")
         } else {
         }
@@ -41,16 +40,14 @@ function StepForm9(props) {
     };
     const { getFieldDecorator } = props.form;
 
-    useEffect( () => {
-        if(!user.hasOwnProperty("confirmed")) {
-            return <SummaryForm summary={true} user={user} step9={true} handlePrev={handlePrev} setConfirmed={setConfirmed}/>
-        }
-    }, [confirmed])
+    if(!user.hasOwnProperty("confirmed")) {
+        return <SummaryForm summary={true} user={user} step9={true} handlePrev={handlePrev} setConfirmed={setConfirmed}/>
+    }
 
     return (
         
         <div>
-            <h1>เสร็จสิ้น</h1>
+            <h1>จัดส่งเอกสาร</h1>
             โปรดส่งเอกสารมาตามที่อยู่นี้ โครงการฝึกอบรมเชิงปฏิบัติการคอมพิวเตอร์เบื้องตน ครั้งที่ 32 ภาควิชาวิศวกรรมคอมพิวเตอร์คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี 126 ถนนประชาอุทิศ 
             แขวงบางมด เขตทุ่งครุ กรุงเทพมหานคร 10140
             <Form onSubmit={handleSubmit} >
@@ -65,8 +62,7 @@ function StepForm9(props) {
                     )}
                 </Form.Item>
 
-
-
+                {!summary && 
                 <Form.Item>
                     <div class="Button-Row">
 
@@ -109,7 +105,7 @@ function StepForm9(props) {
                         </div>
                     </div>
                 </Form.Item>
-
+                }
             </Form>
         </div>
     )

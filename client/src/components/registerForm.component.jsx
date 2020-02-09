@@ -58,7 +58,7 @@ function RegisterForm(props) {
                 "location",
                 "question"
               ].reduce((step, next) => step + Number(user.hasOwnProperty(next)), 0);
-            if(user.hasOwnProperty("confirmed")) {
+            if(user.hasOwnProperty("tracking_number")) {
                 setFinished(true)
             }
         }
