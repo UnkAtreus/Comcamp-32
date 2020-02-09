@@ -36,7 +36,7 @@ function SummaryForm(props) {
         props.fetch_user()
     }, [currentStep])
 
-    
+    /*    
     useEffect( () => {
          if(!loading) {
              if(!finished) {
@@ -44,7 +44,7 @@ function SummaryForm(props) {
              }
          }
      }, [loading, finished])
-     
+     */
 
     async function checkStep(user) {
         console.log("user", user)
@@ -77,15 +77,15 @@ function SummaryForm(props) {
         setMaxStep(newStep)
     }
 
-    // useEffect(() => {
-    //     if (props.user === false) {
-    //         props.history.push('/')
-    //     }
-    //     if (user != null && props.user) {
-    //         setUser(props.user)
-    //         setLoading(false)
-    //     }
-    // }, [props, user])
+    useEffect(() => {
+        if (props.user === false) {
+            props.history.push('/')
+        }
+        if (user != null && props.user) {
+            setUser(props.user)
+            setLoading(false)
+        }
+    }, [props, user])
 
 
     useEffect(() => {
