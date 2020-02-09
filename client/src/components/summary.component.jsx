@@ -19,6 +19,7 @@ import StepForm5 from './stepForm/step5'
 import StepForm6 from './stepForm/step6'
 import StepForm7 from './stepForm/step7'
 import StepForm8 from './stepForm/step8'
+import StepForm9 from './stepForm/step9'
 
 function SummaryForm(props) {
 
@@ -40,13 +41,15 @@ function SummaryForm(props) {
         props.fetch_user()
     }, [currentStep])
     
-    // useEffect( () => {
-    //      if(!loading) {
-    //          if(!finished) {
-    //             window.location = 'https://comcamp.io'
-    //          }
-    //      }
-    //  }, [currentStep, finished])
+    useEffect( () => {
+        if(!step9) {
+            if(!loading) {
+                if(!finished) {
+                   window.location = 'https://comcamp.io/register'
+                }
+            }
+        }
+     }, [currentStep, finished])
     
 
     async function checkStep(user) {
@@ -119,35 +122,29 @@ function SummaryForm(props) {
         }
     }
 
-    
-
-    return (
-        <div>
-            {!step9 && <Navbar user={user} /> }
-                <Row>
-                    <Col span={24}>
-                        <h1>สรุปข้อมูล</h1>
-                            <hr className="break-line"/>
-                            <StepForm1  user={user} summary={true}/>
-                            <hr className="break-line"/>
-                            <StepForm2  user={user} summary={true}/>
-                            <hr className="break-line"/>
-                            <StepForm3  user={user} summary={true}/>
-                            <hr className="break-line"/>
-                            <StepForm4  user={user} summary={true}/>
-                            <hr className="break-line"/>
-                            <StepForm5  user={user} summary={true}/>
-                            <hr className="break-line"/>
-                            <StepForm6  user={user} summary={true}/>
-                            <hr className="break-line"/>
-                            <AlertProvider template={AlertTemplate} {...options}>
-                            <StepForm7  user={user} summary={true}/>
-                            <hr className="break-line"/>
-                            <StepForm8  user={user} summary={true}/>
-                            </AlertProvider>
-                            
-
-                        <Form.Item>
+    if(step9) {
+        return (
+            <Col span={24}>
+                <h1>สรุปข้อมูล</h1>
+                <hr className="break-line"/>
+                <StepForm1  user={user} summary={true}/>
+                <hr className="break-line"/>
+                <StepForm2  user={user} summary={true}/>
+                <hr className="break-line"/>
+                <StepForm3  user={user} summary={true}/>
+                <hr className="break-line"/>
+                <StepForm4  user={user} summary={true}/>
+                <hr className="break-line"/>
+                <StepForm5  user={user} summary={true}/>
+                <hr className="break-line"/>
+                <StepForm6  user={user} summary={true}/>
+                <hr className="break-line"/>
+                <AlertProvider template={AlertTemplate} {...options}>
+                <StepForm7  user={user} summary={true}/>
+                <hr className="break-line"/>
+                <StepForm8  user={user} summary={true}/>
+                </AlertProvider>
+                <Form.Item>
                         <div class="Button-Row">
                             <div className="Button-Column right">
                                 <div className="Button-Left-Image">
@@ -188,6 +185,39 @@ function SummaryForm(props) {
                             </div>
                         </div>
                     </Form.Item>
+            </Col>
+            
+        )
+    }
+
+    
+
+    return (
+        <div>
+            {!step9 && <Navbar user={user} /> }
+                <Row>
+                    <Col span={20} offset={2}>
+                        <h1>สรุปข้อมูล</h1>
+                            <hr className="break-line"/>
+                            <StepForm9  user={user} summary={true}/>
+                            <hr className="break-line"/>
+                            <StepForm1  user={user} summary={true}/>
+                            <hr className="break-line"/>
+                            <StepForm2  user={user} summary={true}/>
+                            <hr className="break-line"/>
+                            <StepForm3  user={user} summary={true}/>
+                            <hr className="break-line"/>
+                            <StepForm4  user={user} summary={true}/>
+                            <hr className="break-line"/>
+                            <StepForm5  user={user} summary={true}/>
+                            <hr className="break-line"/>
+                            <StepForm6  user={user} summary={true}/>
+                            <hr className="break-line"/>
+                            <AlertProvider template={AlertTemplate} {...options}>
+                            <StepForm7  user={user} summary={true}/>
+                            <hr className="break-line"/>
+                            <StepForm8  user={user} summary={true}/>
+                            </AlertProvider>
                     </Col>
                 </Row>
         </div>
