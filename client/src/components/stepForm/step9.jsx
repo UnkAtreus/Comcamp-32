@@ -3,7 +3,7 @@ import register from '../../api/register'
 import { Form, Input, Button, Row, Col, Select } from 'antd';
 import btn_left from '../../asset/Button_left.png';
 import btn_right from '../../asset/Button_right.png';
-
+import SummaryForm from '../summary.component'
 
 
 
@@ -40,7 +40,9 @@ function StepForm9(props) {
     };
     const { getFieldDecorator } = props.form;
 
-
+    if(!user.hasOwnProperty("confirmed")) {
+        return <SummaryForm summary={true} user={user} step9={true} handlePrev={handlePrev}/>
+    }
 
     return (
         

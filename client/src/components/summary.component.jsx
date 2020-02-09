@@ -4,6 +4,9 @@ import { Form, Input, Button, Row, Col, Select } from 'antd';
 import { fetchUserAction } from '../actions/myaction'
 import btn_left from '../asset/Button_left.png';
 import btn_right from '../asset/Button_right.png';
+import { transitions, positions, Provider as AlertProvider } from 'react-alert'
+import AlertTemplate from 'react-alert-template-basic'
+import register from '../api/register'
 
 import Navbar from './navbar.component'
 
@@ -18,6 +21,8 @@ import StepForm7 from './stepForm/step7'
 import StepForm8 from './stepForm/step8'
 
 function SummaryForm(props) {
+
+    const { step9, handlePrev, handleNext } = props
 
     console.log("prop user", props.user)
 
@@ -94,13 +99,35 @@ function SummaryForm(props) {
         return <h1></h1>
     }
 
+       // optional cofiguration
+       const options = {
+        // you can also just use 'bottom center'
+        position: positions.BOTTOM_CENTER,
+        timeout: 5000,
+        offset: '30px',
+        // you can also just use 'scale'
+        transition: transitions.SCALE
+    }
+
+    const handleConfirmed = () => {
+        const nextStep = async () => {
+            const flag = await register.sendData(10, { confirmed: true })
+            console.log("Click Next")
+            console.log(flag)
+            if (flag) {
+                console.log("Next")
+            } else {
+            }
+        }
+    }
+
     
 
     return (
         <div>
-            <Navbar user={user} />
+            {!step9 && <Navbar user={user} /> }
                 <Row>
-                    <Col span={18} offset={3}>
+                    <Col span={24}>
                         <h1>สรุปข้อมูล</h1>
                             <hr className="break-line"/>
                             <StepForm1  user={user} summary={true}/>
@@ -115,9 +142,11 @@ function SummaryForm(props) {
                             <hr className="break-line"/>
                             <StepForm6  user={user} summary={true}/>
                             <hr className="break-line"/>
+                            <AlertProvider template={AlertTemplate} {...options}>
                             <StepForm7  user={user} summary={true}/>
                             <hr className="break-line"/>
                             <StepForm8  user={user} summary={true}/>
+                            </AlertProvider>
                             
 
                         <Form.Item>
@@ -136,7 +165,7 @@ function SummaryForm(props) {
                                     />
                                 </div>
                                 <div className="Button-BorderImage"></div>
-                                <button className="Button-Background" htmlType="submit">
+                                <button className="Button-Background" htmlType="submit" onClick={handleConfirmed}>
                                     <span className="Markdown">Next</span>
                                 </button>
                             </div>
@@ -155,7 +184,7 @@ function SummaryForm(props) {
                                     />
                                 </div>
                                 <div className="Button-BorderImage"></div>
-                                <button className="Button-Background">
+                                <button className="Button-Background" onClick={handlePrev}>
                                     <span className="Markdown">Back</span>
                                 </button>
                             </div>
