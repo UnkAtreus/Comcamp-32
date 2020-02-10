@@ -92,10 +92,10 @@ function StepForm6(props) {
                     </Form.Item>
                 }
 
-                {(!summary || abilityData.achieve)&&
+                {/* {(!summary || abilityData.achieve)&& */}
                 <h1>ผลงาน</h1>
-                }
-                {(!summary || abilityData.achieve)&&    
+                // }
+                {/* {(!summary || abilityData.achieve)&&     */}
                     <Form.Item label="ผลงานที่เคยทำ">
                         {getFieldDecorator('achieve', {
                             rules: [{ message: 'กรุณากรอกข้อมูล' }],
@@ -108,7 +108,7 @@ function StepForm6(props) {
                         )}
                     </Form.Item>
                 
-                }
+                {/* } */}
                 
 
                 {!summary &&
