@@ -23,6 +23,10 @@ function StepForm9(props) {
     }, []);
 
     const nextStep = async (payload) => {
+        if(!accident) {
+            payload = {tracking_number: "มาส่งที่ภาควิชาด้วยตนเอง"}
+        }
+        console.log("payload", payload)
         const flag = await register.sendData(currentStep, payload)
         console.log("Click Next")
         console.log(flag)
@@ -39,7 +43,7 @@ function StepForm9(props) {
         console.log(flag)
         if (flag) {
             console.log("Next 5")
-            window.location = 'register'
+            window.location = '/register'
         } else {
         }
     }
@@ -77,6 +81,7 @@ function StepForm9(props) {
             ดาวโหลดเอกสาร <a href="https://drive.google.com/file/d/1dJeHY3UGLLHArmGY59mblyovY2Vn9Z2Y/view">คลิ๊กที่นี่</a>
             
             <Form onSubmit={handleSubmit} >
+            {!summary && 
             <Form.Item label="วิธีการส่งเอกสาร">
                     {getFieldDecorator('Submit_file', {
                         rules: [{ required: !summary, message: 'กรุณากรอกข้อมูล' }],
@@ -86,11 +91,12 @@ function StepForm9(props) {
                             placeholder="โปรดระบุ"
                             onChange={handleAccident}
                         >
-                            <Option value="false">มาส่งที่ห้องภาคด้วยตนเอง</Option>
+                            <Option value="false">มาส่งที่ภาควิชาด้วยตนเอง</Option>
                             <Option value="true">ส่งทางไปรษณีย์</Option>
                         </Select>
                     )}
                 </Form.Item>
+                }
                 {accident &&
                 <Form.Item label="เลข Tracking Number">
                     {getFieldDecorator('tracking_number', {
@@ -103,6 +109,18 @@ function StepForm9(props) {
                     )}
                 </Form.Item>
                 }
+
+                {(summary) && 
+                <Form.Item label="เลข Tracking Number">
+                    {getFieldDecorator('tracking_number', {
+                        rules: [{ required: !summary, message: 'กรุณาระบุ tracking number' }],
+                    })(
+                        <Input
+                            disabled={summary}
+                            placeholder="EF123456789TH"
+                        />,
+                    )}
+                </Form.Item>}
                 
                 {!summary && 
                 <Form.Item>
