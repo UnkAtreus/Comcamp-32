@@ -294,6 +294,7 @@ function StepForm4(props) {
     }
 
     const selectBefore = getFieldDecorator('prefix_th', {
+        initialValue:"นาย",
         rules: [{required: !summary, message: 'กรุณาระบุคำนำหน้าชื่อ'}]
     })(
         <Select style={{ width: 90 }}
@@ -306,6 +307,7 @@ function StepForm4(props) {
     );
 
     const selectBefore2 = getFieldDecorator('prefix_th2', {
+        initialValue:"นาย",
     })(
         <Select style={{ width: 90 }}
             disabled={summary}

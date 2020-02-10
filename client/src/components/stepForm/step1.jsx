@@ -54,6 +54,7 @@ function StepForm1(props) {
     const { getFieldDecorator } = props.form;
 
     const prefix_th = getFieldDecorator('prefix_th', {
+        initialValue:"นาย",
         rules: [{required: !summary, message: 'กรุณาระบุคำนำหน้าชื่อ'}]
     })(
         <Select style={{ 'width':'90px'}}
@@ -67,11 +68,11 @@ function StepForm1(props) {
     );
 
     const prefix_eng = getFieldDecorator('prefix_eng', {
+        initialValue:"Mr.",
         rules: [{required: !summary, message: 'กรุณาระบุคำนำหน้าชื่อ'}]
     })(
         <Select style={{ width: 90 }}
         disabled={summary}
-            defaultValue={"Mr."}
         >
           <Option value="Mr.">Mr.</Option>
           <Option value="Miss">Miss</Option>
