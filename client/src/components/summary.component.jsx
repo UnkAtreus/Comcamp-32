@@ -188,10 +188,7 @@ function SummaryForm(props) {
             </Col>
             
         )
-    }
-
-    
-
+    } else {
     return (
         <div>
             {!step9 && <Navbar user={user} /> }
@@ -223,6 +220,7 @@ function SummaryForm(props) {
         </div>
     )
 } 
+}
 
 const mapStateToProps = (state) => {
     return {
