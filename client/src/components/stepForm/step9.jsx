@@ -110,7 +110,7 @@ function StepForm9(props) {
                 </Form.Item>
                 }
 
-                {(summary) && 
+                {(!summary) && 
                 <Form.Item label="เลข Tracking Number">
                     {getFieldDecorator('tracking_number', {
                         rules: [{ required: !summary, message: 'กรุณาระบุ tracking number' }],
@@ -120,7 +120,9 @@ function StepForm9(props) {
                             placeholder="EF123456789TH"
                         />,
                     )}
-                </Form.Item>}
+                </Form.Item>
+                }
+                <p>*ปล.หลังจากกด Submit แล้ว จะไม่สามารถแก้ไขข้อมูลได้อีก</p>
                 
                 {!summary && 
                 <Form.Item>
