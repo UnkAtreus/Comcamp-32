@@ -29,7 +29,7 @@ function StepForm3(props) {
                     await setAccident(false)
                     await props.form.setFieldsValue({ have_accident: "false" })
                 }
-                if (diseaseData.hasOwnProperty("accident")) {
+                if (diseaseData.hasOwnProperty("operation")) {
                     await setoperation(true)
                     await props.form.setFieldsValue({ have_operation: "true" })
                 } else {
