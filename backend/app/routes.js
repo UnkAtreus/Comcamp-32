@@ -15,7 +15,7 @@ module.exports = function (app, passport) {
 
     app.get('/auth/facebook', passport.authenticate('facebook'))
     app.get('/auth/facebook/callback', passport.authenticate('facebook',
-        { failureRedirect: '/error' }), (req, res) => res.redirect(`http://comcamp.io/register`));
+        { failureRedirect: 'https://comcamp.io' }), (req, res) => res.redirect(`http://comcamp.io/register`));
 
 
     app.get('/api/logout', (req, res) => {
