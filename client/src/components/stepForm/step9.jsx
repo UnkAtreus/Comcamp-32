@@ -5,11 +5,14 @@ import btn_left from '../../asset/Button_left.png';
 import btn_right from '../../asset/Button_right.png';
 import SummaryForm from '../summary.component'
 
+const { Option } = Select
 
 
 function StepForm9(props) {
 
     const { currentStep, handlePrev, handleNext, user, summary } = props
+
+    const [accident, setAccident] = useState(false)
 
     useEffect(() => {
         if (user.hasOwnProperty("tracking_number")) {
@@ -52,6 +55,15 @@ function StepForm9(props) {
     };
     const { getFieldDecorator } = props.form;
 
+    const handleAccident = value => {
+        if (value == "true") {
+            setAccident(true)
+        } else if (value == "false") {
+            setAccident(false)
+        }
+        console.log(accident)
+    }
+
     if(!user.hasOwnProperty("confirmed") || user.confirmed === false) {
         return <SummaryForm summary={true} step9={true} handlePrev={handlePrev} />
     }
@@ -63,18 +75,35 @@ function StepForm9(props) {
             <p>โปรดส่งเอกสารมาตามที่อยู่นี้ โครงการฝึกอบรมเชิงปฏิบัติการคอมพิวเตอร์เบื้องตน ครั้งที่ 32 ภาควิชาวิศวกรรมคอมพิวเตอร์คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี 126 ถนนประชาอุทิศ 
             แขวงบางมด เขตทุ่งครุ กรุงเทพมหานคร 10140</p>
             ดาวโหลดเอกสาร <a href="https://drive.google.com/file/d/1dJeHY3UGLLHArmGY59mblyovY2Vn9Z2Y/view">คลิ๊กที่นี่</a>
+            
             <Form onSubmit={handleSubmit} >
+            <Form.Item label="วิธีการส่งเอกสาร">
+                    {getFieldDecorator('Submit_file', {
+                        rules: [{ required: !summary, message: 'กรุณากรอกข้อมูล' }],
+                    })(
+                        <Select
+                            disabled={summary}
+                            placeholder="โปรดระบุ"
+                            onChange={handleAccident}
+                        >
+                            <Option value="false">มาส่งที่ห้องภาคด้วยตนเอง</Option>
+                            <Option value="true">ส่งทางไปรษณีย์</Option>
+                        </Select>
+                    )}
+                </Form.Item>
+                {accident &&
                 <Form.Item label="เลข Tracking Number">
                     {getFieldDecorator('tracking_number', {
                         rules: [{ required: !summary, message: 'กรุณาระบุ tracking number' }],
                     })(
                         <Input
                             disabled={summary}
-                            placeholder="TH1234567890"
+                            placeholder="EF123456789TH"
                         />,
                     )}
                 </Form.Item>
-
+                }
+                
                 {!summary && 
                 <Form.Item>
                     <div class="Button-Row">
