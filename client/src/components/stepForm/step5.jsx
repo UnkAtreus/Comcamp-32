@@ -249,7 +249,7 @@ const options = [
                 }
                 {(!summary || futureData.one_camp_university)&&
                     <Col md={{span:11,offset:2}} xs={24}>
-                        <Form.Item label="มหาวิทยาลัย">
+                        <Form.Item label="มหาวิทยาลัย/หน่วยงานที่จัด">
                             {getFieldDecorator('one_camp_university', {
                                 // rules: [{ required: !summary, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
                             })(
@@ -279,7 +279,7 @@ const options = [
                 }
                 {(!summary || futureData.two_camp_university)&&
                     <Col md={{span:11,offset:2}} xs={24}>
-                        <Form.Item label="มหาวิทยาลัย">
+                        <Form.Item label="มหาวิทยาลัย/หน่วยงานที่จัด">
                             {getFieldDecorator('two_camp_university', {
                                 // rules: [{ required: !summary, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
                             })(
@@ -309,7 +309,7 @@ const options = [
                 }
                 {(!summary || futureData.three_camp_university)&&
                     <Col md={{span:11,offset:2}} xs={24}>
-                        <Form.Item label="มหาวิทยาลัย">
+                        <Form.Item label="มหาวิทยาลัย/หน่วยงานที่จัด">
                             {getFieldDecorator('three_camp_university', {
                                 // rules: [{ required: !summary, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
                             })(

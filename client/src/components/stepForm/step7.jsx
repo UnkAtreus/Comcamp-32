@@ -49,7 +49,7 @@ function StepForm7(props) {
     const { getFieldDecorator } = props.form;
     return (
         <div>
-            <h1>สถานที่ที่ต้องการให้พี่ค่ายไปรับ</h1>
+            <h1>การเดินทางมามหาวิทยาลัย</h1>
             <Form onSubmit={handleSubmit} >
                 <Form.Item label="สถานที่ที่ต้องการให้พี่ค่ายไปรับ">
                     {getFieldDecorator('location', {
