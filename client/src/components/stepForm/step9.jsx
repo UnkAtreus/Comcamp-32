@@ -15,10 +15,14 @@ function StepForm9(props) {
     const [accident, setAccident] = useState(false)
 
     useEffect(() => {
-        if (user.hasOwnProperty("tracking_number")) {
-            let tracking_numbernData = user.tracking_number
-            props.form.setFieldsValue({ tracking_number: tracking_numbernData });
+        const fetchData = async () => {
+            if (user.hasOwnProperty("tracking_number")) {
+                let tracking_numbernData = user.tracking_number
+                await setAccident(true)
+                props.form.setFieldsValue({ tracking_number: tracking_numbernData });
+            }
         }
+        fetchData()
         // props.form.setFieldsValue({have_accident: false})
     }, []);
 
@@ -96,7 +100,7 @@ function StepForm9(props) {
                         </Select>
                     )}
                 </Form.Item>
-                }
+            }
                 {accident &&
                 <Form.Item label="เลข Tracking Number">
                     {getFieldDecorator('tracking_number', {
@@ -122,7 +126,9 @@ function StepForm9(props) {
                     )}
                 </Form.Item>
                 } */}
+                {(!summary )&&  
                 <p>*หมายเหตุ.หลังจากกด Submit แล้ว จะไม่สามารถแก้ไขข้อมูลได้อีก</p>
+                }
                 
                 {!summary && 
                 <Form.Item>
