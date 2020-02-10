@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import register from '../../api/register'
-import { Form, Input, Button, Row, Col, Select, DatePicker, InputNumber } from 'antd';
+import { Form, Input, AutoComplete, Row, Col, Select, InputNumber } from 'antd';
 import btn_left from '../../asset/Button_left.png';
 import btn_right from '../../asset/Button_right.png';
 
@@ -90,6 +90,8 @@ function StepForm2(props) {
 
     const { currentStep, handlePrev, handleNext, user, summary } = props
 
+    const [dataSource, setDataSource] = useState([])
+
     useEffect(() => {
         if (user.hasOwnProperty("school")) {
             let schoolData = user.school
@@ -120,7 +122,95 @@ function StepForm2(props) {
         });
     };
 
+    const onSearch = searchText => {
+        setDataSource(!searchText ? [] : province_th)
+      };
+
     const { getFieldDecorator } = props.form;
+
+    const config = {
+        rules: [{
+            required: !summary, 
+            message: 'กรุณากรอกจังหวัด', 
+            enum: ['กรุงเทพฯ',
+            'กระบี่',
+            'กาญจนบุรี',
+            'กาฬสินธุ์',
+            'กำแพงเพชร',
+            'ขอนแก่น',
+            'จันทบุรี',
+            'ฉะเชิงเทรา',
+            'ชลบุรี',
+            'ชัยนาท',
+            'ชัยภูมิ',
+            'ชุมพร',
+            'เชียงใหม่',
+            'เชียงราย',
+            'ตรัง',
+            'ตราด',
+            'ตาก',
+            'นครนายก',
+            'นครปฐม',
+            'นครพนม',
+            'นครราชสีมา',
+            'นครศรีธรรมราช',
+            'นครสวรรค์',
+            'นนทบุรี',
+            'นราธิวาส',
+            'น่าน',
+            'บึงกาฬ',
+            'บุรีรัมย์',
+            'ปทุมธานี',
+            'ประจวบคีรีขันธ์',
+            'ปราจีนบุรี',
+            'ปัตตานี',
+            'พระนครศรีอยุธยา',
+            'พะเยา',
+            'พังงา',
+            'พัทลุง',
+            'พิจิตร',
+            'พิษณุโลก',
+            'เพชรบุรี',
+            'เพชรบูรณ์',
+            'แพร่',
+            'ภูเก็ต',
+            'มหาสารคาม',
+            'มุกดาหาร',
+            'แม่ฮ่องสอน',
+            'ยโสธร',
+            'ยะลา',
+            'ร้อยเอ็ด',
+            'ระนอง',
+            'ระยอง',
+            'ราชบุรี',
+            'ลพบุรี',
+            'ลำปาง',
+            'ลำพูน',
+            'เลย',
+            'ศรีสะเกษ',
+            'สกลนคร',
+            'สงขลา',
+            'สตูล',
+            'สมุทรปราการ',
+            'สมุทรสงคราม',
+            'สมุทรสาคร',
+            'สระแก้ว',
+            'สระบุรี',
+            'สิงห์บุรี',
+            'สุโขทัย',
+            'สุพรรณบุรี',
+            'สุราษฎร์ธานี',
+            'สุรินทร์',
+            'หนองคาย',
+            'หนองบัวลำภู',
+            'อ่างทอง',
+            'อำนาจเจริญ',
+            'อุดรธานี',
+            'อุตรดิตถ์',
+            'อุทัยธานี',
+            'อุบลราชธานี']
+        }]
+    }
 
     return (
         <div>
@@ -143,20 +233,19 @@ function StepForm2(props) {
                     
                     <Row>
                         <Col xs={24} md={{span:10}}>
-                        <Form.Item label="จังหวัด">
-                            {getFieldDecorator('school_province', {
-                                rules: [{ required: !summary, message: 'กรุณากรอกจังหวัด' }],
-                            })(
-                                <Select disabled={summary} placeholder='ระบุจังหวัด'>
-                                    {
-                                        province_th.map((province) => (
-                                            <Option key={province} value={province}>{province}</Option>
-                                        )
-                                        )
-                                    }
-                                </Select>,
-                            )}
-                        </Form.Item>
+                            <Form.Item label="จังหวัด">
+                                        {getFieldDecorator('school_province', config)(
+                                        <AutoComplete
+                                            disabled={summary}
+                                            dataSource={dataSource}
+                                            onSearch={onSearch}
+                                            placeholder="ระบุจังหวัด"
+                                            filterOption={(inputValue, option) =>
+                                            option.props.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
+                                        }
+                                        />
+                                    )}
+                            </Form.Item>
                         </Col>
                     </Row>
 
