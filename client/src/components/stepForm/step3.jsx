@@ -12,7 +12,9 @@ function StepForm3(props) {
     const { currentStep, handlePrev, handleNext, user, summary } = props
 
     const [accident, setAccident] = useState(false)
-
+    
+    const [operation, setoperation] = useState(false)
+    
     let diseaseData = {}
 
     useEffect(() => {
@@ -63,6 +65,14 @@ function StepForm3(props) {
             setAccident(false)
         }
         console.log(accident)
+    }
+    const handleoperation = value => {
+        if (value == "true") {
+            setoperation(true)
+        } else if (value == "false") {
+            setoperation(false)
+        }
+        console.log(operation)
     }
 
     return (
@@ -144,6 +154,33 @@ function StepForm3(props) {
                                 autoSize={{ minRows: 4 }}
                                 disabled={summary}
                                 placeholder="อุบัติเหตุทางรถยนต์"
+                            />,
+                        )}
+                    </Form.Item>
+                }
+                <Form.Item label="การผ่าตัดในรอบ 6 เดือน">
+                    {getFieldDecorator('have_operation', {
+                        rules: [{ required: !summary, message: 'กรุณากรอกข้อมูล' }],
+                    })(
+                        <Select
+                            disabled={summary}
+                            placeholder="โปรดระบุ"
+                            onChange={handleoperation}
+                        >
+                            <Option value="false">ไม่มี</Option>
+                            <Option value="true">มี</Option>
+                        </Select>
+                    )}
+                </Form.Item>
+                {operation &&
+                    <Form.Item label="เนื่องจาก">
+                        {getFieldDecorator('operation', {
+                            rules: [{ required: !summary, message: 'กรุณากรอกข้อมูล' }],
+                        })(
+                            <Input.TextArea
+                                autoSize={{ minRows: 4 }}
+                                disabled={summary}
+                                placeholder="ผ่าตัดไส้ติ่ง"
                             />,
                         )}
                     </Form.Item>
