@@ -31,7 +31,8 @@ var diseaseSchema = mongoose.Schema({
 	allergy_food:{type:String},
 	allergy_medic:{type:String},
 	medic_need:{type:String},
-	accident:{type:String}
+	accident:{type:String},
+	operation:{type: String},
 });
 
 var parent_info = mongoose.Schema({
