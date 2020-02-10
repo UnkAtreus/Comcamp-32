@@ -900,7 +900,7 @@
             display: none;
         }
         .Nav-Links.nav-right.Nav-Back:after {
-            content: 'Back';
+            content: 'Home';
             position: absolute;
         }
         .Logo {
