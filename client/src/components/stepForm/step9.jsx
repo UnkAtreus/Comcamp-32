@@ -78,7 +78,7 @@ function StepForm9(props) {
             <h1>จัดส่งเอกสาร</h1>
             <p>โปรดส่งเอกสารมาตามที่อยู่นี้ โครงการฝึกอบรมเชิงปฏิบัติการคอมพิวเตอร์เบื้องตน ครั้งที่ 32 ภาควิชาวิศวกรรมคอมพิวเตอร์คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี 126 ถนนประชาอุทิศ 
             แขวงบางมด เขตทุ่งครุ กรุงเทพมหานคร 10140</p>
-            ดาวโหลดเอกสาร <a href="https://drive.google.com/file/d/1dJeHY3UGLLHArmGY59mblyovY2Vn9Z2Y/view" target ="_blank">คลิ๊กที่นี่</a>
+            ดาวโหลดเอกสาร <a href="https://drive.google.com/file/d/1dJeHY3UGLLHArmGY59mblyovY2Vn9Z2Y/view" target ="_blank">คลิกที่นี่</a>
             
             <Form onSubmit={handleSubmit} >
             {!summary && 
