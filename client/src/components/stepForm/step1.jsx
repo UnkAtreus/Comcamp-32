@@ -98,7 +98,7 @@ function StepForm1(props) {
                                 <Input
                                     addonBefore={prefix_th}
                                     placeholder="สมชาย"
-                                    // disabled={summary}
+                                    disabled={summary}
                                 />,
                             )}
                         </Form.Item>
