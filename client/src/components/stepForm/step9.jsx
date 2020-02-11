@@ -4,13 +4,14 @@ import { Form, Input, Button, Row, Col, Select } from 'antd';
 import btn_left from '../../asset/Button_left.png';
 import btn_right from '../../asset/Button_right.png';
 import SummaryForm from '../summary.component'
+// import { useAlert } from 'react-alert'
 
 const { Option } = Select
 
 
 function StepForm9(props) {
 
-    const { currentStep, handlePrev, handleNext, user, summary } = props
+    const { currentStep, handlePrev, handleNext, user, summary, step9, fetch_user } = props
 
     const [accident, setAccident] = useState(false)
 
@@ -18,7 +19,14 @@ function StepForm9(props) {
         const fetchData = async () => {
             if (user.hasOwnProperty("tracking_number")) {
                 let tracking_numbernData = user.tracking_number
-                await setAccident(true)
+                if(tracking_numbernData == "มาส่งที่ภาควิชาด้วยตนเอง") {
+                    props.form.setFieldsValue({Submit_file : "false"})
+                    // await setAccident(true)
+                } else {
+                    props.form.setFieldsValue({Submit_file : "true"})
+                    await setAccident(true)
+                }
+                
                 props.form.setFieldsValue({ tracking_number: tracking_numbernData });
             }
         }
@@ -36,7 +44,8 @@ function StepForm9(props) {
         console.log(flag)
         if (flag) {
             console.log("Next 5")
-            window.location = '/register'
+            // fetch_user()
+            window.location = '/summary'
         } else {
         }
     }
@@ -47,7 +56,8 @@ function StepForm9(props) {
         console.log(flag)
         if (flag) {
             console.log("Next 5")
-            window.location = '/register'
+            fetch_user()
+            // window.location = '/register'
         } else {
         }
     }
@@ -85,7 +95,6 @@ function StepForm9(props) {
             ดาวโหลดเอกสาร <a href="https://drive.google.com/file/d/1dJeHY3UGLLHArmGY59mblyovY2Vn9Z2Y/view" target ="_blank">คลิกที่นี่</a>
             
             <Form onSubmit={handleSubmit} >
-            {!summary && 
             <Form.Item label="วิธีการส่งเอกสาร">
                     {getFieldDecorator('Submit_file', {
                         rules: [{ required: !summary, message: 'กรุณากรอกข้อมูล' }],
@@ -100,7 +109,6 @@ function StepForm9(props) {
                         </Select>
                     )}
                 </Form.Item>
-            }
                 {accident &&
                 <Form.Item label="เลข Tracking Number">
                     {getFieldDecorator('tracking_number', {
@@ -126,7 +134,7 @@ function StepForm9(props) {
                     )}
                 </Form.Item>
                 } */}
-                {(!summary )&&  
+                {(!summary && step9)&&  
                 <p>*หมายเหตุ.หลังจากกด Submit แล้ว จะไม่สามารถแก้ไขข้อมูลได้อีก</p>
                 }
                 
