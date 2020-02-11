@@ -63,7 +63,7 @@ app.use(session({
     secret: 'WeLoveComcamp32EiEi',
     resave: false,
     saveUninitialized: false,
-    cookie: { maxAge: 30 * 60 * 1000 }
+    cookie: { maxAge: 2 * 60 * 60 * 1000 }
 }));
 
 app.use(passport.initialize());
