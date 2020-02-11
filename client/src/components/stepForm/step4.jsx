@@ -313,7 +313,7 @@ function StepForm4(props) {
             disabled={summary}
         >
           <Option value="นาย">นาย</Option>
-          <Option value="นาย">นาย</Option>
+          <Option value="นาง">นาง</Option>
           <Option value="นางสาว">นางสาว</Option>
         </Select>
     );
