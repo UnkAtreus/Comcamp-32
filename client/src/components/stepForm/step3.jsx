@@ -132,7 +132,7 @@ function StepForm3(props) {
                 <Form.Item label="ยาประจำตัว">
                     {getFieldDecorator('medic_need')(
                         <Input
-                            placeholder="ยาแก้หอบหึด"
+                            placeholder="ยาแก้หอบหืด"
                             disabled={summary}
                         />,
                     )}
