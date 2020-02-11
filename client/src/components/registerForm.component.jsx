@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { Row, Col, Steps, Popover } from 'antd'
 import { fetchUserAction } from '../actions/myaction'
-import { transitions, positions, Provider as AlertProvider } from 'react-alert'
-import AlertTemplate from 'react-alert-template-basic'
 
 
 import Navbar from './navbar.component'
@@ -106,18 +104,6 @@ function RegisterForm(props) {
         console.log(currentStep)
     }
 
-
-
-    // optional cofiguration
-    const options = {
-        // you can also just use 'bottom center'
-        position: positions.BOTTOM_CENTER,
-        timeout: 5000,
-        offset: '30px',
-        // you can also just use 'scale'
-        transition: transitions.SCALE
-    }
-
     if (loading) {
         return <div></div>
     }
@@ -128,7 +114,6 @@ function RegisterForm(props) {
                 <Row>
                     <Col span={18} offset={3}>
                         <StepForm currentStep={currentStep} maxStep={maxStep} />
-                        <AlertProvider template={AlertTemplate} {...options}>
                         {currentStep === 0 && <StepForm0 currentStep={currentStep} handlePrev={prev} handleNext={next} />}
                         {currentStep === 1 && <StepForm1 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user} />}
                         {currentStep === 2 && <StepForm2 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user} />}
@@ -138,8 +123,7 @@ function RegisterForm(props) {
                         {currentStep === 6 && <StepForm6 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user} />}
                         {currentStep === 7 && <StepForm7 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user} />}
                         {currentStep === 8 && <StepForm8 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user} />}
-                        {currentStep === 9 && <StepForm9 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user} finished={finished} />}
-                        </AlertProvider>
+                        {currentStep === 9 && <StepForm9 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user} finished={finished} step9={true} fetch_user={props.fetch_user}/>}
                     </Col>
                 </Row>
         </div>
