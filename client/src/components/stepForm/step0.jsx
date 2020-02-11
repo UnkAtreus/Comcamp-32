@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React from 'react'
 import register from '../../api/register'
-import { Form, Checkbox, Button, Row, Col, Radio } from 'antd';
+import { Form, Checkbox, Row, Col } from 'antd';
 import btn_left from '../../asset/Button_left.png';
 import btn_right from '../../asset/Button_right.png';
 

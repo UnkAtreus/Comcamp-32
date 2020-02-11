@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
-import { Form, Input, Button, Row, Col, Select } from 'antd';
+import { Form, Row, Col } from 'antd';
 import { fetchUserAction } from '../actions/myaction'
 import btn_left from '../asset/Button_left.png';
 import btn_right from '../asset/Button_right.png';
-import { transitions, positions, Provider as AlertProvider } from 'react-alert'
-import AlertTemplate from 'react-alert-template-basic'
 import register from '../api/register'
 import { useAlert } from 'react-alert'
 
