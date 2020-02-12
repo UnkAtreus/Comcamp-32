@@ -28,8 +28,8 @@ function SummaryForm(props) {
     console.log("prop user", props.user)
 
     const [finished, setFinished] = useState(false)
-    const [currentStep, setCurrentStep] = useState(0);
-    const [maxStep, setMaxStep] = useState(0);
+    const [currentStep, setCurrentStep] = useState(0)
+    const [maxStep, setMaxStep] = useState(0)
     const [user, setUser] = useState({})
     const [loading, setLoading] = useState(true)
 
