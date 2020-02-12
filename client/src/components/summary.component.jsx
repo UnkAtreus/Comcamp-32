@@ -50,6 +50,13 @@ function SummaryForm(props) {
             }
         }
      }, [currentStep, finished])
+
+     useEffect( () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+     }, [])
     
 
     async function checkStep(user) {
