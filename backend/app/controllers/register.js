@@ -4,7 +4,7 @@ exports.step0 = (req, res) => {
     console.log(req.user._id)
     const id = req.user._id
     console.log(id)
-    User.findByIdAndUpdate(id, { step0: true }, (err, result) => {
+    User.findByIdAndUpdate(id, { step0: true, personal: true }, (err, result) => {
         console.log("update")
         // console.log(result)
         if (err) {
@@ -347,6 +347,20 @@ exports.step10 = (req, res) => {
     const id = req.user._id
     console.log(id)
     User.findByIdAndUpdate(id, { confirmed: req.body.confirmed }, (err, result) => {
+        console.log("update")
+        // console.log(result)
+        if (err) {
+            res.sendStatus(400)
+        }
+        res.sendStatus(200)
+    })
+}
+
+exports.stepP = (req, res) => {
+    console.log(req.user._id)
+    const id = req.user._id
+    console.log(id)
+    User.findByIdAndUpdate(id, { personal: true }, (err, result) => {
         console.log("update")
         // console.log(result)
         if (err) {

@@ -104,6 +104,7 @@ var userSchema = mongoose.Schema({
 	facebookId: {type:String},
 	displayName: {type:String},
 	step0: Boolean,
+	personal: Boolean,
 	general: generalSchema,
 	school: schoolSchema,
 	disease: diseaseSchema,

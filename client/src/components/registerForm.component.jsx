@@ -9,6 +9,7 @@ import Navbar from './navbar.component'
 // import step form
 import StepForm from './stepForm/timelineStep'
 import StepForm0 from './stepForm/step0'
+import StepFormP from './stepForm/stepP'
 import StepForm1 from './stepForm/step1'
 import StepForm2 from './stepForm/step2'
 import StepForm3 from './stepForm/step3'
@@ -64,6 +65,9 @@ function RegisterForm(props) {
         //go to page
 
         // newStep = 0
+        if(user.hasOwnProperty("step0") && !user.hasOwnProperty("personal")) {
+            newStep = 'P';
+        }
         setCurrentStep(newStep)
         setMaxStep(newStep)
     }
@@ -115,6 +119,7 @@ function RegisterForm(props) {
                     <Col span={18} offset={3}>
                         <StepForm currentStep={currentStep} maxStep={maxStep} />
                         {currentStep === 0 && <StepForm0 currentStep={currentStep} handlePrev={prev} handleNext={next} />}
+                        {currentStep === 'P' && <StepFormP currentStep={currentStep} handlePrev={prev} handleNext={next} />}
                         {currentStep === 1 && <StepForm1 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user} />}
                         {currentStep === 2 && <StepForm2 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user} />}
                         {currentStep === 3 && <StepForm3 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user} />}
