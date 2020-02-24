@@ -147,7 +147,7 @@ function StepForm0(props) {
             <h1>นโยบายข้อมูลส่วนบุคคล</h1>
             <Input.TextArea
                 disabled={false}
-                autoSize={{ maxRows: 15 }}
+                autoSize={{ maxRows: 11 }}
                 placeholder="กรอกคำตอบที่นี่..."
                 value={description}
             />
