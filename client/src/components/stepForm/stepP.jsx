@@ -50,7 +50,7 @@ function StepForm0(props) {
         console.log(flag)
         if (flag) {
             console.log("Next")
-            handleNext()
+            window.location = '/register'
         } else {
         }
     }
