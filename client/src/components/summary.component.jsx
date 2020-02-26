@@ -122,6 +122,22 @@ function SummaryForm(props) {
         }
     }
 
+    const statusTracking = () => {
+        if(!user.hasOwnProperty("status")) {
+            return (
+                <h1 style={{'color': 'red', 'textAlign': 'center'}}>**ยังไม่ได้รับเอกสาร**</h1>
+            )
+        } else if(user.status == 1) {
+            return (
+                <h1 style={{'color': 'green', 'textAlign': 'center'}}>ได้รับเอกสารแล้ว</h1>
+            )
+        } else if(user.status == 2) {
+            return (
+                <h1 style={{'color': 'red', 'textAlign': 'center'}}>**เอกสารไม่ครบ**</h1>
+            )
+        }
+    }
+
     if(step9) {
         return (
             
@@ -196,6 +212,7 @@ function SummaryForm(props) {
                 <Row>
                     <Col span={20} offset={2}>
                         <h1>สรุปข้อมูล</h1>
+                            {statusTracking()}
                             <hr className="break-line"/>
                             <StepForm9  user={user} summary={true}/>
                             <hr className="break-line"/>
