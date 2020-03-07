@@ -129,11 +129,11 @@ function SummaryForm(props) {
             )
         } else if(user.status == 1) {
             return (
-                <h1 style={{'color': 'green', 'textAlign': 'center'}}>ได้รับเอกสารแล้ว</h1>
+                <h1 style={{'color': 'blue', 'textAlign': 'center'}}>ได้รับเอกสารแล้ว รอตรวจสอบ</h1>
             )
         } else if(user.status == 2) {
             return (
-                <h1 style={{'color': 'red', 'textAlign': 'center'}}>**เอกสารไม่ครบ**</h1>
+                <h1 style={{'color': 'green', 'textAlign': 'center'}}>ตรวจสอบเอกสารเรียบร้อยแล้ว</h1>
             )
         }
     }
