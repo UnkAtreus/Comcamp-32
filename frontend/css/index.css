@@ -1122,8 +1122,8 @@
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  max-width: 1600px;
-  height: 700px;
+  max-width: 1535px;
+  height: 670px;
   pointer-events: none;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 15px 40px 4px;
   /*box-shadow: rgba(0, 0, 0, 0.5) 0px 15px 40px 4px;*/
@@ -2351,6 +2351,53 @@ accordion-a-color {
   padding: 120px 60px;
 }
 
+.Sponsor-Column {
+  width: 100%;
+  padding: .5em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 900px;
+  margin: auto;
+  pointer-events: initial;
+}
+
+.Sponsor-Container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Sponsor-ImageFluid img {
+  width: 100%;
+}
+
+.Super-Vip a {
+  margin: 4px 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 150px;
+}
+
 .Section.Footer {
   padding: 0;
 }
@@ -2401,5 +2448,4 @@ accordion-a-color {
 body {
   font-family: "Pridi", serif;
 }
-
 /*# sourceMappingURL=index.css.map */
