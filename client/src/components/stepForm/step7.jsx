@@ -6,7 +6,7 @@ import btn_right from '../../asset/Button_right.png';
 
 const { Option } = Select
 
-const locations = ['มา มจธ. ด้วยตนเอง', 'สถานีขนส่งผู้โดยสารกรุงเทพฯ (สายใต้ใหม่)', 'สถานีขนส่งผู้โดยสารกรุงเทพฯ (เอกมัย)', 'สถานีรถไฟกรุงเทพ (สถานีหัวลำโพง)', 'อนุสาวรีย์ประชาธิปไตย']
+const locations = ['มา มจธ. ด้วยตนเอง', 'สถานีขนส่งผู้โดยสารกรุงเทพฯ (สายใต้ใหม่)', 'สถานีขนส่งผู้โดยสารกรุงเทพฯ (เอกมัย)', 'สถานีรถไฟกรุงเทพ (สถานีหัวลำโพง)', 'อนุสาวรีย์ชัยสมรภูมิ']
 
 function StepForm7(props) {
 
@@ -49,14 +49,14 @@ function StepForm7(props) {
     const { getFieldDecorator } = props.form;
     return (
         <div>
-            <h1>สถานที่ที่ต้องการให้พี่ค่ายไปรับ</h1>
+            <h1>การเดินทางมามหาวิทยาลัย</h1>
             <Form onSubmit={handleSubmit} >
                 <Form.Item label="สถานที่ที่ต้องการให้พี่ค่ายไปรับ">
                     {getFieldDecorator('location', {
-                        rules: [{ required: true, message: 'กรุณาระบุสถานที่' }],
+                        rules: [{ required: !summary, message: 'กรุณาระบุสถานที่' }],
                         // initialValue: "มา มจธ. ด้วยตนเอง"
                     })(
-                        <Select disabled={summary}>
+                        <Select disabled={summary} placeholder='ระบุสถานที่'>
                             {
                                 locations.map((location) => (
                                     <Option key={location} value={location}>{location}</Option>
@@ -67,31 +67,31 @@ function StepForm7(props) {
                     )}
                 </Form.Item>
                 <h1>ได้รับข่าวสารการจัดค่ายจากที่ใด</h1>
-                <Form.Item className="Right-Radio">
+                <Form.Item >
                     {getFieldDecorator('news', {
-                        // rules: [{ required: true, message: 'กรุณาเลือกหลักสูตรที่ต้องการ' }]
+                        // rules: [{ required: !summary, message: 'กรุณาเลือกหลักสูตรที่ต้องการ' }]
                 })(
-                <Checkbox.Group style={{ width: '100%' }} onChange={onChange} disabled={summary}>
-                <Row>
-                    <Col md={{span:8}}>
+                <Checkbox.Group onChange={onChange} disabled={summary}>
+                <Row style={{'text-align': 'left'}}>
+                    <Col md={{span:8}} xs={{span: 24, offset: 2}} style={{'margin-bottom': '10px'}}>
                         <Checkbox value="facebook">Facebook Page</Checkbox>
                     </Col>
-                    <Col md={{span:8}}>
+                    <Col md={{span:8}} xs={{span: 24, offset: 2}} style={{'margin-bottom': '10px'}}>
                         <Checkbox value="instagram">Instagram</Checkbox>
                     </Col>
-                    <Col md={{span:8}}>
+                    <Col md={{span:8}} xs={{span: 24, offset: 2}} style={{'margin-bottom': '10px'}}>
                         <Checkbox value="camphub">เว็บไซต์ Camphub</Checkbox>
                     </Col>
-                    <Col md={{span:8}}>
+                    <Col md={{span:8}} xs={{span: 24, offset: 2}} style={{'margin-bottom': '10px'}}>
                         <Checkbox value="senior">การแนะนำจากรุ่นพี่</Checkbox>
                     </Col>
-                    <Col md={{span:8}}>
+                    <Col md={{span:8}} xs={{span: 24, offset: 2}} style={{'margin-bottom': '10px'}}>
                         <Checkbox value="friend">การแนะนำจากเพื่อน</Checkbox>
                     </Col>
-                    <Col md={{span:8}}>
+                    <Col md={{span:8}} xs={{span: 24, offset: 2}} style={{'margin-bottom': '10px'}}>
                         <Checkbox value="teacher">การแนะนำจากครูแนะแนว</Checkbox>
                     </Col>
-                    <Col md={{span:8}}>
+                    <Col md={{span:8}} xs={{span: 24, offset: 2}} style={{'margin-bottom': '10px'}}>
                         <Checkbox value="openhouse">งาน Open House</Checkbox>
                     </Col>
                     </Row>

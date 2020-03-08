@@ -4,7 +4,9 @@
     box-sizing: border-box;
     color: rgb(204, 204, 204);
     background-color: rgb(26, 24, 20);
-    background-image: url(/asset/General_BG_new.png);
+    &.lazy-bg-loaded {
+        background-image: url(/asset/General_BG_new.jpg);
+    }
     background-size: auto;
     max-width: 2400px;
     font-size: 17.778px;
@@ -193,7 +195,9 @@
 }
 
 .Button-BorderImage {
-    border-image-source: url(/asset/Button_Frame.png);
+    &.lazy-bg-loaded {
+        border-image-source: url(/asset/Button_Frame.png);
+    }
     border-image-width: 22px 42px;
     border-image-repeat: round;
     position: absolute;
@@ -215,7 +219,9 @@
     color: rgb(255, 238, 204);
     font-weight: bold;
     text-shadow: rgba(0, 0, 0, 0.6) 0px 1px 2px, rgba(0, 0, 0, 0.4) 0px 2px 4px;
-    background-image: url(/asset/Button_Highlight/CC_Button_middle.png);
+    &.lazy-bg-loaded {
+        background-image: url(/asset/Button_Highlight/CC_Button_middle.png);
+    }
     background-size: 500px 170px;
     font-family: SourceSerifVariable, SourceSerif, serif;
     letter-spacing: 0.025em;
@@ -236,7 +242,9 @@
     max-width: 2400px;
     height: 47px;
     width: 100%;
-    background-image: url(/asset/CC_seperate.png);
+    &.lazy-bg-loaded {
+        background-image: url(/asset/CC_seperate.jpg);
+    }
     background-size: 600px 47px;
     z-index: 5;
     box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 24px 8px, rgba(0, 0, 0, 0.33) 0px 0px 12px;
@@ -267,7 +275,9 @@
         color: rgb(204, 204, 204);
         font-size: 15.802px;
         background-color: rgb(26, 24, 20);
-        background-image: url(/asset/General_BG_new.png);
+        &.lazy-bg-loaded {
+            background-image: url(/asset/General_BG_new.jpg);
+        }
         background-size: auto;
         max-width: 2400px;
         background-position: center top;
@@ -282,3 +292,96 @@
         width: 100%;
     }
 }
+
+// อีโก้มันทำไว้ แก้ให้ด้วย - from mumu
+// @keyframes blink {
+// 0% {
+// opacity: 1;
+// }
+// 50% {
+// opacity: 0;
+// }
+// 100% {
+// opacity: 1;
+// }
+// }
+
+// @-webkit-keyframes blink {
+// 0% {
+// opacity: 1;
+// }
+// 50% {
+// opacity: 0;
+// }
+// 100% {
+// opacity: 1;
+// }
+// }
+// @-moz-keyframes blink {
+// 0% {
+// opacity: 1;
+// }
+// 50% {
+// opacity: 0;
+// }
+// 100% {
+// opacity: 1;
+// }
+// }
+// @-o-keyframes blink {
+// 0% {
+// opacity: 1;
+// }
+// 50% {
+// opacity: 0;
+// }
+// 100% {
+// opacity: 1;
+// }
+// }
+
+// @media (min-width: 300px) {
+// .arrow {
+// width: 100px;
+// margin-top: -20px;
+// }
+// }
+
+// @media (min-width: 500px) {
+// .arrow {
+// margin-top: -10px;
+// }
+// }
+
+// @media (min-width: 670px) {
+// .arrow {
+// width: 200px;
+// margin-top: -20px;
+// }
+// }
+// .arrow {
+// margin-top: -10px;
+// -webkit-transform: rotate(-90deg);
+// -moz-transform: rotate(-90deg);
+// -o-transform: rotate(-90deg);
+// -ms-transform: rotate(-90deg);
+// transform: rotate(-90deg);
+// -webkit-animation: blink 2s;
+// -webkit-animation-iteration-count: infinite;
+// -moz-animation: blink 2s;
+// -moz-animation-iteration-count: infinite;
+// -o-animation: blink 2s;
+// -o-animation-iteration-count: infinite;
+// }
+
+// @media screen and (max-width: 680px) {
+// .Section-Row {
+// min-height: 700px;
+// }
+// }
+
+// @media screen and (min-width: 1000px) {
+// .Section-Row {
+// min-height: 1000px;
+// }
+// }

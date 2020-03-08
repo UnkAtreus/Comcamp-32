@@ -5,5 +5,6 @@ RUN cd /tmp && yarn install
 RUN mkdir -p /src && cp -a /tmp/node_modules /src/
 ADD . ./src
 WORKDIR /src
-CMD ["node", "app"]
-EXPOSE 5000 443
+RUN npm install pm2 -g
+CMD ["pm2-runtime", "ecosystem.config.js"]
+EXPOSE 5000

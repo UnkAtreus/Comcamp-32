@@ -1,6 +1,6 @@
 import React from 'react'
 import register from '../../api/register'
-import { Form, Checkbox, Row, Col, Input } from 'antd';
+import { Form, Checkbox, Input } from 'antd';
 import btn_left from '../../asset/Button_left.png';
 import btn_right from '../../asset/Button_right.png';
 
@@ -46,12 +46,12 @@ function StepForm0(props) {
     const { currentStep, handleNext } = props
 
     const nextStep = async () => {
-        const flag = await register.sendData(currentStep, { step0: true, personal: true })
+        const flag = await register.sendData(currentStep, { personal: true })
         console.log("Click Next")
         console.log(flag)
         if (flag) {
             console.log("Next")
-            handleNext()
+            window.location = '/register'
         } else {
         }
     }
@@ -70,89 +70,16 @@ function StepForm0(props) {
 
     return (
         <div>
-            <h1>หลักฐานการสมัคร</h1>
-            <Row>
-                <Col span={20}>
-                    1. สำเนาบัตรประจำตัวประชาชน หรือสำเนาบัตรนักเรียน
-                </Col>
-                <Col span={2} offset={1}>
-                    1 ชุด
-                </Col>
-            </Row>
-            <Row>
-                <Col span={20}>
-                    2. ใบรับรองการเป็นนักเรียนของสถานศึกษาหรือใบ ปพ.7 อย่างใดอย่างหนึ่ง
-                </Col>
-                <Col span={2} offset={1}>
-                    1 ชุด
-                </Col>
-            </Row>
-            <Row>
-                <Col span={20}>
-                    3. ใบรับรองแสดงผลการเรียน ระดับมัธยมศึกษาตอนปลาย (ปพ.1)
-                    หรือ แบบรายงานประจำตัวนักเรียนภาคเรียนล่าสุด อย่างใดอย่างหนึ่ง (อนุญาตให้ใช้สำเนาได้)
-                </Col>
-                <Col span={2} offset={1}>
-                    1 ชุด
-                </Col>
-            </Row>
-            <Row>
-                <Col span={20}>
-                    4. ใบขออนุญาตผู้ปกครอง
-                </Col>
-                <Col span={2} offset={1}>
-                    1 ชุด
-                </Col>
-            </Row>
-            <Row>
-                <Col span={20}>
-                    5. สำเนาบัตรประจำตัวประชาชนของผู้ปกครองที่ให้การรับรองในใบขออนุญาตผู้ปกครอง
-                </Col>
-                <Col span={2} offset={1}>
-                    1 ชุด
-                </Col>
-            </Row>
-            <Row>
-                <Col span={20}>
-                    6. ภาพถ่ายหน้าตรงสวมชุดนักเรียนหรือชุดที่สถานศึกษากำหนด ขนาด 1.5 นิ้ว
-                </Col>
-                <Col span={2} offset={1}>
-                    1 ชุด
-                </Col>
-            </Row>
-            <Row>
-                <Col span={20}>
-                    7. ภาพถ่ายอิสระของผู้สมัครที่เห็นหน้าชัดเจนและมีขนาดไม่ต่ำกว่า 4x6 นิ้ว พร้อมเขียนชื่อจริง นามสกุล และโรงเรียน หลังภาพ
-                </Col>
-                <Col span={2} offset={1}>
-                    1 ชุด
-                </Col>
-            </Row>
-            <Row>
-                <Col span={20}>
-                    8. ภาพถ่ายที่ตลกที่สุด และมีขนาดไม่ต่ำกว่า 4x6 นิ้ว
-                </Col>
-                <Col span={2} offset={1}>
-                    1 ชุด
-                </Col>
-            </Row>
-            <Form onSubmit={handleSubmit}>
-                <Form.Item className="Right-Radio">
-                    {getFieldDecorator('agree', {
-                        rules: [{ required: true, message: 'กรุณาอ่านข้อมูลการสมัครให้ครบถ้วน' }]
-                    })(
-                        <Checkbox.Group options={['ข้าพเจ้าได้อ่านข้อมูลการสมัครทั้งหมดแล้ว']} />,
-                    )}
-                </Form.Item>
             <h1>นโยบายข้อมูลส่วนบุคคล</h1>
             <Input.TextArea
                 disabled={false}
-                autoSize={{ maxRows: 11 }}
+                autoSize={{ maxRows: 15 }}
                 placeholder="กรอกคำตอบที่นี่..."
                 value={description}
             />
+            <Form onSubmit={handleSubmit}>
                 <Form.Item className="Right-Radio">
-                    {getFieldDecorator('personal', {
+                    {getFieldDecorator('agree', {
                         rules: [{ required: true, message: 'กรุณาอ่านข้อมูลการสมัครให้ครบถ้วน' }]
                     })(
                         <Checkbox.Group options={['ข้าพเจ้าได้อ่านนโยบายข้อมูลส่วนบุคคลทั้งหมดแล้ว']} />,

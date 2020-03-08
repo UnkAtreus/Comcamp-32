@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
-import { transitions, positions, Provider as AlertProvider } from 'react-alert'
 import { Row, Col, Steps, Popover } from 'antd'
 import { fetchUserAction } from '../actions/myaction'
 
@@ -10,6 +9,7 @@ import Navbar from './navbar.component'
 // import step form
 import StepForm from './stepForm/timelineStep'
 import StepForm0 from './stepForm/step0'
+import StepFormP from './stepForm/stepP'
 import StepForm1 from './stepForm/step1'
 import StepForm2 from './stepForm/step2'
 import StepForm3 from './stepForm/step3'
@@ -27,7 +27,7 @@ function RegisterForm(props) {
     const [currentStep, setCurrentStep] = useState(0);
     const [maxStep, setMaxStep] = useState(0);
     const [user, setUser] = useState({})
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
 
     // useEffect( () => {
     //     console.log("test", test)
@@ -57,19 +57,30 @@ function RegisterForm(props) {
                 "location",
                 "question"
               ].reduce((step, next) => step + Number(user.hasOwnProperty(next)), 0);
-            if(user.hasOwnProperty("tracking_number")) {
+            if(user.hasOwnProperty("tracking_number") && user.hasOwnProperty("personal")) {
                 setFinished(true)
             }
         }
+
         //go to page
-        newStep = 8
+
+        // newStep = 0
+        if(user.hasOwnProperty("step0") && !user.hasOwnProperty("personal")) {
+            newStep = 'P';
+        }
         setCurrentStep(newStep)
         setMaxStep(newStep)
     }
+
+    useEffect( () => {
+        if(finished === true) {
+            window.location = 'https://comcamp.io/summary'
+        }
+    }, [finished])
    
     useEffect( ()=> {
         if(props.user === false) {
-            props.history.push('/')
+            window.location = 'https://comcamp.io'
         }
         if(user != null && props.user) {
             setUser(props.user)
@@ -97,18 +108,6 @@ function RegisterForm(props) {
         console.log(currentStep)
     }
 
-
-
-    // optional cofiguration
-    const options = {
-        // you can also just use 'bottom center'
-        position: positions.BOTTOM_CENTER,
-        timeout: 5000,
-        offset: '30px',
-        // you can also just use 'scale'
-        transition: transitions.SCALE
-    }
-
     if (loading) {
         return <div></div>
     }
@@ -120,6 +119,7 @@ function RegisterForm(props) {
                     <Col span={18} offset={3}>
                         <StepForm currentStep={currentStep} maxStep={maxStep} />
                         {currentStep === 0 && <StepForm0 currentStep={currentStep} handlePrev={prev} handleNext={next} />}
+                        {currentStep === 'P' && <StepFormP currentStep={currentStep} handlePrev={prev} handleNext={next} />}
                         {currentStep === 1 && <StepForm1 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user} />}
                         {currentStep === 2 && <StepForm2 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user} />}
                         {currentStep === 3 && <StepForm3 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user} />}
@@ -128,7 +128,7 @@ function RegisterForm(props) {
                         {currentStep === 6 && <StepForm6 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user} />}
                         {currentStep === 7 && <StepForm7 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user} />}
                         {currentStep === 8 && <StepForm8 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user} />}
-                        {currentStep === 9 && <StepForm9 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user} finished={finished} />}
+                        {currentStep === 9 && <StepForm9 currentStep={currentStep} handlePrev={prev} handleNext={next} user={user} finished={finished} step9={true} fetch_user={props.fetch_user}/>}
                     </Col>
                 </Row>
         </div>

@@ -52,7 +52,7 @@ function Navbar(props) {
             </div>
 
             <div className="Nav-Links Nav-Logout">
-              <span>Logout</span>
+              <span onClick={logout}>Logout</span>
             </div>
 
             <div className="Button-Column right Nav-Btn">

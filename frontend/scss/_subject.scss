@@ -1,6 +1,8 @@
 .Section.Subject {
     padding: 100px 40px;
-    background-image: url(/asset/Background1.png);
+    &.lazy-bg-loaded {
+        background-image: url(/asset/Background1.jpg);
+    }
 }
 
 .Spacer {
@@ -103,7 +105,9 @@
 }
 
 .Subject-SpriteHeroes {
-    background-image: url(/asset/charactor.jpg);
+    &.lazy-bg-loaded {
+        background-image: url(/asset/charactor.jpg);
+    }
     background-size: 400px 400px;
     width: 100px;
     height: 100px;
@@ -137,7 +141,9 @@
 
 .Subject-BorderPortrait {
     position: absolute;
-    background-image: url(/asset/ring.png);
+    &.lazy-bg-loaded {
+        background-image: url(/asset/ring.png);
+    }
     width: 144px;
     height: 144px;
     left: -12px;
@@ -185,23 +191,23 @@
     padding: 30px 30px 30px 30px;
 }
 
-.Subject-Slide-Row.One {
+.Subject-Slide-Row.One.lazy-bg-loaded {
     background-image: url(/asset/banner_flow.jpg);
 }
 
-.Subject-Slide-Row.Two {
+.Subject-Slide-Row.Two.lazy-bg-loaded {
     background-image: url(/asset/banner_c-programming.jpg);
 }
 
-.Subject-Slide-Row.Three {
+.Subject-Slide-Row.Three.lazy-bg-loaded {
     background-image: url(/asset/banner_micro.jpg);
 }
 
-.Subject-Slide-Row.Four {
+.Subject-Slide-Row.Four.lazy-bg-loaded {
     background-image: url(/asset/banner_machine.jpg);
 }
 
-.Subject-Slide-Row.Five {
+.Subject-Slide-Row.Five.lazy-bg-loaded {
     background-image: url(/asset/banner_brain.jpg);
 }
 

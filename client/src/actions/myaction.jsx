@@ -1,6 +1,6 @@
 import axios from 'axios'
 // const END_POINT = 'http://localhost:5000'
-const END_POINT = 'http://206.189.1.9.84:5000'
+const END_POINT = 'https://comcamp.io'
 
 const i  = axios.create({
     baseURL: END_POINT,

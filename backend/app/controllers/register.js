@@ -4,7 +4,7 @@ exports.step0 = (req, res) => {
     console.log(req.user._id)
     const id = req.user._id
     console.log(id)
-    User.findByIdAndUpdate(id, { step0: true }, (err, result) => {
+    User.findByIdAndUpdate(id, { step0: true, personal: true }, (err, result) => {
         console.log("update")
         // console.log(result)
         if (err) {
@@ -136,10 +136,17 @@ exports.step4 = (req, res) => {
         postal_code_parent,
 
         relation,
-        name,
+        fname,
+        lname,
         tel,
         email,
-        prefix_th
+        prefix_th,
+        relation2,
+        fname2,
+        lname2,
+        tel2,
+        email2,
+        prefix_th2,
 
     } = req.body
     console.log(id)
@@ -177,10 +184,19 @@ exports.step4 = (req, res) => {
             },
             parent: {
                 relation:relation,
-                name: name,
+                fname: fname,
+                lname: lname,
                 tel: tel,
                 email: email,
                 prefix_th: prefix_th
+            },
+            parent2: {
+                relation:relation2,
+                fname: fname2,
+                lname: lname2,
+                tel: tel2,
+                email: email2,
+                prefix_th: prefix_th2
             }
         }
     }, (err, result) => {
@@ -317,6 +333,34 @@ exports.step9 = (req, res) => {
     User.findByIdAndUpdate(id, { 
         tracking_number: req.body.tracking_number
      }, (err, result) => {
+        console.log("update")
+        // console.log(result)
+        if (err) {
+            res.sendStatus(400)
+        }
+        res.sendStatus(200)
+    })
+}
+
+exports.step10 = (req, res) => {
+    console.log(req.user._id)
+    const id = req.user._id
+    console.log(id)
+    User.findByIdAndUpdate(id, { confirmed: req.body.confirmed }, (err, result) => {
+        console.log("update")
+        // console.log(result)
+        if (err) {
+            res.sendStatus(400)
+        }
+        res.sendStatus(200)
+    })
+}
+
+exports.stepP = (req, res) => {
+    console.log(req.user._id)
+    const id = req.user._id
+    console.log(id)
+    User.findByIdAndUpdate(id, { personal: true }, (err, result) => {
         console.log("update")
         // console.log(result)
         if (err) {

@@ -15,7 +15,7 @@ module.exports = function (app, passport) {
 
     app.get('/auth/facebook', passport.authenticate('facebook'))
     app.get('/auth/facebook/callback', passport.authenticate('facebook',
-        { failureRedirect: '/error' }), (req, res) => res.redirect(`http://${process.env.FRONT_END}/register`));
+        { failureRedirect: 'https://comcamp.io' }), (req, res) => res.redirect(`http://comcamp.io/register`));
 
 
     app.get('/api/logout', (req, res) => {
@@ -38,6 +38,8 @@ module.exports = function (app, passport) {
     app.post('/api/register/7', auth.isLoggedIn, validateStep.step7Validation(), validateStep.validate, register.step7)
     app.post('/api/register/8', auth.isLoggedIn, validateStep.step8Validation(), validateStep.validate, register.step8)
     app.post('/api/register/9', auth.isLoggedIn, validateStep.step9Validation(), validateStep.validate, register.step9)
+    app.post('/api/register/10', auth.isLoggedIn, register.step10)
+    app.post('/api/register/P', auth.isLoggedIn, register.stepP)
 
 
 }

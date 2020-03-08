@@ -25,7 +25,7 @@ const step1Validation = () => {
 const step2Validation = () => {
     return [
         body('gpax').not().isEmpty(),
-        body('grade').isIn(['4', '5', '6', 'ปวช']),
+        // body('grade').isIn(['4', '5', '6', 'ปวช']),
         body('school_name').not().isEmpty(),
         body('school_province').not().isEmpty(),
     ]
@@ -33,32 +33,32 @@ const step2Validation = () => {
 const step4Validation = () => {
     return [
         body('home_number').not().isEmpty(),
-        body('road').not().isEmpty(),
-        body('village').not().isEmpty(),
+        // body('road').not().isEmpty(),
+        // body('village').not().isEmpty(),
         body('sub_district').not().isEmpty(),
         body('district').not().isEmpty(),
         body('province').not().isEmpty(),
         body('postal_code').not().isEmpty(),
 
         body('home_number_regis').not().isEmpty(),
-        body('road_regis').not().isEmpty(),
-        body('village_regis').not().isEmpty(),
+        // body('road_regis').not().isEmpty(),
+        // body('village_regis').not().isEmpty(),
         body('sub_district_regis').not().isEmpty(),
         body('district_regis').not().isEmpty(),
         body('province_regis').not().isEmpty(),
         body('postal_code_regis').not().isEmpty(),
 
         body('home_number_parent').not().isEmpty(),
-        body('road_parent').not().isEmpty(),
-        body('village_parent').not().isEmpty(),
+        // body('road_parent').not().isEmpty(),
+        // body('village_parent').not().isEmpty(),
         body('sub_district_parent').not().isEmpty(),
         body('district_parent').not().isEmpty(),
         body('province_parent').not().isEmpty(),
         body('postal_code_parent').not().isEmpty(),
 
-        body('relation').not().isEmpty(),
-        body('name').not().isEmpty(),
-        body('tel').not().isEmpty(),
+        // body('relation').not().isEmpty(),
+        // body('name').not().isEmpty(),
+        // body('tel').not().isEmpty(),
     ]
 }
 
@@ -76,17 +76,17 @@ const step5Validation = () => {
 
 const step6Validation = () => {
     return [
-        body('programming').not().isEmpty(),
-        body('big_data').not().isEmpty(),
-        body('flow_chart').not().isEmpty(),
-        body('microcontroller').not().isEmpty(),
-        body('brain_storm').not().isEmpty(),
+        // body('programming').not().isEmpty(),
+        // body('big_data').not().isEmpty(),
+        // body('flow_chart').not().isEmpty(),
+        // body('microcontroller').not().isEmpty(),
+        // body('brain_storm').not().isEmpty(),
     ]
 }
 
 const step7Validation = () => {
     return [
-        body('location').isIn(['มา มจธ. ด้วยจนเอง', 'สายใต้ใหม่ ถนนบรม (ใต้)', 'ขนส่งเอกมัย (ตะวันออก)', 'หัวลำโพง (รถไฟ)', 'อนุเสาวรีย์ชัยสมรถภูมิ (รถตู้)'])
+        // body('location').isIn(['มา มจธ. ด้วยจนเอง', 'สายใต้ใหม่ ถนนบรม (ใต้)', 'ขนส่งเอกมัย (ตะวันออก)', 'หัวลำโพง (รถไฟ)', 'อนุเสาวรีย์ชัยสมรถภูมิ (รถตู้)'])
     ]
 }
 

@@ -8,15 +8,19 @@ const options = [
     { label: 'หลักสูตรวิศวกรรมคอมพิวเตอร์', value: 'Reg' },
     { label: 'หลักสูตรวิศวกรรมคอมพิวเตอร์ (นานาชาติ)', value: 'Inter' },
     { label: 'หลักสูตรวิทยาศาสตร์ข้อมูลสุขภาพ', value: 'HDS' },
+    { label: 'หลักสูตร Residential College', value: 'RC' },
   ];
 
-function StepForm5(props) {
+  
+  
+  function StepForm5(props) {
+    let futureData = {}
 
     const { currentStep, handlePrev, handleNext, user, summary } = props
 
     useEffect(() => {
         if (user.hasOwnProperty("future")) {
-            let futureData = user.future
+            futureData = user.future
             props.form.setFieldsValue({
                 one_department: futureData.one.department,
                 one_faculty: futureData.one.faculty,
@@ -65,138 +69,175 @@ function StepForm5(props) {
     const { getFieldDecorator } = props.form;
     return (
         <div>
-            <h1>ความสนใจ</h1>
+            <h1>คณะที่สนใจ</h1>
             <Form onSubmit={handleSubmit} >
                 <Row>
+                    {(!summary || futureData.one_department)&&
                     <Col md={{span:6 }} xs={24}>
                         <Form.Item label="ภาควิชาลำดับที่หนึ่ง">
                             {getFieldDecorator('one_department', {
-                                // rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                // rules: [{ required: !summary, message: 'กรุณากรอกคณะที่อยากเข้า' }],
                             })(
                                 <Input
-                                    disabled={summary}
+                                disabled={summary}
                                     placeholder="ภาควิชาวิศวกรรมคอมพิวเตอร์"
-                                />,
+                                    />,
                             )}
                         </Form.Item>
                     </Col>
+                    }
+                    {(!summary || futureData.one_faculty)&&
                     <Col md={{span:6, offset:1}} xs={24}>
                         <Form.Item label="คณะลำดับที่หนึ่ง">
                             {getFieldDecorator('one_faculty', {
-                                // rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                // rules: [{ required: !summary, message: 'กรุณากรอกคณะที่อยากเข้า' }],
                             })(
                                 <Input
-                                    disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                disabled={summary}
+                                placeholder="คณะวิศวกรรมศาสตร์"
                                 />,
-                            )}
+                                )}
                         </Form.Item>
                     </Col>
+                    }
+                    {(!summary || futureData.one_university)&&
                     <Col md={{span:10,offset:1}} xs={24}>
                         <Form.Item label="มหาวิทยาลัยลำดับที่หนึ่ง">
                             {getFieldDecorator('one_university', {
-                                // rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
+                                // rules: [{ required: !summary, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
                             })(
                                 <Input
-                                    disabled={summary}
-                                    placeholder="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี"
+                                disabled={summary}
+                                placeholder="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี"
                                 />,
-                            )}
+                                )}
                         </Form.Item>
                     </Col>
+                }
                 </Row>
 
                 <Row>
+                {(!summary || futureData.two_department)&&
                     <Col md={{span:6 }} xs={24}>
                         <Form.Item label="ภาควิชาลำดับที่สอง">
                             {getFieldDecorator('two_department', {
-                                // rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                // rules: [{ required: !summary, message: 'กรุณากรอกคณะที่อยากเข้า' }],
                             })(
                                 <Input
-                                    disabled={summary}
-                                    placeholder="ภาควิชาวิศวกรรมคอมพิวเตอร์"
+                                disabled={summary}
+                                placeholder="ภาควิชาวิศวกรรมคอมพิวเตอร์"
                                 />,
-                            )}
+                                )}
                         </Form.Item>
                     </Col>
+                }
+                {(!summary || futureData.two_faculty)&&
                     <Col md={{span:6, offset:1}} xs={24}>
                         <Form.Item label="คณะลำดับที่สอง">
                             {getFieldDecorator('two_faculty', {
-                                // rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                // rules: [{ required: !summary, message: 'กรุณากรอกคณะที่อยากเข้า' }],
                             })(
                                 <Input
-                                    disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                disabled={summary}
+                                placeholder="คณะวิศวกรรมศาสตร์"
                                 />,
-                            )}
+                                )}
                         </Form.Item>
                     </Col>
+                }
+                {(!summary || futureData.two_university)&&
                     <Col md={{span:10,offset:1}} xs={24}>
                         <Form.Item label="มหาวิทยาลัยลำดับที่สอง">
                             {getFieldDecorator('two_university', {
-                                // rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
+                                // rules: [{ required: !summary, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
                             })(
                                 <Input
-                                    disabled={summary}
-                                    placeholder="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี"
+                                disabled={summary}
+                                placeholder="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี"
                                 />,
-                            )}
+                                )}
                         </Form.Item>
                     </Col>
+                }
                 </Row>
 
                 <Row>
+                {(!summary || futureData.three_department)&&
                     <Col md={{span:6 }} xs={24}>
                         <Form.Item label="ภาควิชาลำดับที่สาม">
                             {getFieldDecorator('three_department', {
-                                // rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                // rules: [{ required: !summary, message: 'กรุณากรอกคณะที่อยากเข้า' }],
                             })(
                                 <Input
-                                    disabled={summary}
-                                    placeholder="ภาควิชาวิศวกรรมคอมพิวเตอร์"
+                                disabled={summary}
+                                placeholder="ภาควิชาวิศวกรรมคอมพิวเตอร์"
                                 />,
-                            )}
+                                )}
                         </Form.Item>
                     </Col>
+                }
+                {(!summary || futureData.three_faculty)&&
                     <Col md={{span:6, offset:1}} xs={24}>
                         <Form.Item label="คณะลำดับที่สาม">
                             {getFieldDecorator('three_faculty', {
-                                // rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                // rules: [{ required: !summary, message: 'กรุณากรอกคณะที่อยากเข้า' }],
                             })(
                                 <Input
-                                    disabled={summary}
-                                    placeholder="คณะวิศวกรรมศาสตร์"
+                                disabled={summary}
+                                placeholder="คณะวิศวกรรมศาสตร์"
                                 />,
-                            )}
+                                )}
                         </Form.Item>
                     </Col>
+                }
+                {(!summary || futureData.three_university)&&
                     <Col md={{span:10,offset:1}} xs={24}>
                         <Form.Item label="มหาวิทยาลัยลำดับที่สาม">
                             {getFieldDecorator('three_university', {
-                                // rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
+                                // rules: [{ required: !summary, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
                             })(
                                 <Input
-                                    disabled={summary}
+                                disabled={summary}
                                     placeholder="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี"
-                                />,
-                            )}
+                                    />,
+                                    )}
                         </Form.Item>
                     </Col>
+                }
                 </Row>
-
-                <Form.Item className="Right-Checkbox" label="หลักสูตรของภาควิชาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี ที่สนใจ">
+                <h1>หลักสูตรที่สนใจ</h1>
+                <Form.Item className="Right-Checkbox" >
                     {getFieldDecorator('interest', {
-                        // rules: [{ required: true, message: 'กรุณาเลือกหลักสูตรที่ต้องการ' }]
+                        // rules: [{ required: !summary, message: 'กรุณาเลือกหลักสูตรที่ต้องการ' }]
                     })(
-                        <Checkbox.Group options={options} onChange={onChange} disabled={summary}/>,
-                    )}
+                        <Checkbox.Group style={{ width: '100%'}} onChange={onChange} disabled={summary}>
+                <Row style={{'text-align': 'left'}}>
+                    <Col md={{span:22, offset:2}} xs={{span: 24, offset: 2}} style={{'margin-bottom': '10px'}}>
+                        <Checkbox value="Reg" className="white" >หลักสูตรวิศวกรรมคอมพิวเตอร์</Checkbox>
+                    </Col>
+                    <Col md={{span:22, offset:2}} xs={{span: 24, offset: 2}} style={{'margin-bottom': '10px'}}>
+                        <Checkbox value="Inter" className="white">หลักสูตรวิศวกรรมคอมพิวเตอร์ (นานาชาติ)</Checkbox>
+                    </Col>
+                    <Col md={{span:22, offset:2}} xs={{span: 24, offset: 2}} style={{'margin-bottom': '10px'}}>
+                        <Checkbox value="HDS" className="white">หลักสูตรวิทยาศาสตร์ข้อมูลสุขภาพ</Checkbox>
+                    </Col>
+                    <Col md={{span:22, offset:2}} xs={{span: 24, offset: 2}} style={{'margin-bottom': '10px'}}>
+                        <Checkbox value="RC" className="white">หลักสูตร Residential College</Checkbox>
+                    </Col>
+                    
+                    </Row>
+                </Checkbox.Group>
+                        )}
                 </Form.Item>
+                {(!summary || futureData.one_camp || futureData.two_camp || futureData.three_camp) && 
                 <h1>ค่ายที่เคยเข้าร่วม</h1>
+                }
                 <Row>
+                {(!summary || futureData.one_camp)&&
                     <Col md={{span:11}} xs={24}>
                         <Form.Item label="ค่ายที่เคยเข้าร่วม">
                             {getFieldDecorator('one_camp', {
-                                // rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                // rules: [{ required: !summary, message: 'กรุณากรอกคณะที่อยากเข้า' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -205,10 +246,12 @@ function StepForm5(props) {
                             )}
                         </Form.Item>
                     </Col>
+                }
+                {(!summary || futureData.one_camp_university)&&
                     <Col md={{span:11,offset:2}} xs={24}>
-                        <Form.Item label="มหาวิทยาลัย">
+                        <Form.Item label="มหาวิทยาลัย/หน่วยงานที่จัด">
                             {getFieldDecorator('one_camp_university', {
-                                // rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
+                                // rules: [{ required: !summary, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -217,12 +260,14 @@ function StepForm5(props) {
                             )}
                         </Form.Item>
                     </Col>
+                }
                 </Row>
                 <Row>
+                {(!summary || futureData.two_camp)&&
                     <Col md={{span:11}} xs={24}>
                         <Form.Item label="ค่ายที่เคยเข้าร่วม">
                             {getFieldDecorator('two_camp', {
-                                // rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                // rules: [{ required: !summary, message: 'กรุณากรอกคณะที่อยากเข้า' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -231,10 +276,12 @@ function StepForm5(props) {
                             )}
                         </Form.Item>
                     </Col>
+                }
+                {(!summary || futureData.two_camp_university)&&
                     <Col md={{span:11,offset:2}} xs={24}>
-                        <Form.Item label="มหาวิทยาลัย">
+                        <Form.Item label="มหาวิทยาลัย/หน่วยงานที่จัด">
                             {getFieldDecorator('two_camp_university', {
-                                // rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
+                                // rules: [{ required: !summary, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -243,12 +290,14 @@ function StepForm5(props) {
                             )}
                         </Form.Item>
                     </Col>
+                }
                 </Row>
                 <Row>
+                {(!summary || futureData.three_camp)&&
                     <Col md={{span:11}} xs={24}>
                         <Form.Item label="ค่ายที่เคยเข้าร่วม">
                             {getFieldDecorator('three_camp', {
-                                // rules: [{ required: true, message: 'กรุณากรอกคณะที่อยากเข้า' }],
+                                // rules: [{ required: !summary, message: 'กรุณากรอกคณะที่อยากเข้า' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -257,10 +306,12 @@ function StepForm5(props) {
                             )}
                         </Form.Item>
                     </Col>
+                }
+                {(!summary || futureData.three_camp_university)&&
                     <Col md={{span:11,offset:2}} xs={24}>
-                        <Form.Item label="มหาวิทยาลัย">
+                        <Form.Item label="มหาวิทยาลัย/หน่วยงานที่จัด">
                             {getFieldDecorator('three_camp_university', {
-                                // rules: [{ required: true, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
+                                // rules: [{ required: !summary, message: 'กรุณากรอกชื่อมหาวิทยาลัย' }],
                             })(
                                 <Input
                                     disabled={summary}
@@ -269,6 +320,7 @@ function StepForm5(props) {
                             )}
                         </Form.Item>
                     </Col>
+                }
                 </Row>
                 {!summary &&
                     <Form.Item>

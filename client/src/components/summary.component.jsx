@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
-import { Form, Input, Button, Row, Col, Select } from 'antd';
+import { Form, Row, Col } from 'antd';
 import { fetchUserAction } from '../actions/myaction'
-import { transitions, positions, Provider as AlertProvider } from 'react-alert'
 import btn_left from '../asset/Button_left.png';
 import btn_right from '../asset/Button_right.png';
+import register from '../api/register'
+import { useAlert } from 'react-alert'
 
 import Navbar from './navbar.component'
 
@@ -17,14 +18,18 @@ import StepForm5 from './stepForm/step5'
 import StepForm6 from './stepForm/step6'
 import StepForm7 from './stepForm/step7'
 import StepForm8 from './stepForm/step8'
+import StepForm9 from './stepForm/step9'
 
 function SummaryForm(props) {
+
+    const { step9, handlePrev, setConfirmed } = props
+    const alert = useAlert()
 
     console.log("prop user", props.user)
 
     const [finished, setFinished] = useState(false)
-    const [currentStep, setCurrentStep] = useState(0);
-    const [maxStep, setMaxStep] = useState(0);
+    const [currentStep, setCurrentStep] = useState(0)
+    const [maxStep, setMaxStep] = useState(0)
     const [user, setUser] = useState({})
     const [loading, setLoading] = useState(true)
 
@@ -35,14 +40,24 @@ function SummaryForm(props) {
     useEffect(() => {
         props.fetch_user()
     }, [currentStep])
-
+    
     useEffect( () => {
-        if(!loading && user) {
-            if(!finished) {
-                props.history.push('/')
+        if(!step9) {
+            if(!loading) {
+                if(!finished) {
+                   window.location = 'https://comcamp.io/register'
+                }
             }
         }
-    }, [finished])
+     }, [currentStep, finished])
+
+     useEffect( () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+     }, [])
+    
 
     async function checkStep(user) {
         console.log("user", user)
@@ -64,9 +79,9 @@ function SummaryForm(props) {
               "location",
               "question"
             ].reduce((step, next) => step + user.hasOwnProperty(next), 0);
-            if(user.hasOwnProperty("tracking_number")) {
+            if(user.hasOwnProperty("tracking_number") && user.hasOwnProperty("personal")) {
                 setFinished(true)
-            }
+            } 
         }
         // newStep = 3
         setCurrentStep(newStep)
@@ -75,7 +90,7 @@ function SummaryForm(props) {
 
     useEffect(() => {
         if (props.user === false) {
-            props.history.push('/')
+            window.location = 'https://comcamp.io'
         }
         if (user != null && props.user) {
             setUser(props.user)
@@ -88,28 +103,65 @@ function SummaryForm(props) {
         checkStep(user)
     }, [loading])
 
+
+    // if (loading || !finished) {
     if (loading) {
         return <h1></h1>
     }
 
-    
 
-    return (
-        <div>
-            <Navbar user={user} />
-                <Row>
-                    <Col span={18} offset={3}>
-                        <h1>สรุปข้อมูล</h1>
-                            <StepForm1  user={user} summary={true}/>
-                            <StepForm2  user={user} summary={true}/>
-                            <StepForm3  user={user} summary={true}/>
-                            <StepForm4  user={user} summary={true}/>
-                            <StepForm5  user={user} summary={true}/>
-                            <StepForm6  user={user} summary={true}/>
-                            <StepForm7  user={user} summary={true}/>
-                            <StepForm8  user={user} summary={true}/>
+    const handleConfirmed = async () => {
+        const flag = await register.sendData(10, { confirmed: true })
+        console.log("Click Next")
+        console.log(flag)
+        if (flag) {
+            console.log("Next")
+            alert.success('บันทึกข้อมูลเสร็จสิ้น')
+            props.fetch_user()
+            // window.location = '/register'
+        }
+    }
 
-                        <Form.Item>
+    const statusTracking = () => {
+        if(!user.hasOwnProperty("status")) {
+            return (
+                <h1 style={{'color': 'red', 'textAlign': 'center'}}>**ยังไม่ได้รับเอกสาร**</h1>
+            )
+        } else if(user.status == 1) {
+            return (
+                <h1 style={{'color': 'blue', 'textAlign': 'center'}}>ได้รับเอกสารแล้ว รอตรวจสอบ</h1>
+            )
+        } else if(user.status == 2) {
+            return (
+                <h1 style={{'color': 'green', 'textAlign': 'center'}}>ตรวจสอบเอกสารเรียบร้อยแล้ว</h1>
+            )
+        }
+    }
+
+    if(step9) {
+        return (
+            
+            <Col span={24}>
+                <h1>สรุปข้อมูล</h1>
+                <hr className="break-line"/>
+                
+                <StepForm1  user={user} summary={true}/>
+                <hr className="break-line"/>
+                <StepForm2  user={user} summary={true}/>
+                <hr className="break-line"/>
+                <StepForm3  user={user} summary={true}/>
+                <hr className="break-line"/>
+                <StepForm4  user={user} summary={true}/>
+                <hr className="break-line"/>
+                <StepForm5  user={user} summary={true}/>
+                <hr className="break-line"/>
+                <StepForm6  user={user} summary={true}/>
+                <hr className="break-line"/>
+                <StepForm7  user={user} summary={true}/>
+                <hr className="break-line"/>
+                <StepForm8  user={user} summary={true}/>
+                
+                <Form.Item>
                         <div class="Button-Row">
                             <div className="Button-Column right">
                                 <div className="Button-Left-Image">
@@ -125,7 +177,7 @@ function SummaryForm(props) {
                                     />
                                 </div>
                                 <div className="Button-BorderImage"></div>
-                                <button className="Button-Background" htmlType="submit">
+                                <button className="Button-Background" htmlType="submit" onClick={handleConfirmed}>
                                     <span className="Markdown">Next</span>
                                 </button>
                             </div>
@@ -144,16 +196,46 @@ function SummaryForm(props) {
                                     />
                                 </div>
                                 <div className="Button-BorderImage"></div>
-                                <button className="Button-Background">
+                                <button className="Button-Background" onClick={handlePrev}>
                                     <span className="Markdown">Back</span>
                                 </button>
                             </div>
                         </div>
                     </Form.Item>
+            </Col>
+            
+        )
+    } else {
+    return (
+        <div>
+            {!step9 && <Navbar user={user} /> }
+                <Row>
+                    <Col span={20} offset={2}>
+                        <h1>สรุปข้อมูล</h1>
+                            {statusTracking()}
+                            <hr className="break-line"/>
+                            <StepForm9  user={user} summary={true}/>
+                            <hr className="break-line"/>
+                            <StepForm1  user={user} summary={true}/>
+                            <hr className="break-line"/>
+                            <StepForm2  user={user} summary={true}/>
+                            <hr className="break-line"/>
+                            <StepForm3  user={user} summary={true}/>
+                            <hr className="break-line"/>
+                            <StepForm4  user={user} summary={true}/>
+                            <hr className="break-line"/>
+                            <StepForm5  user={user} summary={true}/>
+                            <hr className="break-line"/>
+                            <StepForm6  user={user} summary={true}/>
+                            <hr className="break-line"/>
+                            <StepForm7  user={user} summary={true}/>
+                            <hr className="break-line"/>
+                            <StepForm8  user={user} summary={true}/>
                     </Col>
                 </Row>
         </div>
     )
+} 
 }
 
 const mapStateToProps = (state) => {

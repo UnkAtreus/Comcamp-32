@@ -12,11 +12,15 @@ function StepForm3(props) {
     const { currentStep, handlePrev, handleNext, user, summary } = props
 
     const [accident, setAccident] = useState(false)
+    
+    const [operation, setoperation] = useState(false)
+    
+    let diseaseData = {}
 
     useEffect(() => {
         async function fetchData() {
             if (user.hasOwnProperty("disease")) {
-                let diseaseData = user.disease
+                diseaseData = user.disease
                 delete diseaseData._id
                 if (diseaseData.hasOwnProperty("accident")) {
                     await setAccident(true)
@@ -24,6 +28,13 @@ function StepForm3(props) {
                 } else {
                     await setAccident(false)
                     await props.form.setFieldsValue({ have_accident: "false" })
+                }
+                if (diseaseData.hasOwnProperty("operation")) {
+                    await setoperation(true)
+                    await props.form.setFieldsValue({ have_operation: "true" })
+                } else {
+                    await setoperation(false)
+                    await props.form.setFieldsValue({ have_operation: "false" })
                 }
                 props.form.setFieldsValue(diseaseData);
             }
@@ -62,12 +73,21 @@ function StepForm3(props) {
         }
         console.log(accident)
     }
+    const handleoperation = value => {
+        if (value == "true") {
+            setoperation(true)
+        } else if (value == "false") {
+            setoperation(false)
+        }
+        console.log(operation)
+    }
 
     return (
         <div>
-            <h1>สิ่งที่แพ้</h1>
+            <h1>ข้อมูลสุขภาพ</h1>
             <Form onSubmit={handleSubmit} >
 
+                {(!summary || diseaseData.disease) && 
                 <Form.Item label="โรคประจำตัว">
                     {getFieldDecorator('disease')(
                         <Input
@@ -76,6 +96,9 @@ function StepForm3(props) {
                         />,
                     )}
                 </Form.Item>
+                }
+                
+                {(!summary || diseaseData.allergy_food) && 
                 <Form.Item label="อาหารที่แพ้">
                     {getFieldDecorator('allergy_food')(
                         <Input
@@ -84,6 +107,8 @@ function StepForm3(props) {
                         />,
                     )}
                 </Form.Item>
+                }
+                {(!summary || diseaseData.allergy_medic) && 
                 <Form.Item label="ยาที่แพ้">
                     {getFieldDecorator('allergy_medic')(
                         <Input
@@ -92,18 +117,30 @@ function StepForm3(props) {
                         />,
                     )}
                 </Form.Item>
-                <Form.Item label="ยาประจำตัว">
-                    {getFieldDecorator('medic_need')(
+                }
+                {(!summary || diseaseData.medic_other) && 
+                <Form.Item label="อาการแพ้อื่นๆ">
+                    {getFieldDecorator('medic_other')(
                         <Input
-                            placeholder="ยาแก้หอบหึด"
+                            placeholder="แพ้แป้งฝุ่น แพ้สารเคมี"
                             disabled={summary}
                         />,
                     )}
                 </Form.Item>
-
+                }
+                {(!summary || diseaseData.medic_need) && 
+                <Form.Item label="ยาประจำตัว">
+                    {getFieldDecorator('medic_need')(
+                        <Input
+                            placeholder="ยาแก้หอบหืด"
+                            disabled={summary}
+                        />,
+                    )}
+                </Form.Item>
+                }
                 <Form.Item label="อุบัติเหตุในรอบ 6 เดือน">
                     {getFieldDecorator('have_accident', {
-                        rules: [{ required: true, message: 'กรุณากรอกข้อมูล' }],
+                        rules: [{ required: !summary, message: 'กรุณากรอกข้อมูล' }],
                     })(
                         <Select
                             disabled={summary}
@@ -118,12 +155,39 @@ function StepForm3(props) {
                 {accident &&
                     <Form.Item label="เนื่องจาก">
                         {getFieldDecorator('accident', {
-                            rules: [{ required: true, message: 'กรุณากรอกข้อมูล' }],
+                            rules: [{ required: !summary, message: 'กรุณากรอกข้อมูล' }],
                         })(
                             <Input.TextArea
                                 autoSize={{ minRows: 4 }}
                                 disabled={summary}
                                 placeholder="อุบัติเหตุทางรถยนต์"
+                            />,
+                        )}
+                    </Form.Item>
+                }
+                <Form.Item label="การผ่าตัดในรอบ 6 เดือน">
+                    {getFieldDecorator('have_operation', {
+                        rules: [{ required: !summary, message: 'กรุณากรอกข้อมูล' }],
+                    })(
+                        <Select
+                            disabled={summary}
+                            placeholder="โปรดระบุ"
+                            onChange={handleoperation}
+                        >
+                            <Option value="false">ไม่มี</Option>
+                            <Option value="true">มี</Option>
+                        </Select>
+                    )}
+                </Form.Item>
+                {operation &&
+                    <Form.Item label="เนื่องจาก">
+                        {getFieldDecorator('operation', {
+                            rules: [{ required: !summary, message: 'กรุณากรอกข้อมูล' }],
+                        })(
+                            <Input.TextArea
+                                autoSize={{ minRows: 4 }}
+                                disabled={summary}
+                                placeholder="ผ่าตัดไส้ติ่ง"
                             />,
                         )}
                     </Form.Item>

@@ -31,12 +31,14 @@ var diseaseSchema = mongoose.Schema({
 	allergy_food:{type:String},
 	allergy_medic:{type:String},
 	medic_need:{type:String},
-	accident:{type:String}
+	accident:{type:String},
+	operation:{type: String},
 });
 
 var parent_info = mongoose.Schema({
 	relation: {type:String,required:true},
-	name:{type:String,required:true},
+	fname:{type:String,required:true},
+	lname:{type:String,required:true},
 	tel:{type:String,required:true},
 	email:{type:String,required:true},
 	prefix_th: {type: String, required:true}
@@ -58,6 +60,7 @@ var addressSchema = mongoose.Schema({
 	address_regis:locationSchema,
 	address_parent:locationSchema,
 	parent:parent_info,
+	parent2:parent_info,
 });
 
 var recent_camp = mongoose.Schema({
@@ -82,11 +85,8 @@ var futureSchema = mongoose.Schema({
 });
 
 var abilitySchema = mongoose.Schema({
-	programming:{type:Number,required:true},
-	big_data:{type:Number,required:true},
-	flow_chart:{type:Number,required:true},
-	microcontroller:{type:Number,required:true},
-	brain_storm:{type:Number,required:true},
+	achieve: {type: String},
+	language: {type: String}
 });
 
 var questionSchema = mongoose.Schema({
@@ -104,6 +104,7 @@ var userSchema = mongoose.Schema({
 	facebookId: {type:String},
 	displayName: {type:String},
 	step0: Boolean,
+	personal: Boolean,
 	general: generalSchema,
 	school: schoolSchema,
 	disease: diseaseSchema,
@@ -114,7 +115,9 @@ var userSchema = mongoose.Schema({
 	location: {type: String},
 	question: questionSchema,
 	tracking_number: {type: String},
-	news: [{type: String}]
+	news: [{type: String}],
+	confirmed: {type: Boolean},
+	status: {type: Number}
 });
 
 //create the model for users and expose it to our app

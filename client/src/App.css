@@ -1,4 +1,5 @@
     @import '~antd/dist/antd.css';
+    @import url('https://fonts.googleapis.com/css?family=Sarabun&display=swap');
     body {
         position: relative;
         z-index: auto;
@@ -343,18 +344,30 @@
     }
     
     .ant-input[disabled] {
-        color: black;
+        color: white !important ;
         filter: brightness(1) !important;
+        pointer-events: none;
     }
     
     .ant-input-number-disabled .ant-input-number-input {
-        color: black;
+        /* color: black; */
         background-color: white;
         filter: brightness(2);
+    }
+    .ant-input-number-disabled {
+        pointer-events: none !important;
+
+    }
+
+    .ant-input .ant-select-search__field {
+        border: 0 solid #0c0c0c;
     }
     
     .ant-select-selection--single .ant-select-selection__rendered {
         color: black;
+
+        
+        
     }
     
     .ant-select-selection--single .ant-select-selection__rendered {
@@ -363,6 +376,7 @@
     
     .ant-select-selection__placeholder,
     .ant-select-search__field__placeholder {
+        color: #bfbfbf;
         filter: brightness(0.5);
     }
     /*Selection*/
@@ -370,6 +384,7 @@
     .ant-select-selection {
         border: 0px solid #d9d9d9;
         background-color: black;
+        pointer-events: none;
     }
     
     .ant-select-selection-selected-value {
@@ -411,6 +426,7 @@
     
     .ant-select-dropdown-menu-item-selected {
         background-color: #121212;
+        
     }
     
     .ant-select-dropdown-menu-item-active:not(.ant-select-dropdown-menu-item-disabled) {
@@ -419,6 +435,7 @@
     
     .ant-select-disabled {
         background-color: whitesmoke;
+        pointer-events: none;
     }
     
     .ant-input-group-addon:first-child {
@@ -547,7 +564,7 @@
     
     .ant-btn {
         border-color: transparent;
-        background: rgba(245, 245, 245, 0.75);
+        background: rgba(255, 255, 255, 0.842);
     }
     
     .ant-btn>i,
@@ -586,7 +603,7 @@
     }
     
     .ant-radio-disabled+span {
-        color: white;
+        color: white !important;
     }
     /*calender*/
     
@@ -595,8 +612,14 @@
         border: 0px solid #121212;
     }
     
-    span {
-        color: whitesmoke;
+    .black {
+        color: black !important;
+    }
+    .white {
+        color: whitesmoke !important;
+    }
+    .CC {
+        color: #CCC !important;
     }
     
     .ant-calendar-header .ant-calendar-century-select,
@@ -878,7 +901,7 @@
             display: none;
         }
         .Nav-Links.nav-right.Nav-Back:after {
-            content: 'Back';
+            content: 'Home';
             position: absolute;
         }
         .Logo {
@@ -960,4 +983,72 @@
     .ant-checkbox:hover .ant-checkbox-inner,
     .ant-checkbox-input:focus+.ant-checkbox-inner {
         border-color: #fecb1f;
+        /* pointer-events: none; */
+
+    }
+
+    .ant-input-group-addon:first-child {
+        top: 0px;
+    }
+
+    .ant-select-disabled {
+        top: 1px !important;
+    }
+    
+    .ant-input[disabled] {
+        background-color: #000;
+    }
+
+    .ant-select-selection--single{
+        background-color: #000 !important;
+        color: white !important;
+    }
+    
+    .ant-checkbox-group{
+    color: #bfbfbf;  
+    }
+
+    .ant-input-number-input{   
+        background-color: #000 !important;
+        /* pointer-events: none; */
+    }
+
+    .ant-checkbox-disabled span {
+        color: #bfbfbf !important;
+        pointer-events: none;
+    }
+    .ant-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: rgba(255, 255, 255, 0.3);
+        opacity: 1; /* Firefox */
+    }
+    .ant-select-selection__placeholder {
+        color: rgba(255,255,255,0.3);
+        opacity: 1; /* Firefox */
+    }
+    .no{
+        color: #bfbfbf;
+    }
+    .ant-input-number-input-wrap{
+        color: white;
+        /* pointer-events: none; */
+    }
+
+    .ant-checkbox-disabled + span{
+        color: white;
+        pointer-events: none;
+        /* cursor: default; */
+
+    }
+
+    .ant-checkbox-wrapper{
+        color: white;
+        /* pointer-events: none; */
+    }
+    
+    .ant-select-selection--single{
+        color: white;
+    }
+
+    .ant-checkbox-wrapper-disabled {
+        pointer-events: none;
     }
