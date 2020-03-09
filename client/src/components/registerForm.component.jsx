@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { Row, Col, Steps, Popover } from 'antd'
 import { fetchUserAction } from '../actions/myaction'
+import logo from '../asset/logo-big.png';
+import btn_left from '../asset/Button_left.png';
+import btn_right from '../asset/Button_right.png';
 
 
 import Navbar from './navbar.component'
@@ -112,9 +115,40 @@ function RegisterForm(props) {
         return <div></div>
     }
 
+    const back = () => {
+        window.location = 'https://comcamp.io'
+    }
+
+    if(!loading && !finished) {
+        return (
+            <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", height: "100%"}}>
+                <img src={logo} alt="" srcset=""/>
+                <h1 style={{color: "#ff4d29", fontSize: "5vh"}}>ระบบปิดรับสมัครแล้ว</h1>
+                <br />
+                <div className="Button-Column left">
+                    <div className="Button-Left-Image">
+                        <img
+                            src={btn_left}
+                            alt="Left button decoration"
+                        />
+                    </div>
+                    <div className="Button-Right-Image">
+                        <img
+                            src={btn_right}
+                            alt="Right button decoration"
+                        />
+                    </div>
+                    <div className="Button-BorderImage"></div>
+                    <button className="Button-Background" onClick={back}>
+                        <span className="Markdown">Back</span>
+                    </button>
+                </div>
+            </div>
+        )
+    }
+
     return (
         <div>
-            <Navbar user={user}/>
                 <Row>
                     <Col span={18} offset={3}>
                         <StepForm currentStep={currentStep} maxStep={maxStep} />
