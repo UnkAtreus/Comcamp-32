@@ -122,7 +122,7 @@ function RegisterForm(props) {
     if(!loading && !finished) {
         return (
             <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", height: "100%"}}>
-                <img src={logo} alt="" srcset=""/>
+                <img src={logo} alt="" srcset="" style={{width: "100%"}}/>
                 <h1 style={{color: "#ff4d29", fontSize: "5vh"}}>ระบบปิดรับสมัครแล้ว</h1>
                 <br />
                 <div className="Button-Column left">
