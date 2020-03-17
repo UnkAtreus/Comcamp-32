@@ -7,7 +7,7 @@
     &.lazy-bg-loaded {
         background-image: url(/asset/General_BG_new.jpg);
     }
-    background-size: auto;
+    background-size: 105%;
     max-width: 2400px;
     font-size: 17.778px;
     background-position: center top;
@@ -223,7 +223,9 @@
         background-image: url(/asset/Button_Highlight/CC_Button_middle.png);
     }
     background-size: 500px 170px;
-    font-family: SourceSerifVariable, SourceSerif, serif;
+    font-family: SourceSerifVariable,
+    SourceSerif,
+    serif;
     letter-spacing: 0.025em;
     cursor: inherit;
     font-size: 1.125em;
@@ -247,7 +249,8 @@
     }
     background-size: 600px 47px;
     z-index: 5;
-    box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 24px 8px, rgba(0, 0, 0, 0.33) 0px 0px 12px;
+    box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 24px 8px,
+    rgba(0, 0, 0, 0.33) 0px 0px 12px;
     margin: 0px auto;
     background-position: center center;
     background-repeat: repeat-x;
@@ -305,7 +308,6 @@
 // opacity: 1;
 // }
 // }
-
 // @-webkit-keyframes blink {
 // 0% {
 // opacity: 1;
@@ -339,20 +341,17 @@
 // opacity: 1;
 // }
 // }
-
 // @media (min-width: 300px) {
 // .arrow {
 // width: 100px;
 // margin-top: -20px;
 // }
 // }
-
 // @media (min-width: 500px) {
 // .arrow {
 // margin-top: -10px;
 // }
 // }
-
 // @media (min-width: 670px) {
 // .arrow {
 // width: 200px;
@@ -373,13 +372,11 @@
 // -o-animation: blink 2s;
 // -o-animation-iteration-count: infinite;
 // }
-
 // @media screen and (max-width: 680px) {
 // .Section-Row {
 // min-height: 700px;
 // }
 // }
-
 // @media screen and (min-width: 1000px) {
 // .Section-Row {
 // min-height: 1000px;
